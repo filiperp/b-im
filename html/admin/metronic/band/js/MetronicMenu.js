@@ -14,8 +14,14 @@ MetronicMenu = (function () {
     MetronicMenu.init = function ($var) {
         Metronic.init(); // init metronic core components
         Layout.init();
-        //console.log('oi');
+
     };
     return MetronicMenu;
 
- })()
+ })();
+
+
+function alert (m){
+    "use strict";
+    bootbox.alert(m);
+}

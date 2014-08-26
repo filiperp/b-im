@@ -6,8 +6,8 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-	array('label'=>Yii::t('app', 'List') . ' ' . $model->label(2), 'url' => array('index')),
-	array('label'=>Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url' => array('admin')),
+    array('label'=>Yii::t('app', 'List') . ' ' . $model->label(2), 'url' => array('index'),'linkOptions'=> array('class'=>'btn blue   forceWhite blue ')),
+    array('label'=>Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url' => array('admin'),'linkOptions'=> array('class'=>'btn blue   forceWhite blue ')),
 );
 ?>
 

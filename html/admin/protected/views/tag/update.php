@@ -1,16 +1,16 @@
 <?php
-
-$this->breadcrumbs = array(
-	$model->label(2) => array('index'),
-	GxHtml::valueEx($model) => array('view', 'id' => GxActiveRecord::extractPkValue($model, true)),
-	Yii::t('app', 'Update'),
-);
+//
+//$this->breadcrumbs = array(
+//	$model->label(2) => array('index'),
+//	GxHtml::valueEx($model) => array('view', 'id' => GxActiveRecord::extractPkValue($model, true)),
+//	Yii::t('app', 'Update'),
+//);
 
 $this->menu = array(
-	array('label' => Yii::t('app', 'List') . ' ' . $model->label(2), 'url'=>array('index')),
-	array('label' => Yii::t('app', 'Create') . ' ' . $model->label(), 'url'=>array('create')),
-	array('label' => Yii::t('app', 'View') . ' ' . $model->label(), 'url'=>array('view', 'id' => GxActiveRecord::extractPkValue($model, true))),
-	array('label' => Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url'=>array('admin')),
+    array('label' => Yii::t('app', 'List') . ' ' . $model->label(2), 'url'=>array('index'),'linkOptions'=> array('class'=>'btn blue   forceWhite blue ')),
+    array('label' => Yii::t('app', 'Create') . ' ' . $model->label(), 'url'=>array('create'),'linkOptions'=> array('class'=>'btn blue  forceWhite  green ')),
+    array('label' => Yii::t('app', 'View') . ' ' . $model->label(), 'url'=>array('view', 'id' => GxActiveRecord::extractPkValue($model, true))  ,'linkOptions'=> array('class'=>'btn blue  forceWhite  blue ')),
+    array('label' => Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url'=>array('admin'),'linkOptions'=> array('class'=>'btn blue  forceWhite  blue ')),
 );
 ?>
 

@@ -20,7 +20,7 @@ Programa = (function () {
         var praca = $(this).data('praca');
         var programa = $(this).data('programa');
         var selected = $(this).is(':checked');
-        console.log(selected)
+      //  console.log(selected)
         $('#btnSubmmitForm').hide()
         jQuery.ajax({
             // The url must be appropriate for your configuration;
@@ -30,19 +30,23 @@ Programa = (function () {
             type: "POST",
             data: {veiculo:veiculo, praca:praca,programa:programa, isselected: selected},
             error: function(xhr,tStatus,e){
-                console.log(xhr)
-                console.log(tStatus)
-                console.log(e)
+
+                $(document).html(xhr.responseText);
+//                /console.log(xhr.responseText)
+                //console.log(tStatus)
+                //console.log(e)
+              //  bootbox.alert(xhr.responseText);
+                alert(xhr.responseText)
                 if(!xhr){
-                    alert(" We have an error ");
-                    alert(tStatus+"   "+e.message);
+                   // alert(" We have an error ");
+                   // alert(tStatus+"   "+e.message);
                 }else{
-                    alert("else: "+e.message); // the great unknown
+                    //alert("else: "+xhr.responseText); // the great unknown
                 }
             },
             success: function(resp){
                $('#btnSubmmitForm').show();
-                console.log(resp)
+              //  console.log(resp)
             }
         });
         //console.log(veiculo,praca)
@@ -50,3 +54,4 @@ Programa = (function () {
     return Programa;
 
  })()
+

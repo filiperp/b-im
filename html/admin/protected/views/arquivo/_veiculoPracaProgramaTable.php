@@ -69,7 +69,7 @@ if($isCreate){
               "data-veiculo" =>$data["fk_id_veiculo"],
               "data-praca" =>$data["fk_id_praca"],
               "data-programa" =>$data["fk_id_programa"],
-              "class"=> "checkVeiculoPraca"
+              "class"=> "checkVeiculoPracaPrograma"
             ))',
                 'type' => 'raw',
                 'htmlOptions' => array('width' => 5, 'style' => "text-align:center;"),
@@ -83,7 +83,7 @@ if($isCreate){
 
     $footerClientScript = Yii::app()->getClientScript();
     $footerClientScript->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/Arquivo.js', CClientScript::POS_END);
-   // $footerClientScript->registerScript('metronicMenuStart', "Programa.init();", CClientScript::POS_READY);
+    $footerClientScript->registerScript('veiculoPRacaPRogramaArquivo', "Arquivo.init();", CClientScript::POS_READY);
 
     ?>
 

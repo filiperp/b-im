@@ -22,8 +22,8 @@
                 )); ?>
 
                 <div class="form-group">
-                    <?php echo $form->label($model, 'id_veiculo', array('class' => '  col-md-2 control-label')); ?>
-                    <div class="col-md-4">
+                    <?php echo $form->label($model, 'id_veiculo', array('class' => '  col-md-4 control-label')); ?>
+                    <div class="col-md-8">
                         <?php echo $form->textField($model, 'id_veiculo', array('class' => 'form-control')); ?>
                     </div>
                 </div>

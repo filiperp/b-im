@@ -14,7 +14,7 @@ class AnaliseController extends GxController
     {
         return array(
             array('allow',
-                'actions' => array('index', 'view'),
+                'actions' => array('index', 'view', 'page/about'),
                 'users' => array('@'),
             ),
             array('allow',

@@ -29,7 +29,7 @@ var TableAdvanced = function () {
                 [5, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "pageLength": 10,
+            "pageLength": 5,
 
             "dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
 
@@ -338,6 +338,7 @@ var TableAdvanced = function () {
                 return;
             }
             $('#GridView > table').attr('id', 'tableGirdView')
+           // console.log( 'oi')
             initTable1();
 //            initTable2();
 //            initTable3();

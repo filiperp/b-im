@@ -44,7 +44,10 @@ abstract class BaseArquivo extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa', 'required'),
+			array('ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo', 'required'),
+			array('fk_id_programa', 'required', 'message'=> 'Selecione um Programa'),
+			//array('fk_id_praca', 'required', 'message'=> 'campo obrigatório'),
+			//array('fk_id_veiculo', 'required', 'message'=> 'campo obrigatório'),
 			array('ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa', 'numerical', 'integerOnly'=>true),
 			array('ref_arquivo', 'length', 'max'=>45),
 			array('nome_arquivo', 'length', 'max'=>100),

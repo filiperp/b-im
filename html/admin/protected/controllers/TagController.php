@@ -2,27 +2,6 @@
 
 class TagController extends GxController {
 
-public function filters() {
-	return array(
-			'accessControl', 
-			);
-}
-
-public function accessRules() {
-	return array(
-			array('allow', 
-				'actions'=>array('index', 'view'),
-				'users'=>array('@'),
-				),
-			array('allow', 
-				'actions'=>array('minicreate', 'create', 'update', 'admin', 'delete'),
-				'users'=>array('admin'),
-				),
-			array('deny', 
-				'users'=>array('*'),
-				),
-			);
-}
 
 	public function actionView($id) {
 		$this->render('view', array(
@@ -33,7 +12,6 @@ public function accessRules() {
 	public function actionCreate() {
 		$model = new Tag;
 
-		$this->performAjaxValidation($model, 'tag-form');
 
 		if (isset($_POST['Tag'])) {
 			$model->setAttributes($_POST['Tag']);
@@ -57,7 +35,6 @@ public function accessRules() {
 	public function actionUpdate($id) {
 		$model = $this->loadModel($id, 'Tag');
 
-		$this->performAjaxValidation($model, 'tag-form');
 
 		if (isset($_POST['Tag'])) {
 			$model->setAttributes($_POST['Tag']);

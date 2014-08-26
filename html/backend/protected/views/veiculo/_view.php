@@ -13,12 +13,16 @@
                     array('class' => ' ')); ?>
             </div>
             <div class="tools">
-                <?php echo GxHtml::link('<i class="icon-edit"></i> ' , array('update', 'id' => $data->id_veiculo),array('class' => ' fa fa-gear', 'data-toggle'=>"modal" )); ?>
+                <?php echo GxHtml::link('<i class="icon-edit"></i> ' ,
+                    array('update', 'id' => $data->id_veiculo),
+                    array('class' => ' fa fa-gear', 'data-toggle'=>"modal" )); ?>
             </div>
 
         </div>
         <div class="portlet-body">
             <div class="portlet-content">
+
+
                 <div class="row">
                     <div class="col-sm-2 bold">
                         <?php echo GxHtml::encode($data->getAttributeLabel('ref_veiculo')); ?>
@@ -44,14 +48,10 @@
                     </div>
                 </div>
 
+
+
             </div>
-
         </div>
-
-
-
     </div>
-
-
 </div>
 

@@ -2270,3 +2270,1933 @@ in /var/www/html/admin/index.php (13)
 in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
 in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
 in /var/www/html/admin/index.php (13)
+2014/08/26 13:45:10 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:45:10 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:45:15 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (58)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:45:15 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (58)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:45:16 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:45:16 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:45:24 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:45:24 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:47:18 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:47:18 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:47:19 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:47:19 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:47:20 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:47:20 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:47:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php (362)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (44)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:47:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php(362): CActiveRecord->save(true, NULL)
+#3 /var/www/html/admin/protected/controllers/ArquivoController.php(44): GxActiveRecord->saveWithRelated(Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): ArquivoController->actionCreate()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('arquivo/create')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/html/admin/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/admin/index.php?r=arquivo/create
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=arquivo/create
+---
+2014/08/26 13:55:26 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:55:26 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:55:26 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:55:26 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:55:30 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:55:30 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:55:34 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:55:34 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:20 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:20 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:21 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:21 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:22 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:22 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:23 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:23 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php (362)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (44)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:56:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php(362): CActiveRecord->save(true, NULL)
+#3 /var/www/html/admin/protected/controllers/ArquivoController.php(44): GxActiveRecord->saveWithRelated(Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): ArquivoController->actionCreate()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('arquivo/create')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/html/admin/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/admin/index.php?r=arquivo/create
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=arquivo/create
+---
+2014/08/26 13:59:41 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:41 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:41 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:41 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:42 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:42 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:44 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:44 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:45 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 13:59:45 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:00:54 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:00:54 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:01:04 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:01:04 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:01:06 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:01:06 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:01:08 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:01:08 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:02 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:02 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:37 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:37 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:56 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:56 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:57 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:57 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:58 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:04:58 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:05:00 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:05:00 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:05:04 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:05:04 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 14:27:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/login
+---
+2014/08/26 14:28:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('captcha')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/captcha&v=53fc9986adc2d
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/contact
+---
+2014/08/26 14:28:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/contact
+---
+2014/08/26 14:28:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:28:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:29:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:29:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:29:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:29:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:29:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:29:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:30:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:30:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:30:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:30:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:30:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/page&view=about
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/index
+---
+2014/08/26 14:31:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('captcha')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/captcha&v=53fc9a4ebcf47
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/contact
+---
+2014/08/26 14:37:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CCaptchaAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('captcha')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/html/admin/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=site/captcha&v=53fc9ba9dbec8
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=site/contact
+---
+2014/08/26 15:35:46 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (58)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:35:46 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (58)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:35:46 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (58)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:35:46 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (58)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:36:40 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:36:40 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:40:22 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:40:22 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:42:09 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:42:09 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:42:17 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:42:17 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:42:21 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:42:21 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:48:30 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:48:30 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:48:36 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:48:36 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:50:41 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:50:41 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:51:43 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:51:43 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:52:06 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:52:06 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:52:17 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:52:17 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:53:36 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:53:36 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:53:38 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:53:38 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:53:39 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:53:39 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:53:43 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:53:43 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:08 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:08 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:09 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:09 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:14 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:14 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:16 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:16 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:18 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:18 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:20 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:20 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:23 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:23 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:26 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:26 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:30 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:30 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:34 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:34 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:49 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:49 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:51 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:51 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:52 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:52 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:54 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:54:54 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:55:02 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:55:02 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:02 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:02 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:04 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:04 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:05 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:05 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:07 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:07 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:26 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:26 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:32 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:57:32 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:58:14 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:58:14 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:59:19 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:59:19 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:59:32 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:59:32 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:59:45 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:59:45 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:59:50 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 15:59:50 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:00:16 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:00:16 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:01:02 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:01:02 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:01:06 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:01:06 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:01:30 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:01:30 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:01:46 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:01:46 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:02:40 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:02:40 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:02:57 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:02:57 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:04:32 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:04:32 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:05:25 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:05:25 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:06:37 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 16:06:37 [warning] [application] Failed to set unsafe attribute "veiculoPracaProgramas" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:06:22 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:06:48 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:24:57 [error] [exception.CException] exception 'CException' with message 'The column must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.' in /var/www/yii/framework/zii/widgets/grid/CGridView.php:412
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridView.php(383): CGridView->createDataColumn('table table-str...')
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#2 /var/www/yii/framework/web/CBaseController.php(147): CGridView->init()
+#3 /var/www/yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 /var/www/html/admin/protected/views/programa/_veiculoPracaProgramaTable.php(74): CBaseController->widget('zii.widgets.gri...', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/html/a...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/a...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/a...', Array, true)
+#8 /var/www/html/admin/protected/views/programa/view.php(51): CController->renderPartial('_veiculoPracaPr...', Array)
+#9 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/html/a...')
+#10 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/a...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/a...', Array, true)
+#12 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#13 /var/www/html/admin/protected/controllers/ProgramaController.php(30): CController->render('view', Array)
+#14 [internal function]: ProgramaController->actionView('6')
+#15 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProgramaController), Array)
+#16 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProgramaController), Object(ReflectionMethod), Array)
+#17 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#26 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/view')
+#27 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#28 /var/www/html/admin/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/admin/index.php?r=programa/view&id=6
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/admin
+---
+2014/08/26 17:33:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:33:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=6
+---
+2014/08/26 17:33:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:33:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=6
+---
+2014/08/26 17:34:04 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:34:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=6
+---
+2014/08/26 17:35:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:35:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=6
+---
+2014/08/26 17:35:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:35:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=6
+---
+2014/08/26 17:35:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:35:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=2 AND `veiculo_praca_programa`.`fk_id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=6
+---
+2014/08/26 17:37:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=1 AND `veiculo_praca_programa`.`fk_id_programa`=10.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:37:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=1 AND `veiculo_praca_programa`.`fk_id_programa`=10' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=10
+---
+2014/08/26 17:39:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`programa_tag`, CONSTRAINT `fk_programa_has_tag_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=10.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (78)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:39:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`programa_tag`, CONSTRAINT `fk_programa_has_tag_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=10' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk('10')
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(78): CActiveRecord->delete()
+#3 [internal function]: ProgramaController->actionDelete('10')
+#4 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProgramaController), Array)
+#5 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProgramaController), Object(ReflectionMethod), Array)
+#6 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#15 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/delete')
+#16 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/admin/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/index.php?ajax=programa-grid&id=10&r=programa%2Fdelete
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/admin
+---
+2014/08/26 17:40:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`veiculo_praca_programa`, CONSTRAINT `fk_veiculo_praca_programa_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=9.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (78)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:40:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`veiculo_praca_programa`, CONSTRAINT `fk_veiculo_praca_programa_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=9' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk('9')
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(78): CActiveRecord->delete()
+#3 [internal function]: ProgramaController->actionDelete('9')
+#4 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProgramaController), Array)
+#5 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProgramaController), Object(ReflectionMethod), Array)
+#6 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#15 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/delete')
+#16 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/admin/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/index.php?ajax=programa-grid&id=9&r=programa%2Fdelete
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/admin
+---
+2014/08/26 17:46:59 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:46:59 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:00 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:00 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:01 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:01 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:13 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:13 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php (362)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (44)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php(362): CActiveRecord->save(true, NULL)
+#3 /var/www/html/admin/protected/controllers/ArquivoController.php(44): GxActiveRecord->saveWithRelated(Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): ArquivoController->actionCreate()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('arquivo/create')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/html/admin/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/admin/index.php?r=arquivo/create
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=arquivo/create
+---
+2014/08/26 17:47:32 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:32 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php (362)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (44)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php(362): CActiveRecord->save(true, NULL)
+#3 /var/www/html/admin/protected/controllers/ArquivoController.php(44): GxActiveRecord->saveWithRelated(Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): ArquivoController->actionCreate()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('arquivo/create')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/html/admin/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/admin/index.php?r=arquivo/create
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=arquivo/create
+---
+2014/08/26 17:47:47 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:47 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php (362)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (44)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:47:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php(362): CActiveRecord->save(true, NULL)
+#3 /var/www/html/admin/protected/controllers/ArquivoController.php(44): GxActiveRecord->saveWithRelated(Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): ArquivoController->actionCreate()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('arquivo/create')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/html/admin/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/admin/index.php?r=arquivo/create
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=arquivo/create
+---
+2014/08/26 17:48:10 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:10 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:11 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:11 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:12 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:12 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:13 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:13 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php (362)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (44)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: INSERT INTO `arquivo` (`ref_arquivo`, `nome_arquivo`, `caminho_arquivo`, `ativo_arquivo`, `fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/html/admin/protected/extensions/giix-components/GxActiveRecord.php(362): CActiveRecord->save(true, NULL)
+#3 /var/www/html/admin/protected/controllers/ArquivoController.php(44): GxActiveRecord->saveWithRelated(Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): ArquivoController->actionCreate()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('arquivo/create')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/html/admin/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/admin/index.php?r=arquivo/create
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=arquivo/create
+---
+2014/08/26 17:48:32 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:48:32 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:51:58 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:51:58 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:00 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:00 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:01 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:01 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:03 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:03 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:03 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:03 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ArquivoController.php (36)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:14 [warning] [application] Failed to set unsafe attribute "arquivoHistoricos" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:14 [warning] [application] Failed to set unsafe attribute "tags" of "Arquivo".
+in /var/www/html/admin/protected/controllers/ArquivoController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`programa_tag`, CONSTRAINT `fk_programa_has_tag_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (78)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:52:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`programa_tag`, CONSTRAINT `fk_programa_has_tag_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk('6')
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(78): CActiveRecord->delete()
+#3 [internal function]: ProgramaController->actionDelete('6')
+#4 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProgramaController), Array)
+#5 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProgramaController), Object(ReflectionMethod), Array)
+#6 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#15 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/delete')
+#16 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/admin/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/index.php?ajax=programa-grid&id=6&r=programa%2Fdelete
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/admin
+---
+2014/08/26 17:53:16 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:53:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=9
+---
+2014/08/26 17:56:22 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:56:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=9
+---
+2014/08/26 17:56:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6-3-9' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `veiculo_praca_programa` (`fk_id_praca`, `fk_id_veiculo`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2).
+in /var/www/html/admin/protected/controllers/ProgramaController.php (114)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:56:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6-3-9' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `veiculo_praca_programa` (`fk_id_praca`, `fk_id_veiculo`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(114): CActiveRecord->save(true)
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=9
+---
+2014/08/26 17:56:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:56:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=9
+---
+2014/08/26 17:57:57 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:57:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=9
+---
+2014/08/26 17:58:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6-3-9' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `veiculo_praca_programa` (`fk_id_praca`, `fk_id_veiculo`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2).
+in /var/www/html/admin/protected/controllers/ProgramaController.php (114)
+in /var/www/html/admin/index.php (13)
+2014/08/26 17:58:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '6-3-9' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `veiculo_praca_programa` (`fk_id_praca`, `fk_id_veiculo`, `fk_id_programa`) VALUES (:yp0, :yp1, :yp2)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(114): CActiveRecord->save(true)
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=9
+---
+2014/08/26 18:08:13 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (126)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:08:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`arquivo`, CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_prac). The SQL statement executed was: DELETE FROM `veiculo_praca_programa` WHERE `veiculo_praca_programa`.`fk_id_veiculo`=6 AND `veiculo_praca_programa`.`fk_id_praca`=3 AND `veiculo_praca_programa`.`fk_id_programa`=9' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk(Array)
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(126): CActiveRecord->delete()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionUpdateVeiculoPraca()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('updateVeiculoPr...')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/admin/index.php?r=programa/updateVeiculoPraca
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=9
+---
+2014/08/26 18:09:34 [warning] [application] Failed to set unsafe attribute "analises" of "Veiculo".
+in /var/www/html/admin/protected/controllers/VeiculoController.php (62)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:09:34 [warning] [application] Failed to set unsafe attribute "pracas" of "Veiculo".
+in /var/www/html/admin/protected/controllers/VeiculoController.php (62)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:09:44 [warning] [application] Failed to set unsafe attribute "analises" of "Veiculo".
+in /var/www/html/admin/protected/controllers/VeiculoController.php (62)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:09:44 [warning] [application] Failed to set unsafe attribute "pracas" of "Veiculo".
+in /var/www/html/admin/protected/controllers/VeiculoController.php (62)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:10:00 [warning] [application] Failed to set unsafe attribute "analises" of "Veiculo".
+in /var/www/html/admin/protected/controllers/VeiculoController.php (62)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:10:00 [warning] [application] Failed to set unsafe attribute "pracas" of "Veiculo".
+in /var/www/html/admin/protected/controllers/VeiculoController.php (62)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:20:25 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`programa_tag`, CONSTRAINT `fk_programa_has_tag_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (78)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:20:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`programa_tag`, CONSTRAINT `fk_programa_has_tag_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk('6')
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(78): CActiveRecord->delete()
+#3 [internal function]: ProgramaController->actionDelete('6')
+#4 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProgramaController), Array)
+#5 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProgramaController), Object(ReflectionMethod), Array)
+#6 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#15 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/delete')
+#16 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/admin/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/index.php?r=programa/delete&id=6
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=6
+---
+2014/08/26 18:49:50 [error] [php] Use of undefined constant id_programa - assumed 'id_programa' (/var/www/yii/framework/base/CComponent.php(612) : eval()'d code:1)
+Stack trace:
+#0 /var/www/yii/framework/zii/widgets/grid/CGridColumn.php(151): CDataColumn->renderDataCellContent()
+#1 /var/www/yii/framework/zii/widgets/grid/CGridView.php(616): CDataColumn->renderDataCell()
+#2 /var/www/yii/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow()
+#3 /var/www/yii/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#4 /var/www/yii/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 /var/www/yii/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback()
+#7 /var/www/yii/framework/zii/widgets/CBaseListView.php(135): CGridView->renderContent()
+#8 /var/www/yii/framework/web/CBaseController.php(173): CGridView->run()
+#9 /var/www/html/admin/protected/views/programa/admin.php(85): ProgramaController->widget()
+#10 /var/www/yii/framework/web/CBaseController.php(126): require()
+#11 /var/www/yii/framework/web/CBaseController.php(95): ProgramaController->renderInternal()
+#12 /var/www/yii/framework/web/CController.php(869): ProgramaController->renderFile()
+#13 /var/www/yii/framework/web/CController.php(782): ProgramaController->renderPartial()
+#14 /var/www/html/admin/protected/controllers/ProgramaController.php(102): ProgramaController->render()
+#15 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionAdmin()
+#16 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /var/www/yii/framework/web/filters/CFilterChain.php(133): ProgramaController->runAction()
+#18 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /var/www/yii/framework/web/filters/CInlineFilter.php(58): ProgramaController->filterAccessControl()
+#21 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/yii/framework/web/CController.php(265): ProgramaController->runActionWithFilters()
+#24 /var/www/yii/framework/web/CWebApplication.php(282): ProgramaController->run()
+#25 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /var/www/html/admin/index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=programa/admin
+in /var/www/html/admin/protected/views/programa/admin.php (85)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (102)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:51:24 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (58)
+in /var/www/html/admin/index.php (13)
+2014/08/26 18:51:25 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 19:09:02 [warning] [application] Failed to set unsafe attribute "analises" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (40)
+in /var/www/html/admin/index.php (13)
+2014/08/26 19:09:02 [warning] [application] Failed to set unsafe attribute "arquivos" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (40)
+in /var/www/html/admin/index.php (13)
+2014/08/26 19:09:02 [warning] [application] Failed to set unsafe attribute "programas" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (40)
+in /var/www/html/admin/index.php (13)
+2014/08/26 19:22:21 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/extensions/giix-components/GxController.php (161)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (58)
+in /var/www/html/admin/index.php (13)
+2014/08/26 19:41:37 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 19:43:40 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 19:46:56 [error] [php] Undefined variable: model (/var/www/html/admin/protected/views/programa/index.php:9)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): ProgramaController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): ProgramaController->renderPartial()
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(90): ProgramaController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): ProgramaController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): ProgramaController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): ProgramaController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): ProgramaController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): ProgramaController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/html/admin/index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=programa/index
+in /var/www/html/admin/protected/views/programa/index.php (9)
+in /var/www/html/admin/protected/controllers/ProgramaController.php (90)
+in /var/www/html/admin/index.php (13)
+2014/08/26 19:51:04 [error] [exception.CException] exception 'CException' with message 'Property "Programa.id_veiculo" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('id_veiculo')
+#1 /var/www/html/admin/protected/views/programa/view.php(11): CActiveRecord->__get('id_veiculo')
+#2 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/html/a...')
+#3 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/a...', Array, true)
+#4 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/a...', Array, true)
+#5 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#6 /var/www/html/admin/protected/controllers/ProgramaController.php(30): CController->render('view', Array)
+#7 [internal function]: ProgramaController->actionView('6')
+#8 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProgramaController), Array)
+#9 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProgramaController), Object(ReflectionMethod), Array)
+#10 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#19 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/view')
+#20 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/html/admin/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/admin/index.php?r=programa/view&id=6
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/index
+---
+2014/08/26 20:03:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`programa_tag`, CONSTRAINT `fk_programa_has_tag_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=6.
+in /var/www/html/admin/protected/controllers/ProgramaController.php (78)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:03:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`im`.`programa_tag`, CONSTRAINT `fk_programa_has_tag_programa1` FOREIGN KEY (`fk_id_programa`) REFERENCES `programa` (`id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `programa` WHERE `programa`.`id_programa`=6' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1802): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1222): CActiveRecord->deleteByPk('6')
+#2 /var/www/html/admin/protected/controllers/ProgramaController.php(78): CActiveRecord->delete()
+#3 [internal function]: ProgramaController->actionDelete('6')
+#4 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProgramaController), Array)
+#5 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProgramaController), Object(ReflectionMethod), Array)
+#6 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#15 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/delete')
+#16 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/html/admin/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/index.php?r=programa/delete&id=6
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=6
+---
+2014/08/26 20:04:13 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:09:35 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (61)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:23:42 [warning] [application] Failed to set unsafe attribute "analises" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:23:42 [warning] [application] Failed to set unsafe attribute "arquivos" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:23:42 [warning] [application] Failed to set unsafe attribute "programas" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:23:53 [warning] [application] Failed to set unsafe attribute "analises" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:23:53 [warning] [application] Failed to set unsafe attribute "arquivos" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:23:53 [warning] [application] Failed to set unsafe attribute "programas" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:24:01 [warning] [application] Failed to set unsafe attribute "analises" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:24:01 [warning] [application] Failed to set unsafe attribute "arquivos" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:24:01 [warning] [application] Failed to set unsafe attribute "programas" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:24:09 [warning] [application] Failed to set unsafe attribute "analises" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:24:09 [warning] [application] Failed to set unsafe attribute "arquivos" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:24:09 [warning] [application] Failed to set unsafe attribute "programas" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (17)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:35:24 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.tipo_tag" is not defined.' in /var/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/admin/protected/views/programa/_form.php(89): CComponent->__set('tipo_tag', 'programa')
+#1 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/html/a...')
+#2 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/a...', Array, true)
+#3 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/a...', Array, true)
+#4 /var/www/html/admin/protected/views/programa/update.php(22): CController->renderPartial('_form', Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/html/a...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/a...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/a...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#9 /var/www/html/admin/protected/controllers/ProgramaController.php(73): CController->render('update', Array)
+#10 [internal function]: ProgramaController->actionUpdate('8')
+#11 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProgramaController), Array)
+#12 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProgramaController), Object(ReflectionMethod), Array)
+#13 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#22 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('programa/update')
+#23 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /var/www/html/admin/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/admin/index.php?r=programa/update&id=8
+HTTP_REFERER=http://192.168.33.10/admin/index.php?r=programa/view&id=8
+---
+2014/08/26 20:36:39 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (39)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:36:55 [warning] [application] Failed to set unsafe attribute "analises" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (40)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:36:55 [warning] [application] Failed to set unsafe attribute "arquivos" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (40)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:36:55 [warning] [application] Failed to set unsafe attribute "programas" of "Tag".
+in /var/www/html/admin/protected/controllers/TagController.php (40)
+in /var/www/html/admin/index.php (13)
+2014/08/26 20:37:14 [warning] [application] Failed to set unsafe attribute "tags" of "Programa".
+in /var/www/html/admin/protected/controllers/ProgramaController.php (61)
+in /var/www/html/admin/index.php (13)

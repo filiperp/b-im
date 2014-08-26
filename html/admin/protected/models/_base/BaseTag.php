@@ -12,6 +12,7 @@
  * @property integer $id_tag
  * @property string $ref_tag
  * @property string $nome_tag
+ * @property string $tipo_tag
  *
  * @property Analise[] $analises
  * @property Arquivo[] $arquivos
@@ -32,14 +33,15 @@ abstract class BaseTag extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'ref_tag';
+		return 'nome_tag';
 	}
 
 	public function rules() {
 		return array(
-			array('ref_tag, nome_tag', 'length', 'max'=>45),
+			array('tipo_tag', 'required'),
+			array('ref_tag, nome_tag, tipo_tag', 'length', 'max'=>45),
 			array('ref_tag, nome_tag', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id_tag, ref_tag, nome_tag', 'safe', 'on'=>'search'),
+			array('id_tag, ref_tag, nome_tag, tipo_tag', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,9 +63,10 @@ abstract class BaseTag extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_tag' => Yii::t('app', 'Id Tag'),
-			'ref_tag' => Yii::t('app', 'Ref Tag'),
-			'nome_tag' => Yii::t('app', 'Nome Tag'),
+			'id_tag' => Yii::t('app', 'Id'),
+			'ref_tag' => Yii::t('app', 'Ref'),
+			'nome_tag' => Yii::t('app', 'Nome'),
+			'tipo_tag' => Yii::t('app', 'Tipo'),
 			'analises' => null,
 			'arquivos' => null,
 			'programas' => null,
@@ -76,9 +79,11 @@ abstract class BaseTag extends GxActiveRecord {
 		$criteria->compare('id_tag', $this->id_tag);
 		$criteria->compare('ref_tag', $this->ref_tag, true);
 		$criteria->compare('nome_tag', $this->nome_tag, true);
+		$criteria->compare('tipo_tag', $this->tipo_tag, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
 		));
 	}
+
 }

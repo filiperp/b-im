@@ -4,10 +4,8 @@
     <div class="row">
 
         <div class="col-sm-12 last">
-
                 <?php
                 $this->beginWidget('zii.widgets.CPortlet', array(
-
                     'htmlOptions' => array('class' => 'page-bar'),
                 ));
                 $this->widget('zii.widgets.CMenu', array(

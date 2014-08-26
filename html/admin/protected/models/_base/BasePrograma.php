@@ -64,12 +64,12 @@ abstract class BasePrograma extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_programa' => Yii::t('app', 'Id Programa'),
-			'ref_programa' => Yii::t('app', 'Ref Programa'),
-			'nome_programa' => Yii::t('app', 'Nome Programa'),
-			'descricao_programa' => Yii::t('app', 'Descricao Programa'),
-			'imagem_programa' => Yii::t('app', 'Imagem Programa'),
-			'ativo_programa' => Yii::t('app', 'Ativo Programa'),
+			'id_programa' => Yii::t('app', 'Id'),
+			'ref_programa' => Yii::t('app', 'Ref'),
+			'nome_programa' => Yii::t('app', 'Nome'),
+			'descricao_programa' => Yii::t('app', 'Descricao'),
+			'imagem_programa' => Yii::t('app', 'Imagem'),
+			'ativo_programa' => Yii::t('app', 'Ativo'),
 			'tags' => null,
 			'veiculoPracaProgramas' => null,
 		);
