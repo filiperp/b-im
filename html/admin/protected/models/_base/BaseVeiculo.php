@@ -65,12 +65,12 @@ abstract class BaseVeiculo extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_veiculo' => Yii::t('app', 'Id Veiculo'),
-			'ref_veiculo' => Yii::t('app', 'Ref Veiculo'),
-			'nome_veiculo' => Yii::t('app', 'Nome Veiculo'),
-			'descricao_veiculo' => Yii::t('app', 'Descricao Veiculo'),
-			'imagem_veiculo' => Yii::t('app', 'Imagem Veiculo'),
-			'ativo_veiculo' => Yii::t('app', 'Ativo Veiculo'),
+			'id_veiculo' => Yii::t('app', 'Id'),
+			'ref_veiculo' => Yii::t('app', 'Ref'),
+			'nome_veiculo' => Yii::t('app', 'Nome'),
+			'descricao_veiculo' => Yii::t('app', 'Descricao'),
+			'imagem_veiculo' => Yii::t('app', 'Imagem'),
+			'ativo_veiculo' => Yii::t('app', 'Ativo'),
 			'analises' => null,
 			'pracas' => null,
 		);

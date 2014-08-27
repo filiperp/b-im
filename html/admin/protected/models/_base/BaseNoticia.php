@@ -14,7 +14,7 @@
  * @property string $nome_noticia
  * @property string $descricao_noticia
  * @property string $link_noticia
- * @property string $ativo_noticia
+ * @property integer $ativo_noticia
  * @property string $imagem_noticia
  *
  */
@@ -39,7 +39,8 @@ abstract class BaseNoticia extends GxActiveRecord {
 	public function rules() {
 		return array(
 			array('ref_noticia, nome_noticia, descricao_noticia, link_noticia, ativo_noticia, imagem_noticia', 'required'),
-			array('ref_noticia, ativo_noticia', 'length', 'max'=>45),
+			array('ativo_noticia', 'numerical', 'integerOnly'=>true),
+			array('ref_noticia', 'length', 'max'=>45),
 			array('nome_noticia', 'length', 'max'=>100),
 			array('descricao_noticia, link_noticia', 'length', 'max'=>512),
 			array('imagem_noticia', 'length', 'max'=>255),
@@ -59,13 +60,13 @@ abstract class BaseNoticia extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_noticia' => Yii::t('app', 'Id Noticia'),
-			'ref_noticia' => Yii::t('app', 'Ref Noticia'),
-			'nome_noticia' => Yii::t('app', 'Nome Noticia'),
-			'descricao_noticia' => Yii::t('app', 'Descricao Noticia'),
-			'link_noticia' => Yii::t('app', 'Link Noticia'),
-			'ativo_noticia' => Yii::t('app', 'Ativo Noticia'),
-			'imagem_noticia' => Yii::t('app', 'Imagem Noticia'),
+			'id_noticia' => Yii::t('app', 'Id'),
+			'ref_noticia' => Yii::t('app', 'Ref'),
+			'nome_noticia' => Yii::t('app', 'Nome'),
+			'descricao_noticia' => Yii::t('app', 'Descricao'),
+			'link_noticia' => Yii::t('app', 'Link'),
+			'ativo_noticia' => Yii::t('app', 'Ativo'),
+			'imagem_noticia' => Yii::t('app', 'Imagem'),
 		);
 	}
 
@@ -77,7 +78,7 @@ abstract class BaseNoticia extends GxActiveRecord {
 		$criteria->compare('nome_noticia', $this->nome_noticia, true);
 		$criteria->compare('descricao_noticia', $this->descricao_noticia, true);
 		$criteria->compare('link_noticia', $this->link_noticia, true);
-		$criteria->compare('ativo_noticia', $this->ativo_noticia, true);
+		$criteria->compare('ativo_noticia', $this->ativo_noticia);
 		$criteria->compare('imagem_noticia', $this->imagem_noticia, true);
 
 		return new CActiveDataProvider($this, array(

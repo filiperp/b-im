@@ -1,7 +1,7 @@
 var TableAdvanced = function () {
 
-    var initTable1 = function () {
-        var table = $('#tableGirdView');
+    var initTable1 = function (id) {
+        var table = $('#'+id);
 
         /* Table tools samples: https://www.datatables.net/release-datatables/extras/TableTools/ */
 
@@ -53,6 +53,34 @@ var TableAdvanced = function () {
                     "sExtends": "copy",
                     "sButtonText": "Copy"
                 }]
+            },
+            fnDrawCallback: function () {
+                // first radio button list selection is not rendered, so needs to be re-drawn
+                //
+
+                var _v = parseInt( $('#Arquivo_fk_id_veiculo').val());
+                var _p = parseInt($('#Arquivo_fk_id_praca').val());
+                var _pr =parseInt( $('#Arquivo_fk_id_programa').val());
+console.log( 'valores:', _v,_p,_pr)
+                 $('.checkVeiculoPracaPrograma').each(function(k,v){
+                     "use strict";
+                     var t=$(this);
+                     var t_v = parseInt(t.data('veiculo'));
+                     var t_p = parseInt(t.data('praca'));
+                     var t_pr = parseInt(t.data('programa'));
+   var c= _v==t_v && _p==t_p && _pr==t_pr;
+                    console.log(_v==t_v, _p==t_p, _pr==t_pr)
+                    console.log('v', _v,t_v,'p',  _p, t_p,'pr', _pr,t_pr)
+                     $('[name="selected_item"]').checked= c;
+                     if(c){
+                         console.log( 'foi')
+                     }
+
+
+                 })
+               // $('.checkVeiculoPracaPrograma').attr("checked","");
+               // $('[name="selected_item"]').prop('checked',false)
+                //console.log( 'redraw')
             }
         });
 
@@ -337,9 +365,11 @@ var TableAdvanced = function () {
             if (!jQuery().dataTable) {
                 return;
             }
-            $('#GridView > table').attr('id', 'tableGirdView')
+            $('#GridView > table').attr('id', 'tableGirdView');
+            $('#GridViewHistorico > table').attr('id', 'tableGirdViewHistorico')
            // console.log( 'oi')
-            initTable1();
+            initTable1('tableGirdView');
+            initTable1('tableGirdViewHistorico');
 //            initTable2();
 //            initTable3();
 //            initTable4();

@@ -74,11 +74,11 @@ abstract class BaseArquivo extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_arquivo' => Yii::t('app', 'Id Arquivo'),
-			'ref_arquivo' => Yii::t('app', 'Ref Arquivo'),
-			'nome_arquivo' => Yii::t('app', 'Nome Arquivo'),
-			'caminho_arquivo' => Yii::t('app', 'Caminho Arquivo'),
-			'ativo_arquivo' => Yii::t('app', 'Ativo Arquivo'),
+			'id_arquivo' => Yii::t('app', 'Id'),
+			'ref_arquivo' => Yii::t('app', 'Ref'),
+			'nome_arquivo' => Yii::t('app', 'Nome'),
+			'caminho_arquivo' => Yii::t('app', 'Caminho'),
+			'ativo_arquivo' => Yii::t('app', 'Ativo'),
 			'fk_id_veiculo' => null,
 			'fk_id_praca' => null,
 			'fk_id_programa' => null,

@@ -11,7 +11,8 @@ Arquivo = (function () {
 
     Arquivo.onClickVeiculoPracaPrograma = function(e)
     {
-//
+        $('.checkVeiculoPracaPrograma').attr('checked', "");
+        $(this).attr('checked', "checked");
 //        console.log($(this).data('veiculo'));
 //        console.log($(this).data('praca'));
 //        console.log($(this).data('programa'));

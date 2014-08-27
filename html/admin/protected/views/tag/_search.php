@@ -22,33 +22,31 @@
 
 
 
-                <div class=" form-group">
-                    <?php echo $form->label($model, 'id_tag', array('class' => '  col-md-4 control-label')); ?>
-                    <div class="col-md-8">
-                        <?php echo $form->textField($model, 'id_tag', array('class' => 'form-control')); ?>
-                    </div>
-                </div>
+                <?php
+                $viewElements = array(
 
-                <div class=" form-group">
-                    <?php echo $form->label($model, 'ref_tag', array('class' => '  col-md-4 control-label')); ?>
-                    <div class="col-md-8">
-                        <?php echo $form->textField($model, 'ref_tag', array('maxlength' => 45, 'class' => 'form-control')); ?>
-                    </div>
-                </div>
+                    array('id_tag', 45, 'textField'),
+                    array('ref_tag', 45, 'textField'),
+                    array('nome_tag', 45, 'textField'),
+                    array('tipo_tag', 45, 'textField'),
 
-                <div class="  form-group">
-                    <?php echo $form->label($model, 'nome_tag', array('class' => '  col-md-4 control-label')); ?>
-                    <div class="col-md-8">
-                        <?php echo $form->textField($model, 'nome_tag', array('maxlength' => 45, 'class' => 'form-control')); ?>
-                    </div>
-                </div>
 
-                <div class="  form-group">
-                    <?php echo $form->label($model, 'tipo_tag', array('class' => '  col-md-4 control-label')); ?>
-                    <div class="col-md-8">
-                        <?php echo $form->textField($model, 'tipo_tag', array('maxlength' => 45, 'class' => 'form-control')); ?>
+                );
+
+                foreach ($viewElements as $key => $value) {
+                    ?>
+                    <div class="form-group">
+                        <?php echo $form->label($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php echo $form->$value[2]($model, $value[0], array('maxlength' =>$value[1], 'class' => 'form-control')); ?>
+                            <!--                            --><?php //echo $form->error($model, $value[0], array('errorCssClass'=>' has-error')); ?>
+                        </div>
                     </div>
-                </div>
+
+
+                <?php
+                }
+                ?>
 
                 <div class="  form-group">
                     <div class="col-sm-12 ">

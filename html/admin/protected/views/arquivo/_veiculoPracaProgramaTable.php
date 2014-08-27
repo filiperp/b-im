@@ -17,11 +17,11 @@
         ->leftJoin('praca p', 'vpp.fk_id_praca=p.id_praca')
         ->leftJoin('programa pr', 'vpp.fk_id_programa=pr.id_programa');
 
-if($isCreate){
-    $model->fk_id_praca=0;
-    $model->fk_id_programa=0;
-    $model->fk_id_veiculo=0;
-}
+    if ($isCreate) {
+        $model->fk_id_praca = 0;
+        $model->fk_id_programa = 0;
+        $model->fk_id_veiculo = 0;
+    }
 
     $data = $command->queryAll();
 
@@ -30,7 +30,13 @@ if($isCreate){
 
     $this->widget('zii.widgets.grid.CGridView', array(
 
+        'id' => 'pracaProgramaTable-grid',
         'dataProvider' => $dataProvider,
+        'filter' => null,
+        'enableSorting' => false,
+        'summaryText' => '',
+        'showTableOnEmpty' => false,
+        'enablePagination' => false,
 
         'columns' => array(
 
@@ -63,12 +69,18 @@ if($isCreate){
             array(
                 'name' => '',
                 'header' => 'Habilitar',
-                'value' => 'CHtml::radioButton("selected_program",
-            $data["fk_id_praca"]=='.$model->fk_id_praca .' && $data["fk_id_programa"]=='.$model->fk_id_programa.' && $data["fk_id_veiculo"]=='.$model->fk_id_veiculo.',
+                'value' =>
+                    'CHtml::radioButton("selected_item",
+                  false,
+
             array(
               "data-veiculo" =>$data["fk_id_veiculo"],
               "data-praca" =>$data["fk_id_praca"],
               "data-programa" =>$data["fk_id_programa"],
+
+              "value" => $data["fk_id_veiculo"]. "_".$data["fk_id_praca"]. "_".$data["fk_id_programa"],
+              "id" => "selected_item_".$data["fk_id_veiculo"]. "_".$data["fk_id_praca"]. "_".$data["fk_id_programa"],
+
               "class"=> "checkVeiculoPracaPrograma"
             ))',
                 'type' => 'raw',
@@ -78,6 +90,11 @@ if($isCreate){
 
 
         ),
+        'itemsCssClass' => 'table table-striped table-bordered table-hover',
+        'htmlOptions' => array(
+            'id' => 'GridView',
+            //  'class'=> 'table'
+        )
     ));
 
 

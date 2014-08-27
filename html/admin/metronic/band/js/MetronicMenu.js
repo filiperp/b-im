@@ -25,3 +25,17 @@ function alert (m){
     "use strict";
     bootbox.alert(m);
 }
+
+function exconfirm (m){
+    "use strict";
+        var t;
+    console.log( 'a1',t);
+    bootbox.confirm(m, function(result) {
+        t=result;
+    });
+
+    console.log( 'a',t);
+    return t;
+
+
+}

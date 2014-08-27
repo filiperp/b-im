@@ -1,52 +1,80 @@
-<div class="form">
+<div class="row ">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-file-o fa-create"></i> Cadastro
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="form-horizontal">
+
+                    <?php $form = $this->beginWidget('GxActiveForm', array(
+                        'id' => 'log-form',
+                        'enableAjaxValidation' => true,
+                    ));
+                    CHtml::$errorCss = 'font-red-intense';
+                    ?>
+
+                    <!--	<p class="note">-->
+                    <!--		--><?php //echo Yii::t('app', 'Fields with'); ?><!-- <span class="required">*</span> --><?php //echo Yii::t('app', 'are required'); ?><!--.-->
+                    <!--	</p>-->
+
+                    <?php echo $form->errorSummary($model); ?>
 
 
-<?php $form = $this->beginWidget('GxActiveForm', array(
-	'id' => 'log-form',
-	'enableAjaxValidation' => true,
-));
-?>
-
-	<p class="note">
-		<?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
-	</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
-		<div class="row">
-		<?php echo $form->labelEx($model,'usuario_log'); ?>
-		<?php echo $form->textField($model, 'usuario_log', array('maxlength' => 50)); ?>
-		<?php echo $form->error($model,'usuario_log'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'ip_log'); ?>
-		<?php echo $form->textField($model, 'ip_log', array('maxlength' => 45)); ?>
-		<?php echo $form->error($model,'ip_log'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'acao_log'); ?>
-		<?php echo $form->textField($model, 'acao_log', array('maxlength' => 45)); ?>
-		<?php echo $form->error($model,'acao_log'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'ref_log'); ?>
-		<?php echo $form->textField($model, 'ref_log', array('maxlength' => 45)); ?>
-		<?php echo $form->error($model,'ref_log'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'data_log'); ?>
-		<?php echo $form->textField($model, 'data_log'); ?>
-		<?php echo $form->error($model,'data_log'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'descricao_log'); ?>
-		<?php echo $form->textField($model, 'descricao_log', array('maxlength' => 512)); ?>
-		<?php echo $form->error($model,'descricao_log'); ?>
-		</div><!-- row -->
 
 
-<?php
-echo GxHtml::submitButton(Yii::t('app', 'Save'));
-$this->endWidget();
-?>
-</div><!-- form -->
+                    <?php
+                    $viewElements = array(
+
+                        array('usuario_log', 50, 'textField'),
+                        array('ip_log', 45, 'textField'),
+                        array('acao_log', 45, 'textField'),
+                        array('ref_log', 45, 'textField'),
+                        array('data_log', 45, 'textField'),
+                        array('descricao_log', 512, 'textArea'),
+
+
+
+                    );
+
+                    foreach ($viewElements as $key => $value) {
+                        ?>
+                        <div class="form-group">
+                            <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                            <div class="col-md-8">
+                                <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
+                                <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+                            </div>
+                        </div>
+
+
+                    <?php
+                    }
+                    ?>
+
+
+
+
+
+                    <!-- row -->
+                    <div class="row ">
+                        <div class="col-md-12 ">
+                            <?php
+                            echo GxHtml::submitButton(Yii::t('app', 'Save'), array('id' => 'btnSubmmitForm', 'class' => ' btn blue pull-right'));
+                            $this->endWidget();
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- form -->
+            </div>
+        </div>
+        <!-- form -->
+
+    </div>
+    <!-- END SAMPLE FORM PORTLET-->
+</div>

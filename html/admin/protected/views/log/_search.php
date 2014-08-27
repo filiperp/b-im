@@ -1,49 +1,67 @@
-<div class="wide form">
+<div class="row ">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-search"></i> Pesquisa Avançada
+                </div>
+                <div class="tools">
+                    <a href="" class="expand">
+                    </a>
 
-<?php $form = $this->beginWidget('GxActiveForm', array(
-	'action' => Yii::app()->createUrl($this->route),
-	'method' => 'get',
-)); ?>
+                </div>
+            </div>
+            <div class="portlet-body display-hide">
 
-	<div class="row">
-		<?php echo $form->label($model, 'id_log'); ?>
-		<?php echo $form->textField($model, 'id_log'); ?>
-	</div>
+                <?php $form = $this->beginWidget('GxActiveForm', array(
+                    'action' => Yii::app()->createUrl($this->route),
+                    'method' => 'get',
+                    'htmlOptions' => array('class' => 'form-horizontal')
+                )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model, 'usuario_log'); ?>
-		<?php echo $form->textField($model, 'usuario_log', array('maxlength' => 50)); ?>
-	</div>
+                <?php
+                $viewElements = array(
 
-	<div class="row">
-		<?php echo $form->label($model, 'ip_log'); ?>
-		<?php echo $form->textField($model, 'ip_log', array('maxlength' => 45)); ?>
-	</div>
+                    array('id_log',45, 'textField'),
+                    array('usuario_log', 50, 'textField'),
+                    array('ip_log', 45, 'textField'),
+                    array('acao_log', 45, 'textField'),
+                    array('ref_log', 45, 'textField'),
+                    array('data_log', 45, 'textField'),
+                    array('descricao_log', 512, 'textArea'),
 
-	<div class="row">
-		<?php echo $form->label($model, 'acao_log'); ?>
-		<?php echo $form->textField($model, 'acao_log', array('maxlength' => 45)); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'ref_log'); ?>
-		<?php echo $form->textField($model, 'ref_log', array('maxlength' => 45)); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'data_log'); ?>
-		<?php echo $form->textField($model, 'data_log'); ?>
-	</div>
+                );
 
-	<div class="row">
-		<?php echo $form->label($model, 'descricao_log'); ?>
-		<?php echo $form->textField($model, 'descricao_log', array('maxlength' => 512)); ?>
-	</div>
+                foreach ($viewElements as $key => $value) {
+                    ?>
+                    <div class="form-group">
+                        <?php echo $form->label($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php echo $form->$value[2]($model, $value[0], array('maxlength' =>$value[1], 'class' => 'form-control')); ?>
+                            <!--                            --><?php //echo $form->error($model, $value[0], array('errorCssClass'=>' has-error')); ?>
+                        </div>
+                    </div>
 
-	<div class="row buttons">
-		<?php echo GxHtml::submitButton(Yii::t('app', 'Search')); ?>
-	</div>
 
-<?php $this->endWidget(); ?>
+                <?php
+                }
+                ?>
 
-</div><!-- search-form -->
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <?php echo GxHtml::submitButton(Yii::t('app', 'Search'), array('class' => ' btn blue pull-right')); ?>
+                    </div>
+                </div>
+
+                <?php $this->endWidget(); ?>
+
+
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+</div>

@@ -58,13 +58,13 @@ abstract class BaseLog extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_log' => Yii::t('app', 'Id Log'),
-			'usuario_log' => Yii::t('app', 'Usuario Log'),
-			'ip_log' => Yii::t('app', 'Ip Log'),
-			'acao_log' => Yii::t('app', 'Acao Log'),
-			'ref_log' => Yii::t('app', 'Ref Log'),
-			'data_log' => Yii::t('app', 'Data Log'),
-			'descricao_log' => Yii::t('app', 'Descricao Log'),
+			'id_log' => Yii::t('app', 'Id'),
+			'usuario_log' => Yii::t('app', 'Usuario'),
+			'ip_log' => Yii::t('app', 'Ip'),
+			'acao_log' => Yii::t('app', 'Acao'),
+			'ref_log' => Yii::t('app', 'Ref'),
+			'data_log' => Yii::t('app', 'Data'),
+			'descricao_log' => Yii::t('app', 'Descricao'),
 		);
 	}
 

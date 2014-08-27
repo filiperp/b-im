@@ -6,8 +6,8 @@
 //);
 
 $this->menu = array(
-    array('label'=>Yii::t('app', 'Create') . ' ' . Veiculo::label(), 'url' => array('create'),'linkOptions'=> array('class'=>'btn blue  forceWhite  green ')),
-    array('label'=>Yii::t('app', 'Manage') . ' ' . Veiculo::label(2), 'url' => array('admin'),'linkOptions'=> array('class'=>'btn blue  forceWhite  blue ')),
+    array('label'=>Yii::t('app', 'Create') . ' ' . Programa::label(), 'url' => array('create'),'linkOptions'=> array('class'=>'btn blue  forceWhite  green ')),
+    array('label'=>Yii::t('app', 'Manage') . ' ' . Programa::label(2), 'url' => array('admin'),'linkOptions'=> array('class'=>'btn blue  forceWhite  blue ')),
 );
 ?>
 

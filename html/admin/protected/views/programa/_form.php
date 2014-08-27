@@ -18,53 +18,46 @@
                     CHtml::$errorCss = 'font-red-intense';
                     ?>
 
-                    <!--                    <p class="note">-->
-                    <!--                        --><?php //echo Yii::t('app', 'Fields with'); ?><!-- <span class="required">*</span> --><?php //echo Yii::t('app', 'are required'); ?><!--.-->
-                    <!--                    </p>-->
+                    <p class="note">
+                        <?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
+                    </p>
 
-                    <!--                    --><?php //echo $form->errorSummary($model); ?>
+                    <?php echo $form->errorSummary($model); ?>
 
-                    <div class="form-group">
-                        <?php echo $form->labelEx($model, 'ref_programa', array('class' => '  col-md-4 control-label')); ?>
-                        <div class="col-md-8">
-                            <?php echo $form->textField($model, 'ref_programa', array('maxlength' => 45, 'class' => 'form-control')); ?>
-                            <!--                            --><?php //echo $form->error($model, 'ref_programa', array('errorCssClass'=>' has-error')); ?>
-                        </div>
-                    </div>
-                    <!-- row -->
-                    <div class="form-group">
-                        <?php echo $form->labelEx($model, 'nome_programa', array('class' => '  col-md-4 control-label')); ?>
-                        <div class="col-md-8">
-                            <?php echo $form->textField($model, 'nome_programa', array('maxlength' => 100, 'class' => 'form-control')); ?>
-                            <!--                            --><?php //echo $form->error($model, 'nome_programa', array('errorCssClass'=>' has-error')); ?>
-                        </div>
-                    </div>
-                    <!-- row -->
-                    <div class="form-group">
-                        <?php echo $form->labelEx($model, 'descricao_programa', array('class' => '  col-md-4 control-label')); ?>
-                        <div class="col-md-8">
-                            <?php echo $form->textArea($model, 'descricao_programa', array('maxlength' => 512, 'class' => 'form-control')); ?>
-                            <!--                            --><?php //echo $form->error($model, 'descricao_programa', array('errorCssClass'=>' has-error')); ?>
-                        </div>
-                    </div>
-                    <!-- row -->
-                    <div class="form-group">
-                        <?php echo $form->labelEx($model, 'imagem_programa', array('class' => '  col-md-4 control-label')); ?>
-                        <div class="col-md-8">
-                            <?php echo $form->textField($model, 'imagem_programa', array('maxlength' => 255, 'class' => 'form-control')); ?>
-                            <!--                            --><?php //echo $form->error($model, 'imagem_programa'); ?>
-                        </div>
-                    </div>
-                    <!-- row -->
-                    <div class="form-group">
-                        <?php echo $form->labelEx($model, 'ativo_programa', array('class' => '  col-md-4 control-label')); ?>
-                        <div class="col-md-8">
-                            <?php echo $form->checkBox($model, 'ativo_programa', array('class' => 'form-control')); ?>
-                            <?php echo $form->error($model, 'ativo_programa'); ?>
 
+
+                    <?php
+                    $viewElements = array(
+
+                        array('id_programa', 45, 'textField'),
+                        array('ref_programa', 45, 'textField'),
+                        array('nome_programa', 100, 'textArea'),
+                        array('descricao_programa', 512, 'textArea'),
+                        array('imagem_programa', 255, 'textArea'),
+                        array('ativo_programa', 1, 'checkBox'),
+
+
+                    );
+
+                    foreach ($viewElements as $key => $value) {
+                        ?>
+                        <div class="form-group">
+                            <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                            <div class="col-md-8">
+                                <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
+                                <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+                            </div>
                         </div>
-                    </div>
-                    <!-- row -->
+
+
+                    <?php
+                    }
+                    ?>
+
+
+
+
+
 
                     <!--                    <label>--><?php //echo GxHtml::encode($model->getRelationLabel('tags')); ?><!--</label>-->
                     <!--                    --><?php //echo $form->checkBoxList($model, 'tags', GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAllAttributes(null, true)), false, true)); ?>

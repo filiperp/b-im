@@ -16,6 +16,7 @@
                         'id' => 'tag-form',
                         'enableAjaxValidation' => false,
                     ));
+                    CHtml::$errorCss = 'font-red-intense';
                     ?>
 
                     <p class="note">
@@ -25,29 +26,36 @@
                     <?php echo $form->errorSummary($model); ?>
 
 
-                    <!-- row -->
-                    <div class="form-group">
-                        <?php echo $form->labelEx($model, 'ref_tag', array('class' => '  col-md-4 control-label')); ?>
-                        <div class="col-md-8">
-                            <?php echo $form->textField($model, 'ref_tag', array('maxlength' => 45, 'class' => 'form-control')); ?>
-                            <?php echo $form->error($model, 'ref_tag'); ?>
+                    <?php
+                    $viewElements = array(
+
+                      //  array('id_tag', 45, 'textField'),
+                        array('ref_tag', 45, 'textField'),
+                        array('nome_tag', 45, 'textField'),
+                    );
+
+                    foreach ($viewElements as $key => $value) {
+                        ?>
+                        <div class="form-group">
+                            <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                            <div class="col-md-8">
+                                <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
+                                <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+                            </div>
                         </div>
-                    </div>
-                    <!-- row -->
-                    <div class="form-group">
-                        <?php echo $form->labelEx($model, 'nome_tag', array('class' => '  col-md-4 control-label')); ?>
-                        <div class="col-md-8">
-                            <?php echo $form->textField($model, 'nome_tag', array('maxlength' => 45, 'class' => 'form-control')); ?>
-                            <?php echo $form->error($model, 'nome_tag'); ?>
-                        </div>
-                        <!-- row -->
-                    </div>
+
+
+                    <?php
+                    }
+                    ?>
 
                     <!-- row -->
                     <div class="form-group">
                         <?php echo $form->labelEx($model, 'tipo_tag', array('class' => '  col-md-4 control-label')); ?>
                         <div class="col-md-8">
-                            <?php echo $form->dropDownList($model, 'tipo_tag', array('arquivo' => 'arquivo', 'programa' => 'programa', 'analise' => 'analise'), array('maxlength' => 45, 'class' => 'form-control')); ?>
+                            <?php
+                            $disabled =  $iscreate?'':'disabled';
+                            echo $form->dropDownList($model, 'tipo_tag', array('arquivo' => 'arquivo', 'programa' => 'programa', 'analise' => 'analise'), array('maxlength' => 45, 'class' => "form-control ", 'disabled'=>"$disabled") ); ?>
                             <?php echo $form->error($model, 'tipo_tag'); ?>
                         </div>
                     </div>

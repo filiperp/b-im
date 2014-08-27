@@ -41,6 +41,7 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'id' => 'praca-grid',
 	'dataProvider' => $model->search(),
 	'filter' => $model,
+    'showTableOnEmpty' => false,
 	'columns' => array(
 		'id_praca',
 		'ref_praca',

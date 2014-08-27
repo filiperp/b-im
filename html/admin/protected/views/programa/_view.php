@@ -22,57 +22,33 @@
         <div class="portlet-body">
             <div class="portlet-content">
 
-                <div class="row">
-                    <div class="col-sm-4 bold">
-                        <?php echo GxHtml::encode($data->getAttributeLabel('id_programa')); ?>:
-                    </div>
-                    <div class="col-sm-8">
-                        <?php echo GxHtml::link(GxHtml::encode($data->id_programa), array('view', 'id' => $data->id_programa)); ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 bold">
+                <?php
+                $viewElements = array(
+                    array('id_programa',45, 'textField'),
+                    array('ref_programa',45,'textField'),
+                    array('nome_programa',100,'textArea'),
+                    array('descricao_programa',512,'textArea'),
+                    array('imagem_programa',255,'textArea'),
+                    array('ativo_programa',1,'checkBox'),
 
-                        <?php echo GxHtml::encode($data->getAttributeLabel('ref_programa')); ?>:
+                );
+
+                foreach ($viewElements as $key => $value) {
+                    ?>
+
+                    <div class="row">
+                        <div class="col-sm-4 bold">
+                            <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
+                        </div>
+                        <div class="col-sm-8">
+                            <?php echo GxHtml::encode($data[$value[0]]); ?>
+                        </div>
                     </div>
-                    <div class="col-sm-8">
-                        <?php echo GxHtml::encode($data->ref_programa); ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 bold">
-                        <?php echo GxHtml::encode($data->getAttributeLabel('nome_programa')); ?>:
-                    </div>
-                    <div class="col-sm-8">
-                        <?php echo GxHtml::encode($data->nome_programa); ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 bold">
-                        <?php echo GxHtml::encode($data->getAttributeLabel('descricao_programa')); ?>:
-                    </div>
-                    <div class="col-sm-8">
-                        <?php echo GxHtml::encode($data->descricao_programa); ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 bold">
-                        <?php echo GxHtml::encode($data->getAttributeLabel('imagem_programa')); ?>:
-                    </div>
-                    <div class="col-sm-8">
-                        <?php echo GxHtml::encode($data->imagem_programa); ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4 bold">
-                        <?php echo GxHtml::encode($data->getAttributeLabel('ativo_programa')); ?>:
-                    </div>
-                    <div class="col-sm-8">
-                        <?php echo GxHtml::encode($data->ativo_programa); ?>
-                    </div>
-                </div>
 
 
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>

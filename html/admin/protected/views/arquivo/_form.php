@@ -1,77 +1,173 @@
-<div class="form">
+<div class="row ">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-file-o fa-create"></i> Cadastro
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="form-horizontal">
+
+                    <?php $form = $this->beginWidget('GxActiveForm', array(
+                        'id' => 'arquivoa-form',
+                        'enableAjaxValidation' => true,
+                    ));
+                    CHtml::$errorCss = 'font-red-intense';
+                    ?>
+
+                    <p class="note">
+                        <?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
+                    </p>
+
+                    <?php echo $form->errorSummary($model); ?>
 
 
-    <?php $form = $this->beginWidget('GxActiveForm', array(
-        'id' => 'arquivo-form',
-        'enableAjaxValidation' => true,
-    ));
-    ?>
+                    <?php
+                    $viewElements = array(
 
-    <p class="note">
-        <?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
-    </p>
+                        // array('id_arquivo', 45, 'textField'),
+                        array('ref_arquivo', 45, 'textField'),
+                        array('nome_arquivo', 100, 'textArea'),
+                        array('caminho_arquivo', 512, 'textArea'),
+                        array('ativo_arquivo', 1, 'checkBox'),
 
-    <?php echo $form->errorSummary($model); ?>
+                    );
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'ref_arquivo'); ?>
-        <?php echo $form->textField($model, 'ref_arquivo', array('maxlength' => 45)); ?>
-        <?php echo $form->error($model, 'ref_arquivo'); ?>
+                    foreach ($viewElements as $key => $value) {
+                        ?>
+                        <div class="form-group">
+                            <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                            <div class="col-md-8">
+                                <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
+                                <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+                            </div>
+                        </div>
+
+
+                    <?php
+                    }
+                    ?>
+
+
+                    <?php
+                    $viewElements = array(
+
+                        // array('id_arquivo', 45, 'textField'),
+                        array('fk_id_veiculo', 45, 'hiddenField'),
+                        array('fk_id_praca', 45, 'hiddenField'),
+                        array('fk_id_programa', 45, 'hiddenField'),
+
+
+                    );
+
+                    foreach ($viewElements as $key => $value) {
+
+                        echo $form->hiddenField($model, $value[0]);
+
+
+                    }
+                    ?>
+
+
+
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="portlet box  green-haze">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        PROGRAMA
+                                    </div>
+                                    <div class="tools">
+
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body "><br><Br>
+                                    <?php
+                                    $this->renderPartial('_veiculoPracaProgramaTable', array(
+                                        'model' => $model,
+                                        'isCreate' => $isCreate));
+                                    ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="portlet box  green-haze">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-file-o fa-create"></i> <?php echo GxHtml::encode($model->getRelationLabel('tags')); ?>
+                                    </div>
+                                    <div class="tools">
+
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body ">
+                                    <?php
+                                    $Criteria = new CDbCriteria();
+                                    $Criteria->addCondition('tipo_tag = "arquivo"');
+
+                                    echo $form->checkBoxList($model, 'tags',
+                                        GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAll($Criteria)), false, true)); ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="portlet box  green-haze">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        Historico
+                                    </div>
+                                    <div class="tools">
+
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body "><br><Br>
+                                    <?php
+                                    $this->renderPartial('_historico', array(
+                                        'model' => $model,
+                                        'isCreate' => $isCreate
+                                    ));
+                                    ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!---->
+                    <!--                    <label>--><?php //echo GxHtml::encode($model->getRelationLabel('arquivoHistoricos')); ?><!--</label>-->
+                    <!--                    --><?php //echo $form->checkBoxList($model, 'arquivoHistoricos', GxHtml::encodeEx(GxHtml::listDataEx(ArquivoHistorico::model()->findAllAttributes(null, true)), false, true)); ?>
+
+
+
+                    <div class="row ">
+                        <div class="col-md-12 ">
+                            <?php
+                            echo GxHtml::submitButton(Yii::t('app', 'Save'), array('id' => 'btnSubmmitForm', 'class' => ' btn blue pull-right'));
+                            $this->endWidget();
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- form -->
+            </div>
+        </div>
+        <!-- form -->
+
     </div>
-    <!-- row -->
-    <div class="row">
-        <?php echo $form->labelEx($model, 'nome_arquivo'); ?>
-        <?php echo $form->textField($model, 'nome_arquivo', array('maxlength' => 100)); ?>
-        <?php echo $form->error($model, 'nome_arquivo'); ?>
-    </div>
-    <!-- row -->
-    <div class="row">
-        <?php echo $form->labelEx($model, 'caminho_arquivo'); ?>
-        <?php echo $form->textField($model, 'caminho_arquivo', array('maxlength' => 512)); ?>
-        <?php echo $form->error($model, 'caminho_arquivo'); ?>
-    </div>
-    <!-- row -->
-    <div class="row">
-        <?php echo $form->labelEx($model, 'ativo_arquivo'); ?>
-        <?php echo $form->checkBox($model, 'ativo_arquivo'); ?>
-        <?php echo $form->error($model, 'ativo_arquivo'); ?>
-    </div>
-    <!-- row -->
-    <div class="row">
-        <?php
-        $this->renderPartial('_veiculoPracaProgramaTable', array(
-            'model' => $model,
-            'isCreate' => $isCreate));
-        ?>
-    </div>
-    <div class="row">
-<!--        --><?php //echo $form->labelEx($model, 'fk_id_veiculo'); ?>
-        <?php echo $form->hiddenField($model, 'fk_id_veiculo'); ?>
-<!--        --><?php //echo $form->error($model, 'fk_id_veiculo'); ?>
-    </div>
-    <!-- row -->
-    <div class="row">
-<!--        --><?php //echo $form->labelEx($model, 'fk_id_praca'); ?>
-        <?php echo $form->hiddenField($model, 'fk_id_praca'); ?>
-<!--        --><?php //echo $form->error($model, 'fk_id_praca'); ?>
-    </div>
-    <!-- row -->
-    <div class="row">
-<!--        --><?php //echo $form->labelEx($model, 'fk_id_programa'); ?>
-        <?php echo $form->hiddenField($model, 'fk_id_programa'); ?>
-<!--        --><?php //echo $form->error($model, 'fk_id_programa'); ?>
-    </div>
-    <!-- row -->
-
-    <label><?php echo GxHtml::encode($model->getRelationLabel('arquivoHistoricos')); ?></label>
-    <?php echo $form->checkBoxList($model, 'arquivoHistoricos', GxHtml::encodeEx(GxHtml::listDataEx(ArquivoHistorico::model()->findAllAttributes(null, true)), false, true)); ?>
-    <label><?php echo GxHtml::encode($model->getRelationLabel('tags')); ?></label>
-    <?php echo $form->checkBoxList($model, 'tags', GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAllAttributes(null, true)), false, true)); ?>
-
-    <?php
-    echo GxHtml::submitButton(Yii::t('app', 'Save'));
-    $this->endWidget();
-
-
-    ?>
-</div><!-- form -->
+    <!-- END SAMPLE FORM PORTLET-->
+</div>

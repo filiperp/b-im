@@ -11,6 +11,9 @@
  *
  * @property integer $id_arquivo_historico
  * @property integer $fk_id_arquivo
+ * @property string $ref_arquivo
+ * @property string $nome_arquivo
+ * @property string $caminho_arquivo
  *
  * @property Arquivo $fkIdArquivo
  */
@@ -29,14 +32,17 @@ abstract class BaseArquivoHistorico extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'id_arquivo_historico';
+		return 'ref_arquivo';
 	}
 
 	public function rules() {
 		return array(
-			array('fk_id_arquivo', 'required'),
+			array('fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo', 'required'),
 			array('fk_id_arquivo', 'numerical', 'integerOnly'=>true),
-			array('id_arquivo_historico, fk_id_arquivo', 'safe', 'on'=>'search'),
+			array('ref_arquivo', 'length', 'max'=>45),
+			array('nome_arquivo', 'length', 'max'=>100),
+			array('caminho_arquivo', 'length', 'max'=>512),
+			array('id_arquivo_historico, fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +61,9 @@ abstract class BaseArquivoHistorico extends GxActiveRecord {
 		return array(
 			'id_arquivo_historico' => Yii::t('app', 'Id Arquivo Historico'),
 			'fk_id_arquivo' => null,
+			'ref_arquivo' => Yii::t('app', 'Ref Arquivo'),
+			'nome_arquivo' => Yii::t('app', 'Nome Arquivo'),
+			'caminho_arquivo' => Yii::t('app', 'Caminho Arquivo'),
 			'fkIdArquivo' => null,
 		);
 	}
@@ -64,6 +73,9 @@ abstract class BaseArquivoHistorico extends GxActiveRecord {
 
 		$criteria->compare('id_arquivo_historico', $this->id_arquivo_historico);
 		$criteria->compare('fk_id_arquivo', $this->fk_id_arquivo);
+		$criteria->compare('ref_arquivo', $this->ref_arquivo, true);
+		$criteria->compare('nome_arquivo', $this->nome_arquivo, true);
+		$criteria->compare('caminho_arquivo', $this->caminho_arquivo, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

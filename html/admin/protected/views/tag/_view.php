@@ -22,31 +22,36 @@
         <div class="portlet-body">
             <div class="portlet-content">
 
-                <div class="row">
-                    <div class="col-sm-2 bold">
-                        <?php echo GxHtml::encode($data->getAttributeLabel('ref_tag')); ?>
-                    </div>
-                    <div class="col-sm-10">
-                        <?php echo GxHtml::encode($data->ref_tag); ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-2 bold">
-                        <?php echo GxHtml::encode($data->getAttributeLabel('nome_tag')); ?>
-                    </div>
-                    <div class="col-sm-10">
-                        <?php echo GxHtml::encode($data->nome_tag); ?>
-                    </div>
-                </div>
+                <?php
+                $viewElements = array(
 
-                <div class="row">
-                    <div class="col-sm-2 bold">
-                        <?php echo GxHtml::encode($data->getAttributeLabel('tipo_tag')); ?>
+                    'id_tag',
+                    'ref_tag',
+                    'nome_tag',
+                    'tipo_tag',
+
+
+                );
+
+                foreach ($viewElements as $key => $value) {
+                    ?>
+                    <div class="row">
+                        <div class="col-sm-4 bold ">
+
+                            <?php echo GxHtml::encode($data->getAttributeLabel($value)); ?>:
+                        </div>
+                        <div class="col-sm-8">
+                            <?php echo GxHtml::encode($data[$value]); ?>
+                        </div>
                     </div>
-                    <div class="col-sm-10">
-                        <?php echo GxHtml::encode($data->tipo_tag); ?>
-                    </div>
-                </div>
+
+
+                <?php
+
+                }
+                ?>
+
+
 
 
             </div>

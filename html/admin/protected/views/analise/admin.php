@@ -41,6 +41,7 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'id' => 'analise-grid',
 	'dataProvider' => $model->search(),
 	'filter' => $model,
+    'showTableOnEmpty' => false,
 	'columns' => array(
 		'id_analise',
 		'ref_analise',

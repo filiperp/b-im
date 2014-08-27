@@ -1,49 +1,65 @@
-<div class="wide form">
+<div class="row ">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-search"></i> Pesquisa Avançada
+                </div>
+                <div class="tools">
+                    <a href="" class="expand">
+                    </a>
 
-<?php $form = $this->beginWidget('GxActiveForm', array(
-	'action' => Yii::app()->createUrl($this->route),
-	'method' => 'get',
-)); ?>
+                </div>
+            </div>
+            <div class="portlet-body display-hide">
 
-	<div class="row">
-		<?php echo $form->label($model, 'id_noticia'); ?>
-		<?php echo $form->textField($model, 'id_noticia'); ?>
-	</div>
+                <?php $form = $this->beginWidget('GxActiveForm', array(
+                    'action' => Yii::app()->createUrl($this->route),
+                    'method' => 'get',
+                    'htmlOptions' => array('class' => 'form-horizontal')
+                )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model, 'ref_noticia'); ?>
-		<?php echo $form->textField($model, 'ref_noticia', array('maxlength' => 45)); ?>
-	</div>
+                <?php
+                $viewElements = array(
+                    array('id_noticia', 45, 'textField'),
+                    array('ref_noticia', 45, 'textField'),
+                    array('nome_noticia', 100, 'textArea'),
+                    array('descricao_noticia', 512, 'textArea'),
+                    array('link_noticia', 512, 'textArea'),
+                    array('ativo_noticia', 1, 'checkBox'),
+                    array('imagem_noticia', 255, 'textArea'),
 
-	<div class="row">
-		<?php echo $form->label($model, 'nome_noticia'); ?>
-		<?php echo $form->textField($model, 'nome_noticia', array('maxlength' => 100)); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'descricao_noticia'); ?>
-		<?php echo $form->textField($model, 'descricao_noticia', array('maxlength' => 512)); ?>
-	</div>
+                );
 
-	<div class="row">
-		<?php echo $form->label($model, 'link_noticia'); ?>
-		<?php echo $form->textField($model, 'link_noticia', array('maxlength' => 512)); ?>
-	</div>
+                foreach ($viewElements as $key => $value) {
+                    ?>
+                    <div class="form-group">
+                        <?php echo $form->label($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php echo $form->$value[2]($model, $value[0], array('maxlength' =>$value[1], 'class' => 'form-control')); ?>
+<!--                            --><?php //echo $form->error($model, $value[0], array('errorCssClass'=>' has-error')); ?>
+                        </div>
+                    </div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'ativo_noticia'); ?>
-		<?php echo $form->textField($model, 'ativo_noticia', array('maxlength' => 45)); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'imagem_noticia'); ?>
-		<?php echo $form->textField($model, 'imagem_noticia', array('maxlength' => 255)); ?>
-	</div>
+                <?php
+                }
+                ?>
 
-	<div class="row buttons">
-		<?php echo GxHtml::submitButton(Yii::t('app', 'Search')); ?>
-	</div>
 
-<?php $this->endWidget(); ?>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <?php echo GxHtml::submitButton(Yii::t('app', 'Search'), array('class' => ' btn blue pull-right')); ?>
+                    </div>
+                </div>
 
-</div><!-- search-form -->
+                <?php $this->endWidget(); ?>
+
+
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+</div>

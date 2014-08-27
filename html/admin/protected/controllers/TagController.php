@@ -16,9 +16,9 @@ class TagController extends GxController {
 		if (isset($_POST['Tag'])) {
 			$model->setAttributes($_POST['Tag']);
 			$relatedData = array(
-				'analises' => $_POST['Tag']['analises'] === '' ? null : $_POST['Tag']['analises'],
-				'arquivos' => $_POST['Tag']['arquivos'] === '' ? null : $_POST['Tag']['arquivos'],
-				'programas' => $_POST['Tag']['programas'] === '' ? null : $_POST['Tag']['programas'],
+//				'analises' => $_POST['Tag']['analises'] === '' ? null : $_POST['Tag']['analises'],
+//				'arquivos' => $_POST['Tag']['arquivos'] === '' ? null : $_POST['Tag']['arquivos'],
+//				'programas' => $_POST['Tag']['programas'] === '' ? null : $_POST['Tag']['programas'],
 				);
 
 			if ($model->saveWithRelated($relatedData)) {
@@ -39,9 +39,9 @@ class TagController extends GxController {
 		if (isset($_POST['Tag'])) {
 			$model->setAttributes($_POST['Tag']);
 			$relatedData = array(
-				'analises' => $_POST['Tag']['analises'] === '' ? null : $_POST['Tag']['analises'],
-				'arquivos' => $_POST['Tag']['arquivos'] === '' ? null : $_POST['Tag']['arquivos'],
-				'programas' => $_POST['Tag']['programas'] === '' ? null : $_POST['Tag']['programas'],
+//				'analises' => $_POST['Tag']['analises'] === '' ? null : $_POST['Tag']['analises'],
+//				'arquivos' => $_POST['Tag']['arquivos'] === '' ? null : $_POST['Tag']['arquivos'],
+//				'programas' => $_POST['Tag']['programas'] === '' ? null : $_POST['Tag']['programas'],
 				);
 
 			if ($model->saveWithRelated($relatedData)) {

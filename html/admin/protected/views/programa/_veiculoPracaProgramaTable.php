@@ -40,6 +40,7 @@
                     'filter' => null,
                     'enableSorting' => false,
                     'summaryText' => '',
+                    'showTableOnEmpty' => false,
                     'enablePagination'=>false,
                     'columns' => array(
 

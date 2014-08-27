@@ -65,12 +65,12 @@ abstract class BaseAnalise extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_analise' => Yii::t('app', 'Id Analise'),
-			'ref_analise' => Yii::t('app', 'Ref Analise'),
-			'nome_analise' => Yii::t('app', 'Nome Analise'),
-			'descricao_analise' => Yii::t('app', 'Descricao Analise'),
-			'imagem_analise' => Yii::t('app', 'Imagem Analise'),
-			'ativo_analise' => Yii::t('app', 'Ativo Analise'),
+			'id_analise' => Yii::t('app', 'Id'),
+			'ref_analise' => Yii::t('app', 'Ref'),
+			'nome_analise' => Yii::t('app', 'Nome'),
+			'descricao_analise' => Yii::t('app', 'Descricao'),
+			'imagem_analise' => Yii::t('app', 'Imagem'),
+			'ativo_analise' => Yii::t('app', 'Ativo'),
 			'tags' => null,
 			'veiculos' => null,
 		);

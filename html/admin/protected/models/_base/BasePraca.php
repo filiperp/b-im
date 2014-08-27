@@ -60,11 +60,11 @@ abstract class BasePraca extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_praca' => Yii::t('app', 'Id Praca'),
-			'ref_praca' => Yii::t('app', 'Ref Praca'),
-			'nome_praca' => Yii::t('app', 'Nome Praca'),
-			'descricao_praca' => Yii::t('app', 'Descricao Praca'),
-			'ativo_praca' => Yii::t('app', 'Ativo Praca'),
+			'id_praca' => Yii::t('app', 'Id'),
+			'ref_praca' => Yii::t('app', 'Ref'),
+			'nome_praca' => Yii::t('app', 'Nome'),
+			'descricao_praca' => Yii::t('app', 'Descricao'),
+			'ativo_praca' => Yii::t('app', 'Ativo'),
 			'veiculos' => null,
 		);
 	}

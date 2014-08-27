@@ -46,65 +46,37 @@ $this->menu = array(
                 <div class="form-body">
 
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="control-label col-md-3 bold">
-                                    <?php echo GxHtml::encode($model->getAttributeLabel('id_tag')); ?>:</label>
+                    <?php
+                    $viewElements = array(
+                        'id_tag',
+                        'ref_tag',
+                        'nome_tag',
+                        'tipo_tag',
+                    );
 
-                                <div class="col-md-9">
-                                    <p class="form-control-static">
-                                        <?php echo GxHtml::encode($model->id_tag); ?>
-                                    </p>
+                    foreach ($viewElements as $key => $value) {
+                        ?>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 bold">
+                                        <?php echo GxHtml::encode($model->getAttributeLabel($value)); ?>:</label>
+
+                                    <div class="col-md-9">
+                                        <p class="form-control-static">
+                                            <?php echo GxHtml::encode($model[$value]); ?>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="control-label col-md-3 bold">
-                                    <?php echo GxHtml::encode($model->getAttributeLabel('ref_tag')); ?>:</label>
 
-                                <div class="col-md-9">
-                                    <p class="form-control-static">
-                                        <?php echo GxHtml::encode($model->ref_tag); ?>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="control-label col-md-3 bold">
-                                    <?php echo GxHtml::encode($model->getAttributeLabel('nome_tag')); ?>:</label>
-
-                                <div class="col-md-9">
-                                    <p class="form-control-static">
-                                        <?php echo GxHtml::encode($model->nome_tag); ?>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="control-label col-md-3 bold">
-                                    <?php echo GxHtml::encode($model->getAttributeLabel('tipo_tag')); ?>:</label>
-
-                                <div class="col-md-9">
-                                    <p class="form-control-static">
-                                        <?php echo GxHtml::encode($model->tipo_tag); ?>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    }
+                    ?>
 
                 </div>
 
@@ -114,31 +86,36 @@ $this->menu = array(
     </div>
 
 
-    <h2><?php echo GxHtml::encode($model->getRelationLabel('analises')); ?></h2>
+    <h2><?php echo 'Lista de Objetos <strong>"' . strtoupper($model->tipo_tag) . "'</strong> ligados à esse tag."; ?></h2>
 <?php
 echo GxHtml::openTag('ul');
 foreach ($model->analises as $relatedModel) {
     echo GxHtml::openTag('li');
-    echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('analise/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+    echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array("$model->tipo_tag/view", 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
     echo GxHtml::closeTag('li');
 }
 echo GxHtml::closeTag('ul');
-?><h2><?php echo GxHtml::encode($model->getRelationLabel('arquivos')); ?></h2>
+?>
+
+    <!--    -->
+    <!--    <h2>--><?php //echo GxHtml::encode($model->getRelationLabel('arquivos')); ?><!--</h2>-->
 <?php
-echo GxHtml::openTag('ul');
-foreach ($model->arquivos as $relatedModel) {
-    echo GxHtml::openTag('li');
-    echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('arquivo/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
-    echo GxHtml::closeTag('li');
-}
-echo GxHtml::closeTag('ul');
-?><h2><?php echo GxHtml::encode($model->getRelationLabel('programas')); ?></h2>
+//echo GxHtml::openTag('ul');
+//foreach ($model->arquivos as $relatedModel) {
+//    echo GxHtml::openTag('li');
+//    echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('arquivo/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+//    echo GxHtml::closeTag('li');
+//}
+//echo GxHtml::closeTag('ul');
+//
+?><!--<h2>--><?php //echo GxHtml::encode($model->getRelationLabel('programas')); ?><!--</h2>-->
 <?php
-echo GxHtml::openTag('ul');
-foreach ($model->programas as $relatedModel) {
-    echo GxHtml::openTag('li');
-    echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('programa/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
-    echo GxHtml::closeTag('li');
-}
-echo GxHtml::closeTag('ul');
+//echo GxHtml::openTag('ul');
+//foreach ($model->programas as $relatedModel) {
+//    echo GxHtml::openTag('li');
+//    echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('programa/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+//    echo GxHtml::closeTag('li');
+//}
+//echo GxHtml::closeTag('ul');
+//
 ?>
