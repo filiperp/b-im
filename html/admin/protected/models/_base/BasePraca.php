@@ -32,7 +32,7 @@ abstract class BasePraca extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'ref_praca';
+		return 'nome_praca';
 	}
 
 	public function rules() {

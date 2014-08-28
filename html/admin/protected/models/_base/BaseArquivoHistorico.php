@@ -32,7 +32,7 @@ abstract class BaseArquivoHistorico extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'ref_arquivo';
+		return 'caminho_arquivo';
 	}
 
 	public function rules() {

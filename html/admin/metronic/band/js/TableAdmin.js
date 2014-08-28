@@ -61,7 +61,7 @@ var TableAdvanced = function () {
                 var _v = parseInt( $('#Arquivo_fk_id_veiculo').val());
                 var _p = parseInt($('#Arquivo_fk_id_praca').val());
                 var _pr =parseInt( $('#Arquivo_fk_id_programa').val());
-console.log( 'valores:', _v,_p,_pr)
+//console.log( 'valores:', _v,_p,_pr)
                  $('.checkVeiculoPracaPrograma').each(function(k,v){
                      "use strict";
                      var t=$(this);
@@ -69,8 +69,8 @@ console.log( 'valores:', _v,_p,_pr)
                      var t_p = parseInt(t.data('praca'));
                      var t_pr = parseInt(t.data('programa'));
    var c= _v==t_v && _p==t_p && _pr==t_pr;
-                    console.log(_v==t_v, _p==t_p, _pr==t_pr)
-                    console.log('v', _v,t_v,'p',  _p, t_p,'pr', _pr,t_pr)
+                   // console.log(_v==t_v, _p==t_p, _pr==t_pr)
+                  //  console.log('v', _v,t_v,'p',  _p, t_p,'pr', _pr,t_pr)
                      $('[name="selected_item"]').checked= c;
                      if(c){
                          console.log( 'foi')

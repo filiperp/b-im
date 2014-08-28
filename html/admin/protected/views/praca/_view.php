@@ -1,20 +1,55 @@
 <div class="view">
+    <div class="portlet box grey-salt">
+        <div class="portlet-title">
+            <div class="caption">
+                <?php echo GxHtml::link(
+                    '<i class="icon-screen-desktop"></i> ' .
+                    GxHtml::encode($data->id_praca) .
+                    ' - ' .
+                    GxHtml::encode($data->nome_praca),
 
-	<?php echo GxHtml::encode($data->getAttributeLabel('id_praca')); ?>:
-	<?php echo GxHtml::link(GxHtml::encode($data->id_praca), array('view', 'id' => $data->id_praca)); ?>
-	<br />
+                    array('view', 'id' => $data->id_praca),
 
-	<?php echo GxHtml::encode($data->getAttributeLabel('ref_praca')); ?>:
-	<?php echo GxHtml::encode($data->ref_praca); ?>
-	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('nome_praca')); ?>:
-	<?php echo GxHtml::encode($data->nome_praca); ?>
-	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('descricao_praca')); ?>:
-	<?php echo GxHtml::encode($data->descricao_praca); ?>
-	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('ativo_praca')); ?>:
-	<?php echo GxHtml::encode($data->ativo_praca); ?>
-	<br />
+                    array('class' => ' ')); ?>
+            </div>
+            <div class="tools">
+                <?php echo GxHtml::link('<i class="icon-edit"></i> ',
+                    array('update', 'id' => $data->id_praca),
+                    array('class' => ' fa fa-gear', 'data-toggle' => "modal")); ?>
+            </div>
 
+        </div>
+        <div class="portlet-body">
+            <div class="portlet-content">
+
+                <?php
+                $viewElements = array(
+                    array('id_praca', 45, 'textField'),
+                    array('ref_praca', 45, 'textField'),
+                    array('nome_praca', 100, 'textArea'),
+                    array('descricao_praca', 512, 'textArea'),
+                    array('ativo_praca', 1, 'checkBox'),
+
+                );
+
+                foreach ($viewElements as $key => $value) {
+                    ?>
+
+                    <div class="row">
+                        <div class="col-sm-4 bold">
+                            <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
+                        </div>
+                        <div class="col-sm-8">
+                            <?php echo GxHtml::encode($data[$value[0]]); ?>
+                        </div>
+                    </div>
+
+
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>
 </div>
+

@@ -1,51 +1,119 @@
-<div class="form">
+
+<div class="row ">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-file-o fa-create"></i> Cadastro
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="form-horizontal">
+
+                    <?php $form = $this->beginWidget('GxActiveForm', array(
+                        'id' => 'veiculo-form',
+                        'enableAjaxValidation' => true,
+                    ));
+                    CHtml::$errorCss = 'font-red-intense';
+                    ?>
+
+                    <p class="note">
+                        <?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
+                    </p>
+
+                    <?php echo $form->errorSummary($model); ?>
 
 
-<?php $form = $this->beginWidget('GxActiveForm', array(
-	'id' => 'veiculo-form',
-	'enableAjaxValidation' => true,
-));
-?>
+                    <?php
+                    $viewElements = array(
 
-	<p class="note">
-		<?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
-	</p>
+                        //array('id_analise', 45, 'textField'),
+                       // array('id_veiculo', 45, 'textField'),
+                        array('ref_veiculo', 45, 'textField'),
+                        array('nome_veiculo', 100, 'textArea'),
+                        array('descricao_veiculo', 512, 'textArea'),
+                        array('imagem_veiculo', 255, 'textArea'),
+                        array('ativo_veiculo', 1, 'checkBox'),
 
-	<?php echo $form->errorSummary($model); ?>
 
-		<div class="row">
-		<?php echo $form->labelEx($model,'ref_veiculo'); ?>
-		<?php echo $form->textField($model, 'ref_veiculo', array('maxlength' => 45)); ?>
-		<?php echo $form->error($model,'ref_veiculo'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'nome_veiculo'); ?>
-		<?php echo $form->textField($model, 'nome_veiculo', array('maxlength' => 100)); ?>
-		<?php echo $form->error($model,'nome_veiculo'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'descricao_veiculo'); ?>
-		<?php echo $form->textField($model, 'descricao_veiculo', array('maxlength' => 512)); ?>
-		<?php echo $form->error($model,'descricao_veiculo'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'imagem_veiculo'); ?>
-		<?php echo $form->textField($model, 'imagem_veiculo', array('maxlength' => 255)); ?>
-		<?php echo $form->error($model,'imagem_veiculo'); ?>
-		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'ativo_veiculo'); ?>
-		<?php echo $form->checkBox($model, 'ativo_veiculo'); ?>
-		<?php echo $form->error($model,'ativo_veiculo'); ?>
-		</div><!-- row -->
+                    );
 
-		<label><?php echo GxHtml::encode($model->getRelationLabel('analises')); ?></label>
-		<?php echo $form->checkBoxList($model, 'analises', GxHtml::encodeEx(GxHtml::listDataEx(Analise::model()->findAllAttributes(null, true)), false, true)); ?>
-		<label><?php echo GxHtml::encode($model->getRelationLabel('pracas')); ?></label>
-		<?php echo $form->checkBoxList($model, 'pracas', GxHtml::encodeEx(GxHtml::listDataEx(Praca::model()->findAllAttributes(null, true)), false, true)); ?>
+                    foreach ($viewElements as $key => $value) {
+                        ?>
+                        <div class="form-group">
+                            <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                            <div class="col-md-8">
+                                <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
+                                <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+                            </div>
+                        </div>
 
-<?php
-echo GxHtml::submitButton(Yii::t('app', 'Save'));
-$this->endWidget();
-?>
-</div><!-- form -->
+
+                    <?php
+                    }
+                    ?>
+
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="portlet box  green-haze">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-file-o fa-create"></i> <?php echo GxHtml::encode($model->getRelationLabel('analises')); ?>
+                                    </div>
+                                    <div class="tools">
+
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body ">
+                                     <?php echo $form->checkBoxList($model, 'analises', GxHtml::encodeEx(GxHtml::listDataEx(Analise::model()->findAllAttributes(null, true)), false, true)); ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="portlet box  green-haze">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-file-o fa-create"></i> <?php echo GxHtml::encode($model->getRelationLabel('pracas')); ?>
+                                    </div>
+                                    <div class="tools">
+
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body ">
+                                    <?php echo $form->checkBoxList($model, 'pracas', GxHtml::encodeEx(GxHtml::listDataEx(Praca::model()->findAllAttributes(null, true)), false, true)); ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row ">
+                        <div class="col-md-12 ">
+                            <?php
+                            echo GxHtml::submitButton(Yii::t('app', 'Save'), array('id' => 'btnSubmmitForm', 'class' => ' btn blue pull-right'));
+                            $this->endWidget();
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- form -->
+            </div>
+        </div>
+        <!-- form -->
+
+    </div>
+    <!-- END SAMPLE FORM PORTLET-->
+</div>
+

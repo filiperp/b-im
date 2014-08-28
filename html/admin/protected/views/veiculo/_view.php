@@ -1,23 +1,56 @@
 <div class="view">
+    <div class="portlet box grey-salt">
+        <div class="portlet-title">
+            <div class="caption">
+                <?php echo GxHtml::link(
+                    '<i class="icon-screen-desktop"></i> ' .
+                    GxHtml::encode($data->id_veiculo) .
+                    ' - ' .
+                    GxHtml::encode($data->nome_veiculo),
 
-	<?php echo GxHtml::encode($data->getAttributeLabel('id_veiculo')); ?>:
-	<?php echo GxHtml::link(GxHtml::encode($data->id_veiculo), array('view', 'id' => $data->id_veiculo)); ?>
-	<br />
+                    array('view', 'id' => $data->id_veiculo),
 
-	<?php echo GxHtml::encode($data->getAttributeLabel('ref_veiculo')); ?>:
-	<?php echo GxHtml::encode($data->ref_veiculo); ?>
-	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('nome_veiculo')); ?>:
-	<?php echo GxHtml::encode($data->nome_veiculo); ?>
-	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('descricao_veiculo')); ?>:
-	<?php echo GxHtml::encode($data->descricao_veiculo); ?>
-	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('imagem_veiculo')); ?>:
-	<?php echo GxHtml::encode($data->imagem_veiculo); ?>
-	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('ativo_veiculo')); ?>:
-	<?php echo GxHtml::encode($data->ativo_veiculo); ?>
-	<br />
+                    array('class' => ' ')); ?>
+            </div>
+            <div class="tools">
+                <?php echo GxHtml::link('<i class="icon-edit"></i> ',
+                    array('update', 'id' => $data->id_veiculo),
+                    array('class' => ' fa fa-gear', 'data-toggle' => "modal")); ?>
+            </div>
 
+        </div>
+        <div class="portlet-body">
+            <div class="portlet-content">
+
+                <?php
+                $viewElements = array(
+                    array('id_veiculo', 45, 'textField'),
+                    array('ref_veiculo', 45, 'textField'),
+                    array('nome_veiculo', 100, 'textArea'),
+                    array('descricao_veiculo', 512, 'textArea'),
+                    array('imagem_veiculo', 255, 'textArea'),
+                    array('ativo_veiculo', 1, 'checkBox'),
+
+                );
+
+                foreach ($viewElements as $key => $value) {
+                    ?>
+
+                    <div class="row">
+                        <div class="col-sm-4 bold">
+                            <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
+                        </div>
+                        <div class="col-sm-8">
+                            <?php echo GxHtml::encode($data[$value[0]]); ?>
+                        </div>
+                    </div>
+
+
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>
 </div>
+

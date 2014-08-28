@@ -41,7 +41,6 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'id' => 'arquivo-historico-grid',
 	'dataProvider' => $model->search(),
 	'filter' => $model,
-    'showTableOnEmpty' => false,
 	'columns' => array(
 		'id_arquivo_historico',
 		array(
@@ -49,6 +48,9 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 				'value'=>'GxHtml::valueEx($data->fkIdArquivo)',
 				'filter'=>GxHtml::listDataEx(Arquivo::model()->findAllAttributes(null, true)),
 				),
+		'ref_arquivo',
+		'nome_arquivo',
+		'caminho_arquivo',
 		array(
 			'class' => 'CButtonColumn',
 		),

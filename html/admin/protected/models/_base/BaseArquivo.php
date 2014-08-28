@@ -39,7 +39,7 @@ abstract class BaseArquivo extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'ref_arquivo';
+		return 'nome_arquivo';
 	}
 
 	public function rules() {

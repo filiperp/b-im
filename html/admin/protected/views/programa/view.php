@@ -97,10 +97,37 @@ $this->menu = array(
                                     <p class="form-control-static">
                                         <?php
                                         foreach ($model->tags as $relatedModel) {
-
-
                                             echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('tag/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)), array('class' => "btn btn-circle btn-success"));
                                             echo ' ';
+                                        }
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 bold">
+                                    Praças:</label>
+
+                                <div class="col-md-9">
+                                    <p class="form-control-static">
+
+                                        <?php
+
+                                        $lista = VeiculoPracaPrograma::model()->findAllByAttributes(array('fk_id_programa'=>$model->id_programa));
+
+                                        foreach ($lista as $relatedModel) {
+                                           // var_dump($relatedModel);
+                                            $modelV = Veiculo::model()->findByPk($relatedModel->fk_id_veiculo);
+                                            $modelP = Praca::model()->findByPk($relatedModel->fk_id_praca);
+                                           $modelPR = Programa::model()->findByPk($relatedModel->fk_id_programa);
+                                            //echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('praca/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)), array('class' => "btn btn-circle btn-danger"));
+                                            echo "$modelV->nome_veiculo - $modelP->nome_praca <br>";
                                         }
                                         ?>
                                     </p>

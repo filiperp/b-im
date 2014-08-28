@@ -34,7 +34,7 @@ abstract class BasePrograma extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'ref_programa';
+		return 'nome_programa';
 	}
 
 	public function rules() {

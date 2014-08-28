@@ -1,54 +1,61 @@
-<div class="wide form">
+<div class="row hidden">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-search"></i> Pesquisa Avançada
+                </div>
+                <div class="tools">
+                    <a href="" class="expand">
+                    </a>
 
-<?php $form = $this->beginWidget('GxActiveForm', array(
-	'action' => Yii::app()->createUrl($this->route),
-	'method' => 'get',
-)); ?>
+                </div>
+            </div>
+            <div class="portlet-body display-hide">
 
-	<div class="row">
-		<?php echo $form->label($model, 'id_arquivo'); ?>
-		<?php echo $form->textField($model, 'id_arquivo'); ?>
-	</div>
+                <?php $form = $this->beginWidget('GxActiveForm', array(
+                    'action' => Yii::app()->createUrl($this->route),
+                    'method' => 'get',
+                    'htmlOptions' => array('class' => 'form-horizontal')
+                )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model, 'ref_arquivo'); ?>
-		<?php echo $form->textField($model, 'ref_arquivo', array('maxlength' => 45)); ?>
-	</div>
+                <?php
+                $viewElements = array(
+                    array('id_arquivo'   ,45, 'textField'),
+                    array('ref_arquivo'   ,45, 'textField'),
+                    array('nome_arquivo'   , 100, 'textArea'),
+                    array('caminho_arquivo'   , 512, 'textArea'),
+                    array('ativo_arquivo'   , 1, 'checkBox'),
+                );
 
-	<div class="row">
-		<?php echo $form->label($model, 'nome_arquivo'); ?>
-		<?php echo $form->textField($model, 'nome_arquivo', array('maxlength' => 100)); ?>
-	</div>
+                foreach ($viewElements as $key => $value) {
+                    ?>
+                    <div class="form-group">
+                        <?php echo $form->label($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php echo $form->$value[2]($model, $value[0], array('maxlength' =>$value[1], 'class' => 'form-control')); ?>
+                            <!--                            --><?php //echo $form->error($model, $value[0], array('errorCssClass'=>' has-error')); ?>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
 
-	<div class="row">
-		<?php echo $form->label($model, 'caminho_arquivo'); ?>
-		<?php echo $form->textField($model, 'caminho_arquivo', array('maxlength' => 512)); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'ativo_arquivo'); ?>
-		<?php echo $form->dropDownList($model, 'ativo_arquivo', array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')), array('prompt' => Yii::t('app', 'All'))); ?>
-	</div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <?php echo GxHtml::submitButton(Yii::t('app', 'Search'), array('class' => ' btn blue pull-right')); ?>
+                    </div>
+                </div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'fk_id_veiculo'); ?>
-		<?php echo $form->dropDownList($model, 'fk_id_veiculo', GxHtml::listDataEx(VeiculoPracaPrograma::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
-	</div>
+                <?php $this->endWidget(); ?>
 
-	<div class="row">
-		<?php echo $form->label($model, 'fk_id_praca'); ?>
-		<?php echo $form->dropDownList($model, 'fk_id_praca', GxHtml::listDataEx(VeiculoPracaPrograma::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'fk_id_programa'); ?>
-		<?php echo $form->dropDownList($model, 'fk_id_programa', GxHtml::listDataEx(VeiculoPracaPrograma::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
-	</div>
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+</div>
 
-	<div class="row buttons">
-		<?php echo GxHtml::submitButton(Yii::t('app', 'Search')); ?>
-	</div>
 
-<?php $this->endWidget(); ?>
-
-</div><!-- search-form -->
