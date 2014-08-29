@@ -44,6 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    config.vm.synced_folder "../html/admin", "/var/www/html/admin", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/frontend", "/var/www/html/frontend", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/poc", "/var/www/html/poc", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
+   config.vm.synced_folder "../html/uploads", "/var/www/html/uploads", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

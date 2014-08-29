@@ -39,10 +39,9 @@ public function accessRules() {
 
 		if (isset($_POST['Noticia'])) {
 			$model->setAttributes($_POST['Noticia']);
-            $ttt=CUploadedFile::getInstance($model,'image');
-            $model->imagem_noticia= '/bbbbb/noticia/'.$ttt;
+
 			if ($model->save()) {
-                $ttt->saveAs(Yii::app()->baseUrl. '/bbbbb/noticia/'.$ttt);
+
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else

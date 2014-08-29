@@ -19,7 +19,7 @@
  *
  */
 abstract class BaseNoticia extends GxActiveRecord {
-    public $image;
+//    public $image;
 	public static function model($className=__CLASS__) {
 		return parent::model($className);
 	}
@@ -45,7 +45,7 @@ abstract class BaseNoticia extends GxActiveRecord {
 			array('descricao_noticia, link_noticia', 'length', 'max'=>512),
 			array('imagem_noticia', 'length', 'max'=>255),
 			array('id_noticia, ref_noticia, nome_noticia, descricao_noticia, link_noticia, ativo_noticia, imagem_noticia', 'safe', 'on'=>'search'),
-            array('image', 'file', 'types'=>'jpg, gif, png, jpeg, xls, xlsx, ppt, pptx, pdf'),
+//            array('image', 'file', 'types'=>'jpg, gif, png, jpeg, xls, xlsx, ppt, pptx, pdf'),
 		);
 	}
 

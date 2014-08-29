@@ -57,14 +57,14 @@
                     <?php
                     }
                     ?>
-                    <div class="form-group">
-                       IMAGEM
-                        <div class="col-md-8">
-                            <?php echo $form->labelEx($model, 'image');
-                                    echo $form->fileField($model, 'image');
-                                    echo $form->error($model, 'image');?>
-                        </div>
-                    </div>
+<!--                    <div class="form-group">-->
+<!--                       IMAGEM-->
+<!--                        <div class="col-md-8">-->
+<!--                            --><?php //echo $form->labelEx($model, 'image');
+//                                    echo $form->fileField($model, 'image');
+//                                    echo $form->error($model, 'image');?>
+<!--                        </div>-->
+<!--                    </div>-->
 
                     <div class="row ">
                         <div class="col-md-12 ">
