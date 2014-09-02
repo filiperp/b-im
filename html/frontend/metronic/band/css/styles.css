@@ -1,0 +1,14 @@
+.forceWhite {
+  color: #f0f0f0 !important;
+}
+.view-thumb{
+    width:300px; height:auto;
+}
+
+.thumb-image-grid{
+    width:100px; height:auto;
+}
+
+.errorSummary >ul >li {
+    color:#f20d0d;
+}
