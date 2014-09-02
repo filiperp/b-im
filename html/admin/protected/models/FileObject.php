@@ -16,7 +16,7 @@ class FileObject extends CFormModel
     public function rules()
     {
         return array(
-            array('image', 'file', 'allowEmpty' => true,/* 'safe' => true,*/ 'types' => 'jpg, jpeg, gif, png')
+            array('image', 'file', 'allowEmpty' => false,'safe' => true, 'types' => 'jpg, jpeg, gif, png')
         );
     }
 }

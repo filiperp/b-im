@@ -28,7 +28,7 @@
                     array('ref_analise', 45, 'textField'),
                     array('nome_analise', 100, 'textArea'),
                     array('descricao_analise', 512, 'textArea'),
-                    array('imagem_analise', 255, 'textArea'),
+                 //   array('imagem_analise', 255, 'textArea'),
                     array('ativo_analise', 1, 'checkBox'),
                 );
 
@@ -48,6 +48,15 @@
                 <?php
                 }
                 ?>
+
+                <div class="row">
+                    <div class="col-sm-4 bold">
+                        <?php echo GxHtml::encode($data->getAttributeLabel('imagem_analise')); ?>:
+                    </div>
+                    <div class="col-sm-8">
+                        <?php echo GxHtml::image($data['imagem_analise'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

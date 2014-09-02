@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="portlet-body ">
-                                    <?php echo $form->checkBoxList($model, 'veiculos', GxHtml::encodeEx(GxHtml::listDataEx(Analise::model()->findAllAttributes(null, true)), false, true)); ?>
+                                    <?php echo $form->checkBoxList($model, 'veiculos', GxHtml::encodeEx(GxHtml::listDataEx(Veiculo::model()->findAllAttributes(null, true)), false, true)); ?>
                                 </div>
                             </div>
 

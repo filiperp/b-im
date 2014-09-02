@@ -41,6 +41,9 @@ public function accessRules() {
 				'tags' => $_POST['Arquivo']['tags'] === '' ? null : $_POST['Arquivo']['tags'],
 				);
 
+            Yii::import('application.controllers.FileObjectController');
+            $model->caminho_arquivo = FileObjectController::createBasePathArquivo($model);
+
 			if ($model->saveWithRelated($relatedData)) {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
@@ -48,7 +51,7 @@ public function accessRules() {
 					$this->redirect(array('view', 'id' => $model->id_arquivo));
 			}
 		}
-
+        unset($_SESSION['current_image_'.get_class($model)]);
 		$this->render('create', array( 'model' => $model));
 	}
 
@@ -63,11 +66,18 @@ public function accessRules() {
 				'tags' => $_POST['Arquivo']['tags'] === '' ? null : $_POST['Arquivo']['tags'],
 				);
 
+
+            Yii::import('application.controllers.FileObjectController');
+            $model->caminho_arquivo = FileObjectController::updateArquivo($model);
+
+
 			if ($model->saveWithRelated($relatedData)) {
 				$this->redirect(array('view', 'id' => $model->id_arquivo));
 			}
 		}
 
+
+        $_SESSION['current_image_'. get_class($model)] = $model->caminho_arquivo;
 		$this->render('update', array(
 				'model' => $model,
 				));

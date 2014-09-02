@@ -14,6 +14,7 @@
                     <?php $form = $this->beginWidget('GxActiveForm', array(
                         'id' => 'programa-form',
                         'enableAjaxValidation' => true,
+                        'htmlOptions' => array('enctype' => 'multipart/form-data'),
                     ));
                     CHtml::$errorCss = 'font-red-intense';
                     ?>
@@ -33,28 +34,43 @@
                         array('ref_programa', 45, 'textField'),
                         array('nome_programa', 100, 'textArea'),
                         array('descricao_programa', 512, 'textArea'),
-                        array('imagem_programa', 255, 'textArea'),
+                        array('imagem_programa', 255, 'hiddenField'),
                         array('ativo_programa', 1, 'checkBox'),
 
 
                     );
 
+
                     foreach ($viewElements as $key => $value) {
-                        ?>
-                        <div class="form-group">
-                            <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
-                            <div class="col-md-8">
-                                <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
-                                <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+
+
+                        if ($value[2] != 'hiddenField') {
+                            ?>
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                                <div class="col-md-8">
+                                    <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
+                                    <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+                                </div>
                             </div>
-                        </div>
 
 
-                    <?php
+                        <?php
+                        } else {
+                            echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control'));
+                        }
                     }
                     ?>
 
+                    <div class="form-group">
+                        <?php echo $form->labelEx($model, 'image', array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php
 
+                            echo $form->fileField($model, 'image');
+                            ?>
+                        </div>
+                    </div>
 
 
 
@@ -121,3 +137,12 @@
     </div>
     <!-- END SAMPLE FORM PORTLET-->
 </div>
+
+<?php
+$cs = Yii::app()->getClientScript();
+
+$cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/FileChooserBehavior.js', CClientScript::POS_END);
+
+
+$cs->registerScript('startScriptFormPrograma', "FileChooserBehavior.onChange('Programa_image','Programa_imagem_programa' )", CClientScript::POS_READY);
+?>

@@ -27,7 +27,7 @@
                     array('id_arquivo', 45, 'textField'),
                     array('ref_arquivo', 45, 'textField'),
                     array('nome_arquivo', 100, 'textArea'),
-                    array('caminho_arquivo', 512, 'textArea'),
+                  //  array('caminho_arquivo', 512, 'textArea'),
                     array('ativo_arquivo', 1, 'checkBox'),
 
                 );
@@ -48,6 +48,15 @@
                 <?php
                 }
                 ?>
+
+                <div class="row">
+                    <div class="col-sm-4 bold">
+                        <?php echo GxHtml::encode($data->getAttributeLabel('caminho_arquivo')); ?>:
+                    </div>
+                    <div class="col-sm-8">
+                        <?php echo GxHtml::image($data['caminho_arquivo'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
+                    </div>
+                </div>
                 <?php
                 $modelV = Veiculo::model()->findByPk($data->fk_id_veiculo);
                 $modelP = Praca::model()->findByPk($data->fk_id_praca);

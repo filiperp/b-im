@@ -41,6 +41,9 @@ public function accessRules() {
 				'tags' => $_POST['Programa']['tags'] === '' ? null : $_POST['Programa']['tags'],
 				);
 
+            Yii::import('application.controllers.FileObjectController');
+            $model->imagem_programa = FileObjectController::saveFileAs($model);
+
 			if ($model->saveWithRelated($relatedData)) {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
@@ -48,7 +51,7 @@ public function accessRules() {
 					$this->redirect(array('view', 'id' => $model->id_programa));
 			}
 		}
-
+        unset($_SESSION['current_image_'.get_class($model)]);
 		$this->render('create', array( 'model' => $model));
 	}
 
@@ -63,11 +66,14 @@ public function accessRules() {
 				'tags' => $_POST['Programa']['tags'] === '' ? null : $_POST['Programa']['tags'],
 				);
 
+            Yii::import('application.controllers.FileObjectController');
+            $model->imagem_programa = FileObjectController::saveFileAs($model);
+
 			if ($model->saveWithRelated($relatedData)) {
 				$this->redirect(array('view', 'id' => $model->id_programa));
 			}
 		}
-
+        $_SESSION['current_image_'. get_class($model)] = $model->imagem_programa;
 		$this->render('update', array(
 				'model' => $model,
 				));
@@ -75,7 +81,13 @@ public function accessRules() {
 
 	public function actionDelete($id) {
 		if (Yii::app()->getRequest()->getIsPostRequest()) {
-			$this->loadModel($id, 'Programa')->delete();
+            $model = $this->loadModel($id, 'Programa');
+
+            unlink ($model->imagem_programa);
+            unset($_SESSION['current_image_'.get_class($model)]);
+            $model->delete();
+
+
 
 			if (!Yii::app()->getRequest()->getIsAjaxRequest())
 				$this->redirect(array('admin'));

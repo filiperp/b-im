@@ -30,7 +30,7 @@
                     array('descricao_noticia', 512, 'textArea'),
                     array('link_noticia', 512, 'textArea'),
                     array('ativo_noticia', 1, 'checkBox'),
-                    array('imagem_noticia', 255, 'textArea'),
+                   // array('imagem_noticia', 255, 'textArea'),
 
 
 
@@ -52,6 +52,15 @@
                 <?php
                 }
                 ?>
+                <div class="row">
+                    <div class="col-sm-4 bold">
+                        <?php echo GxHtml::encode($data->getAttributeLabel('imagem_noticia')); ?>:
+                    </div>
+                    <div class="col-sm-8">
+                        <?php echo GxHtml::image($data['imagem_noticia'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

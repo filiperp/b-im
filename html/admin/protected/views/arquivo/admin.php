@@ -63,7 +63,11 @@ $('.search-form form').submit(function(){
                         'id_arquivo',
                         'ref_arquivo',
                         'nome_arquivo',
-                        'caminho_arquivo',
+                        array(
+                            'name' => 'Caminho',
+                            'value' => 'GxHtml::image($data->caminho_arquivo,"ref." , array("class"=>"thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'type'=>'raw'
+                        ),
                         array(
                             'name' => 'ativo_arquivo',
                             'value' => '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',

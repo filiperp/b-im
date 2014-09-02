@@ -38,33 +38,40 @@
                         array('descricao_noticia', 512, 'textArea'),
                         array('link_noticia', 512, 'textArea'),
                         array('ativo_noticia', 1, 'checkBox'),
-                        array('imagem_noticia', 255, 'textArea'),
+                        array('imagem_noticia', 255, 'hiddenField'),
 
 
                     );
 
                     foreach ($viewElements as $key => $value) {
-                        ?>
-                        <div class="form-group">
-                            <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
-                            <div class="col-md-8">
-                                <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
-                                <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+
+
+                        if ($value[2] != 'hiddenField') {
+                            ?>
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                                <div class="col-md-8">
+                                    <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
+                                    <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
+                                </div>
                             </div>
-                        </div>
 
 
-                    <?php
+                        <?php
+                        } else {
+                            echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control'));
+                        }
                     }
                     ?>
-<!--                    <div class="form-group">-->
-<!--                       IMAGEM-->
-<!--                        <div class="col-md-8">-->
-<!--                            --><?php //echo $form->labelEx($model, 'image');
-//                                    echo $form->fileField($model, 'image');
-//                                    echo $form->error($model, 'image');?>
-<!--                        </div>-->
-<!--                    </div>-->
+                    <div class="form-group">
+                        <?php echo $form->labelEx($model, 'image', array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php
+
+                            echo $form->fileField($model, 'image');
+                            ?>
+                        </div>
+                    </div>
 
                     <div class="row ">
                         <div class="col-md-12 ">
@@ -83,3 +90,11 @@
     </div>
     <!-- END SAMPLE FORM PORTLET-->
 </div>
+<?php
+$cs = Yii::app()->getClientScript();
+
+$cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/FileChooserBehavior.js', CClientScript::POS_END);
+
+
+$cs->registerScript('startScriptFormNoticia', "FileChooserBehavior.onChange('Noticia_image','Noticia_imagem_noticia' )", CClientScript::POS_READY);
+?>

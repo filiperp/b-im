@@ -69,7 +69,11 @@ $('.search-form form').submit(function(){
                         'ref_veiculo',
                         'nome_veiculo',
                         'descricao_veiculo',
-                        'imagem_veiculo',
+                        array(
+                            'name' => 'Imagem',
+                            'value' => 'GxHtml::image($data->imagem_veiculo,"ref." , array("class"=>"thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'type'=>'raw'
+                        ),
                         array(
                             'name' => 'ativo_veiculo',
                             'value' => '($data->ativo_veiculo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',

@@ -66,7 +66,11 @@ $('.search-form form').submit(function(){
                         'ref_analise',
                         'nome_analise',
                         'descricao_analise',
-                        'imagem_analise',
+                        array(
+                            'name' => 'Iamgem',
+                            'value' => 'GxHtml::image($data->imagem_analise,"ref." , array("class"=>"thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'type'=>'raw'
+                        ),
                         array(
                             'name' => 'ativo_analise',
                             'value' => '($data->ativo_analise === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',

@@ -96,6 +96,22 @@ $this->menu = array(
 
 
 
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 bold">
+                                    <?php echo GxHtml::encode($model->getAttributeLabel('caminho_arquivo')); ?>:</label>
+
+                                <div class="col-md-9">
+                                    <p class="form-control-static">
+                                        <?php echo GxHtml::image($model['caminho_arquivo'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
 
                     <div class="row">
                         <div class="col-sm-12">

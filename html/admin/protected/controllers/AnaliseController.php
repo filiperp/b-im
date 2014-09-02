@@ -36,11 +36,18 @@ public function accessRules() {
 		$this->performAjaxValidation($model, 'analise-form');
 
 		if (isset($_POST['Analise'])) {
+
+
+            //die();
 			$model->setAttributes($_POST['Analise']);
 			$relatedData = array(
 				'tags' => $_POST['Analise']['tags'] === '' ? null : $_POST['Analise']['tags'],
 				'veiculos' => $_POST['Analise']['veiculos'] === '' ? null : $_POST['Analise']['veiculos'],
 				);
+            Yii::import('application.controllers.FileObjectController');
+            $model->imagem_analise = FileObjectController::saveFileAs($model);
+
+
 
 			if ($model->saveWithRelated($relatedData)) {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
@@ -49,7 +56,7 @@ public function accessRules() {
 					$this->redirect(array('view', 'id' => $model->id_analise));
 			}
 		}
-
+        unset($_SESSION['current_image_'.get_class($model)]);
 		$this->render('create', array( 'model' => $model));
 	}
 
@@ -65,11 +72,15 @@ public function accessRules() {
 				'veiculos' => $_POST['Analise']['veiculos'] === '' ? null : $_POST['Analise']['veiculos'],
 				);
 
+            Yii::import('application.controllers.FileObjectController');
+            $model->imagem_analise = FileObjectController::saveFileAs($model);
+
 			if ($model->saveWithRelated($relatedData)) {
 				$this->redirect(array('view', 'id' => $model->id_analise));
 			}
 		}
 
+        $_SESSION['current_image_'. get_class($model)] = $model->imagem_analise;
 		$this->render('update', array(
 				'model' => $model,
 				));
@@ -77,7 +88,13 @@ public function accessRules() {
 
 	public function actionDelete($id) {
 		if (Yii::app()->getRequest()->getIsPostRequest()) {
-			$this->loadModel($id, 'Analise')->delete();
+
+            $model = $this->loadModel($id, 'Analise');
+            unlink ($model->imagem_analise);
+            unset($_SESSION['current_image_'.get_class($model)]);
+            $model->delete();
+
+
 
 			if (!Yii::app()->getRequest()->getIsAjaxRequest())
 				$this->redirect(array('admin'));

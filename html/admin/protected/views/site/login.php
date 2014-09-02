@@ -12,8 +12,8 @@ $this->endContent();
 <body class="login">
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <a href="index.html">
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/images/Logo-Band3.png" alt=""/>
+    <a href="index.php">
+<!--       <img src="--><?php //echo Yii::app()->request->baseUrl; ?><!--/metronic/band/images/Logo-Band3.png" alt=""/>-->
     </a>
 </div>
 <!-- END LOGO -->
@@ -36,7 +36,7 @@ $this->endContent();
         ),
     )); ?>
 
-    <h3 class="form-title">Acesso ao Portal IM Band</h3>
+    <h3 class="form-title text-center">ADMIN</h3>
 
     <div class="alert alert-danger display-hide">
         <button class="close" data-close="alert"></button>
@@ -45,7 +45,7 @@ $this->endContent();
     </div>
     <div class="form-group">
         <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-        <?php echo $form->labelEx($model, 'username', array('class' => 'control-label visible-ie8 visible-ie9')); ?>
+        <?php echo $form->labelEx($model, 'username', array('class' => 'control-label visible-ie8 visible-ie9', "autocomplete"=> 'off')); ?>
         <div class="input-group  margin-top-10">
 
 

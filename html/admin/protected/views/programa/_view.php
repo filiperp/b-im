@@ -49,6 +49,14 @@
                 <?php
                 }
                 ?>
+                <div class="row">
+                    <div class="col-sm-4 bold">
+                        <?php echo GxHtml::encode($data->getAttributeLabel('imagem_programa')); ?>:
+                    </div>
+                    <div class="col-sm-8">
+                        <?php echo GxHtml::image($data['imagem_programa'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

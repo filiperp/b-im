@@ -71,7 +71,12 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
                         'ref_programa',
                         'nome_programa',
                         'descricao_programa',
-                        'imagem_programa',
+
+                        array(
+                            'name' => 'Imagem',
+                            'value' => 'GxHtml::image($data->imagem_programa,"ref." , array("class"=>"thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'type'=>'raw'
+                        ),
                         array(
                             'name' => 'ativo',
                             'value' => '($data->ativo_programa === "0") ? Yii::t(\'app\', \'\') : Yii::t(\'app\', \'X\')',
