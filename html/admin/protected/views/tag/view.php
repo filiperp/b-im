@@ -92,6 +92,7 @@ $dataModels = array(
     'programa'=> array($model->programas),
     'analise'=> array($model->analises),
     'arquivo'=> array($model->arquivos),
+    'veiculo'=> array($model->veiculos),
 
 );
 

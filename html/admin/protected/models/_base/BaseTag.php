@@ -17,6 +17,7 @@
  * @property Analise[] $analises
  * @property Arquivo[] $arquivos
  * @property Programa[] $programas
+ * @property Veiculo[] $veiculos
  */
 abstract class BaseTag extends GxActiveRecord {
 
@@ -33,7 +34,7 @@ abstract class BaseTag extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'nome_tag';
+		return 'tipo_tag';
 	}
 
 	public function rules() {
@@ -50,6 +51,7 @@ abstract class BaseTag extends GxActiveRecord {
 			'analises' => array(self::MANY_MANY, 'Analise', 'analise_tag(fk_id_tag, fk_id_analise)'),
 			'arquivos' => array(self::MANY_MANY, 'Arquivo', 'arquivo_tag(fk_id_tag, fk_id_arquivo)'),
 			'programas' => array(self::MANY_MANY, 'Programa', 'programa_tag(fk_id_tag, fk_id_programa)'),
+			'veiculos' => array(self::MANY_MANY, 'Veiculo', 'veiculo_tag(tag_id_tag, veiculo_id_veiculo)'),
 		);
 	}
 
@@ -58,18 +60,20 @@ abstract class BaseTag extends GxActiveRecord {
 			'analises' => 'AnaliseTag',
 			'arquivos' => 'ArquivoTag',
 			'programas' => 'ProgramaTag',
+			'veiculos' => 'VeiculoTag',
 		);
 	}
 
 	public function attributeLabels() {
 		return array(
-			'id_tag' => Yii::t('app', 'Id'),
-			'ref_tag' => Yii::t('app', 'Ref'),
-			'nome_tag' => Yii::t('app', 'Nome'),
-			'tipo_tag' => Yii::t('app', 'Tipo'),
+			'id_tag' => Yii::t('app', 'Id '),
+			'ref_tag' => Yii::t('app', 'Ref '),
+			'nome_tag' => Yii::t('app', 'Nome '),
+			'tipo_tag' => Yii::t('app', 'Tipo '),
 			'analises' => null,
 			'arquivos' => null,
 			'programas' => null,
+			'veiculos' => null,
 		);
 	}
 
@@ -85,5 +89,4 @@ abstract class BaseTag extends GxActiveRecord {
 			'criteria' => $criteria,
 		));
 	}
-
 }

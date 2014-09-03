@@ -2,6 +2,27 @@
 
 class TagController extends GxController {
 
+public function filters() {
+	return array(
+			'accessControl', 
+			);
+}
+
+public function accessRules() {
+	return array(
+			array('allow', 
+				'actions'=>array('index', 'view'),
+				'users'=>array('@'),
+				),
+			array('allow', 
+				'actions'=>array('minicreate', 'create', 'update', 'admin', 'delete'),
+				'users'=>array('admin'),
+				),
+			array('deny', 
+				'users'=>array('*'),
+				),
+			);
+}
 
 	public function actionView($id) {
 		$this->render('view', array(
@@ -12,6 +33,7 @@ class TagController extends GxController {
 	public function actionCreate() {
 		$model = new Tag;
 
+		$this->performAjaxValidation($model, 'tag-form');
 
 		if (isset($_POST['Tag'])) {
 			$model->setAttributes($_POST['Tag']);
@@ -19,6 +41,7 @@ class TagController extends GxController {
 //				'analises' => $_POST['Tag']['analises'] === '' ? null : $_POST['Tag']['analises'],
 //				'arquivos' => $_POST['Tag']['arquivos'] === '' ? null : $_POST['Tag']['arquivos'],
 //				'programas' => $_POST['Tag']['programas'] === '' ? null : $_POST['Tag']['programas'],
+//				'veiculos' => $_POST['Tag']['veiculos'] === '' ? null : $_POST['Tag']['veiculos'],
 				);
 
 			if ($model->saveWithRelated($relatedData)) {
@@ -35,6 +58,7 @@ class TagController extends GxController {
 	public function actionUpdate($id) {
 		$model = $this->loadModel($id, 'Tag');
 
+		$this->performAjaxValidation($model, 'tag-form');
 
 		if (isset($_POST['Tag'])) {
 			$model->setAttributes($_POST['Tag']);
@@ -42,6 +66,7 @@ class TagController extends GxController {
 //				'analises' => $_POST['Tag']['analises'] === '' ? null : $_POST['Tag']['analises'],
 //				'arquivos' => $_POST['Tag']['arquivos'] === '' ? null : $_POST['Tag']['arquivos'],
 //				'programas' => $_POST['Tag']['programas'] === '' ? null : $_POST['Tag']['programas'],
+//				'veiculos' => $_POST['Tag']['veiculos'] === '' ? null : $_POST['Tag']['veiculos'],
 				);
 
 			if ($model->saveWithRelated($relatedData)) {

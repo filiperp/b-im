@@ -40,10 +40,8 @@ public function accessRules() {
 			$relatedData = array(
 				'analises' => $_POST['Veiculo']['analises'] === '' ? null : $_POST['Veiculo']['analises'],
 				'pracas' => $_POST['Veiculo']['pracas'] === '' ? null : $_POST['Veiculo']['pracas'],
+				'tags' => $_POST['Veiculo']['tags'] === '' ? null : $_POST['Veiculo']['tags'],
 				);
-
-            Yii::import('application.controllers.FileObjectController');
-            $model->imagem_veiculo = FileObjectController::saveFileAs($model);
 
 			if ($model->saveWithRelated($relatedData)) {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
@@ -52,7 +50,7 @@ public function accessRules() {
 					$this->redirect(array('view', 'id' => $model->id_veiculo));
 			}
 		}
-        unset($_SESSION['current_image_'.get_class($model)]);
+
 		$this->render('create', array( 'model' => $model));
 	}
 
@@ -66,15 +64,14 @@ public function accessRules() {
 			$relatedData = array(
 				'analises' => $_POST['Veiculo']['analises'] === '' ? null : $_POST['Veiculo']['analises'],
 				'pracas' => $_POST['Veiculo']['pracas'] === '' ? null : $_POST['Veiculo']['pracas'],
+				'tags' => $_POST['Veiculo']['tags'] === '' ? null : $_POST['Veiculo']['tags'],
 				);
-            Yii::import('application.controllers.FileObjectController');
-            $model->imagem_veiculo = FileObjectController::saveFileAs($model);
 
 			if ($model->saveWithRelated($relatedData)) {
 				$this->redirect(array('view', 'id' => $model->id_veiculo));
 			}
 		}
-        $_SESSION['current_image_'. get_class($model)] = $model->imagem_veiculo;
+
 		$this->render('update', array(
 				'model' => $model,
 				));
@@ -82,12 +79,8 @@ public function accessRules() {
 
 	public function actionDelete($id) {
 		if (Yii::app()->getRequest()->getIsPostRequest()) {
-//			$this->loadModel($id, 'Veiculo')->delete();
-            $model = $this->loadModel($id, 'Veiculo');
+			$this->loadModel($id, 'Veiculo')->delete();
 
-            unlink ($model->imagem_veiculo);
-            unset($_SESSION['current_image_'.get_class($model)]);
-            $model->delete();
 			if (!Yii::app()->getRequest()->getIsAjaxRequest())
 				$this->redirect(array('admin'));
 		} else
@@ -112,7 +105,5 @@ public function accessRules() {
 			'model' => $model,
 		));
 	}
-
-
 
 }

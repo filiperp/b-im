@@ -55,7 +55,7 @@
                         <div class="col-md-8">
                             <?php
                             $disabled =  $iscreate?'':'disabled';
-                            echo $form->dropDownList($model, 'tipo_tag', array('arquivo' => 'arquivo', 'programa' => 'programa', 'analise' => 'analise'), array('maxlength' => 45, 'class' => "form-control ", 'disabled'=>"$disabled") ); ?>
+                            echo $form->dropDownList($model, 'tipo_tag', array('arquivo' => 'arquivo', 'programa' => 'programa', 'analise' => 'analise', 'veiculo' => 'veiculo'), array('maxlength' => 45, 'class' => "form-control ", 'disabled'=>"$disabled") ); ?>
                             <?php echo $form->error($model, 'tipo_tag'); ?>
                         </div>
                     </div>
