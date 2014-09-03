@@ -1,8 +1,7 @@
+Options -Indexes
 RewriteEngine on
-# prevent httpd from serving dotfiles (.htaccess, .svn, .git, etc.)
-RedirectMatch 403 /\..*$
-# if a directory or a file exists, use it directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-# otherwise forward it to index.php
-RewriteRule . index.php
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?192.168.33.10 [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?192.168.33.10.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?104.131.202.24 [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?104.131.202.24.*$ [NC]
+RewriteRule \.(ico|pdf|flv|jpg|jpeg|mp3|mpg|mp4|mov|wav|wmv|png|gif|swf|css|js)$ http://%{HTTP_HOST}/admin
