@@ -2,8 +2,8 @@
 
 # basic update
 echo "=========UPDATE==========="
-#sudo apt-get -y --force-yes update
-#sudo apt-get -y --force-yes upgrade
+sudo apt-get -y --force-yes update
+sudo apt-get -y --force-yes upgrade
 
 
 echo "=========APT_GET==========="
