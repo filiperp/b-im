@@ -8,13 +8,13 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="PHP">
+      <library name="PHARS">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../yii/vendor/composer" />
+          <root url="phar://$MODULE_DIR$/composer.phar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../../yii/vendor/composer" />
+          <root url="phar://$MODULE_DIR$/composer.phar" />
         </SOURCES>
       </library>
     </orderEntry>
