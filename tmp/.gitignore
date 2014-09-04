@@ -1,4 +1,2 @@
 # Created by .gitignore support plugin (hsz.mobi)
 ### Yii template
-tmp/*
-!tmp/.gitignore
