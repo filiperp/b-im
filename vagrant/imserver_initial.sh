@@ -30,10 +30,10 @@ sudo chown www-data:www-data  /var/www/tmp
 
 
 echo "=========MYSQL==========="
-#CREATE USER 'root'@'localhost' IDENTIFIED BY 'Mudar#123' ;   
+#CREATE USER 'root'@'localhost' IDENTIFIED BY 'Mudar#123' ; 
+#CREATE USER 'root'@'%' IDENTIFIED BY 'Mudar#123' ;			  
 mysql -u root -p << EOF
  
- CREATE USER 'root'@'%' IDENTIFIED BY 'Mudar#123' ;			
  SET PASSWORD FOR 'root'@'localhost' = PASSWORD('Mudar#123');
  SET PASSWORD FOR 'root'@'%' = PASSWORD('Mudar#123');		
  GRANT ALL ON *.* TO 'root'@'localhost';						
@@ -85,3 +85,8 @@ sudo a2enmod rewrite
 " >> /etc/apache2/sites-available/band-im.conf '
 
 ln -s /etc/apache2/sites-available/band-im.conf  /etc/apache2/sites-enabled/band-im.conf 
+
+
+echo "=========RESTART==========="
+sudo /etc/init.d/apache2 restart
+sudo service mysql restart
