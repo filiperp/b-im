@@ -27,7 +27,7 @@
   <?php  Yii::app()->clientScript->registerScript('baseURLScript',
     "
         var baseURL;
-        baseURL = '" . Yii::app()->request->baseUrl . "';
+        baseURL = '".Yii::app()->request->baseUrl."';
 
     "
     , CClientScript::POS_BEGIN);

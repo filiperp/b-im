@@ -14,7 +14,7 @@ LoginReady = (function () {
 
     LoginReady.init = function ($var) {
         jQuery.backstretch([
-                    baseURL + "/metronic/assets/admin/pages/media/bg/5.jpg"
+                    baseURL + "/metronic/assets/admin/pages/media/bg/4.jpg"
             ], {
                 fade: 1000,
                 duration: 8000

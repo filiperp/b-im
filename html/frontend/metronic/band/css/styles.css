@@ -12,3 +12,8 @@
 .errorSummary >ul >li {
     color:#f20d0d;
 }
+
+.site-logo-image{
+    width:auto; height:32px;
+}
+

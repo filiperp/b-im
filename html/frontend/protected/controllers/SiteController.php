@@ -2,7 +2,29 @@
 
 class SiteController extends Controller
 {
-	/**
+    public function filters() {
+        return array(
+            'accessControl',
+        );
+    }
+
+    public function accessRules() {
+        return array(
+            array('allow',
+                'actions'=>array( 'view', 'contact', 'error', 'index', 'site/logout', 'logout','page'),
+                'users'=>array('@'),
+            ),
+            array('allow',
+                'actions'=>array( 'login'),
+                'users'=>array('*'),
+            ),
+            array('deny',
+                'users'=>array('*'),
+            ),
+        );
+    }
+
+    /**
 	 * Declares class-based actions.
 	 */
 	public function actions()
@@ -95,6 +117,7 @@ class SiteController extends Controller
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
+        $this->layout = 'metronicLogin';
 		$this->render('login',array('model'=>$model));
 	}
 

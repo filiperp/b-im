@@ -9,9 +9,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # otherwise forward it to index.php
 RewriteRule . index.php
 
-<ifModule mod_headers.c>
-Header set Server "gws"
-Header set X-Powered-By "@ab8877"
-</ifModule>
 
 php_value date.timezone 'America/Sao_Paulo'

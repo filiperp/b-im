@@ -332,11 +332,7 @@ var Layout = function () {
         var panel = $('.color-panel');
     
         // handle theme colors
-        var setColor = function (color) {
-            $('#style-color').attr("href", "../../assets/frontend/layout/css/themes/" + color + ".css");
-            $('.corporate .site-logo img').attr("src", "../../assets/frontend/layout/img/logos/logo-corp-" + color + ".png");
-            $('.ecommerce .site-logo img').attr("src", "../../assets/frontend/layout/img/logos/logo-shop-" + color + ".png");
-        }
+
 
         $('.icon-color', panel).click(function () {
             $('.color-mode').show();
@@ -350,7 +346,7 @@ var Layout = function () {
 
         $('li', panel).click(function () {
             var color = $(this).attr("data-style");
-            setColor(color);
+            Layout.setColor(color);
             $('.inline li', panel).removeClass("current");
             $(this).addClass("current");
         });
@@ -373,6 +369,12 @@ var Layout = function () {
             handleSubMenuExt();
             handleMobiToggler();
             handlePortletTools();
+        },
+        setColor: function(color){
+            "use strict";
+            $('#style-color').attr("href", baseURL+"/metronic/assets/frontend/layout/css/themes/" + color + ".css");
+          //  $('.corporate .site-logo img').attr("src", baseURL+"/metronic/assets/frontend/layout/img/logos/logo-corp-" + color + ".png");
+          //  $('.ecommerce .site-logo img').attr("src", baseURL+"/metronic/assets/frontend/layout/img/logos/logo-shop-" + color + ".png");
         },
 
         initUniform: function (els) {

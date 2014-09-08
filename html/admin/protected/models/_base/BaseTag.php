@@ -34,7 +34,7 @@ abstract class BaseTag extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'tipo_tag';
+		return 'nome_tag';
 	}
 
 	public function rules() {

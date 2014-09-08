@@ -115,7 +115,30 @@
                         </div>
                     </div>
 
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="portlet box  green-haze">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-file-o fa-create"></i> <?php echo GxHtml::encode($model->getRelationLabel('tags')); ?>
+                                    </div>
+                                    <div class="tools">
 
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body ">
+                                    <?php $Criteria = new CDbCriteria();
+                                    $Criteria->addCondition('tipo_tag = "veiculo"');
+
+                                    echo $form->checkBoxList($model, 'tags',
+                                        GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAll($Criteria)), false, true)); ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
                     <div class="row ">
                         <div class="col-md-12 ">

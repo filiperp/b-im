@@ -39,8 +39,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
+  # config.vm.synced_folder "../html/backend", "/var/www/html/backend", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../yii", "/var/www/yii", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
-   config.vm.synced_folder "../html/backend", "/var/www/html/backend", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/admin", "/var/www/html/admin", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/frontend", "/var/www/html/frontend", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/poc", "/var/www/html/poc", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
