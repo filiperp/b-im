@@ -37,9 +37,12 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php
+$dpp = $model->search();
+$dpp->pagination->pageSize = $model->count();
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id' => 'arquivo-historico-grid',
-	'dataProvider' => $model->search(),
+	'dataProvider' => $dpp,
 	'filter' => $model,
 	'columns' => array(
 		'id_arquivo_historico',

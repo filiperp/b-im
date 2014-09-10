@@ -54,9 +54,12 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 
 
 
-                <?php $this->widget('zii.widgets.grid.CGridView', array(
+                <?php
+                $dpp = $model->search();
+                $dpp->pagination->pageSize = $model->count();
+                $this->widget('zii.widgets.grid.CGridView', array(
                     'id' => 'programa-grid',
-                    'dataProvider' => $model->search(),
+                    'dataProvider' => $dpp,
                     'filter' => null,
                     'enableSorting' => false,
                     'summaryText' => '',

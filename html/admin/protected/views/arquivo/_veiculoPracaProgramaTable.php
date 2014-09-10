@@ -26,7 +26,7 @@
     $data = $command->queryAll();
 
     $dataProvider = new CArrayDataProvider($data, array('keyField' => 'k_v_p_p'));
-
+    $dataProvider->pagination->pageSize = $data->count();
 
     $this->widget('zii.widgets.grid.CGridView', array(
 

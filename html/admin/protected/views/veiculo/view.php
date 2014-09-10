@@ -86,6 +86,26 @@ $this->menu = array(
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label col-md-3 bold">
+                                    TAGS:</label>
+
+                                <div class="col-md-9">
+                                    <p class="form-control-static">
+                                        <?php
+                                        foreach ($model->tags as $relatedModel) {
+                                            echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('tag/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)), array('class' => "btn btn-circle btn-success"));
+                                            echo ' ';
+                                        }
+                                        ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 bold">
                                     <?php echo GxHtml::encode($model->getAttributeLabel('imagem_veiculo')); ?>:</label>
 
                                 <div class="col-md-9">

@@ -53,9 +53,12 @@ $('.search-form form').submit(function(){
                 <br><br>
 
 
-                <?php $this->widget('zii.widgets.grid.CGridView', array(
+                <?php
+                $dpp = $model->search();
+                $dpp->pagination->pageSize = $model->count();
+                $this->widget('zii.widgets.grid.CGridView', array(
                     'id' => 'analise-grid',
-                    'dataProvider' => $model->search(),
+                    'dataProvider' => $dpp,
                     'filter' => null,
                     'enableSorting' => false,
                     'summaryText' => '',

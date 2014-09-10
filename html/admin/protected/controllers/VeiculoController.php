@@ -42,7 +42,7 @@ public function accessRules() {
 				'pracas' => $_POST['Veiculo']['pracas'] === '' ? null : $_POST['Veiculo']['pracas'],
 				'tags' => $_POST['Veiculo']['tags'] === '' ? null : $_POST['Veiculo']['tags'],
 				);
-
+            Yii::import('application.controllers.FileObjectController');
             $model->imagem_veiculo = FileObjectController::saveFileAs($model);
 
 			if ($model->saveWithRelated($relatedData)) {
@@ -69,12 +69,12 @@ public function accessRules() {
 				'tags' => $_POST['Veiculo']['tags'] === '' ? null : $_POST['Veiculo']['tags'],
 				);
             Yii::import('application.controllers.FileObjectController');
-            $model->imagem_analise = FileObjectController::saveFileAs($model);
+            $model->imagem_veiculo = FileObjectController::saveFileAs($model);
 			if ($model->saveWithRelated($relatedData)) {
 				$this->redirect(array('view', 'id' => $model->id_veiculo));
 			}
 		}
-        $_SESSION['current_image_'. get_class($model)] = $model->imagem_analise;
+        $_SESSION['current_image_'. get_class($model)] = $model->imagem_veiculo;
 		$this->render('update', array(
 				'model' => $model,
 				));
@@ -85,7 +85,7 @@ public function accessRules() {
 
 
             $model = $this->loadModel($id, 'Veiculo');
-            unlink ($model->imagem_analise);
+            unlink ($model->imagem_veiculo);
             unset($_SESSION['current_image_'.get_class($model)]);
             $model->delete();
 
@@ -105,7 +105,7 @@ public function accessRules() {
 	public function actionAdmin() {
 		$model = new Veiculo('search');
 		$model->unsetAttributes();
-
+//$model->count(
 		if (isset($_GET['Veiculo']))
 			$model->setAttributes($_GET['Veiculo']);
 

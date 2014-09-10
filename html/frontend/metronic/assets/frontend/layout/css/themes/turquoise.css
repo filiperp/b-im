@@ -340,7 +340,7 @@ a:hover {
   .header .header-navigation li > a:hover,
   .header .header-navigation li.active > a,
   .header .header-navigation li.open > a:hover {
-    color: #69C0CD !important;
+    /*color: #69C0CD !important;*/
   }
 }
 

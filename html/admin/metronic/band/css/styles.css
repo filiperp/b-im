@@ -2,7 +2,7 @@
   color: #f0f0f0 !important;
 }
 .view-thumb{
-    width:300px; height:auto;
+    width:200px; height:auto;
 }
 
 .thumb-image-grid{
@@ -11,4 +11,9 @@
 
 .errorSummary >ul >li {
     color:#f20d0d;
+}
+
+.imgicon{
+    height: 40px;
+    width: auto;
 }

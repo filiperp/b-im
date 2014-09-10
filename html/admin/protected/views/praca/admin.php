@@ -55,9 +55,12 @@ $('.search-form form').submit(function(){
 
 
 
-                <?php $this->widget('zii.widgets.grid.CGridView', array(
+                <?php
+                $dpp = $model->search();
+                $dpp->pagination->pageSize = $model->count();
+                $this->widget('zii.widgets.grid.CGridView', array(
                     'id' => 'praca-grid',
-                    'dataProvider' => $model->search(),
+                    'dataProvider' => $dpp,
                     'filter' => $model,
                     'filter' => null,
                     'enableSorting' => false,

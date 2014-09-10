@@ -54,12 +54,15 @@ $('.search-form form').submit(function(){
                 <br><br>
 
 
-
-                <?php $this->widget('zii.widgets.grid.CGridView', array(
+                <?php
+                $dpp = $model->search();
+                $dpp->pagination->pageSize = $model->count();
+              //  $dataProvider->pagination->pageSize = $model->count();
+                $this->widget('zii.widgets.grid.CGridView', array(
                     'id' => 'veiculo-grid',
-                    'dataProvider' => $model->search(),
-                    'filter' => $model,
-                    'filter' => null,
+                    'dataProvider' => $dpp,
+                    ///'filter' => $model,
+                  'filter' => null,
                     'enableSorting' => false,
                     'summaryText' => '',
                     'showTableOnEmpty' => false,

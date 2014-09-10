@@ -357,18 +357,18 @@ var Layout = function () {
             // init core variables
             handleTheme();
             handleInit();
-            handleResponsiveOnResize();
+            //handleResponsiveOnResize();
             handleIEFixes();
             handleSearch();
             handleFancybox();
             handleDifInits();
-            handleSidebarMenu();
+            //handleSidebarMenu();
             handleAccordions();
-            handleMenu();
+          handleMenu();
             handleScrollers();
             handleSubMenuExt();
             handleMobiToggler();
-            handlePortletTools();
+           // handlePortletTools();
         },
         setColor: function(color){
             "use strict";

@@ -30,7 +30,7 @@ abstract class BasePrograma extends GxActiveRecord {
 	}
 
 	public static function label($n = 1) {
-		return Yii::t('app', 'Programa|Programas', $n);
+		return Yii::t('app', 'Prog. & Cont.|Prog. & Cont.', $n);
 	}
 
 	public static function representingColumn() {

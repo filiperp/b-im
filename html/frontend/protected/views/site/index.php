@@ -1,7 +1,7 @@
 <!-- Body BEGIN -->
-<body class="corporate">
+
 <!-- BEGIN STYLE CUSTOMIZER -->
-<div class="color-panel hidden-sm">
+<div class="color-panel hidden-sm hidden">
     <div class="color-mode-icons icon-color"></div>
     <div class="color-mode-icons icon-color-close"></div>
     <div class="color-mode">
@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div class="header">
+<div class="header btn-primary">
     <div class="container">
         <a class="site-logo " href="index.html">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/images/logo-grupo3.png" alt="Grupo Bandeirantes" class="site-logo-image">
@@ -30,58 +30,77 @@
         <!-- BEGIN NAVIGATION -->
         <div class="header-navigation pull-right font-transform-inherit">
             <ul>
-                <li class="active"> <?php echo CHtml::link('<i class="fa fa-home"> </i>Home', array('index')); ?></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+                <li id="mainMenuHome" class="mainMenuItem active"> <?php echo CHtml::ajaxLink(
+                        '<i class="fa fa-home"> </i>Home',
+                        CController::createUrl('site/main'),
+                        array('type' => 'POST', 'update' => '#container','beforeSend' => 'function(){onClickHome();}')); ?></li>
+                <li id="mainMenuVeiculos" class="mainMenuItem dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#" id="btnMenuVeiculos">
                         Veículos
                     </a>
-
                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
+                        <?php foreach ($tags as $tag) {
+                            if (sizeof($tag->veiculos) > 0) {
+                                ?>
 
-                            <a href="index.html">TV ABERTA <i class="fa fa-angle-right"></i></a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="index.html">Second Level Link</a></li>
-                                <li><a href="index.html">Second Level Link</a></li>
                                 <li class="dropdown-submenu">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                                        Second Level Link
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="index.html">Third Level Link</a></li>
-                                        <li><a href="index.html">Third Level Link</a></li>
-                                        <li><a href="index.html">Third Level Link</a></li>
+                                    <a href="index.html"><?php echo $tag->nome_tag; ?><i class="fa fa-angle-right"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <?php foreach ($tag->veiculos as $veiculo) {
+                                            if ($veiculo->ativo_veiculo) {
+
+
+                                                ?>
+                                                <li>
+                                                    <?php echo CHtml::ajaxLink(
+                                                        CHtml::image(Yii::app()->baseUrl . '/' . $veiculo->imagem_veiculo, '', array('class' => 'imgicon')) . $veiculo->nome_veiculo,
+                                                        CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
+                                                        array(
+                                                            'type' => 'POST',
+                                                            'update' => '#container',
+                                                            'beforeSend' => 'function(){onClickVeiculo("'.$cores[$tag->ref_tag].'");}'
+                                                        ));;?>
+
+                                                </li>
+                                            <?php
+                                            }
+                                        }?>
                                     </ul>
                                 </li>
-                            </ul>
-                        </li>
-
-
-                        <li class="dropdown-submenu">
-
-                            <a href="index.html">Multi level <i class="fa fa-angle-right"></i></a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="index.html">Second Level Link</a></li>
-                                <li><a href="index.html">Second Level Link</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                                        Second Level Link
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="index.html">Third Level Link</a></li>
-                                        <li><a href="index.html">Third Level Link</a></li>
-                                        <li><a href="index.html">Third Level Link</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                            <?php
+                            }
+                        }?>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li id="mainMenuNoticias" class="mainMenuItem  dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#" id="btnMenuVeiculos">
+                        Notícias
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php foreach ($noticias as $noticia) { ?>
+
+                            <li class="dropdown-submenu">
+                                <?php echo CHtml::ajaxLink(
+                                    $noticia->nome_noticia,
+                                    CController::createUrl('site/noticias'),
+                                    array(
+                                        'type' => 'POST',
+                                        'update' => '#container',
+                                        'data' => array('id_noticia' => $noticia->id_noticia),
+                                        'beforeSend' => 'function(){onClickNoticia();}'
+                                    ),
+                                    array(
+                                        'href' => '#' //Yii::app()->createUrl( 'site/noticias' )
+                                    )
+                                );;?>
+                            </li>
+
+                        <?php } ?>
+
+                    </ul>
+                </li>
+
+                <li class="mainMenuItem  dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
                         Pages
 
@@ -104,7 +123,7 @@
                         <li><a href="page-contacts.html">Contact</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="mainMenuItem dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
                         Features
 
@@ -135,7 +154,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="mainMenuItem dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
                         Portfolio
 
@@ -148,7 +167,7 @@
                         <li><a href="portfolio-item.html">Portfolio Item</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="mainMenuItem dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
                         Blog
 
@@ -160,25 +179,7 @@
                     </ul>
                 </li>
 
-                <li> <?php echo CHtml::link('<i class="fa fa-sign-out"> </i>Sair', array('site/logout')); ?></li>
-
-                <!-- BEGIN TOP SEARCH -->
-                <!--                <li class="menu-search">-->
-                <!--                    <span class="sep"></span>-->
-                <!--                    <i class="fa fa-search search-btn"></i>-->
-                <!---->
-                <!--                    <div class="search-box">-->
-                <!--                        <form action="#">-->
-                <!--                            <div class="input-group">-->
-                <!--                                <input type="text" placeholder="Search" class="form-control">-->
-                <!--                    <span class="input-group-btn">-->
-                <!--                      <button class="btn btn-primary" type="submit">Search</button>-->
-                <!--                    </span>-->
-                <!--                            </div>-->
-                <!--                        </form>-->
-                <!--                    </div>-->
-                <!--                </li>-->
-                <!-- END TOP SEARCH -->
+                <li> <?php echo CHtml::link('<i class="fa fa-sign-out"> </i>Logout', array('site/logout')); ?></li>
             </ul>
         </div>
         <!-- END NAVIGATION -->
@@ -187,174 +188,14 @@
 <!-- Header END -->
 
 
-<div class="main">
-<div class="container" id="container">
-
-<!-- BEGIN STEPS -->
-<div class="row margin-bottom-40">
-    <div class="col-md-12 col-sm-12 ">
-        <h1>Bem-vindo ao novo Portal IM!</h1>
-
-        <h2>Agora, para pesquisar você deve seguir apenas 3 passos.</h2>
+<div class="main ">
+    <div class="container" id="container">
+        <?php $this->renderPartial('pages/main', array('tags' => $tags)); ?>
     </div>
-</div>
-<div class="row margin-bottom-50 front-steps-wrapper front-steps-count-3">
-    <div class="col-md-4 col-sm-4 front-step-col">
-        <div class="front-step front-step1">
-            <h2>Escolha o Veículo</h2>
-
-            <p>No Menu superior você pode escolher o veículo de informação que você pretende pesquisar.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 front-step-col">
-        <div class="front-step front-step2">
-            <h2>Análises</h2>
-
-            <p>Dentro de cada veículo selecionado estarão todos dos painéis de análise que podem ser úteis à ele.</p>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 front-step-col">
-        <div class="front-step front-step3">
-            <h2>Comercial</h2>
-
-            <p>O material comercial também está dentro de cada veículo, basta filtrar a praça desejada. </p>
-        </div>
-    </div>
-</div>
-<!-- END STEPS -->
-
-
-<!-- BEGIN RECENT WORKS -->
-<div class="row recent-work margin-bottom-60">
-    <div class="col-md-3">
-        <h2>Painéis Recentes:</h2>
-
-        <p>Estes são os últimos painéis produzidos para auxiliar o seu trabalho.</p>
-    </div>
-    <div class="col-md-9">
-        <div class="owl-carousel owl-carousel3">
-            <div class="recent-work-item">
-                <em>
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img1.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img1.jpg" class="fancybox-button" title="Project Name #1"
-                       data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>Painel CPP</strong>
-                    <b>Painél para cálculo de Custo por Ponto</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img2.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img2.jpg" class="fancybox-button" title="Project Name #2"
-                       data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-            <div class="recent-work-item">
-                <em>
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3"
-                       data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-
-            <div class="recent-work-item">
-                <em>
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                    <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3"
-                       data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                    <strong>Amazing Project</strong>
-                    <b>Agenda corp.</b>
-                </a>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- END RECENT WORKS -->
-
-
-<!-- BEGIN CLIENTS -->
-<div class="row margin-bottom-40 our-clients">
-    <div class="col-md-3">
-        <h2>Pesquisas</h2>
-
-        <p>Estas foram as últimas pesquisas técnicas feitas pelo IM, baixe-os para ter idéias de como proceder com uma defesa.</p>
-    </div>
-    <div class="col-md-9">
-        <div class="owl-carousel owl-carousel6-brands">
-            <div class="client-item">
-                <a href="#">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_1_gray.png" class="img-responsive" alt="">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_1.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_2_gray.png" class="img-responsive" alt="">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_2.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_3_gray.png" class="img-responsive" alt="">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_3.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_4_gray.png" class="img-responsive" alt="">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_4.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_5_gray.png" class="img-responsive" alt="">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_5.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_6_gray.png" class="img-responsive" alt="">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_6.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_7_gray.png" class="img-responsive" alt="">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_7.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-            <div class="client-item">
-                <a href="#">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_8_gray.png" class="img-responsive" alt="">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/clients/client_8.png" class="color-img img-responsive" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END CLIENTS -->
-</div>
 </div>
 
 <!-- BEGIN PRE-FOOTER -->
-<div class="pre-footer">
+<div class="pre-footer ">
     <div class="container">
         <div class="row">
             <!-- BEGIN BOTTOM ABOUT BLOCK -->
@@ -377,7 +218,7 @@
 <!-- END PRE-FOOTER -->
 
 <!-- BEGIN FOOTER -->
-<div class="footer">
+<div class="footer  ">
     <div class="container">
         <div class="row">
             <!-- BEGIN COPYRIGHT -->
@@ -398,4 +239,6 @@
         </div>
     </div>
 </div>
+
+
 <!-- END FOOTER -->

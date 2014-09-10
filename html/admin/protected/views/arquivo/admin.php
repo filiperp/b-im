@@ -51,9 +51,12 @@ $('.search-form form').submit(function(){
 
             <div class="portlet-body">
                 <br><br>
-                <?php $this->widget('zii.widgets.grid.CGridView', array(
+                <?php
+                $dpp = $model->search();
+                $dpp->pagination->pageSize = $model->count();
+                $this->widget('zii.widgets.grid.CGridView', array(
                     'id' => 'arquivo-grid',
-                    'dataProvider' => $model->search(),
+                    'dataProvider' => $dpp,
                     'filter' => null,
                     'enableSorting' => false,
                     'summaryText' => '',

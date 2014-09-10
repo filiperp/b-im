@@ -111,7 +111,7 @@ $this->endContent();
                     </li>
                     <li>
                         <a href="<?php echo Yii::app()->createUrl("/programa/admin"); ?>">
-                            <i class="icon-social-youtube"></i> Programas</a>
+                            <i class="icon-social-youtube"></i> Prog. & Cont.</a>
                     </li>
                     <li>
                         <a href="<?php echo Yii::app()->createUrl("/arquivo/admin"); ?>">

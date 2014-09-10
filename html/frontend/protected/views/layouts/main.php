@@ -11,17 +11,17 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 License: You must have a valid license purchased only from themeforest (the above link) in order to legally use the theme for your project.
 -->
 <!--[if IE 8]>
-<html lang="en" class="ie8 no-js"> <![endif]-->
+<html lang="pt_BR" class="ie8 no-js" > <![endif]-->
 <!--[if IE 9]>
-<html lang="en" class="ie9 no-js"> <![endif]-->
+<html lang="pt_BR" class="ie9 no-js"  > <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="pt_BR"  >
 <!--<![endif]-->
 
 <!-- Head BEGIN -->
 <head>
     <meta charset="utf-8">
-    <title>Metronic Frontend (Header Fixed)</title>
+    <title>Inteligência de Mercado - Grupo Bandeirantes</title>
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -46,7 +46,7 @@ License: You must have a valid license purchased only from themeforest (the abov
 
     <!-- Global styles START -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!-- Global styles END -->
 
     <!-- Page level plugin styles START -->
@@ -60,8 +60,8 @@ License: You must have a valid license purchased only from themeforest (the abov
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/css/style.css" rel="stylesheet">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/css/style-revolution-slider.css" rel="stylesheet">
     <!-- metronic revo slider styles -->
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/css/style-responsive.css" rel="stylesheet">
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/css/themes/red.css" rel="stylesheet" id="style-color">
+<!--    <link href="--><?php //echo Yii::app()->request->baseUrl; ?><!--/metronic/assets/frontend/layout/css/style-responsive.css" rel="stylesheet">-->
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/css/themes/green.css" rel="stylesheet" id="style-color">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/css/custom.css" rel="stylesheet">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/css/styles.css" rel="stylesheet">
     <?php  Yii::app()->clientScript->registerScript('baseURLScript',
@@ -75,6 +75,8 @@ License: You must have a valid license purchased only from themeforest (the abov
     <!-- Theme styles END -->
 </head>
 <!-- Head END -->
+<body class="corporate  corporate-im" >
+
 <?php echo $content; ?>
 <!-- Load javascripts at bottom, this will reduce page load time -->
 <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
@@ -101,16 +103,17 @@ License: You must have a valid license purchased only from themeforest (the abov
 <!-- END RevolutionSlider -->
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/js/frontend.js" type="text/javascript"></script>
 <script type="text/javascript">
     jQuery(document).ready(function () {
         Layout.init();
         Layout.initOWL();
-        // RevosliderInit.initRevoSlider();
-        Layout.initTwitter();
+//        RevosliderInit.initRevoSlider();
+//        Layout.initTwitter();
 
         Layout.initFixHeaderWithPreHeader();
         /* Switch On Header Fixing (only if you have pre-header) */
-        Layout.initNavScrolling();
+//        Layout.initNavScrolling();
     });
 </script>
 <!-- END PAGE LEVEL JAVASCRIPTS -->
