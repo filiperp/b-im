@@ -74,8 +74,8 @@ $('.search-form form').submit(function(){
                         'descricao_praca',
                         array(
                             'name' => 'ativo_praca',
-                            'value' => '($data->ativo_praca === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
-                            'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
+                            'value' => '($data->ativo_praca == 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'filter' => array(0 => Yii::t('app', 'No'), 1 => Yii::t('app', 'Yes')),
                         ),
                         array(
                             'class' => 'CButtonColumn',

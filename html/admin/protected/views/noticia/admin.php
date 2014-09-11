@@ -72,7 +72,7 @@ $('.search-form form').submit(function(){
                         'link_noticia',
                         array(
                             'name' => 'ativo_noticia',
-                            'value' => '($data->ativo_noticia === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'value' => '($data->ativo_noticia == 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
                             'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
                         ),
                         /*

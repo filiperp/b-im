@@ -13,9 +13,9 @@
          p.nome_praca, v.nome_veiculo , pr.nome_programa,
          concat(vpp.fk_id_veiculo ,"-" , vpp.fk_id_praca, "-",vpp.fk_id_programa ) as k_v_p_p')
         ->from('veiculo_praca_programa vpp ')
-        ->leftJoin('veiculo v', 'vpp.fk_id_veiculo=v.id_veiculo')
-        ->leftJoin('praca p', 'vpp.fk_id_praca=p.id_praca')
-        ->leftJoin('programa pr', 'vpp.fk_id_programa=pr.id_programa');
+        ->join('veiculo v', 'vpp.fk_id_veiculo=v.id_veiculo AND v.ativo_veiculo=1')
+        ->join('praca p', 'vpp.fk_id_praca=p.id_praca AND p.ativo_praca=1 ')
+        ->join('programa pr', 'vpp.fk_id_programa=pr.id_programa AND pr.ativo_programa=1');
 
     if ($isCreate) {
         $model->fk_id_praca = 0;
@@ -26,7 +26,7 @@
     $data = $command->queryAll();
 
     $dataProvider = new CArrayDataProvider($data, array('keyField' => 'k_v_p_p'));
-    $dataProvider->pagination->pageSize = $data->count();
+    $dataProvider->pagination->pageSize = sizeof($data);
 
     $this->widget('zii.widgets.grid.CGridView', array(
 

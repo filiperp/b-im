@@ -23,7 +23,7 @@
     $data = $command->queryAll();
 
     $dataProvider = new CArrayDataProvider($data, array('keyField' => 'id_arquivo_historico'));
-    $dataProvider->pagination->pageSize = $data->count();
+    $dataProvider->pagination->pageSize = sizeof($data);
 
     $this->widget('zii.widgets.grid.CGridView', array(
         'id' => 'historico-grid',

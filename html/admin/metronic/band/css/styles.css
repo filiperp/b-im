@@ -8,7 +8,9 @@
 .thumb-image-grid{
     width:100px; height:auto;
 }
-
+.mini-thumb-image-grid{
+    width:40px; height:auto;
+}
 .errorSummary >ul >li {
     color:#f20d0d;
 }

@@ -73,7 +73,7 @@ $('.search-form form').submit(function(){
                         ),
                         array(
                             'name' => 'ativo_arquivo',
-                            'value' => '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'value' => '($data->ativo_arquivo == 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
                             'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
                         ),
                         array(

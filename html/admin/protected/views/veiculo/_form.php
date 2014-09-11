@@ -87,7 +87,11 @@
                                     </div>
                                 </div>
                                 <div class="portlet-body ">
-                                     <?php echo $form->checkBoxList($model, 'analises', GxHtml::encodeEx(GxHtml::listDataEx(Analise::model()->findAllAttributes(null, true)), false, true)); ?>
+                                     <?php
+                                     $Criteria = new CDbCriteria();
+                                     $Criteria->addCondition('ativo_analise = 1  ');
+
+                                     echo $form->checkBoxList($model, 'analises', GxHtml::encodeEx(GxHtml::listDataEx(Analise::model()->findAll($Criteria)), false, true)); ?>
                                 </div>
                             </div>
 
@@ -108,7 +112,10 @@
                                     </div>
                                 </div>
                                 <div class="portlet-body ">
-                                    <?php echo $form->checkBoxList($model, 'pracas', GxHtml::encodeEx(GxHtml::listDataEx(Praca::model()->findAllAttributes(null, true)), false, true)); ?>
+                                    <?php
+                                    $Criteria = new CDbCriteria();
+                                    $Criteria->addCondition('ativo_praca = 1  ');
+                                    echo $form->checkBoxList($model, 'pracas', GxHtml::encodeEx(GxHtml::listDataEx(Praca::model()->findAll($Criteria)), false, true)); ?>
                                 </div>
                             </div>
 

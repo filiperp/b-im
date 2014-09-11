@@ -130,7 +130,7 @@
                                 <div class="portlet-body ">
                                     <?php
                                     $Criteria = new CDbCriteria();
-                                    $Criteria->addCondition('tipo_tag = "arquivo"');
+                                    $Criteria->addCondition('tipo_tag = "arquivo"  ');
 
                                     echo $form->checkBoxList($model, 'tags',
                                         GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAll($Criteria)), false, true)); ?>

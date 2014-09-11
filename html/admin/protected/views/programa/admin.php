@@ -82,7 +82,7 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
                         ),
                         array(
                             'name' => 'ativo',
-                            'value' => '($data->ativo_programa === "0") ? Yii::t(\'app\', \'\') : Yii::t(\'app\', \'X\')',
+                            'value' => '($data->ativo_programa == "0") ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
 
                         ),
                         array(

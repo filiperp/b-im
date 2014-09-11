@@ -22,17 +22,17 @@
                 $ID_PROGRAM = $model->id_programa;
 
                 $command = Yii::app()->db->createCommand()
-                    ->select('vp.fk_id_veiculo , vp.fk_id_praca, p.nome_praca, v.nome_veiculo , concat(vp.fk_id_veiculo ,"-" , vp.fk_id_praca) as k_v_p, coalesce (vpp.fk_id_programa, 0 ) as selected_programa')
+                    ->select('vp.fk_id_veiculo , vp.fk_id_praca, p.nome_praca, v.nome_veiculo, v.imagem_veiculo , concat(vp.fk_id_veiculo ,"-" , vp.fk_id_praca) as k_v_p, coalesce (vpp.fk_id_programa, 0 ) as selected_programa')
                     ->from('veiculo_praca vp')
-                    ->join('veiculo v', 'vp.fk_id_veiculo=v.id_veiculo')
-                    ->join('praca p', 'vp.fk_id_praca=p.id_praca')
+                    ->join('veiculo v', 'vp.fk_id_veiculo=v.id_veiculo and v.ativo_veiculo=1')
+                    ->join('praca p', 'vp.fk_id_praca=p.id_praca and p.ativo_praca=1')
                     ->leftJoin('veiculo_praca_programa vpp', 'vp.fk_id_praca=vpp.fk_id_praca AND  vp.fk_id_veiculo=vpp.fk_id_veiculo and vpp.fk_id_programa = ' . $ID_PROGRAM);
 
 
                 $data = $command->queryAll();
 
                 $dataProvider = new CArrayDataProvider($data, array('keyField' => 'k_v_p'));
-                $dataProvider->pagination->pageSize = $data->count();
+                $dataProvider->pagination->pageSize = sizeof($data);
 
                 $this->widget('zii.widgets.grid.CGridView', array(
                     'id' => 'veiculo-praca-grid',
@@ -43,7 +43,11 @@
                     'showTableOnEmpty' => false,
                     'enablePagination'=>false,
                     'columns' => array(
-
+                        array(
+                            'name' => 'Imagem',
+                            'value' => 'GxHtml::image($data["imagem_veiculo"],"ref." , array("class"=>"mini-thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'type'=>'raw'
+                        ),
                         array(
                             'name' => 'nome_veiculo',
                             'header' => 'Veículo',

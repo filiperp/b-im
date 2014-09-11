@@ -111,10 +111,11 @@
                                 </div>
                                 <div class="portlet-body ">
                                     <?php
-
+                                    $Criteria = new CDbCriteria();
+                                    $Criteria->addCondition('ativo_veiculo = 1  ');
 
                                     echo $form->checkBoxList($model, 'veiculos',
-                                        GxHtml::encodeEx(GxHtml::listDataEx(Veiculo::model()->findAll()), false, true)); ?>
+                                        GxHtml::encodeEx(GxHtml::listDataEx(Veiculo::model()->findAll($Criteria)), false, true)); ?>
                                 </div>
                             </div>
 
