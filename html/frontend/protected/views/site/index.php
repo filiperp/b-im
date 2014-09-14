@@ -44,7 +44,18 @@
                                 ?>
 
                                 <li class="dropdown-submenu">
-                                    <a href="index.html"><?php echo $tag->nome_tag; ?><i class="fa fa-angle-right"></i></a>
+                                    <?php echo CHtml::ajaxLink(
+                                            $tag->nome_tag . '<i class="fa fa-angle-right"></i>',
+                                        CController::createUrl('site/listVeiculos&id=' . $tag->id_tag),
+                                        array(
+                                            'type' => 'POST',
+
+                                            'update' => '#container',
+                                            'beforeSend' => 'function(){onClickTag();}'
+                                        ),
+                                        array('id' =>GUID::getGUID()));?>
+
+
                                     <ul class="dropdown-menu" role="menu">
                                         <?php foreach ($tag->veiculos as $veiculo) {
                                             if ($veiculo->ativo_veiculo) {
@@ -57,9 +68,11 @@
                                                         CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
                                                         array(
                                                             'type' => 'POST',
+
                                                             'update' => '#container',
                                                             'beforeSend' => 'function(){onClickVeiculo("'.$cores[$tag->ref_tag].'");}'
-                                                        ));;?>
+                                                        ),
+                                                        array('id' =>GUID::getGUID()));?>
 
                                                 </li>
                                             <?php
@@ -91,6 +104,7 @@
                                     ),
                                     array(
                                         'href' => '#' //Yii::app()->createUrl( 'site/noticias' )
+                                        ,'id' =>GUID::getGUID()
                                     )
                                 );;?>
                             </li>
@@ -102,84 +116,17 @@
 
                 <li class="mainMenuItem  dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                        Pages
+                        Painel
 
                     </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="page-about.html">About Us</a></li>
-                        <li><a href="page-services.html">Services</a></li>
-                        <li><a href="page-prices.html">Prices</a></li>
-                        <li><a href="page-faq.html">FAQ</a></li>
-                        <li><a href="page-gallery.html">Gallery</a></li>
-                        <li><a href="page-search-result.html">Search Result</a></li>
-                        <li><a href="page-404.html">404</a></li>
-                        <li><a href="page-500.html">500</a></li>
-                        <li><a href="page-login.html">Login Page</a></li>
-                        <li><a href="page-forgotton-password.html">Forget Password</a></li>
-                        <li><a href="page-reg-page.html">Signup Page</a></li>
-                        <li><a href="page-careers.html">Careers</a></li>
-                        <li><a href="page-site-map.html">Site Map</a></li>
-                        <li><a href="page-contacts.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li class="mainMenuItem dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                        Features
 
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="feature-typography.html">Typography</a></li>
-                        <li><a href="feature-buttons.html">Buttons</a></li>
-                        <li><a href="feature-forms.html">Forms</a></li>
-
-                        <li class="dropdown-submenu">
-                            <a href="index.html">Multi level <i class="fa fa-angle-right"></i></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="index.html">Second Level Link</a></li>
-                                <li><a href="index.html">Second Level Link</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                                        Second Level Link
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="index.html">Third Level Link</a></li>
-                                        <li><a href="index.html">Third Level Link</a></li>
-                                        <li><a href="index.html">Third Level Link</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="mainMenuItem dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                        Portfolio
-
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="portfolio-4.html">Portfolio 4</a></li>
-                        <li><a href="portfolio-3.html">Portfolio 3</a></li>
-                        <li><a href="portfolio-2.html">Portfolio 2</a></li>
-                        <li><a href="portfolio-item.html">Portfolio Item</a></li>
-                    </ul>
-                </li>
-                <li class="mainMenuItem dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                        Blog
-
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="blog.html">Blog Page</a></li>
-                        <li><a href="blog-item.html">Blog Item</a></li>
-                    </ul>
                 </li>
 
-                <li> <?php echo CHtml::link('<i class="fa fa-sign-out"> </i>Logout', array('site/logout')); ?></li>
+
+
+
+                <li> <?php echo CHtml::link('<i class="fa fa-sign-out"> </i>Logout', array('site/logout'),array('id' =>GUID::getGUID())); ?></li>
             </ul>
         </div>
         <!-- END NAVIGATION -->

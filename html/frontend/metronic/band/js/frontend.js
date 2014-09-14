@@ -14,6 +14,13 @@ function onClickNoticia() {
     //console.log("ooo")
 }
 
+function onClickTag() {
+    "use strict";
+    wait();
+    focusItemMenu('mainMenuVeiculos');
+    //console.log("ooo")
+}
+
 function onClickVeiculo(c){
     "use strict";
     wait();
@@ -32,3 +39,4 @@ function wait() {
         .html("")
         .html('<h1 style="text-align: center; margin-top: 50px"><i class="fa fa-spinner fa-2x fa-spin"></i></h1>');
 }
+

@@ -48,7 +48,8 @@ class NoticiaController extends GxController
             $model->imagem_noticia = FileObjectController::saveFileAs($model);
 
             if ($model->save()) {
-
+                FileObjectController::updateNewNameLabel($model);
+                $model->save();
                 if (Yii::app()->getRequest()->getIsAjaxRequest())
                     Yii::app()->end();
                 else

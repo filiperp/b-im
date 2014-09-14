@@ -50,6 +50,8 @@ public function accessRules() {
 
 
 			if ($model->saveWithRelated($relatedData)) {
+                FileObjectController::updateNewNameLabel($model);
+                $model->save();
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else

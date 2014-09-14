@@ -10,6 +10,7 @@
 }
 .mini-thumb-image-grid{
     width:40px; height:auto;
+
 }
 .errorSummary >ul >li {
     color:#f20d0d;
@@ -19,3 +20,12 @@
     height: 40px;
     width: auto;
 }
+
+.thumb-list{
+    padding: 3px;
+  border: 1px #aaaaaa solid;
+    width:40px; height:auto;
+    display: inline;
+    margin:2px 5px 2px 0px;
+}
+

@@ -68,7 +68,6 @@ $('.search-form form').submit(function(){
                         'id_analise',
                         'ref_analise',
                         'nome_analise',
-                        'descricao_analise',
                         array(
                             'name' => 'Iamgem',
                             'value' => 'GxHtml::image($data->imagem_analise,"ref." , array("class"=>"thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
@@ -82,6 +81,8 @@ $('.search-form form').submit(function(){
                         array(
                             'class' => 'CButtonColumn',
                         ),
+                        'descricao_analise',
+
                     ),
                     'itemsCssClass' => 'table table-striped table-bordered table-hover',
                     'htmlOptions' => array(

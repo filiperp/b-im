@@ -54,7 +54,7 @@
                                     ),
                                     array(
                                         'hrf' => '#', // Yii::app()->createUrl( 'site/noticias' )
-                                        'id' => 'body_noticia_' . $noticia->id_noticia,
+                                        'id' =>GUID::getGUID(),
                                         "live" => false
                                     )
                                 );;?>

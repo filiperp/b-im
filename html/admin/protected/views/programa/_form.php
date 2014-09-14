@@ -30,7 +30,7 @@
                     <?php
                     $viewElements = array(
 
-                        array('id_programa', 45, 'textField'),
+                        //array('id_programa', 45, 'textField'),
                         array('ref_programa', 45, 'textField'),
                         array('nome_programa', 100, 'textArea'),
                         array('descricao_programa', 512, 'textArea'),

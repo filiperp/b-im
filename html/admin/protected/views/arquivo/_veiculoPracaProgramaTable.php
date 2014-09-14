@@ -10,7 +10,7 @@
 
     $command = Yii::app()->db->createCommand()
         ->select('vpp.fk_id_veiculo , vpp.fk_id_praca, vpp.fk_id_programa,
-         p.nome_praca, v.nome_veiculo , pr.nome_programa,
+         p.nome_praca, v.nome_veiculo, v.imagem_veiculo , pr.nome_programa,pr.imagem_programa,
          concat(vpp.fk_id_veiculo ,"-" , vpp.fk_id_praca, "-",vpp.fk_id_programa ) as k_v_p_p')
         ->from('veiculo_praca_programa vpp ')
         ->join('veiculo v', 'vpp.fk_id_veiculo=v.id_veiculo AND v.ativo_veiculo=1')
@@ -43,7 +43,8 @@
             array(
                 'name' => 'nome_veiculo',
                 'header' => 'Veículo',
-                'value' => '\'[\' .$data["fk_id_veiculo"] . \'] \' . $data["nome_veiculo"] ',
+                'value' => 'GxHtml::image($data["imagem_veiculo"],"ref." , array("class"=>"mini-thumb-image-grid")).  "<br> [" .$data["fk_id_veiculo"] . "] " . $data["nome_veiculo"] ',
+                'type'=>'raw',
                 'htmlOptions' => array('width' => 105),
             ),
             array(
@@ -56,7 +57,8 @@
             array(
                 'name' => 'nome_praca',
                 'header' => 'Praça',
-                'value' => ' \'[\' . $data["fk_id_programa"] . \'] \' . $data["nome_programa"] ',
+                'value' => 'GxHtml::image($data["imagem_programa"],"ref." , array("class"=>"mini-thumb-image-grid")).  "<br> [" . $data["fk_id_programa"] . "] " . $data["nome_programa"] ',
+                'type'=>'raw',
                 'htmlOptions' => array('width' => 105),
 
             ),

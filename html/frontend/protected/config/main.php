@@ -43,6 +43,11 @@ return array(
         'file'=>array(
             'class'=>'application.extensions.file.CFile',
         ),
+        'GUID' => array(
+            'class' => 'ext.components.GUID',
+        ),
+
+
         // uncomment the following to enable URLs in path-format
         /*
         'urlManager'=>array(

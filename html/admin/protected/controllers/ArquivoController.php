@@ -45,6 +45,8 @@ public function accessRules() {
             $model->caminho_arquivo = FileObjectController::createBasePathArquivo($model);
 
 			if ($model->saveWithRelated($relatedData)) {
+                FileObjectController::updateNewNameLabel($model);
+                $model->save();
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else

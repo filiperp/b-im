@@ -14,7 +14,7 @@ class SiteController extends Controller
         return array(
             array('allow',
                 'actions' => array('view', 'contact', 'error', 'index', 'site/logout', 'logout', 'page',
-                    'main', 'noticias', 'veiculo'
+                    'main', 'noticias', 'veiculo', 'praca', 'listVeiculos'
                 ),
                 'users' => array('@'),
             ),
@@ -55,7 +55,7 @@ class SiteController extends Controller
     {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
-
+      //  Yii::app()->clientScript->scriptMap['jquery.js'] = false;
 
         $Criteria = new CDbCriteria();
         $Criteria->addCondition('tipo_tag = "veiculo"');
@@ -82,6 +82,8 @@ class SiteController extends Controller
 
     public function actionMain()
     {
+
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         if (Yii::app()->getRequest()->getIsPostRequest()) {
             $this->renderPartial('pages/main', null, false, true);
         } else {
@@ -145,11 +147,38 @@ class SiteController extends Controller
         }
     }
 
-    public function actionVeiculo()
+    public function actionVeiculo($id, $idPraca= null)
     {
-        $data = null;
-        $this->renderPartial('pages/about', $data, false, true);
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
 
+
+        $v = Veiculo::model()->findByPk($id);
+        if(sizeof($v['pracas'])>1 && $idPraca==null){
+            $this->actionPraca($id);
+        }else{
+            $data[ 'id']= (int) $id;
+            $data['praca'] = sizeof($v['pracas'])==1?$v['pracas'][0] : Praca::model()->findByPk($idPraca);
+            $data[ 'veiculo']= Veiculo::model()->findByPk($id);;
+            $this->renderPartial('pages/veiculo', $data, false, true);
+        }
+
+
+    }
+
+    public function actionListVeiculos($id){
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+        $data[ 'id']= (int) $id;
+        $data[ 'tag']= Tag::model()->findByPk($id);;
+
+        $this->renderPartial('pages/listVeiculos', $data, false, true);
+    }
+
+    public function actionPraca($id){
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+        $data[ 'id']= (int) $id;
+        $data[ 'veiculo']= Veiculo::model()->findByPk($id);;
+
+        $this->renderPartial('pages/pracas', $data, false, true);
     }
 
     /**

@@ -34,7 +34,7 @@
 
 
     <!-- BEGIN RECENT WORKS -->
-    <div class="row recent-work margin-bottom-60">
+    <div class="row recent-work margin-bottom-60" style="background-color: #fafafa; padding: 5px;">
         <div class="col-md-3">
             <br><br>
 
@@ -44,55 +44,34 @@
         </div>
         <div class="col-md-9">
             <div class="owl-carousel owl-carousel3">
-                <div class="recent-work-item">
-                    <em>
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img1.jpg" alt="Amazing Project" class="img-responsive">
-                        <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img1.jpg" class="fancybox-button" title="Project Name #1"
-                           data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                    </em>
-                    <a class="recent-work-description" href="#">
-                        <strong>Painel CPP</strong>
-                        <b>Painél para cálculo de Custo por Ponto</b>
-                    </a>
-                </div>
-                <div class="recent-work-item">
-                    <em>
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img2.jpg" alt="Amazing Project" class="img-responsive">
-                        <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img2.jpg" class="fancybox-button" title="Project Name #2"
-                           data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                    </em>
-                    <a class="recent-work-description" href="#">
-                        <strong>Amazing Project</strong>
-                        <b>Agenda corp.</b>
-                    </a>
-                </div>
-                <div class="recent-work-item">
-                    <em>
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                        <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3"
-                           data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                    </em>
-                    <a class="recent-work-description" href="#">
-                        <strong>Amazing Project</strong>
-                        <b>Agenda corp.</b>
-                    </a>
-                </div>
 
-                <div class="recent-work-item">
-                    <em>
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                        <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3"
-                           data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                    </em>
-                    <a class="recent-work-description" href="#">
-                        <strong>Amazing Project</strong>
-                        <b>Agenda corp.</b>
-                    </a>
-                </div>
+
+                <?php
+                $paineis = Analise::model()->findAll(' 11 order by id_analise desc limit 4 ');
+//Yii::app()->request->baseUrl
+                // CController::createUrl
+                foreach ($paineis as $panel) {
+
+                    ?>
+
+                    <div class="recent-work-item" style="margin-right: 5px;">
+                        <em style="min-height: 180px; max-height: 180px; overflow: hidden;">
+                            <img src="<?php echo Yii::app()->request->baseUrl.'/'. $panel->imagem_analise; ?>" alt="<?php echo $panel->nome_analise ; ?>" class=" img-responsive"
+                                 style="border: 2px solid #ccc; min-height: 180px;"  >
+
+                            <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+                            <a href="<?php echo Yii::app()->request->baseUrl.'/'. $panel->imagem_analise; ?>" class="fancybox-button" title="<?php echo $panel->nome_analise ; ?>"
+                               data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                        </em>
+                        <a class="recent-work-description" href="#"  style="border-top: 2px solid #ccc" >
+                            <strong><?php echo $panel->nome_analise ; ?></strong>
+
+                        </a>
+                    </div>
+
+                <?php
+                };?>
+
 
             </div>
         </div>
@@ -165,12 +144,12 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function () {
-       // Layout.init();
+        // Layout.init();
         Layout.initOWL();
 //        RevosliderInit.initRevoSlider();
 //        Layout.initTwitter();
 
-       /// Layout.initFixHeaderWithPreHeader();
+        /// Layout.initFixHeaderWithPreHeader();
         /* Switch On Header Fixing (only if you have pre-header) */
 //        Layout.initNavScrolling();
     });

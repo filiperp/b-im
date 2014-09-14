@@ -14,8 +14,9 @@ $this->menu = array(
 );
 ?>
 
-<h1><?php echo Yii::t('app', 'Update') . ' ' . GxHtml::encode($model->label()) . ' ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
+<h1 class="text-center"><small><?php echo Yii::t('app', 'Update') . '' . GxHtml::encode($model->label()) . '</small><span class=" bold">  ' . GxHtml::encode(GxHtml::valueEx($model)); ?> </span>
 
+<?php echo GxHtml::image($model->imagem_programa,'',array('class'=>'thumb-image-grid  thumbnail  pull-left')) ; ?></h1>
 <?php
 $this->renderPartial('_form', array(
     'model' => $model,

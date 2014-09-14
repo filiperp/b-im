@@ -46,6 +46,9 @@ public function accessRules() {
             $model->imagem_veiculo = FileObjectController::saveFileAs($model);
 
 			if ($model->saveWithRelated($relatedData)) {
+
+                FileObjectController::updateNewNameLabel($model);
+                $model->save();
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else
@@ -97,13 +100,38 @@ public function accessRules() {
 
 	public function actionIndex() {
 		$dataProvider = new CActiveDataProvider('Veiculo');
+
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
 		));
 	}
 
 	public function actionAdmin() {
-		$model = new Veiculo('search');
+
+//		$mm = Veiculo::model()->findAll();
+//        foreach ($mm  as $vv ){
+//            Yii::import('application.controllers.FileObjectController');
+//            FileObjectController::updateNewNameLabel($vv );
+//        }
+//        $mm = Analise::model()->findAll();
+//        foreach ($mm  as $vv ){
+//            Yii::import('application.controllers.FileObjectController');
+//            FileObjectController::updateNewNameLabel($vv );
+//        }
+//        $mm = Noticia::model()->findAll();
+//        foreach ($mm  as $vv ){
+//            Yii::import('application.controllers.FileObjectController');
+//            FileObjectController::updateNewNameLabel($vv );
+//        }
+//        $mm = Programa::model()->findAll();
+//        foreach ($mm  as $vv ){
+//            Yii::import('application.controllers.FileObjectController');
+//            FileObjectController::updateNewNameLabel($vv );
+//        }
+
+        $model = new Veiculo('search');
+
+
 		$model->unsetAttributes();
 //$model->count(
 		if (isset($_GET['Veiculo']))
