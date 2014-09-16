@@ -107,7 +107,7 @@ class SiteController extends Controller
         //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
         $ticket = $this->get_trusted_ticket($server, $user, $caller);
         if (strcmp($ticket, "-1") != 0) {
-            return "http://$server/trusted/$ticket/$view_url?$params";
+            return "https://$server/trusted/$ticket/$view_url?$params";
         }
         else
             return 0;
@@ -120,7 +120,7 @@ class SiteController extends Controller
             'client_ip' => $remote_addr
         );
 
-        return http_parse_message(http_post_fields("http://$wgserver/trusted", $params))->body;
+        return http_parse_message(http_post_fields("https://$wgserver/trusted", $params))->body;
     }
 
 
