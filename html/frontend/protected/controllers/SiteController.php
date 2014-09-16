@@ -104,7 +104,7 @@ class SiteController extends Controller
 
 
         $server = 'tableau.band.com.br';
-        $user= 'comercialtv';
+        $user= 'band';
         $caller = $_SERVER['REMOTE_ADDR'];
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
