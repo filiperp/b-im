@@ -14,6 +14,12 @@ function onClickNoticia() {
     //console.log("ooo")
 }
 
+function onClickDashBoard(){
+    "use strict";
+    wait();
+    focusItemMenu('mainMenuDashBoard');
+}
+
 function onClickTag() {
     "use strict";
     wait();
@@ -39,4 +45,5 @@ function wait() {
         .html("")
         .html('<h1 style="text-align: center; margin-top: 50px"><i class="fa fa-spinner fa-2x fa-spin"></i></h1>');
 }
+
 

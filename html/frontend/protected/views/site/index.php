@@ -17,9 +17,9 @@
     </div>
 </div>
 
-<div class="header btn-primary">
+<div class="header btn-primary" style="z-index: 10000;">
     <div class="container">
-        <a class="site-logo " href="index.html">
+        <a class="site-logo " href="<?php echo CController::createUrl('site/main') ; ?>">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/images/logo-grupo3.png" alt="Grupo Bandeirantes" class="site-logo-image">
             <!--            <img src="--><?php //echo Yii::app()->request->baseUrl; ?><!--/metronic/band/images/logo-grupo3.png" alt="Grupo Bandeirantes" class="site-logo-image">-->
 
@@ -36,7 +36,7 @@
                         array('type' => 'POST', 'update' => '#container','beforeSend' => 'function(){onClickHome();}')); ?></li>
                 <li id="mainMenuVeiculos" class="mainMenuItem dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#" id="btnMenuVeiculos">
-                        Veículos
+                        <i class="fa fa-video-camera"></i> Veículos
                     </a>
                     <ul class="dropdown-menu">
                         <?php foreach ($tags as $tag) {
@@ -87,7 +87,7 @@
                 </li>
                 <li id="mainMenuNoticias" class="mainMenuItem  dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#" id="btnMenuVeiculos">
-                        Notícias
+                        <i class="fa fa-file-text"></i> Notícias
                     </a>
                     <ul class="dropdown-menu">
                         <?php foreach ($noticias as $noticia) { ?>
@@ -114,11 +114,14 @@
                     </ul>
                 </li>
 
-                <li class="mainMenuItem  dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                        Painel
 
-                    </a>
+
+                <li id="mainMenuDashBoard" class="mainMenuItem"> <?php echo CHtml::ajaxLink(
+                        '<i class="fa fa-bar-chart-o"> </i>Painel',
+                        CController::createUrl('site/dashboard'),
+                        array('type' => 'POST', 'update' => '#container','beforeSend' => 'function(){onClickDashBoard();}')); ?></li>
+
+
 
 
                 </li>
@@ -170,7 +173,7 @@
         <div class="row">
             <!-- BEGIN COPYRIGHT -->
             <div class="col-md-6 col-sm-6 padding-top-10">
-                2014 © Grupo Bandeirantes - Inteligência de Mercado.
+                2014 &copy; Grupo Bandeirantes <br>Vice Presidência de Televisão e Comercialização<br>Depto. Inteligência de Mercado
             </div>
             <!-- END COPYRIGHT -->
             <!-- BEGIN PAYMENTS -->

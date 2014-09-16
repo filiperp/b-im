@@ -14,7 +14,7 @@ class SiteController extends Controller
         return array(
             array('allow',
                 'actions' => array('view', 'contact', 'error', 'index', 'site/logout', 'logout', 'page',
-                    'main', 'noticias', 'veiculo', 'praca', 'listVeiculos'
+                    'main', 'noticias', 'veiculo', 'praca', 'listVeiculos', 'dashboard'
                 ),
                 'users' => array('@'),
             ),
@@ -147,6 +147,10 @@ class SiteController extends Controller
         }
     }
 
+
+    public function actionDashboard(){
+        $this->renderPartial('pages/dashboard', null, false, true);
+    }
     public function actionVeiculo($id, $idPraca= null)
     {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;

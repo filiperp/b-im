@@ -57,7 +57,9 @@ License: You must have a valid license purchased only from themeforest (the abov
 
     <!-- Theme styles START -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/css/components.css" rel="stylesheet">
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/css/plugins.css" rel="stylesheet">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/css/style.css" rel="stylesheet">
+    <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/css/portfolio.css" rel="stylesheet">
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/css/style-revolution-slider.css" rel="stylesheet">
     <!-- metronic revo slider styles -->
 <!--    <link href="--><?php //echo Yii::app()->request->baseUrl; ?><!--/metronic/assets/frontend/layout/css/style-responsive.css" rel="stylesheet">-->
@@ -102,7 +104,11 @@ License: You must have a valid license purchased only from themeforest (the abov
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/scripts/revo-slider-init.js" type="text/javascript"></script>
 <!-- END RevolutionSlider -->
 
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/jquery-mixitup/jquery.mixitup.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/scripts/layout.js" type="text/javascript"></script>
+
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/scripts/portfolio.js" type="text/javascript"></script>
+
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/js/frontend.js" type="text/javascript"></script>
 <script type="text/javascript">
     jQuery(document).ready(function () {

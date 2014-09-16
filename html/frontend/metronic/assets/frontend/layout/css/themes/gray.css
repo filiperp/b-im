@@ -360,7 +360,7 @@ a:hover {
     color: #fff;
 }
 .mix-grid .mix .mix-details {
-  background: #93A2AB;
+  background: rgba(147,162,171,.4);
 }
 .mix-grid .mix a.mix-link, 
 .mix-grid .mix a.mix-preview {

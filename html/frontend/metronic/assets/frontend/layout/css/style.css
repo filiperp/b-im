@@ -554,8 +554,8 @@ body.page-header-fixed {
 	width: 700px;
 }
 .header-navigation > ul > li > .dropdown-menu {
-	margin-top: -5px;
-	border-top: solid 3px transparent;
+	margin-top: -2px;
+	/*border-top: solid 3px transparent;*/
 	z-index: 1001;
 }
 .header-navigation .dropdown100 > .dropdown-menu {
