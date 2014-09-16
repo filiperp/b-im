@@ -104,7 +104,7 @@ class SiteController extends Controller
 
 
         $server = 'tableau.band.com.br';
-        $user= 'comercialtv';
+        $user= 'admin';
         $caller = $_SERVER['REMOTE_ADDR'];
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
@@ -113,7 +113,7 @@ class SiteController extends Controller
         //AnliseShare/AnliseShare
         $ticket = $this->get_trusted_ticket($server, $user, $caller);
         if (strcmp($ticket, "-1") != 0) {
-            return "http://$server/trusted/$ticket/$view_url?$params";
+            return "https://$server/trusted/$ticket/$view_url?$params";
         }
         else
             return 0;
