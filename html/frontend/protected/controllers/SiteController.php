@@ -103,7 +103,7 @@ class SiteController extends Controller
     function get_trusted_url($view_url) {
         $params = ':embed=yes&:toolbar=yes';
 
-        $ticket = http_parse_message(http_post_fields("http://104.131.11.41/frontend/trusted/get.php"))->body;
+        $ticket = http_parse_message(http_post_fields("http://104.131.11.41/frontend/trusted/get.php", array()))->body;
         if (strcmp($ticket, "-1") != 0) {
             return "https://tableau.band.com.br/trusted/$ticket/views/$view_url?$params";
         }
@@ -112,7 +112,7 @@ class SiteController extends Controller
     }
 
 
-   
+
 
     public function actionMain()
     {
