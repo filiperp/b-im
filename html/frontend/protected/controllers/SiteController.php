@@ -123,10 +123,10 @@ class SiteController extends Controller
     function get_trusted_ticket($wgserver, $user, $remote_addr) {
         $params = array(
             'username' => $user,
-            'client_ip' => $remote_addr
+           // 'client_ip' => $remote_addr
         );
 
-        return http_parse_message(http_post_fields("http://$wgserver/trusted", $params))->body;
+        return http_parse_message(http_post_fields("https://$wgserver/trusted", $params))->body;
     }
 
 
