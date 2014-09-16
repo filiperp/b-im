@@ -41,7 +41,8 @@
 
 <div class="row">
     <div class="col-sm-12 ">
-        <?php echo $link;?>
+        <?php echo $link;?><br>
+        <?php echo $remote ; ?>
     </div>
 
 </div>

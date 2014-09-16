@@ -91,6 +91,7 @@ class SiteController extends Controller
 
 
        // $data['link'] = 'http://uol.com.br';
+        $data['remote']=$_SERVER['REMOTE_ADDR'];
         $data['veiculo'] = $veiculo;
         $data['praca'] = $praca;
         $data['nome']=$anal['nome_analise'];
