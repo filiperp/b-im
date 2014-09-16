@@ -107,13 +107,11 @@ class SiteController extends Controller
         $user= 'comercialtv';
         $caller = $_SERVER['REMOTE_ADDR'];
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-        //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
 
-        //http://tableau.band.com.br/trusted/u6KMGKI_lZKcyv9_fNh4NFGg/AnliseSharedeMercado-PraasEspeciaisv3/AnliseShare?:embed=yes&:toolbar=yes
-        //AnliseShare/AnliseShare
+
         $ticket = $this->get_trusted_ticket($server, $user, $caller);
         if (strcmp($ticket, "-1") != 0) {
-            return "https://$server/trusted/$ticket/$view_url?$params";
+            return "https://$server/trusted/$ticket/views/$view_url?$params";
         }
         else
             return 0;
@@ -123,7 +121,7 @@ class SiteController extends Controller
     function get_trusted_ticket($wgserver, $user, $remote_addr) {
         $params = array(
             'username' => $user,
-           // 'client_ip' => $remote_addr
+            'client_ip' => $remote_addr
         );
 
         return http_parse_message(http_post_fields("https://$wgserver/trusted", $params))->body;
