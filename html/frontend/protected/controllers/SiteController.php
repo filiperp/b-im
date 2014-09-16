@@ -86,10 +86,10 @@ class SiteController extends Controller
 
 
     public function actionAnalise($id, $veiculo, $praca){
-
-        $data['link'] = $this->get_trusted_url($id);
-
         $anal = Analise::model()->findByPk($id);
+        $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
+
+
        // $data['link'] = 'http://uol.com.br';
         $data['veiculo'] = $veiculo;
         $data['praca'] = $praca;
@@ -106,7 +106,7 @@ class SiteController extends Controller
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
 
-        //http://tableau.band.com.br/trusted/-mpXCmOgQEdynd8iG8TiN62y/AnliseSharedeMercado-PraasEspeciaisv3/AnliseShare?:embed=yes&:toolbar=yes
+        //http://tableau.band.com.br/trusted/u6KMGKI_lZKcyv9_fNh4NFGg/AnliseSharedeMercado-PraasEspeciaisv3/AnliseShare?:embed=yes&:toolbar=yes
         //AnliseShare/AnliseShare
         $ticket = $this->get_trusted_ticket($server, $user, $caller);
         if (strcmp($ticket, "-1") != 0) {
