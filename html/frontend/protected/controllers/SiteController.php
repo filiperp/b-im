@@ -86,6 +86,7 @@ class SiteController extends Controller
 
 
     public function actionAnalise($id, $veiculo, $praca){
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         $anal = Analise::model()->findByPk($id);
         $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
 
@@ -102,31 +103,16 @@ class SiteController extends Controller
     function get_trusted_url($view_url) {
         $params = ':embed=yes&:toolbar=yes';
 
-
-        $server = 'tableau.band.com.br';
-        $user= 'comercialtv';
-        $caller = $_SERVER['REMOTE_ADDR'];
-        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-
-
-        $ticket = $this->get_trusted_ticket($server, $user, $caller);
+        $ticket = http_parse_message(http_post_fields("http://104.131.11.41/frontend/trusted/get.php"))->body;
         if (strcmp($ticket, "-1") != 0) {
-            return "https://$server/trusted/$ticket/views/$view_url?$params";
+            return "https://tableau.band.com.br/trusted/$ticket/views/$view_url?$params";
         }
         else
             return 0;
     }
 
 
-    function get_trusted_ticket($wgserver, $user, $remote_addr) {
-        $params = array(
-            'username' => $user,
-            'client_ip' => $remote_addr
-        );
-
-        return http_parse_message(http_post_fields("https://$wgserver/trusted", $params))->body;
-    }
-
+   
 
     public function actionMain()
     {
