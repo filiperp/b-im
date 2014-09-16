@@ -38,6 +38,13 @@
     </div>
 
 </div>
+
+<div class="row">
+    <div class="col-sm-12 ">
+        <?php echo $link;?>
+    </div>
+
+</div>
 <div class="row">
     <div class="col-sm-12 ">
         <iframe src="<?php echo $link;?>"
