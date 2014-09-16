@@ -105,6 +105,9 @@ class SiteController extends Controller
         $caller = '104.131.11.41';
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
+
+        //http://tableau.band.com.br/trusted/-mpXCmOgQEdynd8iG8TiN62y/AnliseSharedeMercado-PraasEspeciaisv3/AnliseShare?:embed=yes&:toolbar=yes
+        //AnliseShare/AnliseShare
         $ticket = $this->get_trusted_ticket($server, $user, $caller);
         if (strcmp($ticket, "-1") != 0) {
             return "https://$server/trusted/$ticket/$view_url?$params";

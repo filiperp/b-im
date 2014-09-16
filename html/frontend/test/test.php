@@ -8,7 +8,7 @@
 
 $params = array(
     'username' => 'comercialtv',
-    'client_ip' => 'http://104.131.11.41/'
+    'client_ip' => '104.131.11.41'
 );
 
 echo  http_parse_message(http_post_fields("https://tableau.band.com.br/trusted", $params))->body;
