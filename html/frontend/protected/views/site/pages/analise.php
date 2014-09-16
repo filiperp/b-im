@@ -48,9 +48,9 @@
 </div>
 <div class="row">
     <div class="col-sm-12 ">
-        <iframe src="<?php echo $link;?>"
-                width="100%" height="756px" >
-        </iframe>
+<!--        <iframe src="--><?php //echo $link;?><!--"-->
+<!--                width="100%" height="756px" >-->
+<!--        </iframe>-->
     </div>
 
 </div>

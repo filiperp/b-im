@@ -101,6 +101,8 @@ class SiteController extends Controller
 
     function get_trusted_url($view_url) {
         $params = ':embed=yes&:toolbar=yes';
+
+
         $server = 'tableau.band.com.br';
         $user= 'comercialtv';
         $caller = $_SERVER['REMOTE_ADDR'];
