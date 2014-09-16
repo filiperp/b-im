@@ -120,7 +120,7 @@ class SiteController extends Controller
             'client_ip' => $remote_addr
         );
 
-        return http_parse_message(http_post_fields("https://$wgserver/trusted", $params))->body;
+        return http_parse_message(http_post_fields("http://$wgserver/trusted", $params))->body;
     }
 
 
