@@ -101,7 +101,7 @@ class SiteController extends Controller
     function get_trusted_url($view_url) {
         $params = ':embed=yes&:toolbar=yes';
         $server = 'tableau.band.com.br';
-        $user= 'band';
+        $user= 'comercialtv';
         $caller = '104.131.11.41';
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
