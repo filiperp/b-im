@@ -104,7 +104,7 @@ class SiteController extends Controller
 
 
         $server = 'tableau.band.com.br';
-        $user= 'admin';
+        $user= 'comercialtv';
         $caller = $_SERVER['REMOTE_ADDR'];
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
@@ -123,10 +123,10 @@ class SiteController extends Controller
     function get_trusted_ticket($wgserver, $user, $remote_addr) {
         $params = array(
             'username' => $user,
-            //'client_ip' => $remote_addr
+            'client_ip' => $remote_addr
         );
 
-        return http_parse_message(http_post_fields("https://$wgserver/trusted", $params))->body;
+        return http_parse_message(http_post_fields("http://$wgserver/trusted", $params))->body;
     }
 
 
