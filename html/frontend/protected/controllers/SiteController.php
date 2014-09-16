@@ -102,7 +102,7 @@ class SiteController extends Controller
         $params = ':embed=yes&:toolbar=yes';
         $server = 'tableau.band.com.br';
         $user= 'comercialtv';
-        $caller = '104.131.11.41';
+        $caller = $_SERVER['REMOTE_ADDR'];
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
 
