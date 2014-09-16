@@ -37,7 +37,7 @@ class Analise extends CActiveRecord
 			array('ativo_analise', 'numerical', 'integerOnly'=>true),
 			array('ref_analise', 'length', 'max'=>45),
 			array('nome_analise', 'length', 'max'=>100),
-			array('descricao_analise', 'length', 'max'=>512),
+			array('', 'length', 'max'=>512),
 			array('imagem_analise', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

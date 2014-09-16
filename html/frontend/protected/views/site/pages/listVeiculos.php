@@ -3,7 +3,7 @@
             '<i class="fa fa-home"> </i>Home',
             CController::createUrl('site/main'),
             array('type' => 'POST', 'update' => '#container',
-                //    'beforeSend' => 'function(){onClickHome();}'
+                'beforeSend' => 'function(){wait();}'
             ),
             array('id' => GUID::getGUID())); ?></li>
     <li>
@@ -48,7 +48,7 @@
                     'type' => 'POST',
 
                     'update' => '#container',
-                    // 'beforeSend' => 'function(){onClickVeiculo("' . $cores[$tag->ref_tag] . '");}'
+                    'beforeSend' => 'function(){wait();}'
                 ),
                 array('id' => GUID::getGUID(), 'class' => 'tile btn-primary'));
 

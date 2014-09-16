@@ -31,7 +31,7 @@ function onClickVeiculo(c){
     "use strict";
     wait();
     focusItemMenu('mainMenuVeiculos');
-    Layout.setColor(c);
+    if(c){Layout.setColor(c)};
 }
 function focusItemMenu(i) {
     "use strict";

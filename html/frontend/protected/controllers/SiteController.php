@@ -14,7 +14,7 @@ class SiteController extends Controller
         return array(
             array('allow',
                 'actions' => array('view', 'contact', 'error', 'index', 'site/logout', 'logout', 'page',
-                    'main', 'noticias', 'veiculo', 'praca', 'listVeiculos', 'dashboard'
+                    'main', 'noticias', 'veiculo', 'praca', 'listVeiculos', 'dashboard', 'analise'
                 ),
                 'users' => array('@'),
             ),
@@ -80,10 +80,55 @@ class SiteController extends Controller
         );
     }
 
+
+
+
+
+
+    public function actionAnalise($id, $veiculo, $praca){
+
+        $data['link'] = $this->get_trusted_url($id);
+
+        $anal = Analise::model()->findByPk($id);
+       // $data['link'] = 'http://uol.com.br';
+        $data['veiculo'] = $veiculo;
+        $data['praca'] = $praca;
+        $data['nome']=$anal['nome_analise'];
+        $this->renderPartial('pages/analise', $data, false, true);
+
+    }
+
+    function get_trusted_url($view_url) {
+        $params = ':embed=yes&:toolbar=yes';
+        $server = 'tableau.band.com.br';
+        $user= 'comercialtv';
+        $caller = '104.131.11.41';
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+        //https://tableau.band.com.br/views/pa_slide2/share_emissoras?:embed=y&:display_count=no
+        $ticket = $this->get_trusted_ticket($server, $user, $caller);
+        if (strcmp($ticket, "-1") != 0) {
+            return "http://$server/trusted/$ticket/$view_url?$params";
+        }
+        else
+            return 0;
+    }
+
+
+    function get_trusted_ticket($wgserver, $user, $remote_addr) {
+        $params = array(
+            'username' => $user,
+            'client_ip' => $remote_addr
+        );
+
+        return http_parse_message(http_post_fields("https://$wgserver/trusted", $params))->body;
+    }
+
+
     public function actionMain()
     {
 
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+        Yii::app()->clientScript->scriptMap['jquery.mixitup.min.js'] = false;
         if (Yii::app()->getRequest()->getIsPostRequest()) {
             $this->renderPartial('pages/main', null, false, true);
         } else {
@@ -147,10 +192,11 @@ class SiteController extends Controller
         }
     }
 
-
     public function actionDashboard(){
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         $this->renderPartial('pages/dashboard', null, false, true);
     }
+
     public function actionVeiculo($id, $idPraca= null)
     {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;

@@ -17,7 +17,7 @@
                 'type' => 'POST',
 
                 'update' => '#container',
-                // 'beforeSend' => 'function(){onClickVeiculo("' . $cores[$tag->ref_tag] . '");}'
+                'beforeSend' => 'function(){wait();}'
             ),
             array('id' => GUID::getGUID()));;?>
     </li>
@@ -56,9 +56,17 @@ $dataProgs = $command->queryAll();
 <!-- BEGIN CONTENT -->
 <div class="col-md-12 col-sm-12">
 <div class="row " style="min-height: 80px; margin-bottom:10px;">
-    <div class="col-sm-12 well text-center">
-        <img src="<?php echo Yii::app()->request->baseUrl . '/' . $veiculo['imagem_veiculo']; ?>" style="height: 80px; width: auto; display: inline; " class=""/> -
-        <div class="strong" style="font-size: 50px;vertical-align: middle;display: inline;"> <?php echo $praca->nome_praca; ?></div>
+    <div class="col-sm-12 ">
+        <div class="well text-center">
+
+            <img src="<?php echo Yii::app()->request->baseUrl . '/' . $veiculo['imagem_veiculo']; ?>" style="height: 80px; width: auto; display: inline; " class=""/>
+            <?php if (sizeof($veiculo->pracas) > 1) {
+                ; ?>
+                -
+                <div class="strong" style="font-size: 50px;vertical-align: middle;display: inline;"> <?php echo $praca->nome_praca; ?></div>
+
+            <?php }; ?>
+        </div>
     </div>
 
 </div>
@@ -67,10 +75,19 @@ $dataProgs = $command->queryAll();
 <div class="row">
 <div class="col-md-3 col-sm-3">
     <ul class="tabbable faq-tabbable">
-        <li class="active"><a href="#tab_1" data-toggle="tab">Painéis</a></li>
-        <li><a href="#tab_2" data-toggle="tab">Comercial</a></li>
-
-
+        <li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Análises</a></li>
+        <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Comercial</a></li>
+        <li>
+            <?php echo CHtml::ajaxLink(
+                '<i class="fa fa-backward"></i> Escolher Outra Praça',
+                CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
+                array(
+                    'type' => 'POST',
+                    'update' => '#container',
+                    'beforeSend' => 'function(){wait();}'
+                ),
+                array('id' => GUID::getGUID()));;?>
+        </li>
     </ul>
 
 </div>
@@ -98,7 +115,7 @@ $dataProgs = $command->queryAll();
                                 echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
                             };?>
                         </ul>
-                        <div class="row mix-grid thumbnails">
+                        <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID() ; ?>">
 
 
                             <?php  foreach ($veiculo['analises'] as $anal) {
@@ -127,7 +144,22 @@ $dataProgs = $command->queryAll();
                                             ">
 
                                         <div class="mix-details">
-                                            <a class="mix-link"><i class="fa fa-link"></i></a>
+                                            <?php echo CHtml::ajaxLink(
+                                                '<i class="fa fa-link"></i> ABRIR',
+                                                CController::createUrl('site/analise&id=' . $anal->id_analise.
+                                                    '&veiculo='.$veiculo['id_veiculo'].
+                                                    '&praca='.$praca['id_praca']),
+                                                array(
+                                                    'type' => 'POST',
+                                                    'update' => '#container',
+                                                    'beforeSend' => 'function(){wait();}'
+                                                ),
+                                                array('id' => GUID::getGUID(),
+                                                'class'=> 'mix-link'
+                                                ));;?>
+
+
+
                                             <a data-rel="fancybox-button" title="Project Name"
                                                href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="mix-preview fancybox-button"><i
                                                     class="fa fa-search"></i></a>
@@ -175,69 +207,73 @@ $dataProgs = $command->queryAll();
 
                             <?php foreach ($arqs as $arq) {
 
-                            $arq_tipo = $arq['tags'][0]["ref_tag"];;?>
+                                $arq_tipo = $arq['tags'][0]["ref_tag"];;?>
 
 
-                            <?php
-                            switch ($arq_tipo) {
-                            case 'youtube':
-                                break;
-                            case 'vimeo':
-                            ?>
-                            <blockquote style="min-height: 115px;">
-                                <div>
+                                <?php
+                                switch ($arq_tipo) {
+                                    case 'youtube':
+                                        break;
+                                    case 'vimeo':
+                                        ?>
+                                        <blockquote style="min-height: 115px;">
+                                            <div>
                                             <span class="pull-right">
                                                 <iframe src="//player.vimeo.com/video/<?php echo $arq['caminho_arquivo']; ?>" width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
                                             </span>
 
-                                    <h3><?php echo $arq['nome_arquivo']; ?></h3>
+                                                <h3><?php echo $arq['nome_arquivo']; ?></h3>
 
-                                    <p>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></p>
+                                                <p>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></p>
 
-                                    <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                        <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
-                                    <a target='blank' href='mailto:?to=&subject=Video%20Band&body=<?php echo $arq['nome_arquivo']; ?>:%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                        <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+                                                <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                    <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
 
-                                </div>
-                                <!--                                        </blockquote>-->
-
-                                <?php
-                                break;
-                                case 'pdf':
-                                ?>
-                                <blockquote style="">
-                                    <div>
+                                            </div>
+                                            <!--                                        </blockquote>-->
+                                            <p class="search-link" style="margin-top:8px;">Criado por Admin. (01/09/2014)</p>
+                                        </blockquote>
+                                        <?php
+                                        break;
+                                    case 'pdf':
+                                        ?>
+                                        <blockquote style="">
+                                            <div>
                                                 <span class='pull-right' style="margin-top: 40px;">
                                                         <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                             <i class='fa fa-file-pdf-o '></i> Clique Aqui Para Baixar
                                                         </a>
                                                 </span>
 
-                                        <h3><?php echo $arq['nome_arquivo']; ?></h3>
+                                                <h3><?php echo $arq['nome_arquivo']; ?></h3>
 
-                                        <p>formato: PDF</p>
-                                    </div>
-                                    <!--                                        </blockquote>-->
-
-                                    <?php
-                                    break;
+                                                <p>formato: PDF</p>
+                                            </div>
+                                            <!--                                        </blockquote>-->
+                                            <p class="search-link" style="margin-top:8px;">Criado por Admin. (01/09/2014)</p>
+                                        </blockquote>
+                                        <?php
+                                        break;
                                     case 'doc':
-                                    ?>
-                                    <blockquote style="">
-                                        <div>
+                                        ?>
+                                        <blockquote style="">
+                                            <div>
                                             <span class='pull-right' style="margin-top: 40px;">
                                                         <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                             <i class='fa fa-file-word-o '></i> Clique Aqui Para Baixar </a>
                                                 </span>
-                                        </div>
-                                        <h3><?php echo $arq['nome_arquivo']; ?></h3>
+                                            </div>
+                                            <h3><?php echo $arq['nome_arquivo']; ?></h3>
 
-                                        <p>formato: Word (.doc, .docx)</p>
-                                        <!--                                        </blockquote>-->
+                                            <p>formato: Word (.doc, .docx)</p>
+                                            <!--                                        </blockquote>-->
+                                            <p class="search-link" style="margin-top:8px;">Criado por Admin. (01/09/2014)</p>
+                                        </blockquote>
                                         <?php
                                         break;
-                                        case 'xls':
+                                    case 'xls':
                                         ?>
                                         <blockquote style="">
                                             <div>
@@ -250,29 +286,33 @@ $dataProgs = $command->queryAll();
 
                                             <p>formato: Excel (.xls, .xlsx)</p>
                                             <!--                                        </blockquote>-->
+                                            <p class="search-link" style="margin-top:8px;">Criado por Admin. (01/09/2014)</p>
+                                        </blockquote>
 
-                                            <?php
-                                            break;
-                                            case 'ppt':
-                                            ?>
-                                            <blockquote style="">
-                                                <div>
+                                        <?php
+                                        break;
+                                    case 'ppt':
+                                        ?>
+                                        <blockquote style="">
+                                            <div>
                                             <span class='pull-right' style="margin-top: 40px;">
                                                         <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                             <i class='fa fa-file-powerpoint-o  purple '></i> Clique Aqui Para Baixar </a>
                                                 </span>
-                                                </div>
-                                                <h3><?php echo $arq['nome_arquivo']; ?></h3>
+                                            </div>
+                                            <h3><?php echo $arq['nome_arquivo']; ?></h3>
 
-                                                <p>formato: PowerPoint (.ppt, .pptx)</p>
-                                                <?php
-                                                break;
-                                                }
-                                                ?>
+                                            <p>formato: PowerPoint (.ppt, .pptx)</p>
 
-                                                <p class="search-link" style="margin-top:8px;">Criado por Admin. (01/09/2014)</p>
-                                            </blockquote>
-                                            <?php }; ?>
+                                            <p class="search-link" style="margin-top:8px;">Criado por Admin. (01/09/2014)</p>
+                                        </blockquote>
+                                        <?php
+                                        break;
+                                }
+                                ?>
+
+
+                            <?php }; ?>
                         </div>
                     </div>
                 </div>
@@ -297,7 +337,11 @@ $dataProgs = $command->queryAll();
 </div>
 
 <script type="application/javascript">
-    Portfolio.init();
 
+    $(document).ready(function(){
+       setTimeout(function(){
+           Portfolio.init();
+       },1000)
 
+    })
 </script>

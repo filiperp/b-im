@@ -87,7 +87,7 @@
                 </li>
                 <li id="mainMenuNoticias" class="mainMenuItem  dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#" id="btnMenuVeiculos">
-                        <i class="fa fa-file-text"></i> Notícias
+                        <i class="fa fa-newspaper-o"></i> Notícias
                     </a>
                     <ul class="dropdown-menu">
                         <?php foreach ($noticias as $noticia) { ?>
@@ -117,7 +117,7 @@
 
 
                 <li id="mainMenuDashBoard" class="mainMenuItem"> <?php echo CHtml::ajaxLink(
-                        '<i class="fa fa-bar-chart-o"> </i>Painel',
+                        '<i class="fa fa-line-chart"> </i>Painel',
                         CController::createUrl('site/dashboard'),
                         array('type' => 'POST', 'update' => '#container','beforeSend' => 'function(){onClickDashBoard();}')); ?></li>
 

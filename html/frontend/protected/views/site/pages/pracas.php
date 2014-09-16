@@ -14,7 +14,7 @@
                 'type' => 'POST',
 
                 'update' => '#container',
-                // 'beforeSend' => 'function(){onClickVeiculo("' . $cores[$tag->ref_tag] . '");}'
+                'beforeSend' => 'function(){wait();}'
             ),
             array('id' => GUID::getGUID()));;?>
     </li>
@@ -64,7 +64,7 @@
                         'type' => 'POST',
 
                         'update' => '#container',
-                        // 'beforeSend' => 'function(){onClickVeiculo("' . $cores[$tag->ref_tag] . '");}'
+                        'beforeSend' => 'function(){wait();}'
                     ),
                     array('id' => GUID::getGUID(), 'class' => 'tile btn-primary'));
 
