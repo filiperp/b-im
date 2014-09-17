@@ -15,17 +15,17 @@
     <small>Fulano de Tal.</small>
 </h3>
 <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
         <div class="dashboard-stat blue-madison">
             <div class="visual">
                 <i class="fa fa-dollar"></i>
             </div>
             <div class="details">
-                <div class="number">
-                    R$ 8.000,00
+                <div class="number" style="font-size: 19px !important; ">
+                   R$8.000,00
                 </div>
                 <div class="desc">
-                    (Prêmio: 12%) Faturado
+                    Faturado
                 </div>
             </div>
             <a class="more" href="#">
@@ -33,14 +33,50 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+        <div class="dashboard-stat blue-madison">
+            <div class="visual">
+                <i class="fa fa-dollar"></i>
+            </div>
+            <div class="details">
+                <div class="number" style="font-size: 19px !important; ">
+                    91%
+                </div>
+                <div class="desc">
+                    Desconto Médio
+                </div>
+            </div>
+            <a class="more" href="#">
+                Mais <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+        <div class="dashboard-stat yellow-casablanca">
+            <div class="visual">
+                <i class="fa fa-dollar"></i>
+            </div>
+            <div class="details">
+                <div class="number" style="font-size: 19px !important; ">
+                    13%
+                </div>
+                <div class="desc">
+                    Prêmio
+                </div>
+            </div>
+            <a class="more" href="#">
+                Mais <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
         <div class="dashboard-stat red-intense">
             <div class="visual">
                 <i class="fa fa-bar-chart-o"></i>
             </div>
             <div class="details">
-                <div class="number">
-                    R$ 16.000,00
+                <div class="number" style="font-size: 19px !important; ">
+                    R$16.000,00
                 </div>
                 <div class="desc">
                     Meta
@@ -51,17 +87,17 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
         <div class="dashboard-stat green-haze">
             <div class="visual">
                 <i class="fa fa-shopping-cart"></i>
             </div>
             <div class="details">
-                <div class="number">
+                <div class="number" style="font-size: 19px !important; ">
                     549
                 </div>
                 <div class="desc">
-                    Vendas únicas
+                    Clientes Faturados
                 </div>
             </div>
             <a class="more" href="#">
@@ -69,14 +105,14 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
         <div class="dashboard-stat purple-plum">
             <div class="visual">
                 <i class="fa fa-globe"></i>
             </div>
             <div class="details">
-                <div class="number">
-                    R$ 5.000,00
+                <div class="number" style="font-size: 19px !important; ">
+                    R$5.000,00
                 </div>
                 <div class="desc">
                     Exibido

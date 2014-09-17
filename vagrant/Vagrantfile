@@ -43,6 +43,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    config.vm.synced_folder "../yii", "/var/www/yii", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/admin", "/var/www/html/admin", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/frontend", "/var/www/html/frontend", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
+   config.vm.synced_folder "../html/BSP", "/var/www/html/BSP", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/poc", "/var/www/html/poc", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
    config.vm.synced_folder "../html/uploads", "/var/www/html/uploads", owner: "vagrant",group: "www-data",   mount_options: ["dmode=775,fmode=664"]
 
