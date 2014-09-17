@@ -107,7 +107,7 @@ $dataProgs = $command->queryAll();
                     <h1>Selecione a análise desejada:</h1>
 
                     <div class="filter-v1">
-                        <ul class="mix-filter ">
+                        <ul class="mix-filter hidden ">
                             <li data-filter="all" class="filter active">Todos</li>
                             <?php
                             $tags = Tag::model()->findAll('tipo_tag="analise"');
@@ -115,11 +115,14 @@ $dataProgs = $command->queryAll();
                                 echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
                             };?>
                         </ul>
-                        <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID() ; ?>">
+                        <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>">
 
 
-                            <?php  foreach ($veiculo['analises'] as $anal) {
+                            <?php
+                            $counter = 0;
 
+                            foreach ($veiculo['analises'] as $anal) {
+                                $counter++;
                                 $filter = " ";
                                 foreach ($anal['tags'] as $anal_tag) {
                                     $filter .= " " . $anal_tag['ref_tag'];
@@ -133,7 +136,9 @@ $dataProgs = $command->queryAll();
                                      overflow: hidden; margin-right: 15px;;
                                      ">
                                     <h4 class="text-center"
-                                        style="color:black; background-color: #ccc; margin-bottom:15px; padding-bottom: 10px;"><?php echo $anal['nome_analise']; ?></h4>
+                                        style="color:black; background-color: #eee;
+                                        margin-bottom:15px; padding-bottom: 10px;
+                                        font-weight: 900; color:#666666;"><?php echo $anal['nome_analise']; ?></h4>
 
                                     <div class="mix-inner">
 
@@ -146,16 +151,16 @@ $dataProgs = $command->queryAll();
                                         <div class="mix-details">
                                             <?php echo CHtml::ajaxLink(
                                                 '<i class="fa fa-link"></i> ABRIR',
-                                                CController::createUrl('site/analise&id=' . $anal->id_analise.
-                                                    '&veiculo='.$veiculo['id_veiculo'].
-                                                    '&praca='.$praca['id_praca']),
+                                                CController::createUrl('site/analise&id=' . $anal->id_analise .
+                                                    '&veiculo=' . $veiculo['id_veiculo'] .
+                                                    '&praca=' . $praca['id_praca']),
                                                 array(
                                                     'type' => 'POST',
                                                     'update' => '#container',
                                                     'beforeSend' => 'function(){wait();}'
                                                 ),
                                                 array('id' => GUID::getGUID(),
-                                                'class'=> 'mix-link'
+                                                    'class' => 'mix-link'
                                                 ));;?>
 
 
@@ -166,6 +171,10 @@ $dataProgs = $command->queryAll();
                                         </div>
                                     </div>
                                 </div>
+
+                                <?php if ($counter == 6) {
+                                   // echo "<div class='well'><h2 style='margin-top:25px;'>Audiência</h2></div>";
+                                };?>
                             <?php } ?>
                         </div>
                     </div>
@@ -228,7 +237,8 @@ $dataProgs = $command->queryAll();
 
                                                 <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                     <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
-                                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary '
+                                                   style="color:white !important">
                                                     <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
 
                                             </div>
@@ -338,10 +348,10 @@ $dataProgs = $command->queryAll();
 
 <script type="application/javascript">
 
-    $(document).ready(function(){
-       setTimeout(function(){
-           Portfolio.init();
-       },1000)
+    $(document).ready(function () {
+        setTimeout(function () {
+            Portfolio.init();
+        }, 1000)
 
     })
 </script>

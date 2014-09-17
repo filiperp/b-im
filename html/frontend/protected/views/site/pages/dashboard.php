@@ -25,7 +25,7 @@
                     R$ 8.000,00
                 </div>
                 <div class="desc">
-                    Faturado
+                    (Prêmio: 12%) Faturado
                 </div>
             </div>
             <a class="more" href="#">
@@ -128,7 +128,7 @@
         <div class="portlet box red">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-bar-chart"></i>Faturamento X Meta (R$ 16.000,00)
+                    <i class="fa fa-bar-chart"></i>Faturamento Acumulado
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -592,8 +592,8 @@
                     "sYAxisName": "",
                     "numberPrefix": "$",
                     "sNumberSuffix" : "",
-                    "sYAxisMaxValue" : "30000",
-                    "pYAxisMaxValue" : "30000",
+                    "sYAxisMaxValue" : "200000",
+                    "pYAxisMaxValue" : "200000",
                     "showYAxisValues":'1',
 
                     "theme": "fint"
@@ -630,27 +630,27 @@
                     "data": [{
                         "value": "16000"
                     }, {
-                        "value": "20000"
+                        "value": "36000"
                     }, {
-                        "value": "18000"
+                        "value": "54000"
                     }, {
-                        "value": "19000"
+                        "value": "73000"
                     }, {
-                        "value": "15000"
+                        "value": "88000"
                     }, {
-                        "value": "21000"
+                        "value": "109000"
                     }, {
-                        "value": "16000"
+                        "value": "125000"
                     }, {
-                        "value": "20000"
+                        "value": "145000"
                     }, {
-                        "value": "17000"
+                        "value": "162000"
                     }, {
-                        "value": "22000"
+                        "value": "184000"
                     }, {
-                        "value": "19000"
+                        "value": "203000"
                     }, {
-                        "value": "23000"
+                        "value": "226000"
                     }]
                 },{
                     "seriesName": "Meta",
@@ -661,27 +661,27 @@
                     "data": [{
                         "value": "16000"
                     }, {
-                        "value": "16000"
+                        "value": "32000"
                     }, {
-                        "value": "16000"
+                        "value": "48000"
                     }, {
-                        "value": "16000"
+                        "value": "64000"
                     }, {
-                        "value": "16000"
+                        "value": "80000"
                     }, {
-                        "value": "16000"
+                        "value": "96000"
                     }, {
-                        "value": "16000"
+                        "value": "112000"
                     }, {
-                        "value": "16000"
+                        "value": "128000"
                     }, {
-                        "value": "16000"
+                        "value": "144000"
                     }, {
-                        "value": "16000"
+                        "value": "160000"
                     }, {
-                        "value": "16000"
+                        "value": "176000"
                     }, {
-                        "value": "16000"
+                        "value": "192000"
                     }]
                 }]
             }
