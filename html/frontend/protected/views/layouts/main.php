@@ -87,7 +87,10 @@ License: You must have a valid license purchased only from themeforest (the abov
 <![endif]-->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/scripts/back-to-top.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 
@@ -105,11 +108,37 @@ License: You must have a valid license purchased only from themeforest (the abov
 <!-- END RevolutionSlider -->
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/jquery-mixitup/jquery.mixitup.min.js" type="text/javascript"></script>
+
+
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+
+
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+
+
+
+
+
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/layout/scripts/layout.js" type="text/javascript"></script>
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/assets/frontend/pages/scripts/portfolio.js" type="text/javascript"></script>
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/js/frontend.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
 <script type="text/javascript">
     jQuery(document).ready(function () {
         Layout.init();
@@ -120,6 +149,9 @@ License: You must have a valid license purchased only from themeforest (the abov
         Layout.initFixHeaderWithPreHeader();
         /* Switch On Header Fixing (only if you have pre-header) */
 //        Layout.initNavScrolling();
+
+
+
     });
 </script>
 <!-- END PAGE LEVEL JAVASCRIPTS -->

@@ -6,7 +6,7 @@ var Charts = function () {
         init: function () {
 
             Metronic.addResizeHandler(function () {
-                 Charts.initPieCharts(); 
+               //  Charts.initPieCharts();
             });
             
         },
@@ -38,76 +38,7 @@ var Charts = function () {
                 return res;
             }
 
-            //Basic Chart
 
-            function chart1() {
-                var d1 = [];
-                for (var i = 0; i < Math.PI * 2; i += 0.25)
-                    d1.push([i, Math.sin(i)]);
-
-                var d2 = [];
-                for (var i = 0; i < Math.PI * 2; i += 0.25)
-                    d2.push([i, Math.cos(i)]);
-
-                var d3 = [];
-                for (var i = 0; i < Math.PI * 2; i += 0.1)
-                    d3.push([i, Math.tan(i)]);
-
-                    $.plot($("#chart_1"), [{
-                            label: "sin(x)",
-                            data: d1,
-                            lines: {
-                                lineWidth: 1,
-                            },
-                            shadowSize: 0
-                        }, {
-                            label: "cos(x)",
-                            data: d2,
-                            lines: {
-                                lineWidth: 1,
-                            },
-                            shadowSize: 0
-                        }, {
-                            label: "tan(x)",
-                            data: d3,
-                            lines: {
-                                lineWidth: 1,
-                            },
-                            shadowSize: 0
-                        }
-                    ], {
-                        series: {
-                            lines: {
-                                show: true,
-                            },
-                            points: {
-                                show: true,
-                                fill: true,
-                                radius: 3,
-                                lineWidth: 1
-                            }
-                        },
-                        xaxis: {
-                            tickColor: "#eee",
-                            ticks: [0, [Math.PI / 2, "\u03c0/2"],
-                                [Math.PI, "\u03c0"],
-                                [Math.PI * 3 / 2, "3\u03c0/2"],
-                                [Math.PI * 2, "2\u03c0"]
-                            ]
-                        },
-                        yaxis: {
-                            tickColor: "#eee",
-                            ticks: 10,
-                            min: -2,
-                            max: 2
-                        },
-                        grid: {
-                            borderColor: "#eee",
-                            borderWidth: 1
-                        }
-                    });
-
-            }
 
             //Interactive Chart
 
@@ -278,146 +209,9 @@ var Charts = function () {
 
             //Tracking Curves
 
-            function chart3() {
-                //tracking curves:
 
-                var sin = [],
-                    cos = [];
-                for (var i = 0; i < 14; i += 0.1) {
-                    sin.push([i, Math.sin(i)]);
-                    cos.push([i, Math.cos(i)]);
-                }
 
-                plot = $.plot($("#chart_3"), [{
-                            data: sin,
-                            label: "sin(x) = -0.00",
-                            lines: {
-                                lineWidth: 1,
-                            },
-                            shadowSize: 0
-                        }, {
-                            data: cos,
-                            label: "cos(x) = -0.00",
-                            lines: {
-                                lineWidth: 1,
-                            },
-                            shadowSize: 0
-                        }
-                    ], {
-                        series: {
-                            lines: {
-                                show: true
-                            }
-                        },
-                        crosshair: {
-                            mode: "x"
-                        },
-                        grid: {
-                            hoverable: true,
-                            autoHighlight: false,
-                            tickColor: "#eee",
-                            borderColor: "#eee",
-                            borderWidth: 1
-                        },
-                        yaxis: {
-                            min: -1.2,
-                            max: 1.2
-                        }
-                    });
 
-                var legends = $("#chart_3 .legendLabel");
-                legends.each(function () {
-                    // fix the widths so they don't jump around
-                    $(this).css('width', $(this).width());
-                });
-
-                var updateLegendTimeout = null;
-                var latestPosition = null;
-
-                function updateLegend() {
-                    updateLegendTimeout = null;
-
-                    var pos = latestPosition;
-
-                    var axes = plot.getAxes();
-                    if (pos.x < axes.xaxis.min || pos.x > axes.xaxis.max || pos.y < axes.yaxis.min || pos.y > axes.yaxis.max) return;
-
-                    var i, j, dataset = plot.getData();
-                    for (i = 0; i < dataset.length; ++i) {
-                        var series = dataset[i];
-
-                        // find the nearest points, x-wise
-                        for (j = 0; j < series.data.length; ++j)
-                            if (series.data[j][0] > pos.x) break;
-
-                            // now interpolate
-                        var y, p1 = series.data[j - 1],
-                            p2 = series.data[j];
-                        if (p1 == null) y = p2[1];
-                        else if (p2 == null) y = p1[1];
-                        else y = p1[1] + (p2[1] - p1[1]) * (pos.x - p1[0]) / (p2[0] - p1[0]);
-
-                        legends.eq(i).text(series.label.replace(/=.*/, "= " + y.toFixed(2)));
-                    }
-                }
-
-                $("#chart_3").bind("plothover", function (event, pos, item) {
-                    latestPosition = pos;
-                    if (!updateLegendTimeout) updateLegendTimeout = setTimeout(updateLegend, 50);
-                });
-            }
-
-            //Dynamic Chart
-
-            function chart4() {
-                //server load
-                var options = {
-                    series: {
-                        shadowSize: 1
-                    },
-                    lines: {
-                        show: true,
-                        lineWidth: 0.5,
-                        fill: true,
-                        fillColor: {
-                            colors: [{
-                                    opacity: 0.1
-                                }, {
-                                    opacity: 1
-                                }
-                            ]
-                        }
-                    },
-                    yaxis: {
-                        min: 0,
-                        max: 100,                        
-                        tickColor: "#eee",
-                        tickFormatter: function (v) {
-                            return v + "%";
-                        }
-                    },
-                    xaxis: {
-                        show: false,
-                    },
-                    colors: ["#6ef146"],
-                    grid: {
-                        tickColor: "#eee",
-                        borderWidth: 0,
-                    }
-                };
-
-                var updateInterval = 30;
-                var plot = $.plot($("#chart_4"), [getRandomData()], options);
-
-                function update() {
-                    plot.setData([getRandomData()]);
-                    plot.draw();
-                    setTimeout(update, updateInterval);
-                }
-                update();
-            }
-
-            //bars with controls
 
             function chart5() {
                 var d1 = [];
@@ -441,21 +235,21 @@ var Charts = function () {
                     $.plot($("#chart_5"), 
 
                         [{
-                            label: "sales",
+                            label: "Exibido",
                             data: d1,
                             lines: {
                                 lineWidth: 1,
                             },
                             shadowSize: 0
                         }, {
-                            label: "tax",
+                            label: "Faturado",
                             data: d2,
                             lines: {
                                 lineWidth: 1,
                             },
                             shadowSize: 0
                         }, {
-                            label: "profit",
+                            label: "Meta",
                             data: d3,
                             lines: {
                                 lineWidth: 1,
@@ -506,10 +300,10 @@ var Charts = function () {
             }
 
             //graph
-            chart1();
+            //chart1();
             chart2();
-            chart3();
-            chart4();
+           //chart3();
+            //chart4();
             chart5();
 
         },
