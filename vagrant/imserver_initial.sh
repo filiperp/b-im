@@ -35,6 +35,7 @@ echo "=========MYSQL==========="
 mysql -u root -p << EOF
  
  SET PASSWORD FOR 'root'@'localhost' = PASSWORD('Mudar#123');
+ CREATE USER 'root'@'%' IDENTIFIED BY 'Mudar#123' ;
  SET PASSWORD FOR 'root'@'%' = PASSWORD('Mudar#123');		
  GRANT ALL ON *.* TO 'root'@'localhost';						
  GRANT ALL ON *.* TO 'root'@'%';								
