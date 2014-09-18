@@ -14,6 +14,9 @@ charts = (function () {
         charts.initChart1();
         charts.initChartBrasilExibido();
         charts.initgaugeMeta();
+        charts.initgaugeMetaAcum();
+        charts.initfatExMeta();
+        charts.initfatExMetaAcum();
     }
     charts.chart1 = null;
     charts.initChart1 = function () {
@@ -156,13 +159,13 @@ charts = (function () {
             "type": "angulargauge",
             "renderAt": "gaugeMeta",
             "width": "100%",
-            "height": "250",
+            "height": "150",
             "dataFormat": "json",
             "dataSource": {
                 "chart": {
                     "manageresize": "1",
                     "origw": "400",
-                    "origh": "250",
+                    "origh": "auto",
                     "managevalueoverlapping": "1",
                     "autoaligntickvalues": "1",
                     "bgcolor": "AEC0CA,FFFFFF",
@@ -177,7 +180,7 @@ charts = (function () {
                     "gaugeoriginy": "206",
                     "gaugeinnerradius": "2",
                     "formatnumberscale": "1",
-                    "numberprefix": "$",
+                    "numberprefix": "",
                     "decmials": "2",
                     "tickmarkdecimals": "1",
                     "pivotradius": "17",
@@ -186,7 +189,7 @@ charts = (function () {
                     "pivotborderthickness": "5",
                     "pivotfillmix": "FFFFFF,000000",
                     "tickvaluedistance": "10",
-                    "showborder": "0"
+                    "showborder": "1"
                 },
                 "colorrange": {
                     "color": [
@@ -211,11 +214,12 @@ charts = (function () {
                     "dial": [
                         {
                             "value": "2100000",
-                            "borderalpha": "0",
+                            "borderalpha": "100",
                             "bgcolor": "4b77be",
                             "basewidth": "28",
                             "topwidth": "1",
-                            "radius": "130"
+                            "radius": "150",
+
                         },
                         {
                             "value": "1800000",
@@ -272,11 +276,545 @@ charts = (function () {
         });
         charts.gaugeMeta.render();
     };
+
+    charts.gaugeMetaAcum = null
+    charts.initgaugeMetaAcum = function () {
+
+        charts.gaugeMetaAcum = new FusionCharts({
+
+            "type": "angulargauge",
+            "renderAt": "gaugeMetaAcum",
+            "width": "100%",
+            "height": "150",
+            "dataFormat": "json",
+            "dataSource": {
+                "chart": {
+                    "manageresize": "1",
+                    "origw": "400",
+                    "origh": "auto",
+                    "managevalueoverlapping": "1",
+                    "autoaligntickvalues": "1",
+                    "bgcolor": "AEC0CA,FFFFFF",
+                    "fillangle": "45",
+                    "upperlimit": "25000000",
+                    "lowerlimit": "16000000",
+                    "majortmnumber": "10",
+                    "majortmheight": "8",
+                    "showgaugeborder": "0",
+                    "gaugeouterradius": "140",
+                    "gaugeoriginx": "205",
+                    "gaugeoriginy": "206",
+                    "gaugeinnerradius": "2",
+                    "formatnumberscale": "1",
+                    "numberprefix": "",
+                    "decmials": "2",
+                    "tickmarkdecimals": "1",
+                    "pivotradius": "17",
+                    "showpivotborder": "1",
+                    "pivotbordercolor": "000000",
+                    "pivotborderthickness": "5",
+                    "pivotfillmix": "FFFFFF,000000",
+
+                    "tickvaluedistance": "10",
+                    "showborder": "1"
+                },
+                "colorrange": {
+                    "color": [
+                        {
+                            "minvalue": "16000000",
+                            "maxvalue": "19300000",
+                            "code": " B41527 "
+                        },
+                        {
+                            "minvalue": "19300000",
+                            "maxvalue": "21700000",
+                            "code": "E48739"
+                        },
+                        {
+                            "minvalue": "21700000",
+                            "maxvalue": "25000000",
+                            "code": "399E38"
+                        }
+                    ]
+                },
+                "dials": {
+                    "dial": [
+                        {
+                            "value": "15000000",
+                            "borderalpha": "100",
+                            "bgcolor": "4b77be",
+                            "basewidth": "28",
+                            "topwidth": "1",
+                            "radius": "150",
+                            'label': 'FAturado'
+
+                        },
+                        {
+                            "value": "8000000",
+                            "borderalpha": "0",
+                            "bgcolor": "8775a7",
+                            "basewidth": "28",
+                            "topwidth": "1",
+                            "radius": "130"
+                        }
+                    ]
+                },
+                "annotations": {
+                    "groups": [
+                        {
+                            "x": "205",
+                            "y": "207.5",
+                            "items": [
+                                {
+                                    "type": "circle",
+                                    "x": "0",
+                                    "y": "2.5",
+                                    "radius": "150",
+                                    "startangle": "0",
+                                    "endangle": "180",
+                                    "fillpattern": "linear",
+                                    "fillasgradient": "1",
+                                    "fillcolor": "dddddd,666666",
+                                    "fillalpha": "100,100",
+                                    "fillratio": "50,50",
+                                    "fillangle": "0",
+                                    "showborder": "1",
+                                    "bordercolor": "444444",
+                                    "borderthickness": "2"
+                                },
+                                {
+                                    "type": "circle",
+                                    "x": "0",
+                                    "y": "0",
+                                    "radius": "145",
+                                    "startangle": "0",
+                                    "endangle": "180",
+                                    "fillpattern": "linear",
+                                    "fillasgradient": "1",
+                                    "fillcolor": "666666,ffffff",
+                                    "fillalpha": "100,100",
+                                    "fillratio": "50,50",
+                                    "fillangle": "0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        });
+        charts.gaugeMetaAcum.render();
+    };
+
+
+    charts.fatExMeta = null;
+    charts.initfatExMeta = function () {
+        charts.fatExMeta = new FusionCharts({
+            type: 'mscombidy2d',
+            renderAt: 'fatExMeta',
+            width: '100%',
+            height: '150',
+            dataFormat: 'json',
+
+            dataSource: {
+                "chart": {
+                    "caption": "",
+                    "subCaption": "",
+                    "xAxisname": "Mês",
+                    "pYAxisName": "Fat.",
+                    "sYAxisName": "",
+                    "numberPrefix": "$",
+                    "sNumberSuffix": "",
+                    "sYAxisMaxValue": "30000",
+                    "pYAxisMaxValue": "30000",
+                    "showYAxisValues": '1',
+                    'showLegend': '0',
+
+                    "theme": "fint",
+                    "palettecolors": "#4b77be,#8775a7,#35aa47,#6baa01,#583e78"
+                },
+                "categories": [
+                    {
+                        "category": [
+                            {
+                                "label": "Set"
+                            },
+                            {
+                                "label": "Out"
+                            },
+                            {
+                                "label": "Nov"
+                            },
+                            {
+                                "label": "Dez"
+                            },
+                            {
+                                "label": "Jan"
+                            },
+                            {
+                                "label": "Fev"
+                            },
+                            {
+                                "label": "Mar"
+                            },
+                            {
+                                "label": "Abr"
+                            },
+                            {
+                                "label": "Mai"
+                            },
+                            {
+                                "label": "Jun"
+                            },
+                            {
+                                "label": "Jul"
+                            },
+                            {
+                                "label": "Ago"
+                            }
+                        ]
+                    }
+                ],
+                "dataset": [
+                    {
+                        "seriesName": "Faturamento",
+                        "data": [
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "20000"
+                            },
+                            {
+                                "value": "18000"
+                            },
+                            {
+                                "value": "19000"
+                            },
+                            {
+                                "value": "15000"
+                            },
+                            {
+                                "value": "21000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "20000"
+                            },
+                            {
+                                "value": "17000"
+                            },
+                            {
+                                "value": "22000"
+                            },
+                            {
+                                "value": "19000"
+                            },
+                            {
+                                "value": "23000"
+                            }
+                        ]
+                    },
+                    {
+                        "seriesName": "Exibido",
+                        "data": [
+                            {
+                                "value": "8000"
+                            },
+                            {
+                                "value": "5000"
+                            },
+                            {
+                                "value": "6000"
+                            },
+                            {
+                                "value": "18000"
+                            },
+                            {
+                                "value": "13000"
+                            },
+                            {
+                                "value": "2000"
+                            },
+                            {
+                                "value": "14000"
+                            },
+                            {
+                                "value": "20000"
+                            },
+                            {
+                                "value": "10000"
+                            },
+                            {
+                                "value": "2000"
+                            },
+                            {
+                                "value": "14000"
+                            },
+                            {
+                                "value": "19000"
+                            }
+                        ]
+                    },
+                    {
+                        "seriesName": "Meta",
+                        "parentYAxis": "P",
+                        "renderAs": "line",
+                        "showYAxisValues": '0',
+                        "showValues": "0",
+                        "data": [
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "16000"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        })
+        charts.fatExMeta.render();
+    };
+
+
+    charts.fatExMetaAcum = null;
+    charts.initfatExMetaAcum = function () {
+        charts.fatExMetaAcum = new FusionCharts({
+            type: 'mscombidy2d',
+            renderAt: 'fatExMetaAcum',
+            width: '100%',
+            height: '150',
+            dataFormat: 'json',
+
+            dataSource: {
+                "chart": {
+                    "caption": "",
+                    "subCaption": "",
+                    "xAxisname": "Mês",
+                    "pYAxisName": "Fat.",
+                    "sYAxisName": "",
+                    "numberPrefix": "$",
+                    "sNumberSuffix": "",
+                    "sYAxisMaxValue": "200000",
+                    "pYAxisMaxValue": "200000",
+                    "showYAxisValues": '1',
+                    'showLegend': '0',
+
+                    "theme": "fint",
+                    "palettecolors": "#4b77be,#8775a7,#35aa47,#6baa01,#583e78"
+                },
+                "categories": [
+                    {
+                        "category": [
+                            {
+                                "label": "Jan"
+                            },
+                            {
+                                "label": "Fev"
+                            },
+                            {
+                                "label": "Mar"
+                            },
+                            {
+                                "label": "Abr"
+                            },
+                            {
+                                "label": "Mai"
+                            },
+                            {
+                                "label": "Jun"
+                            },
+                            {
+                                "label": "Jul"
+                            },
+                            {
+                                "label": "Ago"
+                            },
+                            {
+                                "label": "Set"
+                            },
+                            {
+                                "label": "Out"
+                            },
+                            {
+                                "label": "Nov"
+                            },
+                            {
+                                "label": "Dez"
+                            }
+                        ]
+                    }
+                ],
+                "dataset": [
+                    {
+                        "seriesName": "Faturamento",
+                        "data": [
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "36000"
+                            },
+                            {
+                                "value": "54000"
+                            },
+                            {
+                                "value": "73000"
+                            },
+                            {
+                                "value": "88000"
+                            },
+                            {
+                                "value": "109000"
+                            },
+                            {
+                                "value": "125000"
+                            },
+                            {
+                                "value": "145000"
+                            },
+                            {
+                                "value": "0"
+                            },
+                            {
+                                "value": "0"
+                            },
+                            {
+                                "value": "0"
+                            },
+                            {
+                                "value": "0"
+                            }
+                        ]
+                    },
+                    {
+                        "seriesName": "Exibido",
+                        "data": [
+                            {
+                                "value": "8000"
+                            },
+                            {
+                                "value": "13000"
+                            },
+                            {
+                                "value": "19000"
+                            },
+                            {
+                                "value": "37000"
+                            },
+                            {
+                                "value": "50000"
+                            },
+                            {
+                                "value": "58000"
+                            },
+                            {
+                                "value": "72000"
+                            },
+                            {
+                                "value": "92000"
+                            },
+                            {
+                                "value": ""
+                            },
+                            {
+                                "value": ""
+                            },
+                            {
+                                "value": ""
+                            },
+                            {
+                                "value": ""
+                            }
+                        ]
+                    },
+                    {
+                        "seriesName": "Meta",
+                        "parentYAxis": "P",
+                        "renderAs": "line",
+                        "showYAxisValues": '0',
+                        "showValues": "0",
+                        "data": [
+                            {
+                                "value": "16000"
+                            },
+                            {
+                                "value": "32000"
+                            },
+                            {
+                                "value": "48000"
+                            },
+                            {
+                                "value": "64000"
+                            },
+                            {
+                                "value": "80000"
+                            },
+                            {
+                                "value": "96000"
+                            },
+                            {
+                                "value": "112000"
+                            },
+                            {
+                                "value": "128000"
+                            },
+                            {
+                                "value": "144000"
+                            },
+                            {
+                                "value": "160000"
+                            },
+                            {
+                                "value": "176000"
+                            },
+                            {
+                                "value": "192000"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        })
+        charts.fatExMetaAcum.render();
+    };
+
+
     return charts;
 
-})()
-
-
-
-
+})();
 
