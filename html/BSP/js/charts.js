@@ -17,6 +17,7 @@ charts = (function () {
         charts.initgaugeMetaAcum();
         charts.initfatExMeta();
         charts.initfatExMetaAcum();
+        charts.inithistoricCross();
     }
     charts.chart1 = null;
     charts.initChart1 = function () {
@@ -407,12 +408,38 @@ charts = (function () {
 
 
     charts.fatExMeta = null;
-    charts.initfatExMeta = function () {
+    charts.initfatExMeta = function (target, showvalues, h, dataset, colors) {
+        if (!target)target = 'fatExMeta';
+        if (!showvalues)showvalues = '0';
+        if (!h)h = '150';
+        if (!dataset) {
+            dataset = [
+                {
+                    "seriesName": "Faturamento",
+                    "data": brazilStates.getRamdonQty(16000, 30000, 12)
+                },
+                {
+                    "seriesName": "Exibido",
+                    "data": brazilStates.getRamdonQty(15000, 30000, 12)
+                },
+                {
+                    "seriesName": "Meta",
+                    "parentYAxis": "P",
+                    "renderAs": "line",
+                    "showYAxisValues": '0',
+                    "showValues": "0",
+                    "data": brazilStates.getRamdonQty(25000, 25000, 12)
+
+                }
+            ]
+        }
+
+        if (!colors)colors = "#4b77be,#8775a7,#35aa47,#6baa01,#583e78";
         charts.fatExMeta = new FusionCharts({
             type: 'mscombidy2d',
-            renderAt: 'fatExMeta',
+            renderAt: target,
             width: '100%',
-            height: '150',
+            height: h,
             dataFormat: 'json',
 
             dataSource: {
@@ -428,9 +455,9 @@ charts = (function () {
                     "pYAxisMaxValue": "30000",
                     "showYAxisValues": '1',
                     'showLegend': '0',
-
+                    "showvalues": showvalues,
                     "theme": "fint",
-                    "palettecolors": "#4b77be,#8775a7,#35aa47,#6baa01,#583e78"
+                    "palettecolors": colors
                 },
                 "categories": [
                     {
@@ -474,135 +501,7 @@ charts = (function () {
                         ]
                     }
                 ],
-                "dataset": [
-                    {
-                        "seriesName": "Faturamento",
-                        "data": [
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "20000"
-                            },
-                            {
-                                "value": "18000"
-                            },
-                            {
-                                "value": "19000"
-                            },
-                            {
-                                "value": "15000"
-                            },
-                            {
-                                "value": "21000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "20000"
-                            },
-                            {
-                                "value": "17000"
-                            },
-                            {
-                                "value": "22000"
-                            },
-                            {
-                                "value": "19000"
-                            },
-                            {
-                                "value": "23000"
-                            }
-                        ]
-                    },
-                    {
-                        "seriesName": "Exibido",
-                        "data": [
-                            {
-                                "value": "8000"
-                            },
-                            {
-                                "value": "5000"
-                            },
-                            {
-                                "value": "6000"
-                            },
-                            {
-                                "value": "18000"
-                            },
-                            {
-                                "value": "13000"
-                            },
-                            {
-                                "value": "2000"
-                            },
-                            {
-                                "value": "14000"
-                            },
-                            {
-                                "value": "20000"
-                            },
-                            {
-                                "value": "10000"
-                            },
-                            {
-                                "value": "2000"
-                            },
-                            {
-                                "value": "14000"
-                            },
-                            {
-                                "value": "19000"
-                            }
-                        ]
-                    },
-                    {
-                        "seriesName": "Meta",
-                        "parentYAxis": "P",
-                        "renderAs": "line",
-                        "showYAxisValues": '0',
-                        "showValues": "0",
-                        "data": [
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "16000"
-                            }
-                        ]
-                    }
-                ]
+                "dataset": dataset
             }
 
         })
@@ -813,8 +712,211 @@ charts = (function () {
         charts.fatExMetaAcum.render();
     };
 
+    charts.historicCross = null;
+    charts.inithistoricCross = function (target, showvalues, h, dataset) {
 
+        if (!target)target = 'historicCross';
+        if (!showvalues)showvalues = '0';
+        if (!h)h = '200';
+        if (!dataset) {
+            dataset = [
+                {
+                    "seriesname": "2014",
+                    "data": brazilStates.getRamdonQty(13000, 29000, 9)
+                },
+                {
+                    "seriesname": "2013",
+                    "data": brazilStates.getRamdonQty(10000, 25000, 12)
+                }
+            ]
+        }
+
+
+        charts.historicCross = new FusionCharts({
+            //  id: "stockRealTimeChart",
+            type: 'msline',
+            renderAt: target,
+            width: '100%',
+            height: h,
+            dataFormat: 'json',
+            dataSource: {
+
+                "chart": { "palettecolors": "#d91e18,#8775a7,#35aa47,#6baa01,#583e78",
+                    "yaxismaxvalue": "100",
+                    "bgcolor": "bbbbbb, dddddd",
+                    "bgalpha": "100",
+                    "basefontcolor": "333333",
+                    "canvasbgalpha": "0",
+                    "canvasbordercolor": "FFFFFF",
+                    "divlinecolor": "FFFFFF",
+                    "divlinealpha": "100",
+                    "numvdivlines": "10",
+                    "vdivlineisdashed": "1",
+                    "showalternatevgridcolor": "1",
+                    // "linecolor": "BBDA00",
+                    //"anchorradius": "2",
+                    //"anchorbgcolor": "#d91e18,#8775a7,#35aa47,#6baa01,#583e78",
+                    // "anchorbordercolor": "FFFFFF",
+                    // "anchorborderthickness": "1",
+                    "showvalues": showvalues,
+//                    "numbersuffix": "",
+                    "tooltipbgcolor": "dddddd",
+                    "tooltipbordercolor": "333333",
+                    "alternatehgridalpha": "5",
+                    "labeldisplay": "ROTATE",
+                    "canvaspadding": "10",
+                    "showborder": "0"
+                },
+                "categories": [
+                    {
+                        "category": [
+                            {
+                                "label": "Jan"
+                            },
+                            {
+                                "label": "Feb"
+                            },
+                            {
+                                "label": "Mar"
+                            },
+                            {
+                                "label": "Apr"
+                            },
+                            {
+                                "label": "May"
+                            },
+                            {
+                                "label": "Jun"
+                            },
+                            {
+                                "label": "Jul"
+                            },
+                            {
+                                "label": "Aug"
+                            },
+                            {
+                                "label": "Sep"
+                            },
+                            {
+                                "label": "Oct"
+                            },
+                            {
+                                "label": "Nov"
+                            },
+                            {
+                                "label": "Dec"
+                            }
+                        ]
+                    }
+                ],
+                "dataset": dataset,
+                "trendlines": [
+                    {
+                        "line": [
+                            {
+                                "startvalue": "15000",
+                                "endvalue": "20000",
+                                "istrendzone": "1",
+                                "valueonright": "1",
+                                "color": "fda813",
+                                "displayvalue": "",
+                                "showontop": "0",
+
+                                "thickness": "1"
+                            },
+                            {
+                                "startvalue": "25000",
+                                "endvalue": "30000",
+                                "istrendzone": "1",
+                                "valueonright": "1",
+                                "color": "35aa47",
+                                "displayvalue": "",
+                                "showontop": "0",
+                                "thickness": "1"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+
+        });
+        charts.historicCross.render();
+    }
+
+    charts.led = null
+    charts.initLed = function (target) {
+        console.log( target)
+        charts.led = new FusionCharts({
+            "type": "vled",
+            "renderAt": target,
+            "width": "50",
+            "height": "150",
+            "dataFormat": "json",
+            "dataSource": {
+                "chart": {
+                    "caption": "Fuel Level Indicator",
+                    "lowerLimit": "0",
+                    "upperLimit": "100",
+                    "lowerLimitDisplay": "Empty",
+                    "upperLimitDisplay": "Full",
+                    "numberSuffix": "%",
+                    "valueFontSize": "12",
+                    "showhovereffect": "1",
+                    "origW": "400",
+                    "origH": "150",
+                    "ledSize": "3",
+                    "ledGap": "2",
+                    "manageResize": "1",
+                    "theme": "fint"
+                },
+                "annotations": {
+                    "showbelow": "1",
+                    "groups": [
+                        {
+                            "id": "indicator",
+                            "items": [
+                                {
+                                    "id": "bgRectAngle",
+                                    "type": "rectangle",
+                                    "alpha": "90",
+                                    "radius": "1",
+                                    "fillColor": "#6baa01",
+                                    "x": "$gaugeCenterX - 20",
+                                    "tox": "$gaugeCenterX + 20",
+                                    "y": "$gaugeEndY + 25",
+                                    "toy": "$gaugeEndY + 45"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "colorRange": {
+                    "color": [
+                        {
+                            "minValue": "0",
+                            "maxValue": "45",
+                            "code": "#e44a00"
+                        },
+                        {
+                            "minValue": "45",
+                            "maxValue": "75",
+                            "code": "#f8bd19"
+                        },
+                        {
+                            "minValue": "75",
+                            "maxValue": "100",
+                            "code": "#6baa01"
+                        }
+                    ]
+                },
+                "value": "92"
+            },
+            "events": {}
+        });
+
+        charts.led.render();
+    }
     return charts;
 
 })();
-

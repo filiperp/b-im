@@ -11,6 +11,24 @@ brazilStates = (function () {
 
     }
 
+    brazilStates.pracas = [
+        'São Paulo',
+        'Taubaté',
+        'Campinas',
+        'Curitiba',
+        'Porto Alegre',
+        'Rio de Janeiro',
+        'Barra MAnsa',
+        'Belo Horizonte',
+        'Triângulo',
+        'Brasília',
+        'Palmas',
+        'Manaus',
+        'Natal',
+        'Salvador'
+
+    ]
+
     brazilStates.states = [
         {originalID: '007', id: '007', shortLabel: 'DF', label: 'Distrito Federal'},
         {originalID: '019', id: '019', shortLabel: 'RJ', label: 'Rio de Janeiro'},
@@ -50,6 +68,18 @@ brazilStates = (function () {
         for (var i = 0; i < brazilStates.states.length; i++) {
             var state = brazilStates.states[i];
             res.push({id: state.id, value: parseInt(min + ((max - min) * Math.random()))});
+
+        }
+        return res;
+    }
+
+    brazilStates.getRamdonQty = function(min, max, qty){
+        "use strict";
+        var res =[];
+
+        for (var i = 0; i < qty; i++) {
+            var state = {value:parseInt(min + ((max - min) * Math.random()))};
+            res.push(state);
 
         }
         return res;
