@@ -9,10 +9,10 @@ app = (function () {
     app.init = function () {
         FusionCharts.ready(function () {
             charts.initAll();
-            charts.initLed('uhull')
+           // charts.initLed('uhull')
         });
 
-
+        TilesController.init();
 
         $('#demo_1').click(function(){
             $("#myModal").modal({                    // wire up the actual modal functionality and show the dialog

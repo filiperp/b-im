@@ -18,6 +18,7 @@ charts = (function () {
         charts.initfatExMeta();
         charts.initfatExMetaAcum();
         charts.inithistoricCross();
+        charts.initBars();
     }
     charts.chart1 = null;
     charts.initChart1 = function () {
@@ -420,6 +421,7 @@ charts = (function () {
                 },
                 {
                     "seriesName": "Exibido",
+
                     "data": brazilStates.getRamdonQty(15000, 30000, 12)
                 },
                 {
@@ -446,8 +448,8 @@ charts = (function () {
                 "chart": {
                     "caption": "",
                     "subCaption": "",
-                    "xAxisname": "Mês",
-                    "pYAxisName": "Fat.",
+                   // "xAxisname": "Mês",
+                   // "pYAxisName": "Fat.",
                     "sYAxisName": "",
                     "numberPrefix": "$",
                     "sNumberSuffix": "",
@@ -522,8 +524,8 @@ charts = (function () {
                 "chart": {
                     "caption": "",
                     "subCaption": "",
-                    "xAxisname": "Mês",
-                    "pYAxisName": "Fat.",
+                  //  "xAxisname": "Mês",
+                  //  "pYAxisName": "Fat.",
                     "sYAxisName": "",
                     "numberPrefix": "$",
                     "sNumberSuffix": "",
@@ -916,7 +918,88 @@ charts = (function () {
         });
 
         charts.led.render();
+
     }
+
+
+    charts.bar = null;
+    charts.initBars = function(target){
+
+        if(!target) target = 'estqouePanel';
+
+        charts.bar= new FusionCharts({
+            "type": "bar2d",
+            "renderAt": target,
+            "width": "100%",
+            "height": "400",
+            "dataFormat": "json",
+            "dataSource": {
+                "chart": {
+                   // "caption": "Top 5 Stores by Sales",
+                  //  "subCaption": "Last month",
+                  //  "yAxisName": "Sales (In USD)",
+                    "numberSuffix": "min",
+                    "paletteColors": "#0075c2",
+                    "bgColor": "#ffffff",
+                    "showBorder": "0",
+                    "showCanvasBorder": "0",
+                    "usePlotGradientColor": "0",
+                    "plotBorderAlpha": "10",
+                    "placeValuesInside": "1",
+                    "valueFontColor": "#ffffff",
+                    "showAxisLines": "1",
+                    "axisLineAlpha": "25",
+                    "divLineAlpha": "10",
+                    "alignCaptionWithCanvas": "0",
+                    "showAlternateVGridColor": "0",
+                    "captionFontSize": "14",
+                    "subcaptionFontSize": "14",
+                    "subcaptionFontBold": "0",
+                    "toolTipColor": "#ffffff",
+                    "toolTipBorderThickness": "0",
+                    "toolTipBgColor": "#000000",
+                    "toolTipBgAlpha": "80",
+                    "toolTipBorderRadius": "2",
+                    "toolTipPadding": "5"
+                },
+                "data": [
+                    {
+                        "label": "Jr. Band",
+                        "value": "800"
+                    },
+                    {
+                        "label": "Pânico",
+                        "value": "750"
+                    },
+                    {
+                        "label": "A Liga",
+                        "value": "700"
+                    },
+                    {
+                        "label": "CQC",
+                        "value": "650"
+                    },
+                    {
+                        "label": "MasterChef",
+                        "value": "550"
+                    },
+                    {
+                        "label": "Cidade Alerta",
+                        "value": "500"
+                    },
+                    {
+                        "label": "Agora Tarde",
+                        "value": "450"
+                    }, {
+                        "label": "Polícia 24h",
+                        "value": "300"
+                    }
+                ]
+            }
+        });
+        charts.bar.render();
+    }
+
     return charts;
 
 })();
