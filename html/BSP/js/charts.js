@@ -12,7 +12,7 @@ charts = (function () {
 
     charts.initAll = function () {
         charts.initChart1();
-        charts.initChartBrasilExibido();
+
         charts.initgaugeMeta();
         charts.initgaugeMetaAcum();
         charts.initfatExMeta();
@@ -21,7 +21,8 @@ charts = (function () {
         charts.initBars();
     }
     charts.chart1 = null;
-    charts.initChart1 = function () {
+    charts.initChart1 = function (data) {
+        if(!data)data= brazilStates.getRandom(30,100);
         charts.chart1 = new FusionCharts({
             type: 'maps/brazil',
             renderAt: 'brasil',
@@ -35,13 +36,14 @@ charts = (function () {
                     //  "caption": "Annual Sales by State",
                     // "subcaption": "Last year",
                     "entityFillHoverColor": "#cccccc",
-                    "numberScaleValue": "1,1000,1000",
-                    "numberScaleUnit": "K,M,B",
-                    "numberPrefix": "$",
+                   // "numberScaleValue": "1,1000,1000",
+                   // "numberScaleUnit": "K,M,B",
+                    "numberSuffix": "%",
                     "showLabels": "1",
                     "theme": "fint",
                     "showLegend": '1',
-                    legendPosition: 'BOTTOM'
+                    legendPosition: 'BOTTOM',
+                    legendsuffix: '%'
                 },
 
                 "map": {
@@ -59,24 +61,24 @@ charts = (function () {
 
 
                 "colorRange": {
-                    "minvalue": "30000",
+                    "minvalue": "0",
                     "startlabel": "-",
                     "endlabel": "+",
                     "code": "#e44a00",
                     "gradient": "1",
                     "color": [
                         {
-                            "minvalue": "30000",
+                            "minvalue": "0",
                             "displayvalue": "Average",
                             "code": "#f8bd19"
                         },
                         {
-                            "maxvalue": "90000",
+                            "maxvalue": "100",
                             "code": "#6baa01"
                         }
                     ]
                 },
-                "data": brazilStates.dados1
+                "data": data
 
 
 
@@ -86,71 +88,6 @@ charts = (function () {
         charts.chart1.render();
     };
 
-    charts.chartBrasilExibido = null;
-    charts.initChartBrasilExibido = function () {
-        charts.chartBrasilExibido = new FusionCharts({
-            type: 'maps/brazil',
-            renderAt: 'brasilExibido',
-            width: '100%',
-            height: '400',
-            dataFormat: 'json',
-
-
-            dataSource: {
-                "chart": {
-                    //  "caption": "Annual Sales by State",
-                    // "subcaption": "Last year",
-                    "entityFillHoverColor": "#cccccc",
-                    "numberScaleValue": "1,1000,1000",
-                    "numberScaleUnit": "K,M,B",
-                    "numberPrefix": "$",
-                    "showLabels": "1",
-                    "theme": "fint",
-                    "showLegend": '1',
-                    legendPosition: 'BOTTOM'
-                },
-
-                "map": {
-
-                    "animation": "0",
-                    "showbevel": "0",
-                    "usehovercolor": "1",
-                    "canvasbordercolor": "FFFFFF",
-                    "bordercolor": "FFFFFF",
-                    "connectorcolor": "000000",
-                    "fillalpha": "10",
-                    "hovercolor": "CCCCCC",
-
-                },
-
-
-                "colorRange": {
-                    "minvalue": "30000",
-                    "startlabel": "-",
-                    "endlabel": "+",
-                    "code": "#e44a00",
-                    "gradient": "1",
-                    "color": [
-                        {
-                            "minvalue": "30000",
-                            "displayvalue": "Average",
-                            "code": "#f8bd19"
-                        },
-                        {
-                            "maxvalue": "90000",
-                            "code": "#6baa01"
-                        }
-                    ]
-                },
-                "data": brazilStates.dados1
-
-
-
-
-            }
-        });
-        charts.chartBrasilExibido.render();
-    };
 
 
     charts.gaugeMeta = null

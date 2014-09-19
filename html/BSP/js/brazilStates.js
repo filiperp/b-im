@@ -85,7 +85,6 @@ brazilStates = (function () {
         return res;
     }
 
-    brazilStates.dados1=[{"id":"007","value":65084},{"id":"019","value":64639},{"id":"008","value":55598},{"id":"026","value":68159},{"id":"002","value":74251},{"id":"017","value":76782},{"id":"015","value":74781},{"id":"004","value":36103},{"id":"023","value":82027},{"id":"014","value":44844},{"id":"003","value":81321},{"id":"010","value":59949},{"id":"018","value":41066},{"id":"006","value":75926},{"id":"020","value":43510},{"id":"005","value":76809},{"id":"027","value":61940},{"id":"011","value":75504},{"id":"022","value":35669},{"id":"001","value":58537},{"id":"013","value":84343},{"id":"025","value":81560},{"id":"012","value":41526},{"id":"016","value":55367},{"id":"024","value":79504},{"id":"021","value":81932},{"id":"009","value":84055}];
     return brazilStates;
 
 })();

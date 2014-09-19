@@ -11,7 +11,11 @@ app = (function () {
             charts.initAll();
            // charts.initLed('uhull')
         });
-
+         $('.brasil_thermal').click(function(){
+             $('#brasil').html('aguarde carregando...');
+             $('#brasilTitle').html($(this).find('a').html())
+             setTimeout(charts.initChart1,1500)
+         });
         TilesController.init();
 
         $('#demo_1').click(function(){

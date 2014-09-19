@@ -51,7 +51,7 @@
 <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
 <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-<body class="" style="overflow: hidden; ">
+<body class="" style="overflow: scroll; ">
 
 <div class="row" style="height: 83px;background-color: #fafafa; margin-bottom: 27px;">
 
@@ -65,7 +65,36 @@
         <div class="portlet box blue-steel">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-globe"></i>Total Faturado
+                    <i class="fa fa-globe"></i><span id="brasilTitle">Total Faturado</span>
+                </div>
+                <div class="actions">
+                    <div class="btn-group">
+                        <a class="btn  btn-sm" href="#"  style="color:#fff" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            Mais <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li class="brasil_thermal">
+                                <a href="#">
+                                    Faturado Acumulado</a>
+                            </li>
+                            <li class="brasil_thermal">
+                                <a href="#">
+                                    Exibido  Acumulado</a>
+                            </li>
+                            <li class="brasil_thermal">
+                            </li>
+                            <li class="brasil_thermal">
+                                <a href="#">
+                                    Faturado Mensal </a>
+                            </li>
+                            <li class="brasil_thermal">
+                                <a href="#">
+                                   Exibido Mensal</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="portlet-body">
@@ -158,18 +187,7 @@
 
 <div class="row">
 
-    <div class="col-sm-3">
-        <div class="portlet box purple-plum">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-globe"></i>Total Exibido
-                </div>
-            </div>
-            <div class="portlet-body">
-                <div id="brasilExibido">carregando...</div>
-            </div>
-        </div>
-    </div>
+
 
     <div class="col-sm-2">
         <div class="portlet box grey-gallery">
@@ -203,7 +221,7 @@
     </div>
 
 
-    <div class="col-sm-5">
+    <div class="col-sm-8">
         <div class="portlet box grey-gallery">
             <div class="portlet-title">
                 <div class="caption" id="fatExMeta_label">
