@@ -79,7 +79,7 @@ app = (function () {
 
         $('#tabela2').click(function(){
 
-            $("#title_chart").html( $('#fatExMeta_label').html());
+            $("#title_chart").html( $('#fatExMetaAcu_label').html());
             $("#myModal3").modal({                    // wire up the actual modal functionality and show the dialog
                 "backdrop"  : "static",
                 "keyboard"  : true,
