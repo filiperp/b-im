@@ -16,9 +16,33 @@ charts = (function () {
         charts.initgaugeMeta();
         charts.initgaugeMetaAcum();
         charts.initfatExMeta();
-        charts.initfatExMetaAcum();
+
+
+
         charts.inithistoricCross();
         charts.initBars();
+
+        charts.initfatExMeta('fatExMetaAcum','0',null,
+            [
+                {
+                    "seriesName": "2013: ",
+                    "data": brazilStates.getCumulativeRamdonQty(16000, 29000, 12)
+                },
+                {
+                    "seriesName": "2014: ",
+
+                    "data": brazilStates.getCumulativeRamdonQty(15000, 30000, 9)
+                },
+                {
+                    "seriesName": "Meta",
+                    "parentYAxis": "P",
+                    "renderAs": "line",
+                    "showYAxisValues": '0',
+                    "showValues": "0",
+                    "data": brazilStates.getCumulativeRamdonQty(23000, 27000, 12)
+
+                }
+            ])
     }
     charts.chart1 = null;
     charts.initChart1 = function (data) {
@@ -376,9 +400,9 @@ charts = (function () {
                     "ledborderthickness": "4",
                     "showborder": "0",
                     "showToolTip": '1',
-                    "toolTipBorderColor": "#FFFFFF",
-                    "toolTipBgColor": "#666666",
-                    "toolTipBgAlpha": "80",
+                    "toolTipBorderColor": "#111111",
+
+                    "toolTipBgAlpha": "95",
                 },
                 "colorrange": {
                     "color": [
@@ -407,6 +431,7 @@ charts = (function () {
 
     charts.fatExMeta = null;
     charts.initfatExMeta = function (target, showvalues, h, dataset, colors) {
+       // console.log(target,dataset)
         if (!target)target = 'fatExMeta';
         if (!showvalues)showvalues = '0';
         if (!h)h = '150';
@@ -414,12 +439,12 @@ charts = (function () {
             dataset = [
                 {
                     "seriesName": "2013: ",
-                    "data": brazilStates.getRamdonQty(16000, 30000, 12)
+                    "data": brazilStates.getRamdonQty(16000, 29000, 12)
                 },
                 {
                     "seriesName": "2014: ",
 
-                    "data": brazilStates.getRamdonQty(15000, 30000, 12)
+                    "data": brazilStates.getRamdonQty(20000, 30000, 9)
                 },
                 {
                     "seriesName": "Meta",
@@ -430,7 +455,39 @@ charts = (function () {
                     "data": brazilStates.getRamdonQty(23000, 27000, 12)
 
                 }
-            ]
+            ];
+
+
+
+
+
+
+
+        }
+
+        //console.log(target,dataset.length)
+        if(dataset.length==3){
+            for (var i = 0; i < dataset[0].data.length; i++) {
+                console.log(dataset[0].data[i])
+                var relMEta =((((dataset[1].data[i]?dataset[1].data[i].value:0)/dataset[2].data[i].value)*100)-100);
+                var corMEta=  relMEta<0 ?'#ff0000 !important': '#008800 !important';
+
+                var rel2013= ((((dataset[1].data[i]?dataset[1].data[i].value:0)/dataset[0].data[i].value)*100)-100).toFixed(2);
+                var cor2013 =   rel2013<0 ?'#ff0000 !important': '#008800 !important';
+                dataset[0].data[i].tooltext =
+                    '<span style="font-size: 20px;line-height: 20px;color:#333333"> Mês: '+brazilStates.mes[i] +
+                    ' 2014{br}Relação Meta:<b style="color:'+corMEta+'"> ' +relMEta.toFixed(2)+
+                    '%</b>{br}Relação 2013:<b style="color:'+cor2013+'"> '+rel2013 + '%</b></span>';
+
+
+                if( dataset[1].data[i]!=undefined)
+                    dataset[1].data[i].tooltext =dataset[0].data[i].tooltext;
+
+                if( dataset[2].data[i]!=undefined)
+                    dataset[2].data[i].tooltext = '<span style="font-size: 20px;line-height: 20px;color:#333333"> Meta para : '+brazilStates.mes[i]+
+                        '{br} '+  accounting.formatMoney( dataset[2].data[i].value , "R$", 2, ".", ",")+ '</span>';
+
+            }
         }
 
         if (!colors)colors = "#4b77be,#8775a7,#35aa47,#6baa01,#583e78";
@@ -457,7 +514,9 @@ charts = (function () {
                     "showvalues": showvalues,
                     "theme": "fint",
                     "palettecolors": colors,
-                    "labelDisplay": "wrap"
+                    "labelDisplay": "wrap",
+                    'toolTipBgColor': 'ffffff',
+                    'toolTipBorderColor': '000000',
                 },
                 "categories": [
                     {
@@ -508,209 +567,6 @@ charts = (function () {
         charts.fatExMeta.render();
     };
 
-
-    charts.fatExMetaAcum = null;
-    charts.initfatExMetaAcum = function () {
-        charts.fatExMetaAcum = new FusionCharts({
-            type: 'mscombidy2d',
-            renderAt: 'fatExMetaAcum',
-            width: '100%',
-            height: '150',
-            dataFormat: 'json',
-
-            dataSource: {
-                "chart": {
-                    "caption": "",
-                    "subCaption": "",
-                  //  "xAxisname": "Mês",
-                  //  "pYAxisName": "Fat.",
-                    "sYAxisName": "",
-                    "numberPrefix": "$",
-                    "sNumberSuffix": "",
-                    "sYAxisMaxValue": "200000",
-                    "pYAxisMaxValue": "200000",
-                    "showYAxisValues": '1',
-                    'showLegend': '0',
-
-                    "theme": "fint",
-                    "palettecolors": "#4b77be,#8775a7,#35aa47,#6baa01,#583e78"
-                },
-                "categories": [
-                    {
-                        "category": [
-                            {
-                                "label": "Jan"
-                            },
-                            {
-                                "label": "Fev"
-                            },
-                            {
-                                "label": "Mar"
-                            },
-                            {
-                                "label": "Abr"
-                            },
-                            {
-                                "label": "Mai"
-                            },
-                            {
-                                "label": "Jun"
-                            },
-                            {
-                                "label": "Jul"
-                            },
-                            {
-                                "label": "Ago"
-                            },
-                            {
-                                "label": "Set"
-                            },
-                            {
-                                "label": "Out"
-                            },
-                            {
-                                "label": "Nov"
-                            },
-                            {
-                                "label": "Dez"
-                            }
-                        ]
-                    }
-                ],
-                "dataset": [
-                    {
-                        "seriesName": "Faturamento",
-                        "data": [
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "36000"
-                            },
-                            {
-                                "value": "54000"
-                            },
-                            {
-                                "value": "73000"
-                            },
-                            {
-                                "value": "88000"
-                            },
-                            {
-                                "value": "109000"
-                            },
-                            {
-                                "value": "125000"
-                            },
-                            {
-                                "value": "145000"
-                            },
-                            {
-                                "value": "0"
-                            },
-                            {
-                                "value": "0"
-                            },
-                            {
-                                "value": "0"
-                            },
-                            {
-                                "value": "0"
-                            }
-                        ]
-                    },
-                    {
-                        "seriesName": "Exibido",
-                        "data": [
-                            {
-                                "value": "8000"
-                            },
-                            {
-                                "value": "13000"
-                            },
-                            {
-                                "value": "19000"
-                            },
-                            {
-                                "value": "37000"
-                            },
-                            {
-                                "value": "50000"
-                            },
-                            {
-                                "value": "58000"
-                            },
-                            {
-                                "value": "72000"
-                            },
-                            {
-                                "value": "92000"
-                            },
-                            {
-                                "value": ""
-                            },
-                            {
-                                "value": ""
-                            },
-                            {
-                                "value": ""
-                            },
-                            {
-                                "value": ""
-                            }
-                        ]
-                    },
-                    {
-                        "seriesName": "Meta",
-                        "parentYAxis": "P",
-                        "renderAs": "line",
-                        "showYAxisValues": '0',
-                        "showValues": "0",
-                        "data": [
-                            {
-                                "value": "16000"
-                            },
-                            {
-                                "value": "32000"
-                            },
-                            {
-                                "value": "48000"
-                            },
-                            {
-                                "value": "64000"
-                            },
-                            {
-                                "value": "80000"
-                            },
-                            {
-                                "value": "96000"
-                            },
-                            {
-                                "value": "112000"
-                            },
-                            {
-                                "value": "128000"
-                            },
-                            {
-                                "value": "144000"
-                            },
-                            {
-                                "value": "160000"
-                            },
-                            {
-                                "value": "176000"
-                            },
-                            {
-                                "value": "192000"
-                            }
-                        ]
-                    }
-                ]
-            }
-
-        })
-        charts.fatExMetaAcum.render();
-    };
 
     charts.historicCross = null;
     charts.inithistoricCross = function (target, showvalues, h, dataset) {

@@ -28,6 +28,21 @@ brazilStates = (function () {
         'Salvador'
 
     ]
+    brazilStates.mes = [
+
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro'
+    ]
 
     brazilStates.states = [
         {originalID: '007', id: '007', shortLabel: 'DF', label: 'Distrito Federal'},
@@ -67,7 +82,7 @@ brazilStates = (function () {
 
         for (var i = 0; i < brazilStates.states.length; i++) {
             var state = brazilStates.states[i];
-            res.push({id: state.id, value: parseInt(min + ((max - min) * Math.random()))});
+            res.push({id: state.id, value:  brazilStates.roundToTwo(min + ((max - min) * Math.random()))});
 
         }
         return res;
@@ -78,13 +93,33 @@ brazilStates = (function () {
         var res =[];
 
         for (var i = 0; i < qty; i++) {
-            var state = {value:parseInt(min + ((max - min) * Math.random()))};
+            var state = {value: brazilStates.roundToTwo(min + ((max - min) * Math.random()))};
+
+           // state.tooltext ="Quarter 1{br}Total Sale: $195K{br}Rank: 1";
+            res.push(state);
+
+        }
+        return res;
+    }
+    brazilStates.getCumulativeRamdonQty = function(min, max, qty){
+        "use strict";
+        var res =[];
+         var cumul= 0 ;
+        for (var i = 0; i < qty; i++) {
+            cumul+= brazilStates.roundToTwo(min + ((max - min) * Math.random()));
+
+            var state = {value:cumul};
+
+            // state.tooltext ="Quarter 1{br}Total Sale: $195K{br}Rank: 1";
             res.push(state);
 
         }
         return res;
     }
 
+    brazilStates.roundToTwo = function(num) {
+        return +(Math.round(num + "e+2")  + "e-2");
+    }
     return brazilStates;
 
 })();
