@@ -18,11 +18,35 @@ TilesController = (function () {
             ts+=TilesController.createTile(praca);
         }
 
-        console.log('ts')
-        console.log(ts)
+
         $('#tilesContainer')
             .html('')
-            .html(ts)
+            .html(ts);
+
+        $('.tile_content_item').each(function(k,v){
+            $(v).attr('id','tiles_'+parseInt(k))
+            charts.initgaugePraca('tiles_'+parseInt(k))
+        });
+
+
+        $('.pracas_led').click(function(){
+
+            $('#praca_title').html($(this).find('a').html())
+
+            $('.tile_content_item').html("aguarde.")
+            setTimeout(function(){
+                $('.tile_content_item').each(function(k,v){
+                    $(v).attr('id','tiles_'+parseInt(k))
+                    charts.initgaugePraca('tiles_'+parseInt(k))
+                });
+
+            },800)
+
+
+
+        });
+
+
 
         $('.tileClick').click(function(){
 
@@ -39,7 +63,7 @@ TilesController = (function () {
 
 
 
-    TilesController.createTile = function ($var) {
+    TilesController.createTile = function ($var ) {
         var f= 8000+ ( Math.random()*6000);
         var fS = accounting.formatMoney(f, "R$", 2, ".", ",");
         var e= 8000+ ( Math.random()*6000);
@@ -49,11 +73,12 @@ TilesController = (function () {
         //{ symbol: "GBP",  format: "%v %s" }
 
         var res=
-           ' <div class="tile bg-grey tileClick" style="width: 123px !important; height: 192px !important;">                '+
+           ' <div class="tile bg-grey tileClick" style="width: 120px !important; height: 192px !important;">                '+
            '     <div class="tile-body" style="color:#000000; text-align: center; padding:0px">     '+
-           ' <div class="'+TilesController.getclass(f)+'"> Faturado:<br>'+fS+'<br></div>                  '+
-           ' <div class="'+TilesController.getclass(e)+'"> Exibido:<br>'+eS+'<br></div>                   '+
-           ' <div class="'+TilesController.getclass2(d)+'"> Desconto M.:<br>'+dS+'<br></div>                   '+
+           '    <div   class="tile_content_item"  style="width: 112px;">  </div>'+
+        //   ' <div class="'+TilesController.getclass(f)+'"> Faturado:<br>'+fS+'<br></div>                  '+
+          // ' <div class="'+TilesController.getclass(e)+'"> Exibido:<br>'+eS+'<br></div>                   '+
+          // ' <div class="'+TilesController.getclass2(d)+'"> Desconto M.:<br>'+dS+'<br></div>                   '+
            ' </div>                                                                    '+
            ' <div class="tile-object">                                                 '+
            '     <div class="name"  style="color:#000000;">                            '+
@@ -64,7 +89,6 @@ TilesController = (function () {
            '     </div>                                                                '+
            ' </div>                                                                    '+
            ' </div>                                                                    ';
-
 
 
 
@@ -312,31 +336,19 @@ TilesController = (function () {
                     {
                         "category": [
                             {
-                                "label": "Set"
-                            },
-                            {
-                                "label": "Out"
-                            },
-                            {
-                                "label": "Nov"
-                            },
-                            {
-                                "label": "Dez"
-                            },
-                            {
                                 "label": "Jan"
                             },
                             {
-                                "label": "Fev"
+                                "label": "Feb"
                             },
                             {
                                 "label": "Mar"
                             },
                             {
-                                "label": "Abr"
+                                "label": "Apr"
                             },
                             {
-                                "label": "Mai"
+                                "label": "May"
                             },
                             {
                                 "label": "Jun"
@@ -345,7 +357,19 @@ TilesController = (function () {
                                 "label": "Jul"
                             },
                             {
-                                "label": "Ago"
+                                "label": "Aug"
+                            },
+                            {
+                                "label": "Sep"
+                            },
+                            {
+                                "label": "Oct"
+                            },
+                            {
+                                "label": "Nov"
+                            },
+                            {
+                                "label": "Dec"
                             }
                         ]
                     }

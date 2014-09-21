@@ -29,74 +29,14 @@ app = (function () {
             charts.inithistoricCross('detalhe_fatExMetaExibAcum','1','400');
         });
 
-        $('#fatexmeta_geral').click(function(){
 
-            $('#fatExMeta_label').html('Mensal: <span class="label  bg-blue-steel">Faturado</span>X <span class="label bg-purple-plum">Exibido</span>X<span class="label bg-green">Meta</span>')
-            charts.initfatExMeta('fatExMeta', '0',null,[
-                        {
-                            "seriesName": "Faturamento",
-                            "data": brazilStates.getRamdonQty(16000,30000,12)
-                        },
-                        {
-                            "seriesName": "Exibido",
-                            "data":  brazilStates.getRamdonQty(15000,30000,12)
-                        },
-                        {
-                            "seriesName": "Meta",
-                            "parentYAxis": "P",
-                            "renderAs": "line",
-                            "showYAxisValues": '0',
-                            "showValues": "0",
-                            "data":  brazilStates.getRamdonQty(25000,25000,12)
+        $('.fat_ex_mens').click(function(){
+            $('#fatExMeta_label').html('Mensal:'+ $(this).find('a').html())
 
-                        }
-                    ]);
+            charts.initfatExMeta('fatExMeta', '0',null,null,null);
 
         })
-        $('#fatexmeta_fat').click(function(){
-            $('#fatExMeta_label').html('Mensal: <span class="label  bg-blue-steel">Faturado</span>X<span class="label bg-green">Meta</span>')
 
-            charts.initfatExMeta('fatExMeta', '0',null,[
-                {
-                    "seriesName": "Faturamento",
-                    "data": brazilStates.getRamdonQty(16000,30000,12)
-                },
-
-                {
-                    "seriesName": "Meta",
-                    "parentYAxis": "P",
-                    "renderAs": "line",
-                    "showYAxisValues": '0',
-                    "showValues": "0",
-                    "data":  brazilStates.getRamdonQty(20000,20000,12)
-
-                }
-            ],
-                "#4b77be,#35aa47,#6baa01,#583e78");
-
-        })
-        $('#fatexmeta_ex').click(function(){
-            $('#fatExMeta_label').html('Mensal: <span class="label bg-purple-plum">Exibido</span>X<span class="label bg-green">Meta</span>')
-
-            charts.initfatExMeta('fatExMeta', '0',null,[
-
-                {
-                    "seriesName": "Exibido",
-                    "data":  brazilStates.getRamdonQty(15000,30000,12)
-                },
-                {
-                    "seriesName": "Meta",
-                    "parentYAxis": "P",
-                    "renderAs": "line",
-                    "showYAxisValues": '0',
-                    "showValues": "0",
-                    "data":  brazilStates.getRamdonQty(25000,25000,12)
-
-                }
-            ],
-                "#8775a7,#35aa47,#6baa01,#583e78");
-
-        })
     };
     return app;
 

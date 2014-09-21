@@ -166,11 +166,27 @@
         <div class="portlet box yellow-casablanca">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-calendar"></i>Praças
+                    <i class="fa fa-calendar"></i>Praças: <span id="praca_title">Faturado</span>
                 </div>
                 <div class="actions">
-                    <a href="javascript:;" class="btn btn-sm btn-default easy-pie-chart-reload " id="demo_1">
-                        <i class="fa fa-search"></i> Detalhe </a>
+                    <div class="btn-group">
+                        <a class="btn  btn-sm" href="#"  style="color:#fff" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            Mais <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li class="pracas_led">
+                                <a href="#">
+                                   Faturado</a>
+                            </li>
+                            <li class="pracas_led">
+                                <a href="#">
+                                   Exibido</a>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="portlet-body">
@@ -225,7 +241,7 @@
         <div class="portlet box grey-gallery">
             <div class="portlet-title">
                 <div class="caption" id="fatExMeta_label">
-                    Mensal: <span class="label  bg-blue-steel">Faturado</span>X <span class="label bg-purple-plum">Exibido</span>X<span class="label bg-green">Meta</span>
+                    Mensal: Faturado X Meta
                 </div>
                 <div class="tools">
                     <!--<a href="#portlet-config" data-toggle="modal" class=" config">-->
@@ -239,17 +255,13 @@
                             Mais <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu pull-right">
-                            <li id="fatexmeta_geral">
-                                <a href="#">
-                                    Geral </a>
-                            </li>
-                            <li class="divider">
-                            </li>
-                            <li id="fatexmeta_fat">
+
+
+                            <li  class="fat_ex_mens">
                                 <a href="#">
                                     Faturado X Meta </a>
                             </li>
-                            <li id="fatexmeta_ex">
+                            <li class="fat_ex_mens">
                                 <a href="#">
                                     Exibido X Meta </a>
                             </li>
@@ -268,7 +280,7 @@
         <div class="portlet box grey-gallery">
             <div class="portlet-title">
                 <div class="caption">
-                    Acumuado: <span class="label  bg-blue-steel">Faturado</span>X <span class="label bg-purple-plum">Exibido</span>X<span class="label bg-green">Meta</span>
+                    Acumuado: Exibido X Meta
                 </div>
 
             </div>

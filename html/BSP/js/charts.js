@@ -345,6 +345,66 @@ charts = (function () {
     };
 
 
+
+
+    charts.gaugePraca = null
+    charts.initgaugePraca = function (target) {
+          var val= (85+(Math.random()*70));
+        charts.gaugePraca = new FusionCharts({
+
+            "type": "vled",
+            "renderAt": target,
+            "width": "100%",
+            "height": "150",
+            "dataFormat": "json",
+            "dataSource": {
+                "chart": {
+                    "manageresize": "1",
+                    "upperlimit": "150",
+                    "lowerlimit": "0",
+                    "numbersuffix": "%",
+                    "majortmnumber": "11",
+                    "majortmcolor": "646F8F",
+                    "majortmheight": "9",
+                    "minortmnumber": "2",
+                    "minortmcolor": "646F8F",
+                    "minortmheight": "3",
+                    "majortmthickness": "1",
+                    "decimals": "0",
+                    "ledgap": "0",
+                    "ledsize": "1",
+                    "ledborderthickness": "4",
+                    "showborder": "0",
+                    "showToolTip": '1',
+                    "toolTipBorderColor": "#FFFFFF",
+                    "toolTipBgColor": "#666666",
+                    "toolTipBgAlpha": "80",
+                },
+                "colorrange": {
+                    "color": [
+                        {
+                            "minvalue": "0",
+                            "maxvalue": "80",
+                            "code": "cf0000"
+                        },
+                        {
+                            "minvalue": "80",
+                            "maxvalue": "100",
+                            "code": "ffcc33"
+                        },
+                        {
+                            "minvalue": "100",
+                            "maxvalue": "150",
+                            "code": "99cc00"
+                        }
+                    ]
+                },
+                "value": val
+            }
+        });
+        charts.gaugePraca.render();
+    };
+
     charts.fatExMeta = null;
     charts.initfatExMeta = function (target, showvalues, h, dataset, colors) {
         if (!target)target = 'fatExMeta';
@@ -353,11 +413,11 @@ charts = (function () {
         if (!dataset) {
             dataset = [
                 {
-                    "seriesName": "Faturamento",
+                    "seriesName": "2013: ",
                     "data": brazilStates.getRamdonQty(16000, 30000, 12)
                 },
                 {
-                    "seriesName": "Exibido",
+                    "seriesName": "2014: ",
 
                     "data": brazilStates.getRamdonQty(15000, 30000, 12)
                 },
@@ -367,7 +427,7 @@ charts = (function () {
                     "renderAs": "line",
                     "showYAxisValues": '0',
                     "showValues": "0",
-                    "data": brazilStates.getRamdonQty(25000, 25000, 12)
+                    "data": brazilStates.getRamdonQty(23000, 27000, 12)
 
                 }
             ]
@@ -396,46 +456,47 @@ charts = (function () {
                     'showLegend': '0',
                     "showvalues": showvalues,
                     "theme": "fint",
-                    "palettecolors": colors
+                    "palettecolors": colors,
+                    "labelDisplay": "wrap"
                 },
                 "categories": [
                     {
                         "category": [
                             {
-                                "label": "Set"
+                                "label": "2013 - 2014<br>Jan"
                             },
                             {
-                                "label": "Out"
+                                "label": "2013 - 2014<br>Fev"
                             },
                             {
-                                "label": "Nov"
+                                "label": "2013 - 2014<br>Mar"
                             },
                             {
-                                "label": "Dez"
+                                "label": "2013 - 2014<br>Abr"
                             },
                             {
-                                "label": "Jan"
+                                "label": "2013 - 2014<br>Mai"
                             },
                             {
-                                "label": "Fev"
+                                "label": "2013 - 2014<br>Jun"
                             },
                             {
-                                "label": "Mar"
+                                "label": "2013 - 2014<br>Jul"
                             },
                             {
-                                "label": "Abr"
+                                "label": "2013 - 2014<br>Ago"
                             },
                             {
-                                "label": "Mai"
+                                "label": "2013 - 2014<br>Set"
                             },
                             {
-                                "label": "Jun"
+                                "label": "2013 - 2014<br>Out"
                             },
                             {
-                                "label": "Jul"
+                                "label": "2013 - 2014<br>Nov"
                             },
                             {
-                                "label": "Ago"
+                                "label": "2013 - 2014<br>Dev"
                             }
                         ]
                     }
