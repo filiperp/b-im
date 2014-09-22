@@ -173,7 +173,7 @@
         <div class="row">
             <!-- BEGIN COPYRIGHT -->
             <div class="col-md-6 col-sm-6 padding-top-10">
-                2014 &copy; Grupo Bandeirantes <br>Vice Presidência de Televisão e Comercialização<br>Depto. Inteligência de Mercado
+                2014 &copy; Grupo Bandeirantes <br>Vice Presidência e Comercialização<br>Depto. Inteligência de Mercado
             </div>
             <!-- END COPYRIGHT -->
             <!-- BEGIN PAYMENTS -->
