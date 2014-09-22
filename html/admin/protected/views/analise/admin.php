@@ -67,6 +67,7 @@ $('.search-form form').submit(function(){
                     'columns' => array(
                         'id_analise',
                         'ref_analise',
+                        'tipo_analise',
                         'nome_analise',
                         array(
                             'name' => 'Iamgem',

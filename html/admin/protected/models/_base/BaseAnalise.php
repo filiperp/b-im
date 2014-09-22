@@ -15,6 +15,7 @@
  * @property string $descricao_analise
  * @property string $imagem_analise
  * @property integer $ativo_analise
+ * @property string $tipo_analise
  *
  * @property Tag[] $tags
  * @property Veiculo[] $veiculos
@@ -34,18 +35,18 @@ abstract class BaseAnalise extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'nome_analise';
+		return 'ref_analise';
 	}
 
 	public function rules() {
 		return array(
-			array('ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise', 'required'),
+			array('ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise, tipo_analise', 'required'),
 			array('ativo_analise', 'numerical', 'integerOnly'=>true),
-			array('ref_analise', 'length', 'max'=>45),
+			array('ref_analise, tipo_analise', 'length', 'max'=>45),
 			array('nome_analise', 'length', 'max'=>100),
 			array('descricao_analise', 'length', 'max'=>512),
 			array('imagem_analise', 'length', 'max'=>255),
-			array('id_analise, ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise', 'safe', 'on'=>'search'),
+			array('id_analise, ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise, tipo_analise', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,12 +66,13 @@ abstract class BaseAnalise extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_analise' => Yii::t('app', 'Id'),
-			'ref_analise' => Yii::t('app', 'Ref'),
-			'nome_analise' => Yii::t('app', 'Nome'),
-			'descricao_analise' => Yii::t('app', 'Descricao'),
-			'imagem_analise' => Yii::t('app', 'Imagem'),
-			'ativo_analise' => Yii::t('app', 'Ativo'),
+			'id_analise' => Yii::t('app', 'Id Analise'),
+			'ref_analise' => Yii::t('app', 'Ref Analise'),
+			'nome_analise' => Yii::t('app', 'Nome Analise'),
+			'descricao_analise' => Yii::t('app', 'Descricao Analise'),
+			'imagem_analise' => Yii::t('app', 'Imagem Analise'),
+			'ativo_analise' => Yii::t('app', 'Ativo Analise'),
+			'tipo_analise' => Yii::t('app', 'Tipo Analise'),
 			'tags' => null,
 			'veiculos' => null,
 		);
@@ -85,6 +87,7 @@ abstract class BaseAnalise extends GxActiveRecord {
 		$criteria->compare('descricao_analise', $this->descricao_analise, true);
 		$criteria->compare('imagem_analise', $this->imagem_analise, true);
 		$criteria->compare('ativo_analise', $this->ativo_analise);
+		$criteria->compare('tipo_analise', $this->tipo_analise, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

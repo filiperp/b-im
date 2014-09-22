@@ -53,6 +53,7 @@ $this->menu = array(
                     $viewElements = array(
                         array('id_analise', 45, 'textField'),
                         array('ref_analise', 45, 'textField'),
+                        array('tipo_analise', 45, 'textField'),
                         array('nome_analise', 100, 'textArea'),
                         array('descricao_analise', 512, 'textArea'),
                         array('imagem_analise', 255, 'textArea'),
