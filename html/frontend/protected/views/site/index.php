@@ -51,7 +51,7 @@
                                             'type' => 'POST',
 
                                             'update' => '#container',
-                                            'beforeSend' => 'function(){onClickTag();}'
+                                            'beforeSend' => 'function(){onClickTag("'.$cores[$tag->ref_tag].'");}'
                                         ),
                                         array('id' =>GUID::getGUID()));?>
 

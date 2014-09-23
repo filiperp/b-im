@@ -10,6 +10,20 @@ a:hover {
 .shop-currencies a.current {
   color: #798b97;
 }
+
+.tile-border{
+    border: 2px solid #798b97 !important;
+}
+.simple-text{
+    color:#798b97;
+}
+.tile:hover{
+    background:#798b97 ;
+
+}
+.tile:hover img{
+    border: 2px solid #ddd;
+}
 .header-navigation ul > li.active > a,
 .header-navigation ul > li > a:hover,
 .header-navigation ul > li > a:focus,

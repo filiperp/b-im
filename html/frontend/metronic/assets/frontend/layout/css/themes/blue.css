@@ -10,6 +10,27 @@ a:hover {
 .shop-currencies a.current {
   color: #64aed9;
 }
+
+
+.simple-text{
+    color:#64aed9;
+
+}
+
+.veiculo-title{
+    border-bottom: 3px solid #64aed9 ;
+}
+
+.tile-border{
+    border: 2px solid #64aed9 !important;
+}
+.tile:hover{
+    background:#64aed9 ;
+
+}
+.tile:hover img{
+    border: 2px solid #ddd;
+}
 .header-navigation ul > li.active > a,
 .header-navigation ul > li > a:hover,
 .header-navigation ul > li > a:focus,
@@ -59,6 +80,8 @@ a:hover {
 .front-team h3 strong {
   color: #64aed9;
 }
+
+
 .ecommerce .header-navigation ul > li.active > a,
 .ecommerce .header-navigation ul > li > a:hover,
 .ecommerce .header-navigation ul > li > a:focus,
@@ -83,6 +106,7 @@ a:hover {
 }
 .header-navigation .dropdown-menu > li > a:hover,
 .header-navigation .dropdown-menu > li.active > a,
+
 .header-navigation .header-navigation-content .header-navigation-col li > a:hover,
 .header-navigation .header-navigation-content .header-navigation-col li.active > a {
   background: #64aed9;

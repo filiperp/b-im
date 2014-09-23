@@ -57,12 +57,12 @@ $dataProgs = $command->queryAll();
 <div class="col-md-12 col-sm-12">
 <div class="row " style="min-height: 80px; margin-bottom:10px;">
     <div class="col-sm-12 ">
-        <div class="well text-center">
+        <div class=" text-center veiculo-title " style="background-color: #fff;margin-bottom: 15px;">
 
             <img src="<?php echo Yii::app()->request->baseUrl . '/' . $veiculo['imagem_veiculo']; ?>" style="height: 80px; width: auto; display: inline; " class=""/>
             <?php if (sizeof($veiculo->pracas) > 1) {
                 ; ?>
-                -
+
                 <div class="strong" style="font-size: 50px;vertical-align: middle;display: inline;"> <?php echo $praca->nome_praca; ?></div>
 
             <?php }; ?>
@@ -160,14 +160,15 @@ $dataProgs = $command->queryAll();
                                                     'beforeSend' => 'function(){wait();}'
                                                 ),
                                                 array('id' => GUID::getGUID(),
-                                                    'class' => 'mix-link'
+                                                    'class' => 'mix-link',
+                                                    'style'=> 'color:#fff;'
                                                 ));;?>
 
 
 
-                                            <a data-rel="fancybox-button" title="Project Name"
+                                            <a data-rel="fancybox-button" title="Project Name"  style="color:#fff"
                                                href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="mix-preview fancybox-button"><i
-                                                    class="fa fa-search"></i></a>
+                                                    class="fa fa-search"></i> VER</a>
                                         </div>
                                     </div>
                                 </div>

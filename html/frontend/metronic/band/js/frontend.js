@@ -20,8 +20,9 @@ function onClickDashBoard(){
     focusItemMenu('mainMenuDashBoard');
 }
 
-function onClickTag() {
+function onClickTag(c) {
     "use strict";
+    if(c){Layout.setColor(c)};
     wait();
     focusItemMenu('mainMenuVeiculos');
     //console.log("ooo")

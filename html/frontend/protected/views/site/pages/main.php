@@ -2,7 +2,7 @@
 <div class="view-main">
     <div class="row margin-bottom-40">
         <div class="col-md-12 col-sm-12 ">
-            <h1>Bem-vindo ao novo Portal IM!</h1>
+            <h1>Bem-vindo ao novo Portal de <strong> Inteligência de Mercado!</strong></h1>
 
             <h2>Agora, para pesquisar você deve seguir apenas <a href=""><strong>3 passos:</strong></a></h2>
         </div>

@@ -10,6 +10,22 @@ a:hover {
 .shop-currencies a.current {
 	color: #E02222;
 }
+.tile-border{
+    border: 2px solid #E02222 !important;
+}
+.veiculo-title{
+    border-bottom: 3px solid #E02222 ;
+}
+.simple-text{
+    color:#E02222;
+}
+.tile:hover{
+    background:#E02222 ;
+
+}
+.tile:hover img{
+    border: 2px solid #ddd;
+}
 .header-navigation ul > li.active > a,
 .header-navigation ul > li > a:hover,
 .header-navigation ul > li > a:focus,

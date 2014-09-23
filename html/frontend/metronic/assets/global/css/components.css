@@ -4621,7 +4621,7 @@ Tiles(new in v1.1.1)
   letter-spacing: 0.02em;
   line-height: 20px;
   overflow: hidden;
-  border: 4px solid transparent;
+  border: 4px solid #fff;
   margin: 0 10px 10px 0;
 }
 .tiles .tile:after, .tiles .tile:before {
@@ -4688,6 +4688,7 @@ Tiles(new in v1.1.1)
   font-size: 12px;
   color: #000000;
   color: #ffffff;
+    text-align: center;
   margin-bottom: 10px;
 }
 .tiles .tile .tile-body p {
@@ -4708,8 +4709,8 @@ Tiles(new in v1.1.1)
   color: #ffffff;
 }
 .tiles .tile .tile-body img {
-  float: left;
-  margin-right: 10px;
+  /*float: left;*/
+  /*margin-right: 10px;*/
 }
 .tiles .tile .tile-body img.pull-right {
   float: right !important;

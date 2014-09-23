@@ -45,16 +45,16 @@
             foreach ($veiculo->pracas as $praca) {
 
                 echo CHtml::ajaxLink(
-                    '<div class="tile-body">
-                        <i class="fa fa-map-marker"></i>
+                    '<div class="tile-body ">
+                        <i class="fa fa-map-marker" style="color:#ccc;"></i>
                     </div>
                     <div class="tile-object">
-                    <div class="name">
+                    <div class="name"  style="color:#333; font-weight:600;">
                   ' . $praca->nome_praca . '
                         </div>
                         <div class="number">
-                ' . $praca->id_praca . '
-                        </div>
+                ' . //$praca->id_praca . '
+                      '  </div>
                     </div> '
                     ,
 
@@ -66,7 +66,7 @@
                         'update' => '#container',
                         'beforeSend' => 'function(){wait();}'
                     ),
-                    array('id' => GUID::getGUID(), 'class' => 'tile btn-primary'));
+                    array('id' => GUID::getGUID(), 'class' => 'tile-border tile'));
 
 
             }

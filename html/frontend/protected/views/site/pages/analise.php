@@ -33,7 +33,7 @@
 
         ;?>
         <div class="text-center">
-                <h2  style="vertical-align: middle;display: inline;"><span class="small">Análise:</span> <?php echo $nome ; ?></h2>
+                <h2  style="vertical-align: middle;display: inline;"><span class="small"></span> <?php echo $nome ; ?></h2>
         </div>
     </div>
 
