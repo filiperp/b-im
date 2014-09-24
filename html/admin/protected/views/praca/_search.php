@@ -28,6 +28,7 @@
                     array('ref_praca', 45, 'textField'),
                     array('nome_praca', 100, 'textArea'),
                     array('descricao_praca', 512, 'textArea'),
+                    array('imagem_praca', 255, 'textArea'),
                     array('ativo_praca', 1, 'checkBox'),
 
 

@@ -14,6 +14,7 @@
  * @property string $nome_praca
  * @property string $descricao_praca
  * @property integer $ativo_praca
+ * @property string $imagem_praca
  *
  * @property Veiculo[] $veiculos
  */
@@ -37,12 +38,13 @@ abstract class BasePraca extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('ref_praca, nome_praca, descricao_praca, ativo_praca', 'required'),
+			array('ref_praca, nome_praca, descricao_praca, ativo_praca, imagem_praca', 'required'),
 			array('ativo_praca', 'numerical', 'integerOnly'=>true),
 			array('ref_praca', 'length', 'max'=>45),
 			array('nome_praca', 'length', 'max'=>100),
 			array('descricao_praca', 'length', 'max'=>512),
-			array('id_praca, ref_praca, nome_praca, descricao_praca, ativo_praca', 'safe', 'on'=>'search'),
+			array('imagem_praca', 'length', 'max'=>255),
+			array('id_praca, ref_praca, nome_praca, descricao_praca, ativo_praca, imagem_praca', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,11 +62,12 @@ abstract class BasePraca extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_praca' => Yii::t('app', 'Id'),
-			'ref_praca' => Yii::t('app', 'Ref'),
-			'nome_praca' => Yii::t('app', 'Nome'),
-			'descricao_praca' => Yii::t('app', 'Descricao'),
-			'ativo_praca' => Yii::t('app', 'Ativo'),
+			'id_praca' => Yii::t('app', 'Id '),
+			'ref_praca' => Yii::t('app', 'Ref '),
+			'nome_praca' => Yii::t('app', 'Nome '),
+			'descricao_praca' => Yii::t('app', 'Descricao '),
+			'ativo_praca' => Yii::t('app', 'Ativo '),
+			'imagem_praca' => Yii::t('app', 'Imagem '),
 			'veiculos' => null,
 		);
 	}
@@ -77,6 +80,7 @@ abstract class BasePraca extends GxActiveRecord {
 		$criteria->compare('nome_praca', $this->nome_praca, true);
 		$criteria->compare('descricao_praca', $this->descricao_praca, true);
 		$criteria->compare('ativo_praca', $this->ativo_praca);
+		$criteria->compare('imagem_praca', $this->imagem_praca, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

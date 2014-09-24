@@ -21,35 +21,42 @@
         </div>
         <div class="portlet-body">
             <div class="portlet-content">
+                <div class="row">
 
-                <?php
-                $viewElements = array(
-                    array('id_praca', 45, 'textField'),
-                    array('ref_praca', 45, 'textField'),
-                    array('nome_praca', 100, 'textArea'),
-                    array('descricao_praca', 512, 'textArea'),
-                    array('ativo_praca', 1, 'checkBox'),
+                    <div class="col-sm-8">
+                        <?php
+                        $viewElements = array(
+                            array('id_praca', 45, 'textField'),
+                            array('ref_praca', 45, 'textField'),
+                            array('nome_praca', 100, 'textArea'),
+                            array('descricao_praca', 512, 'textArea'),
+                            array('ativo_praca', 1, 'checkBox'),
 
-                );
+                        );
 
-                foreach ($viewElements as $key => $value) {
-                    ?>
+                        foreach ($viewElements as $key => $value) {
+                            ?>
 
-                    <div class="row">
-                        <div class="col-sm-4 bold">
-                            <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
-                        </div>
-                        <div class="col-sm-8">
-                            <?php echo GxHtml::encode($data[$value[0]]); ?>
-                        </div>
+                            <div class="row">
+                                <div class="col-sm-4 bold">
+                                    <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
+                                </div>
+                                <div class="col-sm-8">
+                                    <?php echo GxHtml::encode($data[$value[0]]); ?>
+                                </div>
+                            </div>
+
+
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="col-sm-4  ">
+                        <?php echo GxHtml::image($data['imagem_praca'], 'Imagem Ref.', array('class' => 'view-thumb thumbnail')); ?>
                     </div>
 
-
-                <?php
-                }
-                ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
 

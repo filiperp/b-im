@@ -16,6 +16,7 @@
                     <?php $form = $this->beginWidget('GxActiveForm', array(
                         'id' => 'praca-form',
                         'enableAjaxValidation' => true,
+                        'htmlOptions' => array('enctype' => 'multipart/form-data'),
                     ));
                     CHtml::$errorCss = 'font-red-intense';
                     ?>
@@ -30,10 +31,11 @@
                     <?php
                     $viewElements = array(
 
-                        // array('id_praca', 45, 'textField'),
+                         array('id_praca', 45, 'textField'),
                         array('ref_praca', 45, 'textField'),
                         array('nome_praca', 100, 'textArea'),
                         array('descricao_praca', 512, 'textArea'),
+                        array('imagem_praca', 255, 'textField'),
                         array('ativo_praca', 1, 'checkBox'),
 
 
@@ -53,6 +55,16 @@
                     <?php
                     }
                     ?>
+
+                    <div class="form-group">
+                        <?php echo $form->labelEx($model, 'image', array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php
+
+                            echo $form->fileField($model, 'image');
+                            ?>
+                        </div>
+                    </div>
 
                     <div class="row ">
                         <div class="col-md-12">
@@ -99,5 +111,16 @@
 
     </div>
     <!-- END SAMPLE FORM PORTLET-->
+
+
 </div>
+
+<?php
+$cs = Yii::app()->getClientScript();
+
+$cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/FileChooserBehavior.js', CClientScript::POS_END);
+
+
+$cs->registerScript('startScriptFormVeiculo', "FileChooserBehavior.onChange('Praca_image','Praca_imagem_praca' )", CClientScript::POS_READY);
+?>
 

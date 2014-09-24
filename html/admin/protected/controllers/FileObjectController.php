@@ -76,10 +76,13 @@ class FileObjectController extends CController
 
 
             $newName = $path . $_name . '.' . $ext;
+            if (is_file($model['imagem_' . $label])){
+                rename($model['imagem_' . $label], $newName);
+                $model['imagem_' . $label] = $newName;
+                $model->save();
+            }
 
-         rename($model['imagem_' . $label], $newName);
-            $model['imagem_' . $label] = $newName;
-            $model->save();
+
         }
 
         return $newName;
@@ -94,6 +97,8 @@ class FileObjectController extends CController
         $images = CUploadedFile::getInstancesByName($label);
         $return = isset($model['imagem_' . strtolower($label)]) ? $model['imagem_' . strtolower($label)] : $model['caminho_arquivo'];
         if (count($images) > 0) {
+
+
             foreach ($images as $img) {
                 $initalPAth = $path; //'../uploads/'. strtolower($label).'/';
                 if (!file_exists($initalPAth) && !is_dir($initalPAth)) {
@@ -111,12 +116,13 @@ class FileObjectController extends CController
                 $_name .= '__' . strtolower($label);// . '__' . substr(md5(microtime(true)), 0, 6);
                 $newName = $_name . '.' . $ext; //md5(microtime(true)) . '_' . $img->name;
 
-
-                $res = $img->saveAs($initalPAth . $newName);
                 if (isset($_SESSION['current_image_' . $label])) {
                     if (file_exists($_SESSION['current_image_' . $label])) unlink($_SESSION['current_image_' . $label]);
                     unset($_SESSION['current_image_' . $label]);
                 }
+                $res = $img->saveAs($initalPAth . $newName);
+
+
                 $return = $initalPAth . $newName;
 
             }
