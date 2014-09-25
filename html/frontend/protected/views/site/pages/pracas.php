@@ -46,7 +46,7 @@
 
                 echo CHtml::ajaxLink(
                     '<div class="tile-body ">
-                        <img style="width:111px; height:auto;border:2px solid #ddd;" src="'.$praca->imagem_praca.'">
+                        <img style="width:111px; height:auto;border:2px solid #ddd; background-color:#fff;" src="'.$praca->imagem_praca.'">
                     </div>
                     <div class="tile-object">
                     <div class="name"  style="color:#333; font-weight:600;">

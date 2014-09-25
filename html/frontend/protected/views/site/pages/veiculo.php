@@ -43,7 +43,8 @@ $command = Yii::app()->db->createCommand()
          concat(vpp.fk_id_veiculo ,"-" , vpp.fk_id_praca, "-",vpp.fk_id_programa ) as k_v_p_p')
     ->from('veiculo_praca_programa vpp ')
     ->join('programa pr', 'vpp.fk_id_programa=pr.id_programa AND pr.ativo_programa=1')
-    ->where('vpp.fk_id_veiculo=' . $veiculo->id_veiculo . ' AND  vpp.fk_id_praca = ' . $praca->id_praca);
+    ->where('vpp.fk_id_veiculo=' . $veiculo->id_veiculo . ' AND  vpp.fk_id_praca = ' . $praca->id_praca)
+    ->order('pr.nome_programa');
 
 
 $dataProgs = $command->queryAll();
@@ -78,15 +79,32 @@ $dataProgs = $command->queryAll();
         <li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Análises</a></li>
         <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Comercial</a></li>
         <li>
-            <?php echo CHtml::ajaxLink(
-                '<i class="fa fa-backward"></i> Escolher Outra Praça',
-                CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
-                array(
-                    'type' => 'POST',
-                    'update' => '#container',
-                    'beforeSend' => 'function(){wait();}'
-                ),
-                array('id' => GUID::getGUID()));;?>
+            <?php
+
+            if(count( $veiculo->pracas)>1){
+               echo   CHtml::ajaxLink(
+                    '<i class="fa fa-backward"></i> Escolher Outra Praça',
+                    CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
+                    array(
+                        'type' => 'POST',
+                        'update' => '#container',
+                        'beforeSend' => 'function(){wait();}'
+                    ),
+                    array('id' => GUID::getGUID()));
+            }else{
+                    echo CHtml::ajaxLink(
+                        '<i class="fa fa-backward"></i> Escolher Outro Veículo',
+                        CController::createUrl('site/listVeiculos&id=' . $veiculo->tags[0]['id_tag']),
+                        array(
+                            'type' => 'POST',
+
+                            'update' => '#container',
+                            'beforeSend' => 'function(){wait();}'
+                        ),
+                        array('id' =>GUID::getGUID()));
+            }
+
+         ?>
         </li>
     </ul>
 
@@ -166,7 +184,7 @@ $dataProgs = $command->queryAll();
 
 
 
-                                            <a data-rel="fancybox-button" title="Project Name"  style="color:#fff"
+                                            <a data-rel="fancybox-button" title="<?php echo $anal['nome_analise'] ; ?>"  style="color:#fff"
                                                href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="mix-preview fancybox-button"><i
                                                     class="fa fa-search"></i> VER</a>
                                         </div>
@@ -208,12 +226,13 @@ $dataProgs = $command->queryAll();
                     <div class="panel-collapse collapse " id="accordion1_<?php echo $prog['id_programa']; ?>">
                         <div class="panel-body">
                             <?php
+                            $criteria1 = new CDbCriteria(array('order'=>'nome_arquivo ASC'));
                             $arqs = Arquivo::model()->findAllByAttributes(array(
 
                                 'fk_id_veiculo' => $veiculo->id_veiculo,
                                 'fk_id_praca' => $praca['id_praca'],
                                 'fk_id_programa' => $prog['id_programa'],
-                            ));?>
+                            ), $criteria1);?>
 
                             <?php foreach ($arqs as $arq) {
 

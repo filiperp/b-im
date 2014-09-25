@@ -88,7 +88,14 @@ class SiteController extends Controller
     public function actionAnalise($id, $veiculo, $praca){
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         $anal = Analise::model()->findByPk($id);
-        $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
+
+        if($anal->tipo_analise=='painel'){
+            $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
+        }else{
+            $data['link'] = $anal['descricao_analise'];
+
+        }
+
 
 
        // $data['link'] = 'http://uol.com.br';
