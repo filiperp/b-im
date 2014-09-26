@@ -63,7 +63,7 @@ class FileObjectController extends CController
     {
         $label = strtolower(get_class($model));
         $path = '../uploads/' . $label . '/';
-        $newName="";
+        $newName = "";
         if (isset ($model['imagem_' . $label])) {
             $ext = pathinfo($model['imagem_' . $label], PATHINFO_EXTENSION);
 
@@ -72,11 +72,11 @@ class FileObjectController extends CController
             $_name .= isset($model['ref_' . strtolower($label)]) ? $model['ref_' . strtolower($label)] : "";
 
             $_name .= isset($model['id_' . strtolower($label)]) ? '__' . $model['id_' . strtolower($label)] : "";
-            $_name .= '__' . strtolower($label);// . '__' . substr(md5(microtime(true)), 0, 6);
+            $_name .= '__' . strtolower($label); // . '__' . substr(md5(microtime(true)), 0, 6);
 
 
             $newName = $path . $_name . '.' . $ext;
-            if (is_file($model['imagem_' . $label])){
+            if (is_file($model['imagem_' . $label])) {
                 rename($model['imagem_' . $label], $newName);
                 $model['imagem_' . $label] = $newName;
                 $model->save();
@@ -113,7 +113,7 @@ class FileObjectController extends CController
                 $_name .= isset($model['ref_' . strtolower($label)]) ? $model['ref_' . strtolower($label)] : "";
 
                 $_name .= isset($model['id_' . strtolower($label)]) ? '__' . $model['id_' . strtolower($label)] : "";
-                $_name .= '__' . strtolower($label);// . '__' . substr(md5(microtime(true)), 0, 6);
+                $_name .= '__' . strtolower($label); // . '__' . substr(md5(microtime(true)), 0, 6);
                 $newName = $_name . '.' . $ext; //md5(microtime(true)) . '_' . $img->name;
 
                 if (isset($_SESSION['current_image_' . $label])) {
@@ -127,8 +127,8 @@ class FileObjectController extends CController
 
             }
 
-        }else{
-            $return =  FileObjectController::updateNewNameLabel($model);
+        } else {
+            $return = FileObjectController::updateNewNameLabel($model);
         }
 
         return $return;
@@ -150,7 +150,7 @@ class FileObjectController extends CController
         return FileObjectController::saveFileONPath($model, '../uploads/' . strtolower($label) . '/' . strtolower($model->ref_arquivo) . '/');
     }
 
-    public static function updateArquivo($model)
+    public static function createHistorico($model)
     {
         $label = get_class($model);
 
@@ -158,20 +158,20 @@ class FileObjectController extends CController
         if (!file_exists($histPAth) && !is_dir($histPAth)) {
             mkdir($histPAth);
         }
-        if (isset($_SESSION['current_image_' . get_class($model)])) {
-            if ($model->caminho_arquivo != $_SESSION['current_image_' . get_class($model)]) {
-                $hist = new ArquivoHistorico;
-                $hist->fk_id_arquivo = $model->id_arquivo;
-                $hist->ref_arquivo = $model->ref_arquivo;
-                $hist->nome_arquivo = $model->nome_arquivo;
-                $hist->caminho_arquivo = $histPAth . basename($model->caminho_arquivo);
-                $hist->save();
-                if (copy($_SESSION['current_image_' . get_class($model)], $hist->caminho_arquivo)) {
-                    unlink($_SESSION['current_image_' . get_class($model)]);
-                }
-            }
+
+
+        $hist = new ArquivoHistorico;
+        $hist->fk_id_arquivo = $model->id_arquivo;
+        $hist->ref_arquivo = $model->ref_arquivo;
+        $hist->nome_arquivo = $model->nome_arquivo;
+        $hist->caminho_arquivo = $histPAth . '__' . microtime(true) . '_' . basename($_SESSION['current_image_' . get_class($model)]);
+        $hist->save();
+        if (copy($_SESSION['current_image_' . get_class($model)], $hist->caminho_arquivo)) {
+            unlink($_SESSION['current_image_' . get_class($model)]);
         }
-        return FileObjectController::saveFileONPath($model, '../uploads/' . strtolower($label) . '/' . strtolower($model->ref_arquivo) . '/');
+
+
+        return $hist;
     }
 
 }

@@ -46,19 +46,19 @@ class ArquivoController extends GxController
                 'tags' => $_POST['Arquivo']['tags'] === '' ? null : $_POST['Arquivo']['tags'],
             );
 
-        //    Yii::import('application.controllers.FileObjectController');
-          //  $model->caminho_arquivo = FileObjectController::createBasePathArquivo($model);
+            Yii::import('application.controllers.FileObjectController');
+            $model->caminho_arquivo = FileObjectController::createBasePathArquivo($model);
 
             if ($model->saveWithRelated($relatedData)) {
-               // FileObjectController::updateNewNameLabel($model);
-              //  $model->save();
+                FileObjectController::updateNewNameLabel($model);
+                $model->save();
                 if (Yii::app()->getRequest()->getIsAjaxRequest())
                     Yii::app()->end();
                 else
                     $this->redirect(array('view', 'id' => $model->id_arquivo));
             }
         }
-       // unset($_SESSION['current_image_' . get_class($model)]);
+        unset($_SESSION['current_image_' . get_class($model)]);
         $this->render('create', array('model' => $model));
     }
 
@@ -74,9 +74,15 @@ class ArquivoController extends GxController
                 'tags' => $_POST['Arquivo']['tags'] === '' ? null : $_POST['Arquivo']['tags'],
             );
 
+            Yii::import('application.controllers.FileObjectController');
+            if (intval($model->tags[0]->id_tag) != 15 || intval($model->tags[0]->id_tag) != 14) {
 
-          //  Yii::import('application.controllers.FileObjectController');
-          //  $model->caminho_arquivo = FileObjectController::updateArquivo($model);
+                if ($_SESSION['current_image_' . get_class($model)] != $model->caminho_arquivo) {
+                    FileObjectController::createHistorico($model);
+                }
+                $model->caminho_arquivo = FileObjectController::saveFileAs($model);
+            }
+            //
 
 
             if ($model->saveWithRelated($relatedData)) {
@@ -85,7 +91,7 @@ class ArquivoController extends GxController
         }
 
 
-       // $_SESSION['current_image_' . get_class($model)] = $model->caminho_arquivo;
+        $_SESSION['current_image_' . get_class($model)] = $model->caminho_arquivo;
         $this->render('update', array(
             'model' => $model,
         ));
