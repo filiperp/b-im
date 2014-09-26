@@ -106,4 +106,23 @@ abstract class BaseArquivo extends GxActiveRecord {
 			'criteria' => $criteria,
 		));
 	}
+
+    public function getLink(){
+
+        switch($this->tags[0]['ref_tag']){
+            case 'vimeo':
+                return 'http://vimeo.com/'.$this->caminho_arquivo;
+            break;
+            case 'youtube':
+                return 'http://www.youtube.com/watch?v='.$this->caminho_arquivo;
+            break;
+            case 'pdf':
+            case 'doc':
+            case 'xls':
+            case 'ppt':
+               return  Yii::app()->baseUrl.'/'.$this->caminho_arquivo;
+                break;
+
+        }
+    }
 }

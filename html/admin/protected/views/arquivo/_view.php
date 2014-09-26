@@ -54,7 +54,7 @@
                         <?php echo GxHtml::encode($data->getAttributeLabel('caminho_arquivo')); ?>:
                     </div>
                     <div class="col-sm-8">
-                        <?php echo GxHtml::image($data['caminho_arquivo'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
+                        <?php echo CHtml::link('Abrir',$data->getLink(), array("target"=>"_blank")); ?>
                     </div>
                 </div>
                 <?php

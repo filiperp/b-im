@@ -33,8 +33,9 @@
                         // array('id_arquivo', 45, 'textField'),
                         array('ref_arquivo', 45, 'textField'),
                         array('nome_arquivo', 100, 'textArea'),
-                        array('caminho_arquivo', 512, 'textField'),
+
                         array('ativo_arquivo', 1, 'checkBox'),
+                        array('caminho_arquivo', 512, 'textField'),
 
                     );
 
@@ -58,15 +59,15 @@
                         }
                     }
                     ?>
-<!--                    <div class="form-group">-->
-<!--                        --><?php //echo $form->labelEx($model, 'image', array('class' => '  col-md-4 control-label')); ?>
-<!--                        <div class="col-md-8">-->
-<!--                            --><?php
-//
-//                            echo $form->fileField($model, 'image');
-//                            ?>
-<!--                        </div>-->
-<!--                    </div>-->
+                    <div class="form-group">
+                        <?php echo $form->labelEx($model, 'image', array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php
+
+                            echo $form->fileField($model, 'image');
+                            ?>
+                        </div>
+                    </div>
 
 
                     <?php
@@ -131,9 +132,14 @@
                                     <?php
                                     $Criteria = new CDbCriteria();
                                     $Criteria->addCondition('tipo_tag = "arquivo"  ');
-
+                                    //Yii::import('application.controllers.FileObjectController');
+                                    $classCheckBox = 'tag_item_'.GUID::getGUID();
                                     echo $form->checkBoxList($model, 'tags',
-                                        GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAll($Criteria)), false, true)); ?>
+                                        GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAll($Criteria)), false, true),array('class'=>$classCheckBox));
+
+
+
+                                    ?>
                                 </div>
                             </div>
 
@@ -191,8 +197,10 @@
 <?php
 $cs = Yii::app()->getClientScript();
 
-//$cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/FileChooserBehavior.js', CClientScript::POS_END);
+$cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/FileChooserBehavior.js', CClientScript::POS_END);
+$cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/ArquivoTagBehavior.js', CClientScript::POS_END);
 
 
-//$cs->registerScript('startScriptFormArquivo', "FileChooserBehavior.onChange('Arquivo_image','Arquivo_caminho_arquivo' )", CClientScript::POS_READY);
+$cs->registerScript('startScriptFormArquivo', "FileChooserBehavior.onChange('Arquivo_image','Arquivo_caminho_arquivo' )", CClientScript::POS_READY);
+$cs->registerScript('startScriptFormArquivoTAg', "ArquivoTagBehavior.initTagBehavior('".$classCheckBox. "')", CClientScript::POS_READY);
 ?>

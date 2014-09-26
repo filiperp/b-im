@@ -100,11 +100,11 @@ $this->menu = array(
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label col-md-3 bold">
-                                    <?php echo GxHtml::encode($model->getAttributeLabel('caminho_arquivo')); ?>:</label>
+                                   Arquivo</label>
 
                                 <div class="col-md-9">
                                     <p class="form-control-static">
-                                        <?php echo GxHtml::image($model['caminho_arquivo'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
+                                        <?php echo CHtml::link('Abrir',$model->getLink(), array("target"=>"_blank")); ?>
                                     </p>
                                 </div>
                             </div>

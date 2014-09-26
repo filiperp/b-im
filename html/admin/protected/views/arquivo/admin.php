@@ -67,8 +67,8 @@ $('.search-form form').submit(function(){
                         'ref_arquivo',
                         'nome_arquivo',
                         array(
-                            'name' => 'Caminho',
-                            'value' => 'GxHtml::image($data->caminho_arquivo,"ref." , array("class"=>"thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'name' => 'Tipo',
+                            'value' => 'CHtml::link($data->tags[0]->nome_tag,$data->getLink(), array("target"=>"_blank"))',
                             'type'=>'raw'
                         ),
                         array(
