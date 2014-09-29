@@ -41,17 +41,32 @@ class ArquivoController extends GxController
         $this->performAjaxValidation($model, 'arquivo-form');
 
         if (isset($_POST['Arquivo'])) {
+
+            $_POST['Arquivo']['usuario'] =Yii::app()->user->getId();
+            $_POST['Arquivo']['data'] = date('Y-m-d h:i:s', time());
             $model->setAttributes($_POST['Arquivo']);
             $relatedData = array(
                 'tags' => $_POST['Arquivo']['tags'] === '' ? null : $_POST['Arquivo']['tags'],
             );
+//echo '<pre>';
+//            var_dump($_POST['Arquivo']);
+//            var_dump($model);
+//            die();
 
-            Yii::import('application.controllers.FileObjectController');
-            $model->caminho_arquivo = FileObjectController::createBasePathArquivo($model);
+            if (intval($relatedData['tags'][0]) != 14 && intval($relatedData['tags'][0]) != 15) {
+                Yii::import('application.controllers.FileObjectController');
+                $model->caminho_arquivo = $_POST['Arquivo']['caminho_arquivo'];
+                $model->caminho_arquivo = FileObjectController::createBasePathArquivo($model);
+
+            }
 
             if ($model->saveWithRelated($relatedData)) {
-                FileObjectController::updateNewNameLabel($model);
-                $model->save();
+
+                if (intval($relatedData['tags'][0]) != 14 && intval($relatedData['tags'][0]) != 15) {
+                    FileObjectController::updateNewNameLabel($model);
+                    $model->save();
+                }
+
                 if (Yii::app()->getRequest()->getIsAjaxRequest())
                     Yii::app()->end();
                 else
@@ -69,21 +84,22 @@ class ArquivoController extends GxController
         $this->performAjaxValidation($model, 'arquivo-form');
 
         if (isset($_POST['Arquivo'])) {
+            $_POST['Arquivo']['usuario'] =Yii::app()->user->getId();
+            $_POST['Arquivo']['data'] = date('Y-m-d h:i:s', time());
             $model->setAttributes($_POST['Arquivo']);
             $relatedData = array(
                 'tags' => $_POST['Arquivo']['tags'] === '' ? null : $_POST['Arquivo']['tags'],
             );
 
             Yii::import('application.controllers.FileObjectController');
-            if (intval($model->tags[0]->id_tag) != 15 || intval($model->tags[0]->id_tag) != 14) {
+            if (intval($relatedData['tags'][0]) != 14 && intval($relatedData['tags'][0]) != 15) {
 
                 if ($_SESSION['current_image_' . get_class($model)] != $model->caminho_arquivo) {
                     FileObjectController::createHistorico($model);
+                    $model->caminho_arquivo = FileObjectController::saveFileAs($model, $model->ref_arquivo. '/');
                 }
-                $model->caminho_arquivo = FileObjectController::saveFileAs($model);
-            }
-            //
 
+            }
 
             if ($model->saveWithRelated($relatedData)) {
                 $this->redirect(array('view', 'id' => $model->id_arquivo));

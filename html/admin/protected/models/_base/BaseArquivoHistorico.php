@@ -14,6 +14,8 @@
  * @property string $ref_arquivo
  * @property string $nome_arquivo
  * @property string $caminho_arquivo
+ * @property string $usuario
+ * @property string $data
  *
  * @property Arquivo $fkIdArquivo
  */
@@ -32,17 +34,17 @@ abstract class BaseArquivoHistorico extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'caminho_arquivo';
+		return 'ref_arquivo';
 	}
 
 	public function rules() {
 		return array(
-			array('fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo', 'required'),
+			array('fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, usuario, data', 'required'),
 			array('fk_id_arquivo', 'numerical', 'integerOnly'=>true),
-			array('ref_arquivo', 'length', 'max'=>45),
+			array('ref_arquivo, usuario', 'length', 'max'=>45),
 			array('nome_arquivo', 'length', 'max'=>100),
 			array('caminho_arquivo', 'length', 'max'=>512),
-			array('id_arquivo_historico, fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo', 'safe', 'on'=>'search'),
+			array('id_arquivo_historico, fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, usuario, data', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +66,8 @@ abstract class BaseArquivoHistorico extends GxActiveRecord {
 			'ref_arquivo' => Yii::t('app', 'Ref Arquivo'),
 			'nome_arquivo' => Yii::t('app', 'Nome Arquivo'),
 			'caminho_arquivo' => Yii::t('app', 'Caminho Arquivo'),
+			'usuario' => Yii::t('app', 'Usuario'),
+			'data' => Yii::t('app', 'Data'),
 			'fkIdArquivo' => null,
 		);
 	}
@@ -76,9 +80,32 @@ abstract class BaseArquivoHistorico extends GxActiveRecord {
 		$criteria->compare('ref_arquivo', $this->ref_arquivo, true);
 		$criteria->compare('nome_arquivo', $this->nome_arquivo, true);
 		$criteria->compare('caminho_arquivo', $this->caminho_arquivo, true);
+		$criteria->compare('usuario', $this->usuario, true);
+		$criteria->compare('data', $this->data, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
 		));
 	}
+    public function getLink($tag){
+
+        switch($tag){
+            case 'vimeo':
+                return 'http://vimeo.com/'.$this->caminho_arquivo;
+                break;
+            case 'youtube':
+                return 'http://www.youtube.com/watch?v='.$this->caminho_arquivo;
+                break;
+            case 'pdf':
+            case 'doc':
+            case 'xls':
+            case 'ppt':
+                return  Yii::app()->baseUrl.'/'.$this->caminho_arquivo;
+                break;
+
+        }
+    }
+
+
+
 }

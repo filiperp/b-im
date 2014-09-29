@@ -134,16 +134,16 @@ class FileObjectController extends CController
         return $return;
     }
 
-    public static function saveFileAs($model)
+    public static function saveFileAs($model, $extra= '')
     {
         $label = get_class($model);
-        return FileObjectController::saveFileONPath($model, '../uploads/' . strtolower($label) . '/');
+        return FileObjectController::saveFileONPath($model, '../uploads/' . strtolower($label) . '/'.$extra);
     }
 
     public static function createBasePathArquivo($model)
     {
         $label = get_class($model);
-        $base = '../uploads/' . strtolower($label) . '/';
+        $base = '../uploads/' . strtolower($label) .'/';
         if (!file_exists($base) && !is_dir($base)) {
             mkdir($base);
         }
@@ -162,6 +162,8 @@ class FileObjectController extends CController
 
         $hist = new ArquivoHistorico;
         $hist->fk_id_arquivo = $model->id_arquivo;
+        $hist->usuario = $model->usuario;
+        $hist->data = $model->data;
         $hist->ref_arquivo = $model->ref_arquivo;
         $hist->nome_arquivo = $model->nome_arquivo;
         $hist->caminho_arquivo = $histPAth . '__' . microtime(true) . '_' . basename($_SESSION['current_image_' . get_class($model)]);

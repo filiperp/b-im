@@ -67,9 +67,12 @@ $this->menu = array(
                     $viewElements = array(
                         array('id_arquivo'   ,45, 'textField'),
                         array('ref_arquivo'   ,45, 'textField'),
+
                         array('nome_arquivo'   , 100, 'textArea'),
                         array('caminho_arquivo'   , 512, 'textArea'),
                         array('ativo_arquivo'   , 1, 'checkBox'),
+                        array('usuario'   ,45, 'textField'),
+                        array('data'   ,45, 'textField'),
                     );
 
                     foreach ($viewElements as $key => $value) {
@@ -166,7 +169,11 @@ $this->menu = array(
 echo GxHtml::openTag('ul');
 foreach ($model->arquivoHistoricos as $relatedModel) {
     echo GxHtml::openTag('li');
-    echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('arquivoHistorico/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+   //echo CHtml::link('Abrir',$model->getLink(), array("target"=>"_blank"));
+  echo $relatedModel['usuario']. ' - '. $relatedModel['data']. ' - ';
+    echo GxHtml::link(   'VER', array('arquivoHistorico/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)),array('class'=> 'btn btn-warning'));
+    echo GxHtml::link('Abrir',$relatedModel->getLink($model-> getBaseTag()), array("target"=>"_blank",'class'=> 'btn btn-primary'));
+
     echo GxHtml::closeTag('li');
 }
 echo GxHtml::closeTag('ul');

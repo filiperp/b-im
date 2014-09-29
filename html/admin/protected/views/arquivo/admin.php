@@ -68,7 +68,7 @@ $('.search-form form').submit(function(){
                         'nome_arquivo',
                         array(
                             'name' => 'Tipo',
-                            'value' => 'CHtml::link($data->tags[0]->nome_tag,$data->getLink(), array("target"=>"_blank"))',
+                            'value' => 'CHtml::link($data->getName(),$data->getLink(), array("target"=>"_blank"))',
                             'type'=>'raw'
                         ),
                         array(

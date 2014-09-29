@@ -31,11 +31,11 @@
                     $viewElements = array(
 
                         // array('id_arquivo', 45, 'textField'),
-                        array('ref_arquivo', 45, 'textField'),
-                        array('nome_arquivo', 100, 'textArea'),
+                        array('ref_arquivo', 45, 'textField',  ''), //  $iscreate?'':'disabled'),
+                        array('nome_arquivo', 100, 'textArea', ''),
 
-                        array('ativo_arquivo', 1, 'checkBox'),
-                        array('caminho_arquivo', 512, 'textField'),
+                        array('ativo_arquivo', 1, 'checkBox', ''),
+                        array('caminho_arquivo', 512, 'textField', ''),
 
                     );
 
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <?php echo $form->labelEx($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
                                 <div class="col-md-8">
-                                    <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control')); ?>
+                                    <?php echo $form->$value[2]($model, $value[0], array('maxlength' => $value[1], 'class' => 'form-control', 'disabled'=>$value[3])); ?>
                                     <?php echo $form->error($model, $value[0], array('errorCssClass' => ' has-error')); ?>
                                 </div>
                             </div>
@@ -100,11 +100,11 @@
                                     </div>
                                     <div class="tools">
 
-                                        <a href="javascript:;" class="collapse">
+                                        <a href="javascript:;" class="expand">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="portlet-body "><br><Br>
+                                <div class="portlet-body  " style="display:none"><br><Br>
                                     <?php
                                     $this->renderPartial('_veiculoPracaProgramaTable', array(
                                         'model' => $model,

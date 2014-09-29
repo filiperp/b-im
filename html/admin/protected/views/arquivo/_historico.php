@@ -38,8 +38,8 @@
             array(
                 'name' => 'id_arquivo_historico',
                 'header' => 'id',
-                'value' => '\'[\' .$data["id_arquivo_historico"] . \']',
-              //  'htmlOptions' => array('width' => 105),
+                'value' => ' $data["id_arquivo_historico"] ',
+             'htmlOptions' => array('width' => 105),
             ),
             array(
                 'name' => 'ref_arquivo',

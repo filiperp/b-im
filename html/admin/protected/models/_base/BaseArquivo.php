@@ -17,6 +17,8 @@
  * @property integer $fk_id_veiculo
  * @property integer $fk_id_praca
  * @property integer $fk_id_programa
+ * @property string $usuario
+ * @property string $data
  *
  * @property VeiculoPracaPrograma $fkIdVeiculo
  * @property VeiculoPracaPrograma $fkIdPraca
@@ -39,20 +41,17 @@ abstract class BaseArquivo extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'nome_arquivo';
+		return 'ref_arquivo';
 	}
 
 	public function rules() {
 		return array(
-			array('ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo', 'required'),
-			array('fk_id_programa', 'required', 'message'=> 'Selecione um Programa'),
-			//array('fk_id_praca', 'required', 'message'=> 'campo obrigatório'),
-			//array('fk_id_veiculo', 'required', 'message'=> 'campo obrigatório'),
+			array('ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa, usuario, data', 'required'),
 			array('ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa', 'numerical', 'integerOnly'=>true),
-			array('ref_arquivo', 'length', 'max'=>45),
+			array('ref_arquivo, usuario', 'length', 'max'=>45),
 			array('nome_arquivo', 'length', 'max'=>100),
 			array('caminho_arquivo', 'length', 'max'=>512),
-			array('id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa', 'safe', 'on'=>'search'),
+			array('id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa, usuario, data', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,14 +73,16 @@ abstract class BaseArquivo extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_arquivo' => Yii::t('app', 'Id'),
-			'ref_arquivo' => Yii::t('app', 'Ref'),
-			'nome_arquivo' => Yii::t('app', 'Nome'),
-			'caminho_arquivo' => Yii::t('app', 'Caminho'),
-			'ativo_arquivo' => Yii::t('app', 'Ativo'),
+			'id_arquivo' => Yii::t('app', 'Id Arquivo'),
+			'ref_arquivo' => Yii::t('app', 'Ref Arquivo'),
+			'nome_arquivo' => Yii::t('app', 'Nome Arquivo'),
+			'caminho_arquivo' => Yii::t('app', 'Caminho Arquivo'),
+			'ativo_arquivo' => Yii::t('app', 'Ativo Arquivo'),
 			'fk_id_veiculo' => null,
 			'fk_id_praca' => null,
 			'fk_id_programa' => null,
+			'usuario' => Yii::t('app', 'Usuario'),
+			'data' => Yii::t('app', 'Data'),
 			'fkIdVeiculo' => null,
 			'fkIdPraca' => null,
 			'fkIdPrograma' => null,
@@ -101,28 +102,45 @@ abstract class BaseArquivo extends GxActiveRecord {
 		$criteria->compare('fk_id_veiculo', $this->fk_id_veiculo);
 		$criteria->compare('fk_id_praca', $this->fk_id_praca);
 		$criteria->compare('fk_id_programa', $this->fk_id_programa);
+		$criteria->compare('usuario', $this->usuario, true);
+		$criteria->compare('data', $this->data, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
 		));
 	}
 
-    public function getLink(){
 
-        switch($this->tags[0]['ref_tag']){
+    public function getLink()
+    {
+        if (!isset ($this->tags[0])) return;
+        switch ($this->tags[0]['ref_tag']) {
             case 'vimeo':
-                return 'http://vimeo.com/'.$this->caminho_arquivo;
-            break;
+                return 'http://vimeo.com/' . $this->caminho_arquivo;
+                break;
             case 'youtube':
-                return 'http://www.youtube.com/watch?v='.$this->caminho_arquivo;
-            break;
+                return 'http://www.youtube.com/watch?v=' . $this->caminho_arquivo;
+                break;
             case 'pdf':
             case 'doc':
             case 'xls':
             case 'ppt':
-               return  Yii::app()->baseUrl.'/'.$this->caminho_arquivo;
+                return Yii::app()->baseUrl . '/' . $this->caminho_arquivo;
                 break;
 
         }
+    }
+
+    public function getBaseTag()
+    {
+        if (!isset ($this->tags[0])) return 'pdf';
+        return $this->tags[0]['ref_tag'];
+    }
+
+    public function getName()
+    {
+        if (!isset ($this->tags[0])) return 'SEM TAG';
+
+        return $this->tags[0]['nome_tag'];
     }
 }

@@ -62,6 +62,8 @@
                     'ref_arquivo',
                     'nome_arquivo',
                     'caminho_arquivo',
+                 'usuario'   ,
+                 'data'  ,
                 );
 
                 foreach ($viewElements as $key => $value) {
