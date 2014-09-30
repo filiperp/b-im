@@ -44,9 +44,10 @@
 
             foreach ($veiculo->pracas as $praca) {
 
-                echo CHtml::ajaxLink(
-                    '<div class="tile-body ">
-                        <img style="width:111px; height:auto;border:2px solid #ddd; background-color:#fff;" src="'.$praca->imagem_praca.'">
+                if($praca->ativo_praca){
+                    echo CHtml::ajaxLink(
+                        '<div class="tile-body ">
+                            <img style="width:111px; height:auto;border:2px solid #ddd; background-color:#fff;" src="'.$praca->imagem_praca.'">
                     </div>
                     <div class="tile-object">
                     <div class="name"  style="color:#333; font-weight:600;">
@@ -54,22 +55,23 @@
                         </div>
                         <div class="number">
                 ' . //$praca->id_praca . '
-                      '  </div>
-                    </div> '
-                    ,
+                        '  </div>
+                      </div> '
+                        ,
 
 
-                    CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo . '&idPraca=' . $praca->id_praca),
-                    array(
-                        'type' => 'POST',
+                        CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo . '&idPraca=' . $praca->id_praca),
+                        array(
+                            'type' => 'POST',
 
-                        'update' => '#container',
-                        'beforeSend' => 'function(){wait();}'
-                    ),
-                    array('id' => GUID::getGUID(), 'class' => 'tile-border tile'));
+                            'update' => '#container',
+                            'beforeSend' => 'function(){wait();}'
+                        ),
+                        array('id' => GUID::getGUID(), 'class' => 'tile-border tile'));
 
 
-            }
+                }
+                }
             ?>
 
 
