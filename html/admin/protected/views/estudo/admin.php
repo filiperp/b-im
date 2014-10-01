@@ -46,12 +46,16 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 		'ref_estudo',
 		'nome_estudo',
 		'caminho_estudo',
-		'cliente_estudo',
 		array(
 					'name' => 'ativo_estudo',
 					'value' => '($data->ativo_estudo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
 					'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
 					),
+		array(
+				'name'=>'cliente_id_cliente',
+				'value'=>'GxHtml::valueEx($data->clienteIdCliente)',
+				'filter'=>GxHtml::listDataEx(Cliente::model()->findAllAttributes(null, true)),
+				),
 		array(
 			'class' => 'CButtonColumn',
 		),

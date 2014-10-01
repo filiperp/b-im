@@ -13,11 +13,11 @@
 	<?php echo GxHtml::encode($data->getAttributeLabel('caminho_estudo')); ?>:
 	<?php echo GxHtml::encode($data->caminho_estudo); ?>
 	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('cliente_estudo')); ?>:
-	<?php echo GxHtml::encode($data->cliente_estudo); ?>
-	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('ativo_estudo')); ?>:
 	<?php echo GxHtml::encode($data->ativo_estudo); ?>
+	<br />
+	<?php echo GxHtml::encode($data->getAttributeLabel('cliente_id_cliente')); ?>:
+		<?php echo GxHtml::encode(GxHtml::valueEx($data->clienteIdCliente)); ?>
 	<br />
 
 </div>

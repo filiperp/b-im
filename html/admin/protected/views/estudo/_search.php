@@ -26,13 +26,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'cliente_estudo'); ?>
-		<?php echo $form->textField($model, 'cliente_estudo', array('maxlength' => 100)); ?>
+		<?php echo $form->label($model, 'ativo_estudo'); ?>
+		<?php echo $form->dropDownList($model, 'ativo_estudo', array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'ativo_estudo'); ?>
-		<?php echo $form->dropDownList($model, 'ativo_estudo', array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')), array('prompt' => Yii::t('app', 'All'))); ?>
+		<?php echo $form->label($model, 'cliente_id_cliente'); ?>
+		<?php echo $form->dropDownList($model, 'cliente_id_cliente', GxHtml::listDataEx(Cliente::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
 
 	<div class="row buttons">

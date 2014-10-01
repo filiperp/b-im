@@ -7,15 +7,16 @@
  * property or method in class "Estudo".
  *
  * Columns in table "estudo" available as properties of the model,
- * and there are no model relations.
+ * followed by relations of table "estudo" available as properties of the model.
  *
  * @property integer $id_estudo
  * @property string $ref_estudo
  * @property string $nome_estudo
  * @property string $caminho_estudo
- * @property string $cliente_estudo
  * @property integer $ativo_estudo
+ * @property integer $cliente_id_cliente
  *
+ * @property Cliente $clienteIdCliente
  */
 abstract class BaseEstudo extends GxActiveRecord {
 
@@ -37,17 +38,18 @@ abstract class BaseEstudo extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('ref_estudo, nome_estudo, caminho_estudo, cliente_estudo, ativo_estudo', 'required'),
-			array('ativo_estudo', 'numerical', 'integerOnly'=>true),
+			array('ref_estudo, nome_estudo, caminho_estudo, ativo_estudo, cliente_id_cliente', 'required'),
+			array('ativo_estudo, cliente_id_cliente', 'numerical', 'integerOnly'=>true),
 			array('ref_estudo', 'length', 'max'=>45),
-			array('nome_estudo, cliente_estudo', 'length', 'max'=>100),
+			array('nome_estudo', 'length', 'max'=>100),
 			array('caminho_estudo', 'length', 'max'=>255),
-			array('id_estudo, ref_estudo, nome_estudo, caminho_estudo, cliente_estudo, ativo_estudo', 'safe', 'on'=>'search'),
+			array('id_estudo, ref_estudo, nome_estudo, caminho_estudo, ativo_estudo, cliente_id_cliente', 'safe', 'on'=>'search'),
 		);
 	}
 
 	public function relations() {
 		return array(
+			'clienteIdCliente' => array(self::BELONGS_TO, 'Cliente', 'cliente_id_cliente'),
 		);
 	}
 
@@ -62,8 +64,9 @@ abstract class BaseEstudo extends GxActiveRecord {
 			'ref_estudo' => Yii::t('app', 'Ref Estudo'),
 			'nome_estudo' => Yii::t('app', 'Nome Estudo'),
 			'caminho_estudo' => Yii::t('app', 'Caminho Estudo'),
-			'cliente_estudo' => Yii::t('app', 'Cliente Estudo'),
 			'ativo_estudo' => Yii::t('app', 'Ativo Estudo'),
+			'cliente_id_cliente' => null,
+			'clienteIdCliente' => null,
 		);
 	}
 
@@ -74,8 +77,8 @@ abstract class BaseEstudo extends GxActiveRecord {
 		$criteria->compare('ref_estudo', $this->ref_estudo, true);
 		$criteria->compare('nome_estudo', $this->nome_estudo, true);
 		$criteria->compare('caminho_estudo', $this->caminho_estudo, true);
-		$criteria->compare('cliente_estudo', $this->cliente_estudo, true);
 		$criteria->compare('ativo_estudo', $this->ativo_estudo);
+		$criteria->compare('cliente_id_cliente', $this->cliente_id_cliente);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

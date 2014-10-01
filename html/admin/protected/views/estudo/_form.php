@@ -29,14 +29,14 @@
 		<?php echo $form->error($model,'caminho_estudo'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'cliente_estudo'); ?>
-		<?php echo $form->textField($model, 'cliente_estudo', array('maxlength' => 100)); ?>
-		<?php echo $form->error($model,'cliente_estudo'); ?>
-		</div><!-- row -->
-		<div class="row">
 		<?php echo $form->labelEx($model,'ativo_estudo'); ?>
 		<?php echo $form->checkBox($model, 'ativo_estudo'); ?>
 		<?php echo $form->error($model,'ativo_estudo'); ?>
+		</div><!-- row -->
+		<div class="row">
+		<?php echo $form->labelEx($model,'cliente_id_cliente'); ?>
+		<?php echo $form->dropDownList($model, 'cliente_id_cliente', GxHtml::listDataEx(Cliente::model()->findAllAttributes(null, true))); ?>
+		<?php echo $form->error($model,'cliente_id_cliente'); ?>
 		</div><!-- row -->
 
 

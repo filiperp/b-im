@@ -122,6 +122,14 @@ $this->endContent();
                             <i class="icon-tag"></i> Tags</a>
                     </li>
                     <li>
+                        <a href="<?php echo Yii::app()->createUrl("/cliente/admin"); ?>">
+                            <i class="icon-users"></i> Clientes</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo Yii::app()->createUrl("/estudo/admin"); ?>">
+                            <i class="icon-briefcase"></i> Estudos</a>
+                    </li>
+                    <li>
                         <a href="<?php echo Yii::app()->createUrl("/noticia/admin"); ?>">
                             <i class="icon-feed"></i> Notícias</a>
                     </li>

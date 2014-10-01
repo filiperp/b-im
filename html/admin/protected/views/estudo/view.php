@@ -23,8 +23,12 @@ $this->menu=array(
 'ref_estudo',
 'nome_estudo',
 'caminho_estudo',
-'cliente_estudo',
 'ativo_estudo:boolean',
+array(
+			'name' => 'clienteIdCliente',
+			'type' => 'raw',
+			'value' => $model->clienteIdCliente !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->clienteIdCliente)), array('cliente/view', 'id' => GxActiveRecord::extractPkValue($model->clienteIdCliente, true))) : null,
+			),
 	),
 )); ?>
 
