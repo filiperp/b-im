@@ -1,44 +1,64 @@
-<div class="wide form">
+<div class="row hidden">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-search"></i> Pesquisa Avançada
+                </div>
+                <div class="tools">
+                    <a href="" class="expand">
+                    </a>
 
-<?php $form = $this->beginWidget('GxActiveForm', array(
-	'action' => Yii::app()->createUrl($this->route),
-	'method' => 'get',
-)); ?>
+                </div>
+            </div>
+            <div class="portlet-body display-hide">
 
-	<div class="row">
-		<?php echo $form->label($model, 'id_estudo'); ?>
-		<?php echo $form->textField($model, 'id_estudo'); ?>
-	</div>
+                <?php $form = $this->beginWidget('GxActiveForm', array(
+                    'action' => Yii::app()->createUrl($this->route),
+                    'method' => 'get',
+                    'htmlOptions' => array('class' => 'form-horizontal')
+                )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model, 'ref_estudo'); ?>
-		<?php echo $form->textField($model, 'ref_estudo', array('maxlength' => 45)); ?>
-	</div>
+                <?php
+                $viewElements = array(
 
-	<div class="row">
-		<?php echo $form->label($model, 'nome_estudo'); ?>
-		<?php echo $form->textField($model, 'nome_estudo', array('maxlength' => 100)); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'caminho_estudo'); ?>
-		<?php echo $form->textField($model, 'caminho_estudo', array('maxlength' => 255)); ?>
-	</div>
+                     array('id_estudo', 45, 'textField'),
+                    array('ref_estudo', 45, 'textField'),
+                    array('nome_estudo', 100, 'textArea'),
+                   // array('caminho_estudo', 255, 'textField'),
+                    array('ativo_estudo', 1, 'checkBox'),
 
-	<div class="row">
-		<?php echo $form->label($model, 'ativo_estudo'); ?>
-		<?php echo $form->dropDownList($model, 'ativo_estudo', array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')), array('prompt' => Yii::t('app', 'All'))); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->label($model, 'cliente_id_cliente'); ?>
-		<?php echo $form->dropDownList($model, 'cliente_id_cliente', GxHtml::listDataEx(Cliente::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
-	</div>
+                );
 
-	<div class="row buttons">
-		<?php echo GxHtml::submitButton(Yii::t('app', 'Search')); ?>
-	</div>
+                foreach ($viewElements as $key => $value) {
+                    ?>
+                    <div class="form-group">
+                        <?php echo $form->label($model, $value[0], array('class' => '  col-md-4 control-label')); ?>
+                        <div class="col-md-8">
+                            <?php echo $form->$value[2]($model, $value[0], array('maxlength' =>$value[1], 'class' => 'form-control')); ?>
+                            <!--                            --><?php //echo $form->error($model, $value[0], array('errorCssClass'=>' has-error')); ?>
+                        </div>
+                    </div>
 
-<?php $this->endWidget(); ?>
 
-</div><!-- search-form -->
+                <?php
+                }
+                ?>
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <?php echo GxHtml::submitButton(Yii::t('app', 'Search'), array('class' => ' btn blue pull-right')); ?>
+                    </div>
+                </div>
+
+                <?php $this->endWidget(); ?>
+
+
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+</div>

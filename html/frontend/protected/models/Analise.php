@@ -10,6 +10,7 @@
  * @property string $descricao_analise
  * @property string $imagem_analise
  * @property integer $ativo_analise
+ * @property string $tipo_analise
  *
  * The followings are the available model relations:
  * @property Tag[] $tags
@@ -33,15 +34,15 @@ class Analise extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise', 'required'),
+			array('ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise, tipo_analise', 'required'),
 			array('ativo_analise', 'numerical', 'integerOnly'=>true),
-			array('ref_analise', 'length', 'max'=>45),
+			array('ref_analise, tipo_analise', 'length', 'max'=>45),
 			array('nome_analise', 'length', 'max'=>100),
-			array('', 'length', 'max'=>512),
+			array('descricao_analise', 'length', 'max'=>512),
 			array('imagem_analise', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_analise, ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise', 'safe', 'on'=>'search'),
+			array('id_analise, ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise, tipo_analise', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,6 +71,7 @@ class Analise extends CActiveRecord
 			'descricao_analise' => 'Descricao Analise',
 			'imagem_analise' => 'Imagem Analise',
 			'ativo_analise' => 'Ativo Analise',
+			'tipo_analise' => 'Tipo Analise',
 		);
 	}
 
@@ -97,6 +99,7 @@ class Analise extends CActiveRecord
 		$criteria->compare('descricao_analise',$this->descricao_analise,true);
 		$criteria->compare('imagem_analise',$this->imagem_analise,true);
 		$criteria->compare('ativo_analise',$this->ativo_analise);
+		$criteria->compare('tipo_analise',$this->tipo_analise,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

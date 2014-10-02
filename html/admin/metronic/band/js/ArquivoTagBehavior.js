@@ -35,6 +35,19 @@ ArquivoTagBehavior.class= '';
 
 
     };
+
+
+    ArquivoTagBehavior.checkJustOne= function($classTag){
+        ArquivoTagBehavior.class=$classTag;
+        $('.'+$classTag).change(function(){
+            $('.'+ ArquivoTagBehavior.class).attr('checked', false).parent().removeClass('checked');
+
+            $(this).attr('checked', true);
+
+
+        })
+
+    }
     return ArquivoTagBehavior;
 
  })();

@@ -61,7 +61,7 @@
                         <?php echo $form->labelEx($model, 'tipo_tag', array('class' => '  col-md-4 control-label')); ?>
                         <div class="col-md-8">
                             <?php
-                            $disabled =  $iscreate?'':'disabled';
+                            $disabled =  $isCreate?'':'disabled';
                             echo $form->dropDownList($model, 'tipo_tag', array('arquivo' => 'arquivo', 'programa' => 'programa', 'analise' => 'analise', 'veiculo' => 'veiculo'), array('maxlength' => 45, 'class' => "form-control ", 'disabled'=>"$disabled") ); ?>
                             <?php echo $form->error($model, 'tipo_tag'); ?>
                         </div>

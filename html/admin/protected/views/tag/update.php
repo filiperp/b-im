@@ -19,5 +19,5 @@ $this->menu = array(
 <?php
 $this->renderPartial('_form', array(
 		'model' => $model,
-        'iscreate'=>false));
+        'isCreate'=>false));
 ?>

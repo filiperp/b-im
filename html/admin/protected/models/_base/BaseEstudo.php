@@ -17,6 +17,7 @@
  * @property integer $cliente_id_cliente
  *
  * @property Cliente $clienteIdCliente
+ * @property Tag[] $tags
  */
 abstract class BaseEstudo extends GxActiveRecord {
 
@@ -50,11 +51,13 @@ abstract class BaseEstudo extends GxActiveRecord {
 	public function relations() {
 		return array(
 			'clienteIdCliente' => array(self::BELONGS_TO, 'Cliente', 'cliente_id_cliente'),
+			'tags' => array(self::MANY_MANY, 'Tag', 'estudo_has_tag(estudo_id_estudo, tag_id_tag)'),
 		);
 	}
 
 	public function pivotModels() {
 		return array(
+			'tags' => 'EstudoHasTag',
 		);
 	}
 
@@ -67,6 +70,7 @@ abstract class BaseEstudo extends GxActiveRecord {
 			'ativo_estudo' => Yii::t('app', 'Ativo Estudo'),
 			'cliente_id_cliente' => null,
 			'clienteIdCliente' => null,
+			'tags' => null,
 		);
 	}
 
@@ -84,4 +88,36 @@ abstract class BaseEstudo extends GxActiveRecord {
 			'criteria' => $criteria,
 		));
 	}
+    public function getLink()
+    {
+        if (!isset ($this->tags[0])) return;
+        switch ($this->tags[0]['ref_tag']) {
+            case 'vimeo':
+                return 'http://vimeo.com/' . $this->caminho_estudo;
+                break;
+            case 'youtube':
+                return 'http://www.youtube.com/watch?v=' . $this->caminho_estudo;
+                break;
+            case 'pdf':
+            case 'doc':
+            case 'xls':
+            case 'ppt':
+                return Yii::app()->baseUrl . '/' . $this->caminho_estudo;
+                break;
+
+        }
+    }
+
+    public function getBaseTag()
+    {
+        if (!isset ($this->tags[0])) return 'pdf';
+        return $this->tags[0]['ref_tag'];
+    }
+
+    public function getName()
+    {
+        if (!isset ($this->tags[0])) return 'SEM TAG';
+
+        return $this->tags[0]['nome_tag'];
+    }
 }

@@ -12,6 +12,8 @@
  * @property integer $fk_id_veiculo
  * @property integer $fk_id_praca
  * @property integer $fk_id_programa
+ * @property string $usuario
+ * @property string $data
  *
  * The followings are the available model relations:
  * @property VeiculoPracaPrograma $fkIdVeiculo
@@ -38,14 +40,14 @@ class Arquivo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa', 'required'),
+			array('ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa, usuario, data', 'required'),
 			array('ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa', 'numerical', 'integerOnly'=>true),
-			array('ref_arquivo', 'length', 'max'=>45),
+			array('ref_arquivo, usuario', 'length', 'max'=>45),
 			array('nome_arquivo', 'length', 'max'=>100),
 			array('caminho_arquivo', 'length', 'max'=>512),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa', 'safe', 'on'=>'search'),
+			array('id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa, usuario, data', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -79,6 +81,8 @@ class Arquivo extends CActiveRecord
 			'fk_id_veiculo' => 'Fk Id Veiculo',
 			'fk_id_praca' => 'Fk Id Praca',
 			'fk_id_programa' => 'Fk Id Programa',
+			'usuario' => 'Usuario',
+			'data' => 'Data',
 		);
 	}
 
@@ -108,6 +112,8 @@ class Arquivo extends CActiveRecord
 		$criteria->compare('fk_id_veiculo',$this->fk_id_veiculo);
 		$criteria->compare('fk_id_praca',$this->fk_id_praca);
 		$criteria->compare('fk_id_programa',$this->fk_id_programa);
+		$criteria->compare('usuario',$this->usuario,true);
+		$criteria->compare('data',$this->data,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

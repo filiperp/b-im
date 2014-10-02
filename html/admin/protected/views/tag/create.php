@@ -16,6 +16,6 @@ $this->menu = array(
 <?php
 $this->renderPartial('_form', array(
 		'model' => $model,
-    'iscreate'=>true,
+    'isCreate'=>true,
 		'buttons' => 'create'));
 ?>

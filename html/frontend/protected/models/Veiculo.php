@@ -26,8 +26,6 @@ class Veiculo extends CActiveRecord
 		return 'veiculo';
 	}
 
-
-
 	/**
 	 * @return array validation rules for model attributes.
 	 */

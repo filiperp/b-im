@@ -9,6 +9,7 @@
  * @property string $nome_praca
  * @property string $descricao_praca
  * @property integer $ativo_praca
+ * @property string $imagem_praca
  *
  * The followings are the available model relations:
  * @property Veiculo[] $veiculos
@@ -31,14 +32,15 @@ class Praca extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ref_praca, nome_praca, descricao_praca, ativo_praca', 'required'),
+			array('ref_praca, nome_praca, descricao_praca, ativo_praca, imagem_praca', 'required'),
 			array('ativo_praca', 'numerical', 'integerOnly'=>true),
 			array('ref_praca', 'length', 'max'=>45),
 			array('nome_praca', 'length', 'max'=>100),
 			array('descricao_praca', 'length', 'max'=>512),
+			array('imagem_praca', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_praca, ref_praca, nome_praca, descricao_praca, ativo_praca', 'safe', 'on'=>'search'),
+			array('id_praca, ref_praca, nome_praca, descricao_praca, ativo_praca, imagem_praca', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +67,7 @@ class Praca extends CActiveRecord
 			'nome_praca' => 'Nome Praca',
 			'descricao_praca' => 'Descricao Praca',
 			'ativo_praca' => 'Ativo Praca',
+			'imagem_praca' => 'Imagem Praca',
 		);
 	}
 
@@ -91,6 +94,7 @@ class Praca extends CActiveRecord
 		$criteria->compare('nome_praca',$this->nome_praca,true);
 		$criteria->compare('descricao_praca',$this->descricao_praca,true);
 		$criteria->compare('ativo_praca',$this->ativo_praca);
+		$criteria->compare('imagem_praca',$this->imagem_praca,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

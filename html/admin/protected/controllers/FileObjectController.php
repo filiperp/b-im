@@ -95,7 +95,9 @@ class FileObjectController extends CController
     {
         $label = get_class($model);
         $images = CUploadedFile::getInstancesByName($label);
-        $return = isset($model['imagem_' . strtolower($label)]) ? $model['imagem_' . strtolower($label)] : $model['caminho_arquivo'];
+        $return = isset($model['imagem_' . strtolower($label)]) ? $model['imagem_' . strtolower($label)] : $model['caminho_'. strtolower($label)];
+
+
         if (count($images) > 0) {
 
 

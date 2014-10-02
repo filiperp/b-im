@@ -12,6 +12,7 @@
  * The followings are the available model relations:
  * @property Analise[] $analises
  * @property Arquivo[] $arquivos
+ * @property Estudo[] $estudos
  * @property Programa[] $programas
  * @property Veiculo[] $veiculos
  */
@@ -33,7 +34,7 @@ class Tag extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tipo_tag', 'required'),
+			array('ref_tag, tipo_tag', 'required'),
 			array('ref_tag, nome_tag, tipo_tag', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -51,6 +52,7 @@ class Tag extends CActiveRecord
 		return array(
 			'analises' => array(self::MANY_MANY, 'Analise', 'analise_tag(fk_id_tag, fk_id_analise)'),
 			'arquivos' => array(self::MANY_MANY, 'Arquivo', 'arquivo_tag(fk_id_tag, fk_id_arquivo)'),
+			'estudos' => array(self::MANY_MANY, 'Estudo', 'estudo_has_tag(tag_id_tag, estudo_id_estudo)'),
 			'programas' => array(self::MANY_MANY, 'Programa', 'programa_tag(fk_id_tag, fk_id_programa)'),
 			'veiculos' => array(self::MANY_MANY, 'Veiculo', 'veiculo_tag(tag_id_tag, veiculo_id_veiculo)'),
 		);

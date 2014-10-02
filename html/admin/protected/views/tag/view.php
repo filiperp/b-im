@@ -86,22 +86,31 @@ $this->menu = array(
     </div>
 
 
-    <h2><?php echo 'Lista de Objetos <strong>"' . strtoupper($model->tipo_tag) . "'</strong> ligados à esse tag."; ?></h2>
 <?php
 $dataModels = array(
-    'programa'=> array($model->programas),
-    'analise'=> array($model->analises),
-    'arquivo'=> array($model->arquivos),
-    'veiculo'=> array($model->veiculos),
+    'programa'=> array(
+        'programa'=> $model->programas ),
+    'analise'=> array(
+        'analise'=> $model->analises),
+    'arquivo'=> array(
+        'arquivo'=> $model->arquivos,
+        'estudo'=> $model->estudos),
+    'veiculo'=> array(
+        'veiculo'=>$model->veiculos),
 
 );
+foreach ($dataModels[$model->tipo_tag] as $chave=> $lista) {
+?>
+    <h2><?php echo 'Lista de Objetos <strong>"' .$chave . "'</strong> ligados à esse tag."; ?></h2>
 
-
-echo GxHtml::openTag('ul');
-foreach ($dataModels[$model->tipo_tag][0] as $relatedModel) {
-    echo GxHtml::openTag('li');
-    echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array("$model->tipo_tag/view", 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
-    echo GxHtml::closeTag('li');
+<?php
+    //var_dump($lista);
+    echo GxHtml::openTag('ul');
+    foreach ($lista as $relatedModel) {
+        echo GxHtml::openTag('li');
+        echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array("$model->tipo_tag/view", 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+        echo GxHtml::closeTag('li');
+    }
+    echo GxHtml::closeTag('ul');
 }
-echo GxHtml::closeTag('ul');
 ?>

@@ -37,15 +37,23 @@ public function accessRules() {
 
 		if (isset($_POST['Estudo'])) {
 			$model->setAttributes($_POST['Estudo']);
+			$relatedData = array(
+				'tags' => $_POST['Estudo']['tags'] === '' ? null : $_POST['Estudo']['tags'],
+				);
+            Yii::import('application.controllers.FileObjectController');
+            $model->caminho_estudo = FileObjectController::saveFileAs($model);
 
-			if ($model->save()) {
+
+            if ($model->saveWithRelated($relatedData)) {
+                FileObjectController::updateNewNameLabel($model);
+                $model->save();
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else
 					$this->redirect(array('view', 'id' => $model->id_estudo));
 			}
 		}
-
+        unset($_SESSION['current_image_'.get_class($model)]);
 		$this->render('create', array( 'model' => $model));
 	}
 
@@ -56,12 +64,16 @@ public function accessRules() {
 
 		if (isset($_POST['Estudo'])) {
 			$model->setAttributes($_POST['Estudo']);
-
-			if ($model->save()) {
+			$relatedData = array(
+				'tags' => $_POST['Estudo']['tags'] === '' ? null : $_POST['Estudo']['tags'],
+				);
+            Yii::import('application.controllers.FileObjectController');
+            $model->caminho_estudo = FileObjectController::saveFileAs($model);
+			if ($model->saveWithRelated($relatedData)) {
 				$this->redirect(array('view', 'id' => $model->id_estudo));
 			}
 		}
-
+        $_SESSION['current_image_'. get_class($model)] = $model->caminho_estudo;
 		$this->render('update', array(
 				'model' => $model,
 				));
@@ -69,7 +81,13 @@ public function accessRules() {
 
 	public function actionDelete($id) {
 		if (Yii::app()->getRequest()->getIsPostRequest()) {
-			$this->loadModel($id, 'Estudo')->delete();
+		//	$this->loadModel($id, 'Estudo')->delete();
+
+
+            $model = $this->loadModel($id, 'Estudo');
+            unlink ($model->imagem_praca);
+            unset($_SESSION['current_image_'.get_class($model)]);
+            $model->delete();
 
 			if (!Yii::app()->getRequest()->getIsAjaxRequest())
 				$this->redirect(array('admin'));

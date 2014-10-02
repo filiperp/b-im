@@ -82,7 +82,7 @@ $this->menu = array(
                     }
                     ?>
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12  ">
                             <div class="form-group">
                                 <label class="control-label col-md-3 bold">
                                     <?php echo GxHtml::encode($model->getAttributeLabel('imagem_cliente')); ?>:</label>
@@ -111,6 +111,7 @@ $this->menu = array(
 	foreach($model->estudos as $relatedModel) {
 		echo GxHtml::openTag('li');
 		echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('estudo/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+		echo GxHtml::link('Abrir',$relatedModel->getLink(),array('target'=>'_blank', 'class'=>'badge badge-danger'));
 		echo GxHtml::closeTag('li');
 	}
 	echo GxHtml::closeTag('ul');

@@ -9,6 +9,8 @@
  * @property string $ref_arquivo
  * @property string $nome_arquivo
  * @property string $caminho_arquivo
+ * @property string $usuario
+ * @property string $data
  *
  * The followings are the available model relations:
  * @property Arquivo $fkIdArquivo
@@ -31,14 +33,14 @@ class ArquivoHistorico extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo', 'required'),
+			array('fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, usuario, data', 'required'),
 			array('fk_id_arquivo', 'numerical', 'integerOnly'=>true),
-			array('ref_arquivo', 'length', 'max'=>45),
+			array('ref_arquivo, usuario', 'length', 'max'=>45),
 			array('nome_arquivo', 'length', 'max'=>100),
 			array('caminho_arquivo', 'length', 'max'=>512),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_arquivo_historico, fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo', 'safe', 'on'=>'search'),
+			array('id_arquivo_historico, fk_id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, usuario, data', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +67,8 @@ class ArquivoHistorico extends CActiveRecord
 			'ref_arquivo' => 'Ref Arquivo',
 			'nome_arquivo' => 'Nome Arquivo',
 			'caminho_arquivo' => 'Caminho Arquivo',
+			'usuario' => 'Usuario',
+			'data' => 'Data',
 		);
 	}
 
@@ -91,6 +95,8 @@ class ArquivoHistorico extends CActiveRecord
 		$criteria->compare('ref_arquivo',$this->ref_arquivo,true);
 		$criteria->compare('nome_arquivo',$this->nome_arquivo,true);
 		$criteria->compare('caminho_arquivo',$this->caminho_arquivo,true);
+		$criteria->compare('usuario',$this->usuario,true);
+		$criteria->compare('data',$this->data,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
