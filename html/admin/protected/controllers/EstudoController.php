@@ -39,6 +39,7 @@ public function accessRules() {
 			$model->setAttributes($_POST['Estudo']);
 			$relatedData = array(
 				'tags' => $_POST['Estudo']['tags'] === '' ? null : $_POST['Estudo']['tags'],
+                'veiculos' => $_POST['Estudo']['veiculos'] === '' ? null : $_POST['Estudo']['veiculos'],
 				);
             Yii::import('application.controllers.FileObjectController');
             $model->caminho_estudo = FileObjectController::saveFileAs($model);
@@ -66,6 +67,7 @@ public function accessRules() {
 			$model->setAttributes($_POST['Estudo']);
 			$relatedData = array(
 				'tags' => $_POST['Estudo']['tags'] === '' ? null : $_POST['Estudo']['tags'],
+                'veiculos' => $_POST['Estudo']['veiculos'] === '' ? null : $_POST['Estudo']['veiculos'],
 				);
             Yii::import('application.controllers.FileObjectController');
             $model->caminho_estudo = FileObjectController::saveFileAs($model);

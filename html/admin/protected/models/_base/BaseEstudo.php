@@ -18,6 +18,7 @@
  *
  * @property Cliente $clienteIdCliente
  * @property Tag[] $tags
+ * @property Veiculo[] $veiculos
  */
 abstract class BaseEstudo extends GxActiveRecord {
 
@@ -52,12 +53,14 @@ abstract class BaseEstudo extends GxActiveRecord {
 		return array(
 			'clienteIdCliente' => array(self::BELONGS_TO, 'Cliente', 'cliente_id_cliente'),
 			'tags' => array(self::MANY_MANY, 'Tag', 'estudo_has_tag(estudo_id_estudo, tag_id_tag)'),
+			'veiculos' => array(self::MANY_MANY, 'Veiculo', 'veiculo_has_estudo(estudo_id_estudo, veiculo_id_veiculo)'),
 		);
 	}
 
 	public function pivotModels() {
 		return array(
 			'tags' => 'EstudoHasTag',
+			'veiculos' => 'VeiculoHasEstudo',
 		);
 	}
 
@@ -71,6 +74,7 @@ abstract class BaseEstudo extends GxActiveRecord {
 			'cliente_id_cliente' => null,
 			'clienteIdCliente' => null,
 			'tags' => null,
+			'veiculos' => null,
 		);
 	}
 
@@ -88,6 +92,7 @@ abstract class BaseEstudo extends GxActiveRecord {
 			'criteria' => $criteria,
 		));
 	}
+
     public function getLink()
     {
         if (!isset ($this->tags[0])) return;

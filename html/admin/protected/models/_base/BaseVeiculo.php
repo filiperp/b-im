@@ -17,6 +17,7 @@
  * @property integer $ativo_veiculo
  *
  * @property Analise[] $analises
+ * @property Estudo[] $estudos
  * @property Praca[] $pracas
  * @property Tag[] $tags
  */
@@ -35,7 +36,7 @@ abstract class BaseVeiculo extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'nome_veiculo';
+		return 'ref_veiculo';
 	}
 
 	public function rules() {
@@ -53,6 +54,7 @@ abstract class BaseVeiculo extends GxActiveRecord {
 	public function relations() {
 		return array(
 			'analises' => array(self::MANY_MANY, 'Analise', 'veiculo_analise(fk_id_veiculo, fk_id_analise)'),
+			'estudos' => array(self::MANY_MANY, 'Estudo', 'veiculo_has_estudo(veiculo_id_veiculo, estudo_id_estudo)'),
 			'pracas' => array(self::MANY_MANY, 'Praca', 'veiculo_praca(fk_id_veiculo, fk_id_praca)'),
 			'tags' => array(self::MANY_MANY, 'Tag', 'veiculo_tag(veiculo_id_veiculo, tag_id_tag)'),
 		);
@@ -61,6 +63,7 @@ abstract class BaseVeiculo extends GxActiveRecord {
 	public function pivotModels() {
 		return array(
 			'analises' => 'VeiculoAnalise',
+			'estudos' => 'VeiculoHasEstudo',
 			'pracas' => 'VeiculoPraca',
 			'tags' => 'VeiculoTag',
 		);
@@ -68,13 +71,14 @@ abstract class BaseVeiculo extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'id_veiculo' => Yii::t('app', 'Id '),
-			'ref_veiculo' => Yii::t('app', 'Ref '),
-			'nome_veiculo' => Yii::t('app', 'Nome '),
-			'descricao_veiculo' => Yii::t('app', 'Descricao '),
-			'imagem_veiculo' => Yii::t('app', 'Imagem '),
-			'ativo_veiculo' => Yii::t('app', 'Ativo '),
+			'id_veiculo' => Yii::t('app', 'Id Veiculo'),
+			'ref_veiculo' => Yii::t('app', 'Ref Veiculo'),
+			'nome_veiculo' => Yii::t('app', 'Nome Veiculo'),
+			'descricao_veiculo' => Yii::t('app', 'Descricao Veiculo'),
+			'imagem_veiculo' => Yii::t('app', 'Imagem Veiculo'),
+			'ativo_veiculo' => Yii::t('app', 'Ativo Veiculo'),
 			'analises' => null,
+			'estudos' => null,
 			'pracas' => null,
 			'tags' => null,
 		);

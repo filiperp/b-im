@@ -39,6 +39,7 @@ public function accessRules() {
 			$model->setAttributes($_POST['Veiculo']);
 			$relatedData = array(
 				'analises' => $_POST['Veiculo']['analises'] === '' ? null : $_POST['Veiculo']['analises'],
+                'estudos' => $_POST['Veiculo']['estudos'] === '' ? null : $_POST['Veiculo']['estudos'],
 				'pracas' => $_POST['Veiculo']['pracas'] === '' ? null : $_POST['Veiculo']['pracas'],
 				'tags' => $_POST['Veiculo']['tags'] === '' ? null : $_POST['Veiculo']['tags'],
 				);
@@ -68,6 +69,7 @@ public function accessRules() {
 			$model->setAttributes($_POST['Veiculo']);
 			$relatedData = array(
 				'analises' => $_POST['Veiculo']['analises'] === '' ? null : $_POST['Veiculo']['analises'],
+                'estudos' => $_POST['Veiculo']['estudos'] === '' ? null : $_POST['Veiculo']['estudos'],
 				'pracas' => $_POST['Veiculo']['pracas'] === '' ? null : $_POST['Veiculo']['pracas'],
 				'tags' => $_POST['Veiculo']['tags'] === '' ? null : $_POST['Veiculo']['tags'],
 				);
