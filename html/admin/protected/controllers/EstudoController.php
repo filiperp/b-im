@@ -64,7 +64,9 @@ public function accessRules() {
 		$this->performAjaxValidation($model, 'estudo-form');
 
 		if (isset($_POST['Estudo'])) {
-			$model->setAttributes($_POST['Estudo']);
+
+
+           // var_dump($_POST['Estudo']); die();
 			$relatedData = array(
 				'tags' => $_POST['Estudo']['tags'] === '' ? null : $_POST['Estudo']['tags'],
                 'veiculos' => $_POST['Estudo']['veiculos'] === '' ? null : $_POST['Estudo']['veiculos'],

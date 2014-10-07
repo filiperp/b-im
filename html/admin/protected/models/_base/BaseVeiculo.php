@@ -36,7 +36,7 @@ abstract class BaseVeiculo extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'ref_veiculo';
+		return 'nome_veiculo';
 	}
 
 	public function rules() {

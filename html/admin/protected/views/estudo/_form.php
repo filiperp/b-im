@@ -84,6 +84,32 @@
                             <div class="portlet box  green-haze">
                                 <div class="portlet-title">
                                     <div class="caption">
+                                        <i class="fa fa-file-o fa-create"></i> <?php echo GxHtml::encode($model->getRelationLabel('veiculos')); ?>
+                                    </div>
+                                    <div class="tools">
+
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body ">
+                                    <?php
+                                    $Criteria = new CDbCriteria();
+                                    $Criteria->addCondition('ativo_veiculo = 1  ');
+
+                                    echo $form->checkBoxList($model, 'veiculos', GxHtml::encodeEx(GxHtml::listDataEx(Veiculo::model()->findAll($Criteria)), false, true)); ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="portlet box  green-haze">
+                                <div class="portlet-title">
+                                    <div class="caption">
                                         <i class="fa fa-file-o fa-create"></i> <?php echo GxHtml::encode($model->getRelationLabel('tags')); ?>
                                     </div>
                                     <div class="tools">

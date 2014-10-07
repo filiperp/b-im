@@ -128,20 +128,33 @@ $this->menu = array(
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="form-group">
+                            <div class="form-group ">
                                 <label class="control-label col-md-3 bold">
-                                    Veiculos:</label>
+                                    <?php echo GxHtml::encode($model->getAttributeLabel('veiculos')); ?>:</label>
 
                                 <div class="col-md-9">
-                                    <p class="form-control-static">
+                                    <?php
+                                    //  echo GxHtml::openTag('ul');
+                                    foreach ($model->veiculos as $relatedModel) {
+                                        //  echo GxHtml::openTag('li');
+                                        $corAtico = $relatedModel->ativo_veiculo==0?'#ff0000 !important':"#888";
 
-                                        <?php
-                                        foreach ($model->veiculos as $relatedModel) {
-                                            echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('veiculos/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)), array('class' => "btn btn-circle blue-madison"));
-                                            echo ' ';
-                                        }
-                                        ?>
-                                    </p>
+                                        echo GxHtml::link(
+                                            GxHtml::openTag('div', array('style'=>"display:inline-block;border: 1px solid $corAtico; margin-bottom:15px;")).
+                                            GxHtml::openTag('div', array('style'=>"text-wrap:normal; width:200px; text-align:center; color:$corAtico")).
+                                            GxHtml::encode(GxHtml::valueEx($relatedModel)).
+                                            GxHtml::closeTag('div').
+                                            GxHtml::image($relatedModel['imagem_veiculo'],'Imagem Ref.', array('class'=>'thumb-list100 ')).
+
+                                            GxHtml::closeTag('div')
+                                            , array('veiculo/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)),
+                                            array('style' => "width:200px;  text-align:center;padding-right:15px;"));
+
+                                        // echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('analise/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
+                                        //  echo GxHtml::closeTag('li');
+                                    }
+                                    // echo GxHtml::closeTag('ul');
+                                    ?>
                                 </div>
                             </div>
                         </div>

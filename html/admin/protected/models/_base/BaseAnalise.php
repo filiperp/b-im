@@ -35,7 +35,7 @@ abstract class BaseAnalise extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'ref_analise';
+		return 'nome_analise';
 	}
 
 	public function rules() {

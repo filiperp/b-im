@@ -20,7 +20,7 @@
 
         </div>
         <div class="portlet-body">
-            <div class="portlet-content">
+            <div class="portlet-content ">
                 <div class="row">
 
                     <div class="col-sm-8">

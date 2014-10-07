@@ -84,6 +84,7 @@ class ArquivoController extends GxController
         $this->performAjaxValidation($model, 'arquivo-form');
 
         if (isset($_POST['Arquivo'])) {
+
             $_POST['Arquivo']['usuario'] =Yii::app()->user->getId();
             $_POST['Arquivo']['data'] = date('Y-m-d h:i:s', time());
             $model->setAttributes($_POST['Arquivo']);

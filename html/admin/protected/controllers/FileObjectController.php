@@ -64,8 +64,10 @@ class FileObjectController extends CController
         $label = strtolower(get_class($model));
         $path = '../uploads/' . $label . '/';
         $newName = "";
-        if (isset ($model['imagem_' . $label])) {
-            $ext = pathinfo($model['imagem_' . $label], PATHINFO_EXTENSION);
+        if (isset ($model['imagem_' . $label]) || isset ($model['caminho_' . $label])) {
+            $baseProp = isset ($model['imagem_' . $label])?'imagem_':'caminho_';
+
+            $ext = pathinfo($model[$baseProp . $label], PATHINFO_EXTENSION);
 
             $_name = "";
 
@@ -76,9 +78,9 @@ class FileObjectController extends CController
 
 
             $newName = $path . $_name . '.' . $ext;
-            if (is_file($model['imagem_' . $label])) {
-                rename($model['imagem_' . $label], $newName);
-                $model['imagem_' . $label] = $newName;
+            if (is_file($model[$baseProp . $label])) {
+                rename($model[$baseProp. $label], $newName);
+                $model[$baseProp. $label] = $newName;
                 $model->save();
             }
 

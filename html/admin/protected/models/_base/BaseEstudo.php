@@ -35,7 +35,7 @@ abstract class BaseEstudo extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'ref_estudo';
+		return 'nome_estudo';
 	}
 
 	public function rules() {
