@@ -14,6 +14,7 @@
  * The followings are the available model relations:
  * @property Cliente $clienteIdCliente
  * @property Tag[] $tags
+ * @property Veiculo[] $veiculos
  */
 class Estudo extends CActiveRecord
 {
@@ -54,6 +55,7 @@ class Estudo extends CActiveRecord
 		return array(
 			'clienteIdCliente' => array(self::BELONGS_TO, 'Cliente', 'cliente_id_cliente'),
 			'tags' => array(self::MANY_MANY, 'Tag', 'estudo_has_tag(estudo_id_estudo, tag_id_tag)'),
+			'veiculos' => array(self::MANY_MANY, 'Veiculo', 'veiculo_has_estudo(estudo_id_estudo, veiculo_id_veiculo)'),
 		);
 	}
 
@@ -127,10 +129,22 @@ class Estudo extends CActiveRecord
             case 'doc':
             case 'xls':
             case 'ppt':
-                return  '/' . $this->caminho_estudo;
+                return Yii::app()->baseUrl . '/' . $this->caminho_estudo;
                 break;
 
         }
     }
 
+    public function getBaseTag()
+    {
+        if (!isset ($this->tags[0])) return 'pdf';
+        return $this->tags[0]['ref_tag'];
+    }
+
+    public function getName()
+    {
+        if (!isset ($this->tags[0])) return 'SEM TAG';
+
+        return $this->tags[0]['nome_tag'];
+    }
 }

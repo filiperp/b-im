@@ -55,6 +55,13 @@ $dataProgs = $command->queryAll();
 
 <div class="row margin-bottom-40">
 <!-- BEGIN CONTENT -->
+<div class=" col-md-12 col-sm-12" id="frame_result" style="display: none">
+
+    <div class="btn btn-info"  style="right: 7px; position: absolute; top:8px; " id="btn_close_frame_result"><i class="fa fa-close"></i></div>
+    <iframe id="uploader_iframe" scrolling="no" name="uploader_iframe" style="display: block; overflow: hidden; width: 100%; height: 45px; border: none !important;overflow-style: panner;"></iframe>
+
+
+</div>
 <div class="col-md-12 col-sm-12">
 <div class="row " style="min-height: 80px; margin-bottom:10px;">
     <div class="col-sm-12 ">
@@ -73,6 +80,7 @@ $dataProgs = $command->queryAll();
 </div>
 
 <div class="content-page">
+
 <div class="row">
 <div class="col-md-3 col-sm-3">
     <ul class="tabbable faq-tabbable">
@@ -345,13 +353,18 @@ $dataProgs = $command->queryAll();
                                             break;
                                     }
                                     ?>
+                                                <p class="search-link " style="margin-top:8px;display: inline">
+                                                    Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo $arq['data']; ?>)
+                                                </p>
+                                                <div  class="input-file-item"  style="display: none; float: right; cursor:hand; cursor:pointer">
 
-                                                <div style="display: inline">
-
-                                                   <input type="file" class="input-file-item">
-                                                    <p class="search-link" style="margin-top:8px;display: inline">
-                                                        Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo $arq['data']; ?>)
-                                                    </p>
+                                                     <div class="btn btn-danger  btn-upload-item"
+                                                          onclick="onClickUploadFile('<?php echo $prog['nome_programa']; ?>',
+                                                                                        '<?php echo $arq['nome_arquivo']; ?>',
+                                                                                        '<?php echo $arq['id_arquivo']; ?>'
+                                                                                )">
+                                                          <i class= "fa fa-cloud-upload"></i>
+                                                     </div>
 
                                                 </div>
 
@@ -561,6 +574,76 @@ $dataProgs = $command->queryAll();
 </div>
 </div>
 
+
+<div id="modalUploadFile" class="modal fade" style="">
+    <div class="modal-dialog" style="max-width: 500px;float: right; min-width: 500px;" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 class="modal-title">Atualização de Arquivo</h2></div>
+            <div class="modal-body">
+                <div class="bootbox-body">
+
+
+
+                    <form enctype="multipart/form-data" id="veiculo-form" target="uploader_iframe" action="<?php echo Yii::app()->createUrl("site/uploadFile") ; ?>" method="post">
+
+                        <div class="form-group">
+                            <div class="  col-md-4 bold" >Programa: </div>
+
+                            <div class="col-md-8 ">
+                                <div  class=""  id="nomePrograma" ></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="  col-md-4 bold" >ID Arquivo: </div>
+
+                            <div class="col-md-8 ">
+                                <div  class=""  id="idArquivo" ></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="  col-md-4  bold ">Nome: </div>
+
+                            <div class="col-md-8">
+                                <div  class=""  id="nomeArquivo" ></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="  col-md-4 control-label bold" for="Veiculo_image">Arquivo:</label>
+
+                            <div class="col-md-8">
+
+                                <input name="Arquivo[image]" id="Arquivo_image" type="file">
+                            </div>
+                        </div>
+
+
+
+                        <input name="Arquivo[id_arquivo]" id="Arquivo_fk_id_arquivo" type="hidden">
+
+                        <div class="row ">
+                            <div class="col-md-12 ">
+                                <input id="btn-upload-file" class=" btn blue pull-right" type="submit" name="yt0" value="Enviar">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
 <script type="application/javascript">
 
     $(document).ready(function () {
@@ -570,6 +653,56 @@ $dataProgs = $command->queryAll();
 
         $('#btn-upload-comercial').unbind('click').on('click', function(){
             $('.input-file-item').toggle();
-        }
+        });
+
+//        $('.btn-upload-item').unbind('click').on('click',function(){
+//
+//
+//        })
+
+
+        $("#btn-upload-file").on("click", function(e) {
+            console.log("button pressed");   // just as an example...
+            $('#frame_result').show();
+            $("#modalUploadFile").modal('hide');     // dismiss the dialog
+        });
+
+        $('#btn_close_frame_result').unbind('click').on('click', function(){
+            $('#frame_result').hide();
+        });
+
+        $("#modalUploadFile").on("hide", function() {    // remove the event listeners when the dialog is dismissed
+            $("#btn-enviar-file").off("click");
+        });
+
+        $("#modalUploadFile").on("hidden", function() {  // remove the actual elements from the DOM when fully hidden
+            $("#modalUploadFile").remove();
+        });
+
+
+
+
+
     })
+
+
+
+    function onClickUploadFile(prog, arq,id){
+        console.log( prog, arq,id);
+        $('#nomeArquivo').html( arq);
+        $('#idArquivo').html(id);
+        $('#nomePrograma').html(prog);
+
+        $('#Arquivo_image').replaceWith( $('#Arquivo_image').val('').clone(true));
+        $('#Arquivo_fk_id_arquivo').val(id);
+       $("#modalUploadFile").modal({                    // wire up the actual modal functionality and show the dialog
+            //  "backdrop"  : "static",
+            "keyboard"  : true
+            // "show"      : true                     // ensure the modal is shown immediately
+        });
+    }
+
+
+
+
 </script>

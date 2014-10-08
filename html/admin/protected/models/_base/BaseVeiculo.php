@@ -98,4 +98,24 @@ abstract class BaseVeiculo extends GxActiveRecord {
 			'criteria' => $criteria,
 		));
 	}
+
+    public function getLink()
+    {
+        if (!isset ($this->tags[0])) return;
+        switch ($this->tags[0]['ref_tag']) {
+            case 'vimeo':
+                return 'http://vimeo.com/' . $this->caminho_estudo;
+                break;
+            case 'youtube':
+                return 'http://www.youtube.com/watch?v=' . $this->caminho_estudo;
+                break;
+            case 'pdf':
+            case 'doc':
+            case 'xls':
+            case 'ppt':
+                return  '/' . $this->caminho_estudo;
+                break;
+
+        }
+    }
 }
