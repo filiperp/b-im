@@ -233,55 +233,18 @@ class SiteController extends Controller
         $hist->data = $model->data;
         $hist->ref_arquivo = $model->ref_arquivo;
         $hist->nome_arquivo = $model->nome_arquivo;
-        $hist->caminho_arquivo = $histPAth . '__' . microtime(true) . '_' . basename($_SESSION['current_image_' . get_class($model)]);
+        $path_parts = pathinfo($model->caminho_arquivo);
+        $hist->caminho_arquivo = $histPAth . '__' . microtime(true) . '_' . $path_parts['basename'];
         $hist->save();
         if (copy($model->caminho_arquivo, $hist->caminho_arquivo)) {
             unlink($model->caminho_arquivo);
         }
+       $model->usuario =Yii::app()->user->getId();
+       $model->data= date('Y-m-d h:i:s', time());
+        $img = CUploadedFile::getInstanceByName('Arquivo[image]');
+        $img->saveAs($model->caminho_arquivo);
 
 
-        echo '<pre>';
- var_dump($_POST);
- var_dump($_FILES);
-        var_dump(CUploadedFile::getInstanceByName('Arquivo[image]'));
-
-        die();
-
-
-$id= 1;
-        $model = $this->loadModel($id, 'Arquivo');
-
-        $this->performAjaxValidation($model, 'arquivo-form');
-
-        if (isset($_POST['Arquivo'])) {
-
-            $_POST['Arquivo']['usuario'] =Yii::app()->user->getId();
-            $_POST['Arquivo']['data'] = date('Y-m-d h:i:s', time());
-            $model->setAttributes($_POST['Arquivo']);
-            $relatedData = array(
-                'tags' => $_POST['Arquivo']['tags'] === '' ? null : $_POST['Arquivo']['tags'],
-            );
-
-            Yii::import('application.controllers.FileObjectController');
-            if (intval($relatedData['tags'][0]) != 14 && intval($relatedData['tags'][0]) != 15) {
-
-                if ($_SESSION['current_image_' . get_class($model)] != $model->caminho_arquivo) {
-                    FileObjectController::createHistorico($model);
-                    $model->caminho_arquivo = FileObjectController::saveFileAs($model, $model->ref_arquivo. '/');
-                }
-
-            }
-
-            if ($model->saveWithRelated($relatedData)) {
-                $this->redirect(array('view', 'id' => $model->id_arquivo));
-            }
-        }
-
-
-        $_SESSION['current_image_' . get_class($model)] = $model->caminho_arquivo;
-        $this->render('update', array(
-            'model' => $model,
-        ));
         $data['res']=true;
         $this->renderPartial('pages/uploadResult',$data);
     }

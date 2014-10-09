@@ -52,8 +52,18 @@ abstract class BaseArquivo extends GxActiveRecord {
 			array('nome_arquivo', 'length', 'max'=>100),
 			array('caminho_arquivo', 'length', 'max'=>512),
 			array('id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa, usuario, data', 'safe', 'on'=>'search'),
+			array('tags','greaterThanZero'),
 		);
 	}
+
+
+    public function greaterThanZero($attribute,$params)
+    {
+
+        if (sizeof($this->tags)==0)
+            $this->addError($attribute, 'Seleciona ao menos 1 tag');
+
+    }
 
 	public function relations() {
 		return array(

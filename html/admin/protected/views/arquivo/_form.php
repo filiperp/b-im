@@ -184,7 +184,7 @@
                     <div class="row ">
                         <div class="col-md-12 ">
                             <?php
-                            echo GxHtml::submitButton(Yii::t('app', 'Save'), array('id' => 'btnSubmmitForm', 'class' => ' btn blue pull-right'));
+                            echo GxHtml::submitButton(Yii::t('app', 'Save'), array('id' => 'btnSubmmitForm', 'class' => ' btn blue pull-right', 'disabled'=> 'disabled'));
                             $this->endWidget();
                             ?>
                         </div>

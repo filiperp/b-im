@@ -14,7 +14,7 @@ ArquivoTagBehavior.class= '';
         ArquivoTagBehavior.class=$classTag;
         $('.'+$classTag).change(function(){
             $('.'+ ArquivoTagBehavior.class).attr('checked', false).parent().removeClass('checked');
-
+    $('#btnSubmmitForm').removeAttr('disabled');
             $(this).attr('checked', true);
            switch(parseInt($(this).val())){
                case 14:

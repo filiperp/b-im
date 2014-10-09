@@ -1,3 +1,12 @@
+<div class=" " id="frame_result" style="display: none; position: fixed; top:74px; z-index: 1000;width: 400px;
+right: 0px;">
+
+    <div class="btn btn-info"  style="right: 7px; position: absolute; top:8px; " id="btn_close_frame_result"><i class="fa fa-close"></i></div>
+    <iframe id="uploader_iframe" scrolling="no" name="uploader_iframe" style="display: block; overflow: hidden; width: 100%; height: 45px; border: none !important;overflow-style: panner;"></iframe>
+
+
+</div>
+
 <ul class="breadcrumb">
     <li><?php echo CHtml::ajaxLink(
             '<i class="fa fa-home"> </i>Home',
@@ -55,13 +64,7 @@ $dataProgs = $command->queryAll();
 
 <div class="row margin-bottom-40">
 <!-- BEGIN CONTENT -->
-<div class=" col-md-12 col-sm-12" id="frame_result" style="display: none">
 
-    <div class="btn btn-info"  style="right: 7px; position: absolute; top:8px; " id="btn_close_frame_result"><i class="fa fa-close"></i></div>
-    <iframe id="uploader_iframe" scrolling="no" name="uploader_iframe" style="display: block; overflow: hidden; width: 100%; height: 45px; border: none !important;overflow-style: panner;"></iframe>
-
-
-</div>
 <div class="col-md-12 col-sm-12">
 <div class="row " style="min-height: 80px; margin-bottom:10px;">
     <div class="col-sm-12 ">
@@ -253,7 +256,7 @@ $dataProgs = $command->queryAll();
 
                                 <?php foreach ($arqs as $arq) {
 
-                                    $arq_tipo = $arq['tags'][0]["ref_tag"];;?>
+                                    $arq_tipo = isset($arq['tags'][0]["ref_tag"])?$arq['tags'][0]["ref_tag"]: 'pdf';;?>
 
 
                                     <?php
@@ -361,7 +364,8 @@ $dataProgs = $command->queryAll();
                                                      <div class="btn btn-danger  btn-upload-item"
                                                           onclick="onClickUploadFile('<?php echo $prog['nome_programa']; ?>',
                                                                                         '<?php echo $arq['nome_arquivo']; ?>',
-                                                                                        '<?php echo $arq['id_arquivo']; ?>'
+                                                                                        '<?php echo $arq['id_arquivo']; ?>',
+                                                                                        '<?php echo $arq_tipo; ?>'
                                                                                 )">
                                                           <i class= "fa fa-cloud-upload"></i>
                                                      </div>
@@ -446,7 +450,7 @@ $dataProgs = $command->queryAll();
                                        foreach ($idEstudos as $idEstudo) {
                                             $estudo = Estudo::model()->findByPk($idEstudo['id_estudo']);
 
-                                            $arq_tipo = $estudo['tags'][0]["ref_tag"];;?>
+                                            $arq_tipo = isset($estudo['tags'][0]["ref_tag"])?$estudo['tags'][0]["ref_tag"]: 'pdf';;?>
 
 
                                             <?php
@@ -668,7 +672,7 @@ $dataProgs = $command->queryAll();
         });
 
         $('#btn_close_frame_result').unbind('click').on('click', function(){
-            $('#frame_result').hide();
+            $('#frame_result').fadeOut();
         });
 
         $("#modalUploadFile").on("hide", function() {    // remove the event listeners when the dialog is dismissed
@@ -687,8 +691,24 @@ $dataProgs = $command->queryAll();
 
 
 
-    function onClickUploadFile(prog, arq,id){
+    function onClickUploadFile(prog, arq,id,tipo){
         console.log( prog, arq,id);
+
+        switch (tipo){
+            case "pdf":
+                $('#Arquivo_image').attr('accept', '.pdf')
+                break;
+            case "doc":
+                $('#Arquivo_image').attr('accept', '.doc,.docx')
+                break;
+            case "xls":
+                $('#Arquivo_image').attr('accept', '.xls,.xlsx')
+            break;
+            case "ppt":
+                $('#Arquivo_image').attr('accept', '.ppt,.pptx')
+                break;
+
+        }
         $('#nomeArquivo').html( arq);
         $('#idArquivo').html(id);
         $('#nomePrograma').html(prog);

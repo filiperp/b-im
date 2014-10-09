@@ -63,7 +63,7 @@ class ArquivoController extends GxController
             if ($model->saveWithRelated($relatedData)) {
 
                 if (intval($relatedData['tags'][0]) != 14 && intval($relatedData['tags'][0]) != 15) {
-                    FileObjectController::updateNewNameLabel($model);
+                    FileObjectController::updateNewNameLabel($model, $model->ref_arquivo.'/');
                     $model->save();
                 }
 

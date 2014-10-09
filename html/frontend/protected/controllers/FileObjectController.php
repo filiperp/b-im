@@ -59,10 +59,10 @@ class FileObjectController extends CController
         $this->render('show', array('data' => $data));
     }
 
-    public static function updateNewNameLabel($model)
+    public static function updateNewNameLabel($model, $extra= '')
     {
         $label = strtolower(get_class($model));
-        $path = '../uploads/' . $label . '/';
+        $path = '../uploads/' . $label . '/'.$extra;
         $newName = "";
         if (isset ($model['imagem_' . $label]) || isset ($model['caminho_' . $label])) {
             $baseProp = isset ($model['imagem_' . $label])?'imagem_':'caminho_';
