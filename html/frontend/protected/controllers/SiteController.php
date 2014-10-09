@@ -90,6 +90,7 @@ class SiteController extends Controller
         $anal = Analise::model()->findByPk($id);
 
         if($anal->tipo_analise=='painel'){
+
             $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
         }else{
             $data['link'] = $anal['descricao_analise'];
@@ -99,6 +100,7 @@ class SiteController extends Controller
 
 
        // $data['link'] = 'http://uol.com.br';
+        $data['link_tipo'] =$anal->tipo_analise;
         $data['remote']=$_SERVER['REMOTE_ADDR'];
         $data['veiculo'] = $veiculo;
         $data['praca'] = $praca;
