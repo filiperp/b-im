@@ -16,14 +16,20 @@ HelpAnalise = (function () {
 
     HelpAnalise.prototype.navigator = null;
     HelpAnalise.NAVIGATOR = 'navigator_help_analise';
+
+    HelpAnalise.prototype.navigatorMenu = null;
+    HelpAnalise.NAVIGATOR_MENU = 'navigator_menu_help_analise';
+
     HelpAnalise.instance= null;
     function HelpAnalise(theData, holder) {
+        if(HelpAnalise.instance) return;
         this.theData = theData;
         this.currentIndex = 0;
         this.holder = $('#' + holder);
         this.holder.html(' ').hide();
         this.createBG();
         this.createNavigator();
+        this.createNavigatorMenu();
         this.drawScreen();
         this.holder.fadeIn();
         HelpAnalise.instance= this;
@@ -64,23 +70,86 @@ HelpAnalise = (function () {
             top: '5px',
             'text-align':'center'
         });
-        var btnClose =  $( '<div class="badge badge-primary pull-right isBT" style="margin-right: 5px; height: 22px; "><i class="fa fa-close"></i></div>');
+
+        this.holder.append(this.navigator);
 
         for (var i = 0; i < this.theData.length; i++) {
-            var btn =  $( '<div class="badge badge-primary isBT" style="margin-right: 5px; height: 22px; " data-page="'+i+'"><i class="fa fa-star"></i> '+(i+1)+ '</div>');
+            var btn =  $( '<div  id="btnPage'+i+'" class="badge badge-primary isBT" ' +
+                'style="margin-right: 5px; height: 22px; " data-page="'+i+'">' +
+                '<i class="fa fa-star"></i> '+(i+1)+ '</div>');
 
-           btn.on('click', this.onClickPage)
+           btn.unbind( 'click').on('click', this.onClickPage)
             this.navigator.append(btn);
 
         }
+        var btnClose =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-close"></i>Fechar</div>');
         this.navigator.append(btnClose);
+        btnClose.unbind('click').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            HelpAnalise.instance.holder.fadeOut({complete:function(){
+                HelpAnalise.instance.holder.html( ' ' );
+                delete HelpAnalise.instance;
+
+            }})
+
+        })
         if (HelpAnalise.DEBUG) {
             this.navigator.css({
                 border: '2px solid #0000ff'
 
             })
         }
-        this.holder.append(this.navigator);
+
+    };
+    HelpAnalise.prototype.createNavigatorMenu = function () {
+        this.navigatorMenu = $("<div></div>");
+        this.navigatorMenu.attr('id', HelpAnalise.NAVIGATOR_MENU);
+
+        this.navigatorMenu.css({
+            position: 'absolute',
+            height: '100%',
+            left: '-190px',
+            width: '200px',
+            'box-sizing': 'border-box',
+            overflow: 'hidden',
+            top: '0px',
+            'text-align':'center',
+            'background-color':'rgba(255,255,255,.6)'
+        });
+
+        this.navigatorMenu.addClass('navigatorMenu');
+        this.holder.append(this.navigatorMenu);
+
+
+//        for (var i = 0; i < this.theData.length; i++) {
+//            var btn =  $( '<div  id="btnPage'+i+'" class="badge badge-primary isBT" ' +
+//                'style="margin-right: 5px; height: 22px; " data-page="'+i+'">' +
+//                '<i class="fa fa-star"></i> '+(i+1)+ '</div>');
+//
+//            btn.unbind( 'click').on('click', this.onClickPage)
+//            this.navigator.append(btn);
+//
+//        }
+//        var btnClose =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-close"></i>Fechar</div>');
+//        this.navigator.append(btnClose);
+//        btnClose.unbind('click').on('click', function(e){
+//            e.preventDefault();
+//            e.stopPropagation();
+//            HelpAnalise.instance.holder.fadeOut({complete:function(){
+//                HelpAnalise.instance.holder.html( ' ' );
+//                delete HelpAnalise.instance;
+//
+//            }})
+//
+//        })
+//        if (HelpAnalise.DEBUG) {
+//            this.navigator.css({
+//                border: '2px solid #0000ff'
+//
+//            })
+//        }
+
     };
     HelpAnalise.prototype.onClickPage = function(e){
         e.preventDefault();
@@ -92,7 +161,9 @@ HelpAnalise = (function () {
 
     HelpAnalise.prototype.drawScreen = function()
     {
-        console.log(this.currentIndex)
+        console.log(this.currentIndex);
+        $('.isBT').removeClass('isBTSelected');
+        $('#btnPage'+this.currentIndex).addClass('isBTSelected');
         this.bgContent.html('');
         var inData = this.theData[this.currentIndex];
         var rect = inData.rect;
@@ -149,8 +220,24 @@ HelpAnalise = (function () {
             width: rect.width,
             height: rect.height,
             color: '#ffffff',
-            opacity: 0.01
+            opacity: 0.01,
+            isfocus:true
         });
+        if(inData.extraRects){
+            for (var i = 0; i < inData.extraRects.length; i++) {
+                var obj = inData.extraRects[i];
+                this.appendDiv({
+                    left: obj.left,
+                    top: obj.top,
+                    width: obj.width,
+                    height: obj.height,
+                    color: obj.color||'#ffffff'
+                    //opacity: 0.01,
+                    //isfocus:true
+                });
+
+            }
+        }
 
         //area texto
         this.appendDiv({
@@ -159,8 +246,9 @@ HelpAnalise = (function () {
             width: trect.width,
             height: trect.height,
             color: '#ffffff',
-            opacity: 0.8,
-            text: inData.text
+            opacity: 1,
+            text: inData.text,
+            title:inData.title
         });
     }
 
@@ -189,8 +277,28 @@ HelpAnalise = (function () {
 
             }
         );
+
+        if(inData.isfocus){
+            b.css({
+                'background-color': 'rgba(255, 255, 255,0.1)',
+              //  'border': '3px solid #ff0000',
+                opacity:1
+            });
+
+        }
+        if (inData.title) {
+            b.css({
+                padding:'15px',
+                'text-align': 'left',
+                'background-color': 'rgba(0,0,0,.3)',
+                color:"#ffffff",
+                'font-size': '14px'
+
+            })
+            b.append('<h1>'+ inData.title+ '</h1>');
+        }
         if (inData.text) {
-            b.html(inData.text);
+            b.append(inData.text);
         }
         this.bgContent.append(b);
 

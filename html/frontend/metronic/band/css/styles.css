@@ -52,3 +52,19 @@
     cursor:hand;
     cursor:pointer;
 }
+.isBTSelected{
+  color:#FFEF74;
+  border: 1px solid #FFEF74;
+}
+
+.navigatorMenu{
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+
+.navigatorMenu:hover{
+    left:0px !important;
+
+}
