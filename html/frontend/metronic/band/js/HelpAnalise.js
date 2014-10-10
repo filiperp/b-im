@@ -5,7 +5,7 @@
 var HelpAnalise;
 HelpAnalise = (function () {
     'use strict';
-    HelpAnalise.DEBUG = true;
+    HelpAnalise.DEBUG = false;
     HelpAnalise.prototype.theData = null;
     HelpAnalise.prototype.currentIndex = null;
 
@@ -16,7 +16,7 @@ HelpAnalise = (function () {
 
     HelpAnalise.prototype.navigator = null;
     HelpAnalise.NAVIGATOR = 'navigator_help_analise';
-
+    HelpAnalise.instance= null;
     function HelpAnalise(theData, holder) {
         this.theData = theData;
         this.currentIndex = 0;
@@ -26,6 +26,7 @@ HelpAnalise = (function () {
         this.createNavigator();
         this.drawScreen();
         this.holder.fadeIn();
+        HelpAnalise.instance= this;
     }
 
     HelpAnalise.prototype.createBG = function () {
@@ -60,9 +61,19 @@ HelpAnalise = (function () {
             height: '45px',
             'box-sizing': 'border-box',
             overflow: 'hidden',
-            bottom: '0px'
+            top: '5px',
+            'text-align':'center'
         });
+        var btnClose =  $( '<div class="badge badge-primary pull-right isBT" style="margin-right: 5px; height: 22px; "><i class="fa fa-close"></i></div>');
 
+        for (var i = 0; i < this.theData.length; i++) {
+            var btn =  $( '<div class="badge badge-primary isBT" style="margin-right: 5px; height: 22px; " data-page="'+i+'"><i class="fa fa-star"></i> '+(i+1)+ '</div>');
+
+           btn.on('click', this.onClickPage)
+            this.navigator.append(btn);
+
+        }
+        this.navigator.append(btnClose);
         if (HelpAnalise.DEBUG) {
             this.navigator.css({
                 border: '2px solid #0000ff'
@@ -71,8 +82,17 @@ HelpAnalise = (function () {
         }
         this.holder.append(this.navigator);
     };
+    HelpAnalise.prototype.onClickPage = function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        HelpAnalise.instance.currentIndex = $(e.currentTarget).data('page');
+        HelpAnalise.instance.drawScreen();
+
+    }
+
     HelpAnalise.prototype.drawScreen = function()
     {
+        console.log(this.currentIndex)
         this.bgContent.html('');
         var inData = this.theData[this.currentIndex];
         var rect = inData.rect;
@@ -81,6 +101,13 @@ HelpAnalise = (function () {
         rect.width = rect.width || 0;
         rect.height = rect.height || 0;
 
+        var trect = inData.textRect;
+        trect.left = trect.left || 0;
+        trect.top = trect.top || 0;
+        trect.width = trect.width || 0;
+        trect.height = trect.height || 0;
+
+
         //area sombra
         this.appendDiv({
             left: 0,
@@ -88,40 +115,52 @@ HelpAnalise = (function () {
             width: '100%',
             height: rect.top,
             color: '#000',
-            opacity: .4
+            opacity: .6
         });
         this.appendDiv({
             left: 0,
             top: rect.top,
             width: rect.left,
+            height: rect.height,
+            color: '#000',
+            opacity: .6
+        });
+        this.appendDiv({
+            left: 0,
+            top: rect.top + rect.height,
+            width: '100%',
             height: '100%',
             color: '#000',
-            opacity: .4
+            opacity: .6
         });
         this.appendDiv({
             left: rect.left + rect.width,
             top: rect.top,
             width: '100%',
-            height: '100%',
+            height: rect.height,
             color: '#000',
-            opacity: .4
+            opacity: .6
         });
-        this.appendDiv({
-            left: rect.left,
-            top: rect.top + rect.height,
-            width: rect.width,
-            height: '100%',
-            color: '#000',
-            opacity: .4
-        });
+
         //area visivel
         this.appendDiv({
             left: rect.left,
             top: rect.top,
             width: rect.width,
             height: rect.height,
-            color: '#ff0000',
-            opacity: .2
+            color: '#ffffff',
+            opacity: 0.01
+        });
+
+        //area texto
+        this.appendDiv({
+            left: trect.left,
+            top: trect.top,
+            width: trect.width,
+            height: trect.height,
+            color: '#ffffff',
+            opacity: 0.8,
+            text: inData.text
         });
     }
 
@@ -151,7 +190,7 @@ HelpAnalise = (function () {
             }
         );
         if (inData.text) {
-            b.hatml(inData.text);
+            b.html(inData.text);
         }
         this.bgContent.append(b);
 

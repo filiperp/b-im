@@ -47,7 +47,7 @@ if ($link_tipo == 'painel') $frame_width = '915px';;?>
     <div class="col-sm-12 " style="text-align: center;">
 
         <div style="text-align: center;width: <?php echo $frame_width; ?> !important; ">
-            <div id="help_holder" style="border: 2px solid #ff0000; height:756px; box-sizing: border-box; width:<?php echo $frame_width; ?> ; position: absolute">
+            <div id="help_holder" style="height:756px; box-sizing: border-box; width:<?php echo $frame_width; ?> ; position: absolute">
 
             </div>
             <iframe src="<?php echo $link; ?>"
@@ -69,12 +69,12 @@ if ($link_tipo == 'painel') $frame_width = '915px';;?>
           text: '1'+t
       },
       {
-          rect:{left: 80, top: 200, width: 300, height: 100},
+          rect:{left: 80, top: 400, width: 300, height: 100},
           textRect:{left: 100, top: 400, width: 300, height: 100},
           text: '2'+  t
       },
       {
-          rect:{left: 30, top: 200, width: 300, height: 100},
+          rect:{left: 30, top: 100, width: 300, height: 100},
           textRect:{left: 60, top: 400, width: 300, height: 100},
           text: '3'+t
       }

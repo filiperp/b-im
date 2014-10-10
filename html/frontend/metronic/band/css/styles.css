@@ -47,3 +47,8 @@
 #container{
     min-height: 600px;
 }
+
+.isBT:hover{
+    cursor:hand;
+    cursor:pointer;
+}
