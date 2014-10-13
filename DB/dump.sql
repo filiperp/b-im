@@ -32,9 +32,11 @@ CREATE TABLE `analise` (
   `imagem_analise` varchar(255) NOT NULL COMMENT 'Imagem',
   `ativo_analise` tinyint(1) NOT NULL COMMENT 'Ativo',
   `tipo_analise` varchar(45) NOT NULL,
+  `help_analise` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_analise`),
+  UNIQUE KEY `ref_analise_UNIQUE` (`ref_analise`),
   KEY `ref` (`ref_analise`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +45,7 @@ CREATE TABLE `analise` (
 
 LOCK TABLES `analise` WRITE;
 /*!40000 ALTER TABLE `analise` DISABLE KEYS */;
-INSERT INTO `analise` VALUES (1,'calc_descontos','Calculadora de Descontos','PolticadeDesconto/CLCULO','../uploads/analise/calc_descontos__1__analise.png',1,'painel'),(2,'analise_share_mercado','Análise Share de Mercado','AnliseShare/AnliseShare','../uploads/analise/analise_share_mercado__2__analise.png',1,'painel'),(3,'analise_share_mercado_pracas_especiais','Análise Share de Mercado - Praças Especiais','AnliseSharedeMercado-PraasEspeciaisv3/AnliseShare','../uploads/analise/analise_share_mercado_pracas_especiais__3__analise.png',1,'painel'),(4,'cpp_cpm','Análise CPP / CPM','AnliseCPP-CPM/CPP','../uploads/analise/cpp_cpm__4__analise.png',1,'painel'),(5,'sazionalidade_investimento','Sazionalidade de Investimento da TV Aberta','Sazonalidade/Sazonalidade','../uploads/analise/sazionalidade_investimento__5__analise.png',1,'painel'),(6,'prospeccao','Ferramenta de Prospecção','FerramentaparaProspecodeClientes/Potenciaisanunciantes','../uploads/analise/prospeccao__6__analise.png',1,'painel'),(7,'agenda_anunciantes_agencia','Agenda Anunciantes e Agências','Terminaldeconsulta/Agendaanunciantes','../uploads/analise/agenda_anunciantes_agencia__7__analise.png',1,'painel'),(8,'maiores_anunciantes_setor','Maiores Anunciantes por Setor','RankingInvestimentoPorSetor/Rkg_Anunciantes_Setor','../uploads/analise/maiores_anunciantes_setor__8__analise.png',1,'painel'),(9,'maiores_anunciantes_mercado','Maiores Anunciantes por Mercado','RankingAnunciantesPorMercado/Rkg_Anunciantes_Mercado','../uploads/analise/maiores_anunciantes_mercado__9__analise.png',1,'painel'),(10,'maiores_anunciantes_agencia','Maiores Anunciantes por Agência','RankingAnunciantesPorAgncias/Rkg_Anunciantes_Agncia','../uploads/analise/maiores_anunciantes_agencia__10__analise.png',1,'painel'),(11,'maiores_agencias_mercado','Maiores Agências por Mercado','RankingAgnciasPorMercado/Rkg_Agencia_Mercado','../uploads/analise/maiores_agencias_mercado__11__analise.png',1,'painel'),(12,'midia_dados_2014','Mídia Dados 2013','https://mdb.bbi.net.br/','../uploads/analise/midia_dados_2014__12__analise.png',1,'site'),(13,'inter_meios','Projeto Inter Meios','Intermeios/InvestimentoPublicitrio','../uploads/analise/inter_meios__13__analise.png',1,'painel'),(14,'audiencia_emissora','Análise de Audiência por Emissora','AnliseAudinciaporEmissora/AnliseAudinciaporEmissora','../uploads/analise/audiencia_emissora__14__analise.png',1,'painel'),(15,'audiencia_programa_pracas_especiais','Audiência por Programa - Praças Especiais','AnliseAudinciaporPrograma-PraasEspeciais/AnliseaudinciaPraasEspeciais','../uploads/analise/audiencia_programa_pracas_especiais__15__analise.png',1,'painel'),(16,'audiencia_programa','Análise de Audiência por Programa','AnliseAudinciaporPrograma/AnliseAudinciaporPrograma','../uploads/analise/audiencia_programa__16__analise.png',1,'painel'),(17,'principais_targets_band','Principais Targets da Band','DesempenhoTargetseProgramas/TopProgramaseTargets','../uploads/analise/principais_targets_band__17__analise.png',1,'painel'),(18,'perfil_audiencia_programa','Perfil de Audiência por Programa','PerfilPrograma/PerfildeAudinciadoPrograma','../uploads/analise/perfil_audiencia_programa__18__analise.png',1,'painel'),(19,'perfil_investimento_programa','Perfil de Investimento por Programa','PerfilPrograma/PerfildeInvestimentodoPrograma','../uploads/analise/perfil_investimento_programa__19__analise.png',1,'painel'),(20,'perfil_futebol','Perfil do Futebol','PerfilFutebol/PerfildoFutebol','../uploads/analise/perfil_futebol__20__analise.png',1,'painel'),(21,'targets_comportamentais','Análise de Targets Comportamentais','DesempenhoTargetseProgramasTGR/TopTargets','../uploads/analise/targets_comportamentais__21__analise.png',1,'painel'),(22,'agenda_anunciantes_newco','Agenda de Anunciantes ','AgendaAnunciantes-PayTV/TerminaldeConsulta-PayTV','../uploads/analise/agenda_anunciantes_newco__22__analise.png',1,'painel'),(23,'perfil_investimento_emissora','Perfil de Investimento por Emissora','Monitor-PerfildeInvestimentosporEmissora/Perfildeinvestimentoporemissoras','../uploads/analise/perfil_investimento_emissora__23__analise.png',1,'painel'),(24,'anunciantes_agencia','Maiores Anunciantes por Agência','RankingAnunciantesPorAgnciasPayTv/AnunciantesporAgncia','../uploads/analise/anunciantes_agencia__24__analise.png',1,'painel'),(25,'audiencia_programa_newco','Análise Audiência por Programa','Audincia-PayTV-Programasv_2/AnliseAudinciaProgramas','../uploads/analise/audiencia_programa_newco__25__analise.png',1,'painel'),(26,'audiencia_emissora_newco','Análise Audiência por Emissora','Audincia-PayTV-FaixahorriaMensal/AnliseEmissoraPaytv','../uploads/analise/audiencia_emissora_newco__26__analise.png',1,'painel'),(27,'targets_comportamentais_newco','Análise Targets Comportamentais','Audincia-PayTV-FaixahorriaMensal/AnliseEmissoraPaytv','../uploads/analise/targets_comportamentais_newco__27__analise.png',1,'painel'),(28,'desempenho_programas_targets','Desempenho por Programas e Targets','DesempenhoTargetseProgramas_0/TopProgramaseTargets','../uploads/analise/desempenho_programas_targets__28__analise.png',1,'painel'),(29,'agenda_anunciantes_outernet','Agenda Anunciantes','uternetAgendaAnunciantes/AnlisedeInvestimento','../uploads/analise/agenda_anunciantes_outernet__29__analise.png',1,'painel'),(30,'anunciantes_setor_meio','Maiores Anunciantes por Setor ou Meio','Outernet-SharedeInvestimentosporMeios/Rankingsetores','../uploads/analise/anunciantes_setor_meio__30__analise.png',1,'painel'),(31,'habitos_consumo','Análise de Hábitos de Consumo','Outernet-Anlisedehbitosdeconsumo/Anlisedehbitosdeconsumo','../uploads/analise/habitos_consumo__31__analise.png',1,'painel'),(32,'planilha_habitos_consumo','Planilha de Hábitos de Consumo','Outernet-Anlisedehbitosdeconsumo-Planilha/AnlisedehbitosdeConsumo','../uploads/analise/planilha_habitos_consumo__32__analise.png',1,'painel'),(33,'penetracao_consumo_meios','Penetração e Consumo dos Meios','Outernet-PenetraoeConsumodosMeios/PenetraoeConsumodosMeios','../uploads/analise/penetracao_consumo_meios__33__analise.png',1,'painel');
+INSERT INTO `analise` VALUES (1,'calc_descontos','Calculadora de Descontos','PolticadeDesconto/CLCULO','../uploads/analise/calc_descontos__1__analise.png',1,'painel',0),(2,'analise_share_mercado','Análise Share de Mercado','AnliseShare/AnliseShare','../uploads/analise/analise_share_mercado__2__analise.png',1,'painel',1),(3,'analise_share_mercado_pracas_especiais','Análise Share de Mercado - Praças Especiais','AnliseSharedeMercado-PraasEspeciaisv3/AnliseShare','../uploads/analise/analise_share_mercado_pracas_especiais__3__analise.png',1,'painel',0),(4,'cpp_cpm','Análise CPP / CPM','AnliseCPP-CPM/CPP','../uploads/analise/cpp_cpm__4__analise.png',1,'painel',0),(5,'sazionalidade_investimento','Sazionalidade de Investimento da TV Aberta','Sazonalidade/Sazonalidade','../uploads/analise/sazionalidade_investimento__5__analise.png',1,'painel',0),(6,'prospeccao','Ferramenta de Prospecção','FerramentaparaProspecodeClientes/Potenciaisanunciantes','../uploads/analise/prospeccao__6__analise.png',1,'painel',0),(7,'agenda_anunciantes_agencia','Agenda Anunciantes e Agências','Terminaldeconsulta/Agendaanunciantes','../uploads/analise/agenda_anunciantes_agencia__7__analise.png',1,'painel',0),(8,'maiores_anunciantes_setor','Maiores Anunciantes por Setor','RankingInvestimentoPorSetor/Rkg_Anunciantes_Setor','../uploads/analise/maiores_anunciantes_setor__8__analise.png',1,'painel',0),(9,'maiores_anunciantes_mercado','Maiores Anunciantes por Mercado','RankingAnunciantesPorMercado/Rkg_Anunciantes_Mercado','../uploads/analise/maiores_anunciantes_mercado__9__analise.png',1,'painel',0),(10,'maiores_anunciantes_agencia','Maiores Anunciantes por Agência','RankingAnunciantesPorAgncias/Rkg_Anunciantes_Agncia','../uploads/analise/maiores_anunciantes_agencia__10__analise.png',1,'painel',0),(11,'maiores_agencias_mercado','Maiores Agências por Mercado','RankingAgnciasPorMercado/Rkg_Agencia_Mercado','../uploads/analise/maiores_agencias_mercado__11__analise.png',1,'painel',0),(12,'midia_dados_2014','Mídia Dados 2013','https://mdb.bbi.net.br/','../uploads/analise/midia_dados_2014__12__analise.png',1,'site',0),(13,'inter_meios','Projeto Inter Meios','Intermeios/InvestimentoPublicitrio','../uploads/analise/inter_meios__13__analise.png',1,'painel',0),(14,'audiencia_emissora','Análise de Audiência por Emissora','AnliseAudinciaporEmissora/AnliseAudinciaporEmissora','../uploads/analise/audiencia_emissora__14__analise.png',1,'painel',0),(15,'audiencia_programa_pracas_especiais','Audiência por Programa - Praças Especiais','AnliseAudinciaporPrograma-PraasEspeciais/AnliseaudinciaPraasEspeciais','../uploads/analise/audiencia_programa_pracas_especiais__15__analise.png',1,'painel',0),(16,'audiencia_programa','Análise de Audiência por Programa','AnliseAudinciaporPrograma/AnliseAudinciaporPrograma','../uploads/analise/audiencia_programa__16__analise.png',1,'painel',0),(17,'principais_targets_band','Principais Targets da Band','DesempenhoTargetseProgramas/TopProgramaseTargets','../uploads/analise/principais_targets_band__17__analise.png',1,'painel',0),(18,'perfil_audiencia_programa','Perfil de Audiência por Programa','PerfilPrograma/PerfildeAudinciadoPrograma','../uploads/analise/perfil_audiencia_programa__18__analise.png',1,'painel',0),(19,'perfil_investimento_programa','Perfil de Investimento por Programa','PerfilPrograma/PerfildeInvestimentodoPrograma','../uploads/analise/perfil_investimento_programa__19__analise.png',1,'painel',0),(20,'perfil_futebol','Perfil do Futebol','PerfilFutebol/PerfildoFutebol','../uploads/analise/perfil_futebol__20__analise.png',1,'painel',0),(21,'targets_comportamentais','Análise de Targets Comportamentais','DesempenhoTargetseProgramasTGR/TopTargets','../uploads/analise/targets_comportamentais__21__analise.png',1,'painel',0),(22,'agenda_anunciantes_newco','Agenda de Anunciantes ','AgendaAnunciantes-PayTV/TerminaldeConsulta-PayTV','../uploads/analise/agenda_anunciantes_newco__22__analise.png',1,'painel',0),(23,'perfil_investimento_emissora','Perfil de Investimento por Emissora','Monitor-PerfildeInvestimentosporEmissora/Perfildeinvestimentoporemissoras','../uploads/analise/perfil_investimento_emissora__23__analise.png',1,'painel',0),(24,'anunciantes_agencia','Maiores Anunciantes por Agência','RankingAnunciantesPorAgnciasPayTv/AnunciantesporAgncia','../uploads/analise/anunciantes_agencia__24__analise.png',1,'painel',0),(25,'audiencia_programa_newco','Análise Audiência por Programa','Audincia-PayTV-Programasv_2/AnliseAudinciaProgramas','../uploads/analise/audiencia_programa_newco__25__analise.png',1,'painel',0),(26,'audiencia_emissora_newco','Análise Audiência por Emissora','Audincia-PayTV-FaixahorriaMensal/AnliseEmissoraPaytv','../uploads/analise/audiencia_emissora_newco__26__analise.png',1,'painel',0),(27,'targets_comportamentais_newco','Análise Targets Comportamentais','Audincia-PayTV-FaixahorriaMensal/AnliseEmissoraPaytv','../uploads/analise/targets_comportamentais_newco__27__analise.png',1,'painel',0),(28,'desempenho_programas_targets','Desempenho por Programas e Targets','DesempenhoTargetseProgramas_0/TopProgramaseTargets','../uploads/analise/desempenho_programas_targets__28__analise.png',1,'painel',0),(29,'agenda_anunciantes_outernet','Agenda Anunciantes','uternetAgendaAnunciantes/AnlisedeInvestimento','../uploads/analise/agenda_anunciantes_outernet__29__analise.png',1,'painel',0),(30,'anunciantes_setor_meio','Maiores Anunciantes por Setor ou Meio','Outernet-SharedeInvestimentosporMeios/Rankingsetores','../uploads/analise/anunciantes_setor_meio__30__analise.png',1,'painel',0),(31,'habitos_consumo','Análise de Hábitos de Consumo','Outernet-Anlisedehbitosdeconsumo/Anlisedehbitosdeconsumo','../uploads/analise/habitos_consumo__31__analise.png',1,'painel',0),(32,'planilha_habitos_consumo','Planilha de Hábitos de Consumo','Outernet-Anlisedehbitosdeconsumo-Planilha/AnlisedehbitosdeConsumo','../uploads/analise/planilha_habitos_consumo__32__analise.png',1,'painel',0),(33,'penetracao_consumo_meios','Penetração e Consumo dos Meios','Outernet-PenetraoeConsumodosMeios/PenetraoeConsumodosMeios','../uploads/analise/penetracao_consumo_meios__33__analise.png',1,'painel',0),(34,'midia_fatos_2014','Mídia Fatos 2014','http://www.midiafatos.com.br/site2014/index.html','../uploads/analise/midia_fatos_2014__34__analise.png',1,'site',0);
 /*!40000 ALTER TABLE `analise` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +73,7 @@ CREATE TABLE `analise_tag` (
 
 LOCK TABLES `analise_tag` WRITE;
 /*!40000 ALTER TABLE `analise_tag` DISABLE KEYS */;
-INSERT INTO `analise_tag` VALUES (1,23),(2,23),(3,23),(4,23),(5,23),(6,23),(7,23),(8,23),(9,23),(10,23),(11,23),(12,23),(13,23),(22,23),(23,23),(24,23),(29,23),(30,23),(14,24),(15,24),(16,24),(17,24),(18,24),(19,24),(20,24),(21,24),(25,24),(26,24),(27,24),(28,24),(31,24),(32,24),(33,24);
+INSERT INTO `analise_tag` VALUES (34,20),(34,21),(1,23),(2,23),(3,23),(4,23),(5,23),(6,23),(7,23),(8,23),(9,23),(10,23),(11,23),(12,23),(13,23),(22,23),(23,23),(24,23),(29,23),(30,23),(14,24),(15,24),(16,24),(17,24),(18,24),(19,24),(20,24),(21,24),(25,24),(26,24),(27,24),(28,24),(31,24),(32,24),(33,24);
 /*!40000 ALTER TABLE `analise_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,10 +96,11 @@ CREATE TABLE `arquivo` (
   `usuario` varchar(45) NOT NULL,
   `data` datetime NOT NULL,
   PRIMARY KEY (`id_arquivo`),
+  UNIQUE KEY `ref_arquivo_UNIQUE` (`ref_arquivo`),
   KEY `ref` (`ref_arquivo`),
   KEY `fk_arquivo_veiculo_praca_programa1_idx` (`fk_id_veiculo`,`fk_id_praca`,`fk_id_programa`),
   CONSTRAINT `fk_arquivo_veiculo_praca_programa1` FOREIGN KEY (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) REFERENCES `veiculo_praca_programa` (`fk_id_veiculo`, `fk_id_praca`, `fk_id_programa`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,6 +109,7 @@ CREATE TABLE `arquivo` (
 
 LOCK TABLES `arquivo` WRITE;
 /*!40000 ALTER TABLE `arquivo` DISABLE KEYS */;
+INSERT INTO `arquivo` VALUES (2,'teste1','teste13222222','../uploads/arquivo/teste1/teste1__2__arquivo.pptx',1,1,1,10,'admin','2014-10-07 10:21:28');
 /*!40000 ALTER TABLE `arquivo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +131,7 @@ CREATE TABLE `arquivo_historico` (
   PRIMARY KEY (`id_arquivo_historico`),
   KEY `fk_arquivo_historico_arquivo1_idx` (`fk_id_arquivo`),
   CONSTRAINT `fk_arquivo_historico_arquivo1` FOREIGN KEY (`fk_id_arquivo`) REFERENCES `arquivo` (`id_arquivo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,6 +140,7 @@ CREATE TABLE `arquivo_historico` (
 
 LOCK TABLES `arquivo_historico` WRITE;
 /*!40000 ALTER TABLE `arquivo_historico` DISABLE KEYS */;
+INSERT INTO `arquivo_historico` VALUES (7,2,'teste1','teste13','../uploads/arquivo/teste1/hist/__1412694461.0214_teste1__2__arquivo.pptx','admin','2014-10-07 03:07:40'),(8,2,'teste1','teste13','../uploads/arquivo/teste1/hist/__1412694483.6583_teste1__2__arquivo.jpg','admin','2014-10-07 03:08:03');
 /*!40000 ALTER TABLE `arquivo_historico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,7 +168,94 @@ CREATE TABLE `arquivo_tag` (
 
 LOCK TABLES `arquivo_tag` WRITE;
 /*!40000 ALTER TABLE `arquivo_tag` DISABLE KEYS */;
+INSERT INTO `arquivo_tag` VALUES (19,2);
 /*!40000 ALTER TABLE `arquivo_tag` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cliente`
+--
+
+DROP TABLE IF EXISTS `cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cliente` (
+  `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
+  `ref_cliente` varchar(45) NOT NULL,
+  `nome_cliente` varchar(100) NOT NULL,
+  `imagem_cliente` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_cliente`),
+  UNIQUE KEY `ref_cliente_UNIQUE` (`ref_cliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cliente`
+--
+
+LOCK TABLES `cliente` WRITE;
+/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (2,'coamo','Coamo','../uploads/cliente/coamo__2__cliente.png'),(3,'boston_medical','Boston Medical Group','../uploads/cliente/boston_medical__3__cliente.png'),(4,'cemil','Cemil','../uploads/cliente/cemil__4__cliente.png'),(5,'havan','Havan','../uploads/cliente/havan__5__cliente.png');
+/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `estudo`
+--
+
+DROP TABLE IF EXISTS `estudo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `estudo` (
+  `id_estudo` int(11) NOT NULL AUTO_INCREMENT,
+  `ref_estudo` varchar(45) NOT NULL,
+  `nome_estudo` varchar(100) NOT NULL,
+  `caminho_estudo` varchar(255) NOT NULL COMMENT '	',
+  `ativo_estudo` tinyint(1) NOT NULL,
+  `cliente_id_cliente` int(11) NOT NULL,
+  PRIMARY KEY (`id_estudo`),
+  UNIQUE KEY `ref_estudo_UNIQUE` (`ref_estudo`),
+  KEY `fk_estudo_cliente1_idx` (`cliente_id_cliente`),
+  CONSTRAINT `fk_estudo_cliente1` FOREIGN KEY (`cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `estudo`
+--
+
+LOCK TABLES `estudo` WRITE;
+/*!40000 ALTER TABLE `estudo` DISABLE KEYS */;
+INSERT INTO `estudo` VALUES (3,'coamo_2014_v1','Estudo Coamo v1','../uploads/estudo/coamo_2014_v1__3__estudo.png',1,2),(4,'coamo_2014_v1_pdf','Estudo Coamo v1 PDF','../uploads/estudo/coamo_2014_v1_pdf__4__estudo.pdf',1,2),(5,'boston_2014','Boston Medical Group','../uploads/estudo/boston_2014__5__estudo.pptx',1,3),(6,'cemil_2014','Estudo Cemil','../uploads/estudo/cemil_2014__6__estudo.pptx',1,4),(7,'havan_2014','Estudo Havan 2014','../uploads/estudo/havan_2014__7__estudo.pptx',1,5);
+/*!40000 ALTER TABLE `estudo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `estudo_has_tag`
+--
+
+DROP TABLE IF EXISTS `estudo_has_tag`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `estudo_has_tag` (
+  `estudo_id_estudo` int(11) NOT NULL,
+  `tag_id_tag` int(11) NOT NULL,
+  PRIMARY KEY (`estudo_id_estudo`,`tag_id_tag`),
+  KEY `fk_estudo_has_tag_tag1_idx` (`tag_id_tag`),
+  KEY `fk_estudo_has_tag_estudo1_idx` (`estudo_id_estudo`),
+  CONSTRAINT `fk_estudo_has_tag_estudo1` FOREIGN KEY (`estudo_id_estudo`) REFERENCES `estudo` (`id_estudo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_estudo_has_tag_tag1` FOREIGN KEY (`tag_id_tag`) REFERENCES `tag` (`id_tag`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `estudo_has_tag`
+--
+
+LOCK TABLES `estudo_has_tag` WRITE;
+/*!40000 ALTER TABLE `estudo_has_tag` DISABLE KEYS */;
+INSERT INTO `estudo_has_tag` VALUES (4,16),(3,19),(5,19),(6,19),(7,19);
+/*!40000 ALTER TABLE `estudo_has_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -213,6 +305,7 @@ CREATE TABLE `noticia` (
   `ativo_noticia` tinyint(1) NOT NULL COMMENT 'Ativo',
   `imagem_noticia` varchar(255) NOT NULL COMMENT 'Imagem',
   PRIMARY KEY (`id_noticia`),
+  UNIQUE KEY `ref_noticia_UNIQUE` (`ref_noticia`),
   KEY `ref` (`ref_noticia`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -242,8 +335,9 @@ CREATE TABLE `praca` (
   `ativo_praca` tinyint(1) NOT NULL COMMENT 'Ativo',
   `imagem_praca` varchar(255) NOT NULL,
   PRIMARY KEY (`id_praca`),
+  UNIQUE KEY `ref_praca_UNIQUE` (`ref_praca`),
   KEY `ref` (`ref_praca`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +346,7 @@ CREATE TABLE `praca` (
 
 LOCK TABLES `praca` WRITE;
 /*!40000 ALTER TABLE `praca` DISABLE KEYS */;
-INSERT INTO `praca` VALUES (1,'NET','NET','Rede Nacional',1,'../uploads/praca/NET__1__praca.png'),(2,'barra_mansa','Barra Mansa','Barra Mansa',1,'../uploads/praca/barra_mansa__2__praca.png'),(3,'belo_horizonte','Belo Horizonte','Belo Horizonte',1,'../uploads/praca/belo_horizonte__3__praca.'),(4,'brasilia','Brasília','Brasília',1,'../uploads/praca/brasilia__4__praca.png'),(5,'campinas','Campinas','Campinas',1,'../uploads/praca/campinas__5__praca.png'),(6,'curitiba','\r\nCuritiba','Curitiba',1,'../uploads/praca/curitiba__6__praca.png'),(7,'manaus','Manaus','Manaus',1,'../uploads/praca/manaus__7__praca.png'),(8,'natal','Natal','Natal',1,'../uploads/praca/natal__8__praca.png'),(9,'palmas','Palmas','Palmas',1,'../uploads/praca/palmas__9__praca.png'),(10,'porto_alegre','Porto Alegre','Porto Alegre',1,'../uploads/praca/porto_alegre__10__praca.png'),(11,'presidente_prudente','Presidente Prudente','Presidente Prudente',1,'../uploads/praca/presidente_prudente__11__praca.png'),(12,'rio_janeiro','Rio de Janeiro','Rio de Janeiro',1,'../uploads/praca/rio_janeiro__12__praca.png'),(13,'salvador','Salvador','Salvador',1,'../uploads/praca/salvador__13__praca.png'),(14,'sao_paulo','São Paulo','São Paulo',1,'../uploads/praca/sao_paulo__14__praca.png'),(15,'taubate','Taubaté','Taubaté',1,'../uploads/praca/taubate__15__praca.png'),(16,'uberaba','Uberaba','Uberaba',1,'../uploads/praca/uberaba__16__praca.png'),(17,'sp_vale','São Paulo - Vale','São Paulo - Vale',1,'../uploads/praca/sp_vale__17__praca.png'),(18,'sp_interior','São Paulo - Interior','São Paulo - Interior',1,'../uploads/praca/sp_interior__18__praca.png'),(19,'sp_campinas','São Paulo - Campinas','São Paulo - Campinas',1,'../uploads/praca/sp_campinas__19__praca.png');
+INSERT INTO `praca` VALUES (1,'NET','NET','Rede Nacional',1,'../uploads/praca/NET__1__praca.png'),(2,'barra_mansa','Barra Mansa','Barra Mansa',1,'../uploads/praca/barra_mansa__2__praca.png'),(3,'belo_horizonte','Belo Horizonte','Belo Horizonte',1,'../uploads/praca/belo_horizonte__3__praca.png'),(4,'brasilia','Brasília','Brasília',1,'../uploads/praca/brasilia__4__praca.png'),(5,'campinas','Campinas','Campinas',1,'../uploads/praca/campinas__5__praca.png'),(6,'curitiba','\r\nCuritiba','Curitiba',1,'../uploads/praca/curitiba__6__praca.png'),(7,'manaus','Manaus','Manaus',1,'../uploads/praca/manaus__7__praca.png'),(8,'natal','Natal','Natal',1,'../uploads/praca/natal__8__praca.png'),(9,'palmas','Palmas','Palmas',1,'../uploads/praca/palmas__9__praca.png'),(10,'porto_alegre','Porto Alegre','Porto Alegre',1,'../uploads/praca/porto_alegre__10__praca.png'),(12,'rio_janeiro','Rio de Janeiro','Rio de Janeiro',1,'../uploads/praca/rio_janeiro__12__praca.png'),(13,'salvador','Salvador','Salvador',1,'../uploads/praca/salvador__13__praca.png'),(14,'sao_paulo','São Paulo','São Paulo',1,'../uploads/praca/sao_paulo__14__praca.png'),(16,'uberaba','Triângulo','Triângulo',1,'../uploads/praca/uberaba__16__praca.png'),(17,'sp_vale','Vale','Vale',1,'../uploads/praca/sp_vale__17__praca.png'),(18,'sp_interior','SP Interior','SP Interior',1,'../uploads/praca/sp_interior__18__praca.png');
 /*!40000 ALTER TABLE `praca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,6 +365,7 @@ CREATE TABLE `programa` (
   `imagem_programa` varchar(255) NOT NULL COMMENT 'Imagem',
   `ativo_programa` tinyint(1) NOT NULL COMMENT 'Ativo',
   PRIMARY KEY (`id_programa`),
+  UNIQUE KEY `ref_programa_UNIQUE` (`ref_programa`),
   KEY `ref` (`ref_programa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -322,10 +417,11 @@ DROP TABLE IF EXISTS `tag`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tag` (
   `id_tag` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `ref_tag` varchar(45) DEFAULT NULL COMMENT 'Nome Ref.',
+  `ref_tag` varchar(45) NOT NULL COMMENT 'Nome Ref.',
   `nome_tag` varchar(45) DEFAULT NULL COMMENT 'Nome',
   `tipo_tag` varchar(45) NOT NULL,
   PRIMARY KEY (`id_tag`),
+  UNIQUE KEY `ref_tag_UNIQUE` (`ref_tag`),
   KEY `ref` (`ref_tag`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -336,7 +432,7 @@ CREATE TABLE `tag` (
 
 LOCK TABLES `tag` WRITE;
 /*!40000 ALTER TABLE `tag` DISABLE KEYS */;
-INSERT INTO `tag` VALUES (1,'tv_aberta','TV Aberta','veiculo'),(2,'newco','Newco','veiculo'),(3,'outernet','Outernet','veiculo'),(4,'radio','Rádio','veiculo'),(5,'midia_impressa','Mídia Impressa','veiculo'),(6,'midia_digital','Mídias Digitais','veiculo'),(7,'entretenimento','Entretenimento','veiculo'),(8,'entretenimento','Entretenimento','programa'),(9,'esportes','Esportes','programa'),(10,'eventos','Eventos','programa'),(11,'feminino','Feminino','programa'),(12,'filmes_series','Filmes e Séries','programa'),(13,'jornalismo','Jornalismo','programa'),(14,'vimeo','Vimeo','arquivo'),(15,'youtube','Youtube','arquivo'),(16,'pdf','PDF','arquivo'),(17,'doc','Word','arquivo'),(18,'xls','Excel','arquivo'),(19,'ppt','PowerPoint','arquivo'),(20,'agencias','Agências','analise'),(21,'anunciantes','Anunciantes','analise'),(22,'performance','Performance','analise'),(23,'mercado','Mercado','analise'),(24,'audiencia','Audiência','analise'),(25,'material','Material','programa');
+INSERT INTO `tag` VALUES (1,'tv_aberta','TV Aberta','veiculo'),(2,'newco','Newco','veiculo'),(3,'outernet','Outernet','veiculo'),(4,'radio','Rádio','veiculo'),(5,'midia_impressa','Mídia Impressa','veiculo'),(6,'midia_digital','Mídias Digitais','veiculo'),(7,'entretenimento_veiculo','Entretenimento','veiculo'),(8,'entretenimento_programa','Entretenimento','programa'),(9,'esportes','Esportes','programa'),(10,'eventos','Eventos','programa'),(11,'feminino','Feminino','programa'),(12,'filmes_series','Filmes e Séries','programa'),(13,'jornalismo','Jornalismo','programa'),(14,'vimeo','Vimeo','arquivo'),(15,'youtube','Youtube','arquivo'),(16,'pdf','PDF','arquivo'),(17,'doc','Word','arquivo'),(18,'xls','Excel','arquivo'),(19,'ppt','PowerPoint','arquivo'),(20,'agencias','Agências','analise'),(21,'anunciantes','Anunciantes','analise'),(22,'performance','Performance','analise'),(23,'mercado','Mercado','analise'),(24,'audiencia','Audiência','analise'),(25,'material','Material','programa');
 /*!40000 ALTER TABLE `tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,6 +451,7 @@ CREATE TABLE `veiculo` (
   `imagem_veiculo` varchar(255) NOT NULL COMMENT 'Imagem',
   `ativo_veiculo` tinyint(1) NOT NULL COMMENT 'Ativo',
   PRIMARY KEY (`id_veiculo`),
+  UNIQUE KEY `ref_veiculo_UNIQUE` (`ref_veiculo`),
   KEY `ref` (`ref_veiculo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -393,8 +490,36 @@ CREATE TABLE `veiculo_analise` (
 
 LOCK TABLES `veiculo_analise` WRITE;
 /*!40000 ALTER TABLE `veiculo_analise` DISABLE KEYS */;
-INSERT INTO `veiculo_analise` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),(3,12),(3,13),(3,22),(3,23),(3,24),(3,25),(3,26),(3,27),(3,28),(4,12),(4,13),(4,22),(4,23),(4,24),(4,25),(4,26),(4,27),(4,28),(5,12),(5,13),(5,22),(5,23),(5,24),(5,25),(5,26),(5,27),(5,28),(6,12),(6,13),(6,22),(6,23),(6,24),(6,25),(6,26),(6,27),(6,28),(7,12),(7,13),(7,22),(7,23),(7,24),(7,25),(7,26),(7,27),(7,28),(8,12),(8,13),(8,22),(8,23),(8,24),(8,25),(8,26),(8,27),(8,28),(9,29),(9,30),(9,31),(9,32),(9,33),(10,29),(10,30),(10,31),(10,32),(10,33),(11,29),(11,30),(11,31),(11,32),(11,33),(12,29),(12,30),(12,31),(12,32),(12,33),(13,29),(13,30),(13,31),(13,32),(13,33),(14,29),(14,30),(14,31),(14,32),(14,33),(15,29),(15,30),(15,31),(15,32),(15,33),(30,12),(30,13),(30,29),(30,30),(30,31),(30,32),(30,33);
+INSERT INTO `veiculo_analise` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(1,19),(1,20),(1,21),(1,34),(3,12),(3,13),(3,22),(3,23),(3,24),(3,25),(3,26),(3,27),(3,28),(3,34),(4,12),(4,13),(4,22),(4,23),(4,24),(4,25),(4,26),(4,27),(4,28),(4,34),(5,12),(5,13),(5,22),(5,23),(5,24),(5,25),(5,26),(5,27),(5,28),(5,34),(6,12),(6,13),(6,22),(6,23),(6,24),(6,25),(6,26),(6,27),(6,28),(6,34),(7,12),(7,13),(7,22),(7,23),(7,24),(7,25),(7,26),(7,27),(7,28),(7,34),(8,12),(8,13),(8,22),(8,23),(8,24),(8,25),(8,26),(8,27),(8,28),(9,29),(9,30),(9,31),(9,32),(9,33),(10,29),(10,30),(10,31),(10,32),(10,33),(11,29),(11,30),(11,31),(11,32),(11,33),(12,29),(12,30),(12,31),(12,32),(12,33),(13,29),(13,30),(13,31),(13,32),(13,33),(14,29),(14,30),(14,31),(14,32),(14,33),(15,29),(15,30),(15,31),(15,32),(15,33),(30,12),(30,13),(30,29),(30,30),(30,31),(30,32),(30,33);
 /*!40000 ALTER TABLE `veiculo_analise` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `veiculo_has_estudo`
+--
+
+DROP TABLE IF EXISTS `veiculo_has_estudo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `veiculo_has_estudo` (
+  `veiculo_id_veiculo` int(11) NOT NULL,
+  `estudo_id_estudo` int(11) NOT NULL,
+  PRIMARY KEY (`veiculo_id_veiculo`,`estudo_id_estudo`),
+  KEY `fk_veiculo_has_estudo_estudo1_idx` (`estudo_id_estudo`),
+  KEY `fk_veiculo_has_estudo_veiculo1_idx` (`veiculo_id_veiculo`),
+  CONSTRAINT `fk_veiculo_has_estudo_estudo1` FOREIGN KEY (`estudo_id_estudo`) REFERENCES `estudo` (`id_estudo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_veiculo_has_estudo_veiculo1` FOREIGN KEY (`veiculo_id_veiculo`) REFERENCES `veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `veiculo_has_estudo`
+--
+
+LOCK TABLES `veiculo_has_estudo` WRITE;
+/*!40000 ALTER TABLE `veiculo_has_estudo` DISABLE KEYS */;
+INSERT INTO `veiculo_has_estudo` VALUES (1,3),(3,3),(4,3),(5,3),(6,3),(7,3),(1,4),(3,4),(4,4),(5,4),(6,4),(7,4),(1,5),(3,5),(4,5),(5,5),(6,5),(7,5),(1,6),(3,6),(4,6),(5,6),(6,6),(7,6),(1,7),(3,7),(4,7),(5,7),(6,7),(7,7);
+/*!40000 ALTER TABLE `veiculo_has_estudo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -421,7 +546,7 @@ CREATE TABLE `veiculo_praca` (
 
 LOCK TABLES `veiculo_praca` WRITE;
 /*!40000 ALTER TABLE `veiculo_praca` DISABLE KEYS */;
-INSERT INTO `veiculo_praca` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,17),(1,18),(1,19),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),(9,1),(10,1),(11,1),(12,1),(13,1),(14,1),(15,1),(16,1),(17,1),(18,1),(19,1),(20,1),(21,1),(22,1),(23,1),(24,1),(25,1),(26,1),(27,1),(28,1),(29,1),(30,1),(31,1);
+INSERT INTO `veiculo_praca` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,12),(1,13),(1,14),(1,17),(1,18),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),(9,1),(10,1),(11,1),(12,1),(13,1),(14,1),(15,1),(16,1),(17,1),(18,1),(19,1),(20,1),(21,1),(22,1),(23,1),(24,1),(25,1),(26,1),(27,1),(28,1),(29,1),(30,1),(31,1);
 /*!40000 ALTER TABLE `veiculo_praca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -449,7 +574,7 @@ CREATE TABLE `veiculo_praca_programa` (
 
 LOCK TABLES `veiculo_praca_programa` WRITE;
 /*!40000 ALTER TABLE `veiculo_praca_programa` DISABLE KEYS */;
-INSERT INTO `veiculo_praca_programa` VALUES (1,1,1),(1,1,2),(1,17,2),(1,18,2),(3,1,2),(4,1,2),(5,1,2),(6,1,2),(9,1,2),(10,1,2),(11,1,2),(12,1,2),(13,1,2),(14,1,2),(15,1,2),(30,1,2),(1,1,3),(1,1,4),(9,1,5),(10,1,5),(11,1,5),(12,1,5),(13,1,5),(14,1,5),(15,1,5),(30,1,5),(1,1,6),(1,14,6),(1,1,7),(1,1,8),(1,1,9),(1,1,10),(1,1,11),(1,1,12),(1,1,13),(1,1,14),(1,1,15),(1,1,16),(1,1,17),(1,1,18),(1,1,19),(1,1,20),(1,1,21),(1,1,22),(1,1,23),(1,5,23),(1,18,23),(1,19,23),(1,1,24),(1,1,25),(1,1,26),(1,1,27),(1,1,29),(1,1,30),(1,1,31),(1,1,32),(1,1,33),(1,1,34),(1,1,35),(1,3,35),(1,5,35),(1,6,35),(1,10,35),(1,12,35),(1,13,35),(1,19,35),(1,1,36),(1,1,37),(1,1,38),(1,1,39),(1,3,40),(1,5,40),(1,6,40),(1,10,40),(1,12,40),(1,13,40),(1,14,40),(1,17,40),(1,19,40),(1,13,41),(1,5,42),(1,6,42),(1,10,42),(1,13,42),(1,17,42),(1,18,42),(1,19,42),(1,13,43),(1,6,44),(1,13,44),(1,3,45),(1,6,46),(1,6,47),(1,12,48),(1,8,49),(1,8,50),(1,8,51),(1,8,52),(1,8,53),(1,8,54),(1,8,55),(1,8,56),(1,8,57),(1,8,58),(1,8,59),(1,10,60),(1,10,61),(1,10,62),(1,10,63),(1,10,64),(1,14,65),(1,14,66),(1,14,67),(1,18,68),(1,18,69),(1,18,70),(1,18,71),(1,17,72),(1,17,73),(1,17,74),(1,17,75),(1,17,76),(1,17,77),(1,5,78),(1,19,78),(1,5,79),(1,19,79),(1,5,80),(1,19,80),(1,9,81);
+INSERT INTO `veiculo_praca_programa` VALUES (1,1,1),(1,1,2),(1,17,2),(1,18,2),(3,1,2),(4,1,2),(5,1,2),(6,1,2),(9,1,2),(10,1,2),(11,1,2),(12,1,2),(13,1,2),(14,1,2),(15,1,2),(30,1,2),(1,1,3),(1,1,4),(9,1,5),(10,1,5),(11,1,5),(12,1,5),(13,1,5),(14,1,5),(15,1,5),(30,1,5),(1,1,6),(1,14,6),(1,1,7),(1,1,8),(1,1,9),(1,1,10),(1,1,11),(1,1,12),(1,1,13),(1,1,14),(1,1,15),(1,1,16),(1,1,17),(1,1,18),(1,1,19),(1,1,20),(1,1,21),(1,1,22),(1,1,23),(1,5,23),(1,18,23),(1,1,24),(1,1,25),(1,1,26),(1,1,27),(1,1,29),(1,1,30),(1,1,31),(1,1,32),(1,1,33),(1,1,34),(1,1,35),(1,3,35),(1,5,35),(1,6,35),(1,10,35),(1,12,35),(1,13,35),(1,1,36),(1,1,37),(1,1,38),(1,1,39),(1,3,40),(1,5,40),(1,6,40),(1,10,40),(1,12,40),(1,13,40),(1,14,40),(1,17,40),(1,13,41),(1,5,42),(1,6,42),(1,10,42),(1,13,42),(1,17,42),(1,18,42),(1,13,43),(1,6,44),(1,13,44),(1,3,45),(1,6,46),(1,6,47),(1,12,48),(1,8,49),(1,8,50),(1,8,51),(1,8,52),(1,8,53),(1,8,54),(1,8,55),(1,8,56),(1,8,57),(1,8,58),(1,8,59),(1,10,60),(1,10,61),(1,10,62),(1,10,63),(1,10,64),(1,14,65),(1,14,66),(1,1,67),(1,18,68),(1,18,69),(1,18,70),(1,18,71),(1,17,72),(1,17,73),(1,17,74),(1,17,75),(1,17,76),(1,17,77),(1,5,78),(1,5,79),(1,5,80),(1,9,81);
 /*!40000 ALTER TABLE `veiculo_praca_programa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -497,4 +622,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-09-29 19:30:03
+-- Dump completed on 2014-10-13 20:20:27
