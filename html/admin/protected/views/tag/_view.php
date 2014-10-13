@@ -36,11 +36,11 @@
                 foreach ($viewElements as $key => $value) {
                     ?>
                     <div class="row">
-                        <div class="col-sm-4 bold ">
+                        <div class="col-lg-4 bold ">
 
                             <?php echo GxHtml::encode($data->getAttributeLabel($value)); ?>:
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-lg-8">
                             <?php echo GxHtml::encode($data[$value]); ?>
                         </div>
                     </div>

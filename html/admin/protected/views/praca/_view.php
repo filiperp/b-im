@@ -23,7 +23,7 @@
             <div class="portlet-content">
                 <div class="row">
 
-                    <div class="col-sm-8">
+                    <div class="col-lg-8">
                         <?php
                         $viewElements = array(
                             array('id_praca', 45, 'textField'),
@@ -38,10 +38,10 @@
                             ?>
 
                             <div class="row">
-                                <div class="col-sm-4 bold">
+                                <div class="col-lg-4 bold">
                                     <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-lg-8">
                                     <?php echo GxHtml::encode($data[$value[0]]); ?>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                         }
                         ?>
                     </div>
-                    <div class="col-sm-4  ">
+                    <div class="col-lg-4  ">
                         <?php echo GxHtml::image($data['imagem_praca'], 'Imagem Ref.', array('class' => 'view-thumb thumbnail')); ?>
                     </div>
 

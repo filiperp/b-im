@@ -42,10 +42,10 @@
                     ?>
 
                     <div class="row">
-                        <div class="col-sm-4 bold">
+                        <div class="col-lg-4 bold">
                             <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-lg-8">
                             <?php echo GxHtml::encode($data[$value[0]]); ?>
                         </div>
                     </div>
@@ -55,10 +55,10 @@
                 }
                 ?>
                 <div class="row">
-                    <div class="col-sm-4 bold">
+                    <div class="col-lg-4 bold">
                         <?php echo GxHtml::encode($data->getAttributeLabel('imagem_cliente')); ?>:
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-lg-8">
                         <?php echo GxHtml::image($data['imagem_cliente'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
                     </div>
                 </div>

@@ -27,6 +27,9 @@ HelpAnalise = (function () {
         this.currentIndex = 0;
         this.holder = $('#' + holder);
         this.holder.html(' ').hide();
+        this.holder.css({
+            overflow:'hidden'
+        });
         this.createBG();
         this.createNavigator();
         this.createNavigatorMenu();
@@ -73,17 +76,40 @@ HelpAnalise = (function () {
 
         this.holder.append(this.navigator);
 
-        for (var i = 0; i < this.theData.length; i++) {
-            var btn =  $( '<div  id="btnPage'+i+'" class="badge badge-primary isBT" ' +
-                'style="margin-right: 5px; height: 22px; " data-page="'+i+'">' +
-                '<i class="fa fa-star"></i> '+(i+1)+ '</div>');
+//        for (var i = 0; i < this.theData.length; i++) {
+//            var btn =  $( '<div  id="btnPage'+i+'" class="badge badge-primary isBT" ' +
+//                'style="margin-right: 5px; height: 22px; " data-page="'+i+'">' +
+//                '<i class="fa fa-star"></i> '+(i+1)+ '</div>');
+//
+//           btn.unbind( 'click').on('click', this.onClickPage)
+//            this.navigator.append(btn);
+//
+//        }
+        var btnPrev =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-backward"></i> Anterior</div>');
+        this.navigator.append(btnPrev);
+        btnPrev.unbind('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-           btn.unbind( 'click').on('click', this.onClickPage)
-            this.navigator.append(btn);
+            if( HelpAnalise.instance.currentIndex>0) HelpAnalise.instance.currentIndex--;
+            HelpAnalise.instance.drawScreen();
+        });
 
-        }
-        var btnClose =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-close"></i>Fechar</div>');
+       // var btnPrev =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-backward"></i> Anterior</div>');
+
+        var btnNext =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-forward"></i> Próximo</div>');
+        this.navigator.append(btnNext);
+        btnNext.unbind('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if( HelpAnalise.instance.currentIndex<( HelpAnalise.instance.theData.length-1)) HelpAnalise.instance.currentIndex++;
+            HelpAnalise.instance.drawScreen();
+        });
+
+        var btnClose =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-close"></i> Fechar</div>');
         this.navigator.append(btnClose);
+
         btnClose.unbind('click').on('click', function(e){
             e.preventDefault();
             e.stopPropagation();
@@ -109,17 +135,32 @@ HelpAnalise = (function () {
         this.navigatorMenu.css({
             position: 'absolute',
             height: '100%',
-            left: '-190px',
+            left: '-195px',
             width: '200px',
             'box-sizing': 'border-box',
-            overflow: 'hidden',
+           // overflow: 'hidden',
             top: '0px',
             'text-align':'center',
-            'background-color':'rgba(255,255,255,.6)'
+            'background-color':'rgba(255,255,255,.9)'
         });
 
         this.navigatorMenu.addClass('navigatorMenu');
+        this.navigatorMenu.append('<div class="title" style="margin: 15px 0px 15px 0px;"> <h1>Menu</h1></div>');
+        this.navigatorMenu.append('<div class="tab" style="position:absolute;top:50%;right:-31px;background-color:rgba(255,255,255,.9);padding:10px 6px 5px 10px;"><i class="fa fa-2x fa-chevron-circle-right"></i> </div>');
+        this.navigatorMenu.append('<div class="title" id="navigator-menu-item-holder" style="height: 680px; overflow-x: hidden; overflow-y: scroll; width: 200px; "></div>')
+
         this.holder.append(this.navigatorMenu);
+
+        for (var i = 0; i < this.theData.length; i++) {
+            var btn =  $( '<div  id="btnMenuPage'+i+'" class="btn btn-info isBT" ' +
+                'style="text-align:left;min-width:190px;margin-top:2px;" data-page="'+i+'">' +
+                (i+1) + ' ' +this.theData[i].title+ '</div>');
+
+            btn.unbind( 'click').on('click', this.onClickPage)
+            $('#navigator-menu-item-holder').append(btn);
+
+        }
+
 
 
 //        for (var i = 0; i < this.theData.length; i++) {
@@ -161,9 +202,10 @@ HelpAnalise = (function () {
 
     HelpAnalise.prototype.drawScreen = function()
     {
-        console.log(this.currentIndex);
+      //  console.log(this.currentIndex);
         $('.isBT').removeClass('isBTSelected');
         $('#btnPage'+this.currentIndex).addClass('isBTSelected');
+        $('#btnMenuPage'+this.currentIndex).addClass('isBTSelected');
         this.bgContent.html('');
         var inData = this.theData[this.currentIndex];
         var rect = inData.rect;

@@ -58,12 +58,13 @@ $this->menu = array(
                         array('descricao_analise', 512, 'textArea'),
                         array('imagem_analise', 255, 'textArea'),
                         array('ativo_analise', 1, 'checkBox'),
+                        array('help_analise', 1, 'checkBox'),
                     );
 
                     foreach ($viewElements as $key => $value) {
                         ?>
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="control-label col-md-3 bold">
                                         <?php echo GxHtml::encode($model->getAttributeLabel($value[0])); ?>:</label>
@@ -85,7 +86,7 @@ $this->menu = array(
                     ?>
 
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="control-label col-md-3 bold">
                                     <?php echo GxHtml::encode($model->getAttributeLabel('imagem_analise')); ?>:</label>
@@ -106,7 +107,7 @@ $this->menu = array(
 
 
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="control-label col-md-3 bold">
                                     TAGS:</label>
@@ -127,7 +128,7 @@ $this->menu = array(
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-lg-12">
                             <div class="form-group ">
                                 <label class="control-label col-md-3 bold">
                                     <?php echo GxHtml::encode($model->getAttributeLabel('veiculos')); ?>:</label>

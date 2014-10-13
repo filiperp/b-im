@@ -36,6 +36,7 @@
                         array('descricao_analise', 512, 'textArea'),
                         array('imagem_analise', 255, 'hiddenField'),
                         array('ativo_analise', 1, 'checkBox'),
+                        array('help_analise', 1, 'checkBox'),
 
 
                     );

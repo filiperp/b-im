@@ -69,7 +69,7 @@
                 foreach ($viewElements as $key => $value) {
                     ?>
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="control-label col-md-3 bold">
                                     <?php echo GxHtml::encode($model->getAttributeLabel($value)); ?>:</label>
@@ -97,7 +97,7 @@
 
 
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-lg-12">
                         <div class="form-group">
                             <label class="control-label col-md-3 bold">
                                 Arquivo:</label>

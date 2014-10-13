@@ -36,10 +36,10 @@
                     ?>
 
                     <div class="row">
-                        <div class="col-sm-4 bold">
+                        <div class="col-lg-4 bold">
                             <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-lg-8">
                             <?php echo GxHtml::encode($data[$value[0]]); ?>
                         </div>
                     </div>
@@ -50,10 +50,10 @@
                 ?>
 
                 <div class="row">
-                    <div class="col-sm-4 bold">
+                    <div class="col-lg-4 bold">
                         <?php echo GxHtml::encode($data->getAttributeLabel('caminho_arquivo')); ?>:
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-lg-8">
                         <?php echo CHtml::link('Abrir',$data->getLink(), array("target"=>"_blank")); ?>
                     </div>
                 </div>
@@ -65,26 +65,26 @@
 
                 ?>
                 <div class="row">
-                    <div class="col-sm-4 bold">
+                    <div class="col-lg-4 bold">
                         Veiculo:
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-lg-8">
                         <?php echo $modelV->nome_veiculo; ?>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4 bold">
+                    <div class="col-lg-4 bold">
                         Praca:
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-lg-8">
                         <?php echo $modelP->nome_praca; ?>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4 bold">
+                    <div class="col-lg-4 bold">
                         Programa
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-lg-8">
                         <?php echo $modelPR->nome_programa; ?>
                     </div>
                 </div>

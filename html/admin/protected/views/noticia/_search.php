@@ -50,7 +50,7 @@
 
 
                 <div class="form-group">
-                    <div class="col-sm-12">
+                    <div class="col-lg-12">
                         <?php echo GxHtml::submitButton(Yii::t('app', 'Search'), array('class' => ' btn blue pull-right')); ?>
                     </div>
                 </div>

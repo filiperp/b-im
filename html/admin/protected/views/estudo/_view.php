@@ -26,7 +26,7 @@
             <div class="portlet-content">
                 <div class="row">
 
-                    <div class="col-sm-8">
+                    <div class="col-lg-8">
                         <?php
                         $viewElements = array(
 
@@ -43,10 +43,10 @@
                             ?>
 
                             <div class="row">
-                                <div class="col-sm-4 bold">
+                                <div class="col-lg-4 bold">
                                     <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-lg-8">
                                     <?php echo GxHtml::encode($data[$value[0]]); ?>
                                 </div>
                             </div>
@@ -56,15 +56,15 @@
                         }
                         ?>
                         <div class="row">
-                            <div class="col-sm-4 bold">
+                            <div class="col-lg-4 bold">
                                 <?php echo GxHtml::encode($data->getAttributeLabel('caminho_estudo')); ?>:
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-lg-8">
                                 <?php echo CHtml::link('Abrir',$data->getLink(), array("target"=>"_blank")); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4  ">
+                    <div class="col-lg-4  ">
                         <?php echo GxHtml::image($data['caminho_estudo'], 'Imagem Ref.', array('class' => 'view-thumb thumbnail')); ?>
                     </div>
 

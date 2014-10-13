@@ -3,7 +3,7 @@
 
     <div class="row">
 
-        <div class="col-sm-12 last">
+        <div class="col-lg-12 last">
                 <?php
                 $this->beginWidget('zii.widgets.CPortlet', array(
                     'htmlOptions' => array('class' => 'page-bar'),
@@ -20,7 +20,7 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-lg-12">
             <div id="content">
                 <?php echo $content; ?>
             </div>

@@ -80,6 +80,11 @@ $('.search-form form').submit(function(){
                             'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
                         ),
                         array(
+                            'name' => 'help_analise',
+                            'value' => '($data->help_analise == 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
+                        ),
+                        array(
                             'class' => 'CButtonColumn',
                         ),
                         'descricao_analise',

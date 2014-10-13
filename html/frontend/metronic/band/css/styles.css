@@ -53,8 +53,9 @@
     cursor:pointer;
 }
 .isBTSelected{
-  color:#FFEF74;
-  border: 1px solid #FFEF74;
+  /*color:#FFEF74;*/
+  /*border: 1px solid #FFEF74;*/
+    background-color: #1e90ff;
 }
 
 .navigatorMenu{

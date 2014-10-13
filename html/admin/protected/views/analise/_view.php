@@ -30,16 +30,17 @@
                     array('descricao_analise', 512, 'textArea'),
                  //   array('imagem_analise', 255, 'textArea'),
                     array('ativo_analise', 1, 'checkBox'),
+                    array('help_analise', 1, 'checkBox'),
                 );
 
                 foreach ($viewElements as $key => $value) {
                     ?>
 
                     <div class="row">
-                        <div class="col-sm-4 bold">
+                        <div class="col-lg-4 bold">
                             <?php echo GxHtml::encode($data->getAttributeLabel($value[0])); ?>:
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-lg-8">
                             <?php echo GxHtml::encode($data[$value[0]]); ?>
                         </div>
                     </div>
@@ -50,10 +51,10 @@
                 ?>
 
                 <div class="row">
-                    <div class="col-sm-4 bold">
+                    <div class="col-lg-4 bold">
                         <?php echo GxHtml::encode($data->getAttributeLabel('imagem_analise')); ?>:
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-lg-8">
                         <?php echo GxHtml::image($data['imagem_analise'],'Imagem Ref.', array('class'=>'view-thumb')); ?>
                     </div>
                 </div>
