@@ -9,6 +9,8 @@
 
             </div>
             <div class="portlet-body">
+
+
                 <div class="form-horizontal">
 
                     <?php $form = $this->beginWidget('GxActiveForm', array(
@@ -20,9 +22,43 @@
                     CHtml::$errorCss = 'font-red-intense';
                     ?>
 
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="portlet box  green-haze">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-file-o fa-create"></i> <?php echo GxHtml::encode($model->getRelationLabel('tags')); ?>
+                                    </div>
+                                    <div class="tools">
+
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body ">
+                                    <?php
+                                    $Criteria = new CDbCriteria();
+                                    $Criteria->addCondition('tipo_tag = "arquivo"  ');
+                                    //Yii::import('application.controllers.FileObjectController');
+                                    $classCheckBox = 'tag_item_'.GUID::getGUID();
+                                    echo $form->checkBoxList($model, 'tags',
+                                        GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAll($Criteria)), false, true),array('class'=>$classCheckBox));
+
+
+
+                                    ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                     <p class="note">
                         <?php echo Yii::t('app', 'Fields with'); ?> <span class="required">*</span> <?php echo Yii::t('app', 'are required'); ?>.
                     </p>
+
+
 
                     <?php echo $form->errorSummary($model); ?>
 
@@ -38,7 +74,9 @@
                         array('caminho_arquivo', 512, 'textField'),
 
                     );
-
+                    $model['ativo_arquivo']= 1;
+                   // $model['nome_arquivo']= 'Programa 2014';
+                   // $model['ref_arquivo']= '_programa_2014';
                     foreach ($viewElements as $key => $value) {
                         $isDisabled= '';
                         if (substr($value[0],0,3)=='ref' && $isCreate==false){
@@ -104,11 +142,11 @@
                                     </div>
                                     <div class="tools">
 
-                                        <a href="javascript:;" class="expand">
+                                        <a href="javascript:;" class="collapse">
                                         </a>
                                     </div>
                                 </div>
-                                <div class="portlet-body  " style="display:none"><br><Br>
+                                <div class="portlet-body  " ><br><Br>
                                     <?php
                                     $this->renderPartial('_veiculoPracaProgramaTable', array(
                                         'model' => $model,
@@ -119,36 +157,7 @@
 
                         </div>
                     </div>
-                    <div class="row ">
-                        <div class="col-md-12">
-                            <div class="portlet box  green-haze">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-file-o fa-create"></i> <?php echo GxHtml::encode($model->getRelationLabel('tags')); ?>
-                                    </div>
-                                    <div class="tools">
 
-                                        <a href="javascript:;" class="collapse">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="portlet-body ">
-                                    <?php
-                                    $Criteria = new CDbCriteria();
-                                    $Criteria->addCondition('tipo_tag = "arquivo"  ');
-                                    //Yii::import('application.controllers.FileObjectController');
-                                    $classCheckBox = 'tag_item_'.GUID::getGUID();
-                                    echo $form->checkBoxList($model, 'tags',
-                                        GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAll($Criteria)), false, true),array('class'=>$classCheckBox));
-
-
-
-                                    ?>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
                     <div class="row ">
                         <div class="col-md-12">
