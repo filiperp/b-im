@@ -130,4 +130,36 @@ class Arquivo extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    public function getLink()
+    {
+        if (!isset ($this->tags[0])) return;
+        switch ($this->tags[0]['ref_tag']) {
+            case 'vimeo':
+                return 'http://vimeo.com/' . $this->caminho_arquivo;
+                break;
+            case 'youtube':
+                return 'http://www.youtube.com/watch?v=' . $this->caminho_arquivo;
+                break;
+            case 'pdf':
+            case 'doc':
+            case 'xls':
+            case 'ppt':
+                return Yii::app()->baseUrl . '/' . $this->caminho_arquivo;
+                break;
+
+        }
+    }
+
+    public function getBaseTag()
+    {
+        if (!isset ($this->tags[0])) return 'pdf';
+        return $this->tags[0]['ref_tag'];
+    }
+
+    public function getName()
+    {
+        if (!isset ($this->tags[0])) return 'SEM TAG';
+
+        return $this->tags[0]['nome_tag'];
+    }
 }

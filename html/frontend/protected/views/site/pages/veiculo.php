@@ -456,6 +456,27 @@ $dataProgs = $command->queryAll();
                                             <?php
                                             switch ($arq_tipo) {
                                                 case 'youtube':
+                                                    ?>
+
+                                                <blockquote style="min-height: 115px;">
+                                                    <div>
+                                                                    <span class="pull-right">
+                                                                        <iframe src="//www.youtube.com/embed/<?php echo $estudo['caminho_estudo']; ?>
+                                                                        " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
+                                                                    </span>
+
+                                                        <h2  style="font-weight:300; text-decoration: underline" ><?php echo $estudo['nome_estudo']; ?></h2>
+
+                                                        <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
+
+                                                        <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                            <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                                        <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_estudo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $arq['caminho_estudo']; ?>' class=' btn  btn-primary '
+                                                           style="color:white !important">
+                                                            <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+
+                                                    </div>
+                                                <?php
                                                     break;
                                                 case 'vimeo':
                                                     ?>
@@ -616,7 +637,7 @@ $dataProgs = $command->queryAll();
 
 
 
-                        <div class="form-group">
+                        <div class="form-group" id="g_image">
                             <label class="  col-md-4 control-label bold" for="Veiculo_image">Arquivo:</label>
 
                             <div class="col-md-8">
@@ -625,6 +646,14 @@ $dataProgs = $command->queryAll();
                             </div>
                         </div>
 
+                        <div class="form-group" id="g_text">
+                            <label class="  col-md-4 control-label bold" for="Arquivo_caminho_arquivo">Arquivo:</label>
+
+                            <div class="col-md-8">
+
+                                <input name="Arquivo[caminho_arquivo]" id="Arquivo_caminho_arquivo" type="text">
+                            </div>
+                        </div>
 
 
                         <input name="Arquivo[id_arquivo]" id="Arquivo_fk_id_arquivo" type="hidden">
@@ -693,19 +722,31 @@ $dataProgs = $command->queryAll();
 
     function onClickUploadFile(prog, arq,id,tipo){
         console.log( prog, arq,id);
-
+         $('#g_image').hide();
+         $('#g_text').hide();
         switch (tipo){
             case "pdf":
-                $('#Arquivo_image').attr('accept', '.pdf')
+                $('#Arquivo_image').attr('accept', '.pdf');
+                $('#g_image').show();
                 break;
             case "doc":
-                $('#Arquivo_image').attr('accept', '.doc,.docx')
+                $('#Arquivo_image').attr('accept', '.doc,.docx');
+                $('#g_image').show();
+
                 break;
             case "xls":
-                $('#Arquivo_image').attr('accept', '.xls,.xlsx')
-            break;
+                $('#Arquivo_image').attr('accept', '.xls,.xlsx');
+                $('#g_image').show();
+
+                break;
             case "ppt":
-                $('#Arquivo_image').attr('accept', '.ppt,.pptx')
+                $('#Arquivo_image').attr('accept', '.ppt,.pptx');
+                $('#g_image').show();
+
+                break;
+            case "vimeo":
+            case "youtube":
+                $('#g_text').show();
                 break;
 
         }
