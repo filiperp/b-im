@@ -97,7 +97,7 @@ HelpAnalise = (function () {
 
        // var btnPrev =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-backward"></i> Anterior</div>');
 
-        var btnNext =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; "><i class="fa fa-forward"></i> Próximo</div>');
+        var btnNext =  $( '<div class="badge badge-primary isBT" style="margin-left: 15px; height: 22px; ">Próximo <i class="fa fa-forward"></i></div>');
         this.navigator.append(btnNext);
         btnNext.unbind('click').on('click', function(e) {
             e.preventDefault();

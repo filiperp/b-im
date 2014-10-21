@@ -48,7 +48,7 @@
 
                 <?php
                 $paineis = Analise::model()->findAll(' 11 order by id_analise desc limit 4 ');
-//Yii::app()->request->baseUrl
+                //Yii::app()->request->baseUrl
                 // CController::createUrl
                 foreach ($paineis as $panel) {
 
@@ -56,15 +56,20 @@
 
                     <div class="recent-work-item" style="margin-right: 5px;">
                         <em style="min-height: 180px; max-height: 180px; overflow: hidden;">
-                            <img src="<?php echo Yii::app()->request->baseUrl.'/'. $panel->imagem_analise; ?>" alt="<?php echo $panel->nome_analise ; ?>" class=" img-responsive"
-                                 style="border: 2px solid #ccc; min-height: 180px;"  >
+                            <img src="<?php echo Yii::app()->request->baseUrl . '/' . $panel->imagem_analise; ?>"
+                                 alt="<?php echo $panel->nome_analise; ?>" class=" img-responsive"
+                                 style="border: 2px solid #ccc; min-height: 180px;">
 
                             <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                            <a href="<?php echo Yii::app()->request->baseUrl.'/'. $panel->imagem_analise; ?>" class="fancybox-button" title="<?php echo $panel->nome_analise ; ?>"
-                               data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+
+
+                            <a href="<?php echo Yii::app()->request->baseUrl . '/' . $panel->imagem_analise; ?>"
+                               class="fancybox-button" title="<?php echo $panel->nome_analise; ?>"
+                               data-rel="fancybox-button"><i class="fa fa-search"></i>
+                            </a>
                         </em>
-                        <a class="recent-work-description" href="#"  style="border-top: 2px solid #ccc" >
-                            <strong><?php echo $panel->nome_analise ; ?></strong>
+                        <a class="recent-work-description" href="#" style="border-top: 2px solid #ccc">
+                            <strong><?php echo $panel->nome_analise; ?></strong>
 
                         </a>
                     </div>
@@ -82,32 +87,22 @@
     <!-- BEGIN CLIENTS -->
     <div class="row margin-bottom-40 our-clients">
         <div class="col-md-3">
-
             <h2>Pesquisas</h2>
-
             <p>Estas foram as últimas pesquisas técnicas feitas pelo IM, baixe-os para ter idéias de como proceder com uma defesa.</p>
         </div>
         <div class="col-md-9">
             <div class="owl-carousel owl-carousel6-brands">
                 <?php
                 $estudos = Estudo::model()->findAll('1=1 order by id_estudo desc limit 8');
-                    foreach( $estudos as $est){
-
-
-                ?>
-
-                <div class="client-item" style=" margin-right: 15px;">
-                    <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true). $est->getLink(); ?>" target="_blank">
-                        <img src="<?php echo Yii::app()->request->baseUrl. '/' . $est->clienteIdCliente->imagem_cliente; ?>" class="img-responsive" alt="">
-                        <img src="<?php echo Yii::app()->request->baseUrl. '/' . $est->clienteIdCliente->imagem_cliente; ?>" class="color-img img-responsive" alt="">
-                        <?php echo $est->nome_estudo ; ?>
-                    </a>
-
-                </div>
-               <?php  } ;?>
-
-
-
+                foreach ($estudos as $est) { ?>
+                    <div class="client-item" style=" margin-right: 15px;">
+                        <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $est->getLink(); ?>" target="_blank">
+                            <img src="<?php echo Yii::app()->request->baseUrl . '/' . $est->clienteIdCliente->imagem_cliente; ?>" class="img-responsive" alt="">
+                            <img src="<?php echo Yii::app()->request->baseUrl . '/' . $est->clienteIdCliente->imagem_cliente; ?>" class="color-img img-responsive" alt="">
+                            <?php echo $est->nome_estudo; ?>
+                        </a>
+                    </div>
+                <?php }; ?>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <div class=" " id="frame_result" style="display: none; position: fixed; top:74px; z-index: 1000;width: 400px;
 right: 0px;">
 
-    <div class="btn btn-info"  style="right: 7px; position: absolute; top:8px; " id="btn_close_frame_result"><i class="fa fa-close"></i></div>
+    <div class="btn btn-info" style="right: 7px; position: absolute; top:8px; " id="btn_close_frame_result"><i class="fa fa-close"></i></div>
     <iframe id="uploader_iframe" scrolling="no" name="uploader_iframe" style="display: block; overflow: hidden; width: 100%; height: 45px; border: none !important;overflow-style: panner;"></iframe>
 
 
@@ -30,8 +30,6 @@ right: 0px;">
             ),
             array('id' => GUID::getGUID()));;?>
     </li>
-
-
     <?php if (sizeof($veiculo->pracas) > 1) {
         ; ?>
 
@@ -219,7 +217,7 @@ $dataProgs = $command->queryAll();
     <div class="panel-group" id="accordion1">
 
         <div id="btn-upload-comercial"
-            style="display: inline; color:red !important;
+             style="display: inline; color:red !important;
              border:1px solid red;padding-left:3px;padding-right:3px;
              top: -19px;
             right: 15px;
@@ -256,57 +254,79 @@ $dataProgs = $command->queryAll();
 
                                 <?php foreach ($arqs as $arq) {
 
-                                    $arq_tipo = isset($arq['tags'][0]["ref_tag"])?$arq['tags'][0]["ref_tag"]: 'pdf';;?>
+                                $arq_tipo = isset($arq['tags'][0]["ref_tag"]) ? $arq['tags'][0]["ref_tag"] : 'pdf';;?>
 
+
+                                <?php
+                                switch ($arq_tipo) {
+                                case 'youtube':
+                                ?>
+
+                                <blockquote style="min-height: 115px;">
+                                    <div>
+                                                                    <span class="pull-right">
+                                                                        <iframe src="//www.youtube.com/embed/<?php echo $arq['caminho_arquivo']; ?>
+                                                                        " width="200" height="112" style="border: 1px solid #cccccc; " webkitallowfullscreen mozallowfullscree allowfullscreen ></iframe>
+                                                                    </span>
+
+                                        <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
+
+                                        <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
+
+                                        <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                            <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                        <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary '
+                                           style="color:white !important">
+                                            <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+
+                                    </div>
 
                                     <?php
-                                    switch ($arq_tipo) {
-                                        case 'youtube':
-                                            break;
-                                        case 'vimeo':
-                                            ?>
-                                            <blockquote style="min-height: 115px;">
-                                                <div>
+
+                                    break;
+                                    case 'vimeo':
+                                    ?>
+                                    <blockquote style="min-height: 115px;">
+                                        <div>
                                             <span class="pull-right">
                                                 <iframe src="//player.vimeo.com/video/<?php echo $arq['caminho_arquivo']; ?>" width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
                                             </span>
 
-                                                    <h2  style="font-weight:300; text-decoration: underline" ><?php echo $arq['nome_arquivo']; ?></h2>
+                                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
 
-                                                    <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
+                                            <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
 
 
+                                            <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                            <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary '
+                                               style="color:white !important">
+                                                <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
 
-                                                    <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                                        <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
-                                                    <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary '
-                                                       style="color:white !important">
-                                                        <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+                                        </div>
+                                        <!--                                        </blockquote>-->
 
-                                                </div>
-                                                <!--                                        </blockquote>-->
-
-                                            <?php
-                                            break;
+                                        <?php
+                                        break;
                                         case 'pdf':
-                                            ?>
-                                            <blockquote style="">
-                                                <div>
+                                        ?>
+                                        <blockquote style="">
+                                            <div>
                                                 <span class='pull-right' style="margin-top: 40px;">
                                                         <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                             <i class='fa fa-file-pdf-o '></i> Clique Aqui Para Baixar
                                                         </a>
                                                 </span>
 
-                                                    <h2  style="font-weight:300; text-decoration: underline" ><?php echo $arq['nome_arquivo']; ?></h2>
+                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
 
-                                                    <h4>formato: PDF</h4>
-                                                </div>
-                                                <!--                                        </blockquote>-->
+                                                <h4>formato: PDF</h4>
+                                            </div>
+                                            <!--                                        </blockquote>-->
 
                                             <?php
                                             break;
-                                        case 'doc':
+                                            case 'doc':
                                             ?>
                                             <blockquote style="">
                                                 <div>
@@ -315,66 +335,67 @@ $dataProgs = $command->queryAll();
                                                             <i class='fa fa-file-word-o '></i> Clique Aqui Para Baixar </a>
                                                 </span>
                                                 </div>
-                                                <h2  style="font-weight:300; text-decoration: underline" ><?php echo $arq['nome_arquivo']; ?></h2>
+                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
 
                                                 <h4>formato: Word (.doc, .docx)</h4>
                                                 <!--                                        </blockquote>-->
 
-                                            <?php
-                                            break;
-                                        case 'xls':
-                                            ?>
-                                            <blockquote style="">
-                                                <div>
+                                                <?php
+                                                break;
+                                                case 'xls':
+                                                ?>
+                                                <blockquote style="">
+                                                    <div>
                                             <span class='pull-right' style="margin-top: 40px;">
                                                         <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                             <i class='fa fa-file-excel-o green'></i> Clique Aqui Para Baixar </a>
                                                 </span>
-                                                </div>
-                                                <h2  style="font-weight:300; text-decoration: underline" ><?php echo $arq['nome_arquivo']; ?></h2>
-                                                <h4>formato: Excel (.xls, .xlsx)</h4>
-                                                <!--                                        </blockquote>-->
+                                                    </div>
+                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
+                                                    <h4>formato: Excel (.xls, .xlsx)</h4>
+                                                    <!--                                        </blockquote>-->
 
 
-                                            <?php
-                                            break;
-                                        case 'ppt':
-                                            ?>
-                                            <blockquote style="">
-                                                <div>
+                                                    <?php
+                                                    break;
+                                                    case 'ppt':
+                                                    ?>
+                                                    <blockquote style="">
+                                                        <div>
                                             <span class='pull-right' style="margin-top: 40px;">
                                                         <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                             <i class='fa fa-file-powerpoint-o  purple '></i> Clique Aqui Para Baixar </a>
                                                 </span>
-                                                </div>
-                                                <h2  style="font-weight:300; text-decoration: underline" ><?php echo $arq['nome_arquivo']; ?></h2>
+                                                        </div>
+                                                        <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
 
-                                                <h4>formato: PowerPoint (.ppt, .pptx)</h4>
+                                                        <h4>formato: PowerPoint (.ppt, .pptx)</h4>
 
 
-                                            <?php
-                                            break;
-                                    }
-                                    ?>
-                                                <p class="search-link " style="margin-top:8px;display: inline">
-                                                    Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo $arq['data']; ?>)
-                                                </p>
-                                                <div  class="input-file-item"  style="display: none; float: right; cursor:hand; cursor:pointer">
+                                                        <?php
+                                                        break;
+                                                        }
+                                                        ?>
+                                                        <p class="search-link " style="margin-top:8px;display: inline">
+                                                            Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo $arq['data']; ?>)
+                                                        </p>
 
-                                                     <div class="btn btn-danger  btn-upload-item"
-                                                          onclick="onClickUploadFile('<?php echo $prog['nome_programa']; ?>',
-                                                                                        '<?php echo $arq['nome_arquivo']; ?>',
-                                                                                        '<?php echo $arq['id_arquivo']; ?>',
-                                                                                        '<?php echo $arq_tipo; ?>'
-                                                                                )">
-                                                          <i class= "fa fa-cloud-upload"></i>
-                                                     </div>
+                                                        <div class="input-file-item" style="display: none; float: right; cursor:hand; cursor:pointer">
 
-                                                </div>
+                                                            <div class="btn btn-danger  btn-upload-item"
+                                                                 onclick="onClickUploadFile('<?php echo $prog['nome_programa']; ?>',
+                                                                     '<?php echo $arq['nome_arquivo']; ?>',
+                                                                     '<?php echo $arq['id_arquivo']; ?>',
+                                                                     '<?php echo $arq_tipo; ?>'
+                                                                     )">
+                                                                <i class="fa fa-cloud-upload"></i>
+                                                            </div>
 
-                                    </blockquote>
+                                                        </div>
 
-                                <?php }; ?>
+                                                    </blockquote>
+
+                                                    <?php }; ?>
                             </div>
                         </div>
                     </div>
@@ -391,153 +412,154 @@ $dataProgs = $command->queryAll();
 
 
 <div class="tab-pane " id="tab_3">
-    <div class="panel-group" id="accordion2">
+<div class="panel-group" id="accordion2">
 
-        <div class="row margin-bottom-40">
-            <!-- BEGIN CONTENT -->
-            <div class="col-md-12 col-sm-12">
-                <div class="content-page">
-                    <h1>Estudos realizados pelo departamento de Inteligência:</h1>
+    <div class="row margin-bottom-40">
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-12 col-sm-12">
+            <div class="content-page">
+                <h1>Estudos realizados pelo departamento de Inteligência:</h1>
 
-                    <?php
+                <?php
 
-                    $commandClient = Yii::app()->db->createCommand()
-                        ->selectDistinct('c.id_cliente,
+                $commandClient = Yii::app()->db->createCommand()
+                    ->selectDistinct('c.id_cliente,
                                     c.ref_cliente,
                                     c.nome_cliente,
                                     c.imagem_cliente  ')
-                        ->from('estudo  as e')
-                        ->join('cliente as  c', 'e.cliente_id_cliente = c.id_cliente ')
-                        ->join('veiculo_has_estudo as vhe', 'vhe.estudo_id_estudo = e.id_estudo ')
-                        ->where( " e.ativo_estudo=1 and vhe.veiculo_id_veiculo =". $veiculo->id_veiculo)
-                        ->order(' c.nome_cliente, e.nome_estudo ');
+                    ->from('estudo  as e')
+                    ->join('cliente as  c', 'e.cliente_id_cliente = c.id_cliente ')
+                    ->join('veiculo_has_estudo as vhe', 'vhe.estudo_id_estudo = e.id_estudo ')
+                    ->where(" e.ativo_estudo=1 and vhe.veiculo_id_veiculo =" . $veiculo->id_veiculo)
+                    ->order(' c.nome_cliente, e.nome_estudo ');
 
 
-                    $clientes = $commandClient->queryAll();
+                $clientes = $commandClient->queryAll();
 
 
+                if (isset($clientes)) {
+                    foreach ($clientes as $cli) {
 
-                    if (isset($clientes)) {
-                        foreach ($clientes as $cli) {
+                        ;?>
 
-                            ;?>
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a href="#accordion2_<?php echo $cli['id_cliente']; ?>" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle"
-                                           style="width: 100%">
-                                            <img src="<?php echo Yii::app()->request->baseUrl . '/' . $cli['imagem_cliente']; ?>" class="imgicon100"/>
-                                            <?php echo $cli['nome_cliente']; ?>
-                                            <i class="fa fa-eye  fa-2x pull-right" style="margin-top: 27px;"></i>
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div class="panel-collapse collapse " id="accordion2_<?php echo $cli['id_cliente']; ?>">
-                                    <div class="panel-body">
-                                        <?php
-                                        $commandEstudo= Yii::app()->db->createCommand()
-                                            ->select('e.id_estudo ')
-                                            ->from('estudo e  ')
-                                            ->join('cliente c', 'e.cliente_id_cliente = c.id_cliente ')
-                                            ->join('veiculo_has_estudo vhe', 'vhe.estudo_id_estudo = e.id_estudo ')
-                                            ->where( " e.ativo_estudo=1 and vhe.veiculo_id_veiculo =". $veiculo->id_veiculo. " and c.id_cliente= ". $cli['id_cliente'])
-                                            ->order('c.nome_cliente, e.nome_estudo ');
-
-
-                                        $idEstudos = $commandEstudo->queryAll();
-
-                                       foreach ($idEstudos as $idEstudo) {
-                                            $estudo = Estudo::model()->findByPk($idEstudo['id_estudo']);
-
-                                            $arq_tipo = isset($estudo['tags'][0]["ref_tag"])?$estudo['tags'][0]["ref_tag"]: 'pdf';;?>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="#accordion2_<?php echo $cli['id_cliente']; ?>" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle"
+                                       style="width: 100%">
+                                        <img src="<?php echo Yii::app()->request->baseUrl . '/' . $cli['imagem_cliente']; ?>" class="imgicon100"/>
+                                        <?php echo $cli['nome_cliente']; ?>
+                                        <i class="fa fa-eye  fa-2x pull-right" style="margin-top: 27px;"></i>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse " id="accordion2_<?php echo $cli['id_cliente']; ?>">
+                                <div class="panel-body">
+                                    <?php
+                                    $commandEstudo = Yii::app()->db->createCommand()
+                                        ->select('e.id_estudo ')
+                                        ->from('estudo e  ')
+                                        ->join('cliente c', 'e.cliente_id_cliente = c.id_cliente ')
+                                        ->join('veiculo_has_estudo vhe', 'vhe.estudo_id_estudo = e.id_estudo ')
+                                        ->where(" e.ativo_estudo=1 and vhe.veiculo_id_veiculo =" . $veiculo->id_veiculo . " and c.id_cliente= " . $cli['id_cliente'])
+                                        ->order('c.nome_cliente, e.nome_estudo ');
 
 
-                                            <?php
-                                            switch ($arq_tipo) {
-                                                case 'youtube':
-                                                    ?>
+                                    $idEstudos = $commandEstudo->queryAll();
 
-                                                <blockquote style="min-height: 115px;">
-                                                    <div>
+                                    foreach ($idEstudos as $idEstudo) {
+                                    $estudo = Estudo::model()->findByPk($idEstudo['id_estudo']);
+
+                                    $arq_tipo = isset($estudo['tags'][0]["ref_tag"]) ? $estudo['tags'][0]["ref_tag"] : 'pdf';
+
+                                    ?>
+
+
+                                    <?php
+                                    switch ($arq_tipo) {
+                                    case 'youtube':
+                                    ?>
+
+                                    <blockquote style="min-height: 115px;">
+                                        <div>
                                                                     <span class="pull-right">
                                                                         <iframe src="//www.youtube.com/embed/<?php echo $estudo['caminho_estudo']; ?>
                                                                         " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
                                                                     </span>
 
-                                                        <h2  style="font-weight:300; text-decoration: underline" ><?php echo $estudo['nome_estudo']; ?></h2>
+                                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                        <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
+                                            <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
 
-                                                        <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                                            <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
-                                                        <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_estudo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $arq['caminho_estudo']; ?>' class=' btn  btn-primary '
-                                                           style="color:white !important">
-                                                            <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+                                            <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                            <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary '
+                                               style="color:white !important">
+                                                <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
 
-                                                    </div>
-                                                <?php
-                                                    break;
-                                                case 'vimeo':
-                                                    ?>
-                                                    <blockquote style="min-height: 115px;">
-                                                        <div>
+                                        </div>
+                                        <?php
+                                        break;
+                                        case 'vimeo':
+                                        ?>
+                                        <blockquote style="min-height: 115px;">
+                                            <div>
                                                             <span class="pull-right">
                                                                 <iframe src="//player.vimeo.com/video/<?php echo $estudo['caminho_estudo']; ?>
                                                                 " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
                                                             </span>
 
-                                                            <h2  style="font-weight:300; text-decoration: underline" ><?php echo $estudo['nome_estudo']; ?></h2>
+                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                            <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
+                                                <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
 
-                                                            <a target='_blank' href='http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                                                <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
-                                                            <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_estudo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_estudo']; ?>' class=' btn  btn-primary '
-                                                               style="color:white !important">
-                                                                <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+                                                <a target='_blank' href='http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary '
+                                                   style="color:white !important">
+                                                    <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
 
-                                                        </div>
-                                                        <!--                                        </blockquote>-->
+                                            </div>
+                                            <!--                                        </blockquote>-->
 
-                                                    <?php
-                                                    break;
-                                                case 'pdf':
-                                                    ?>
-                                                    <blockquote style="">
-                                                        <div>
+                                            <?php
+                                            break;
+                                            case 'pdf':
+                                            ?>
+                                            <blockquote style="">
+                                                <div>
                                                             <span class='pull-right' style="margin-top: 40px;">
                                                                     <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                                         <i class='fa fa-file-pdf-o '></i> Clique Aqui Para Baixar
                                                                     </a>
                                                             </span>
 
-                                                            <h2  style="font-weight:300; text-decoration: underline" ><?php echo $estudo['nome_estudo']; ?></h2>
+                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                            <h4>formato: PDF</h4>
-                                                        </div>
-                                                        <!--                                        </blockquote>-->
+                                                    <h4>formato: PDF</h4>
+                                                </div>
+                                                <!--                                        </blockquote>-->
 
-                                                    <?php
-                                                    break;
+                                                <?php
+                                                break;
                                                 case 'doc':
-                                                    ?>
-                                                    <blockquote style="">
-                                                        <div>
+                                                ?>
+                                                <blockquote style="">
+                                                    <div>
                                                             <span class='pull-right' style="margin-top: 40px;">
                                                                         <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>'
                                                                            class=' btn  btn-primary ' style="color:white !important">
                                                                             <i class='fa fa-file-word-o '></i> Clique Aqui Para Baixar </a>
                                                                 </span>
-                                                        </div>
-                                                        <h2  style="font-weight:300; text-decoration: underline" ><?php echo $estudo['nome_estudo']; ?></h2>
+                                                    </div>
+                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                        <h4>formato: Word (.doc, .docx)</h4>
-                                                        <!--                                        </blockquote>-->
+                                                    <h4>formato: Word (.doc, .docx)</h4>
+                                                    <!--                                        </blockquote>-->
 
                                                     <?php
                                                     break;
-                                                case 'xls':
+                                                    case 'xls':
                                                     ?>
                                                     <blockquote style="">
                                                         <div>
@@ -547,49 +569,49 @@ $dataProgs = $command->queryAll();
                                                                         <i class='fa fa-file-excel-o green'></i> Clique Aqui Para Baixar </a>
                                                             </span>
                                                         </div>
-                                                        <h2  style="font-weight:300; text-decoration: underline" ><?php echo $estudo['nome_estudo']; ?></h2>
+                                                        <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
                                                         <h4>formato: Excel (.xls, .xlsx)</h4>
                                                         <!--                                        </blockquote>-->
 
 
-                                                    <?php
-                                                    break;
-                                                case 'ppt':
-                                                    ?>
-                                                    <blockquote style="">
-                                                        <div>
+                                                        <?php
+                                                        break;
+                                                        case 'ppt':
+                                                        ?>
+                                                        <blockquote style="">
+                                                            <div>
                                                         <span class='pull-right' style="margin-top: 40px;">
                                                                     <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>'
                                                                        class=' btn  btn-primary ' style="color:white !important">
                                                                         <i class='fa fa-file-powerpoint-o  purple '></i> Clique Aqui Para Baixar </a>
                                                             </span>
-                                                        </div>
-                                                        <h2  style="font-weight:300; text-decoration: underline" ><?php echo $estudo['nome_estudo']; ?></h2>
-                                                        <h4>formato: PowerPoint (.ppt, .pptx)</h4>
+                                                            </div>
+                                                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+                                                            <h4>formato: PowerPoint (.ppt, .pptx)</h4>
 
 
-                                                    <?php
-                                                    break;
-                                            }
-                                            ?>
-<!--                                            <p class="search-link" style="margin-top:8px;">Atualizado por --><?php //echo $estudo['usuario']; ?><!-- - (--><?php //echo $estudo['data']; ?><!--)</p>-->
-                                        </blockquote>
+                                                            <?php
+                                                            break;
+                                                            }
+                                                            ?>
+                                                            <!--                                            <p class="search-link" style="margin-top:8px;">Atualizado por --><?php //echo $estudo['usuario']; ?><!-- - (--><?php //echo $estudo['data']; ?><!--)</p>-->
+                                                        </blockquote>
 
-                                        <?php }; ?>
-                                    </div>
+                                                        <?php }; ?>
                                 </div>
                             </div>
+                        </div>
 
 
-                        <?php
+                    <?php
 
-                        }
-                    };?>
-                </div>
+                    }
+                };?>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 </div>
@@ -601,7 +623,7 @@ $dataProgs = $command->queryAll();
 
 
 <div id="modalUploadFile" class="modal fade" style="">
-    <div class="modal-dialog" style="max-width: 500px;float: right; min-width: 500px;" >
+    <div class="modal-dialog" style="max-width: 500px;float: right; min-width: 500px;">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -610,31 +632,29 @@ $dataProgs = $command->queryAll();
                 <div class="bootbox-body">
 
 
-
-                    <form enctype="multipart/form-data" id="veiculo-form" target="uploader_iframe" action="<?php echo Yii::app()->createUrl("site/uploadFile") ; ?>" method="post">
+                    <form enctype="multipart/form-data" id="veiculo-form" target="uploader_iframe" action="<?php echo Yii::app()->createUrl("site/uploadFile"); ?>" method="post">
 
                         <div class="form-group">
-                            <div class="  col-md-4 bold" >Programa: </div>
+                            <div class="  col-md-4 bold">Programa:</div>
 
                             <div class="col-md-8 ">
-                                <div  class=""  id="nomePrograma" ></div>
+                                <div class="" id="nomePrograma"></div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="  col-md-4 bold" >ID Arquivo: </div>
+                            <div class="  col-md-4 bold">ID Arquivo:</div>
 
                             <div class="col-md-8 ">
-                                <div  class=""  id="idArquivo" ></div>
+                                <div class="" id="idArquivo"></div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="  col-md-4  bold ">Nome: </div>
+                            <div class="  col-md-4  bold ">Nome:</div>
 
                             <div class="col-md-8">
-                                <div  class=""  id="nomeArquivo" ></div>
+                                <div class="" id="nomeArquivo"></div>
                             </div>
                         </div>
-
 
 
                         <div class="form-group" id="g_image">
@@ -668,10 +688,6 @@ $dataProgs = $command->queryAll();
             </div>
 
 
-
-
-
-
         </div>
     </div>
 </div>
@@ -684,7 +700,7 @@ $dataProgs = $command->queryAll();
             Portfolio.init();
         }, 1000);
 
-        $('#btn-upload-comercial').unbind('click').on('click', function(){
+        $('#btn-upload-comercial').unbind('click').on('click', function () {
             $('.input-file-item').toggle();
         });
 
@@ -694,37 +710,33 @@ $dataProgs = $command->queryAll();
 //        })
 
 
-        $("#btn-upload-file").on("click", function(e) {
+        $("#btn-upload-file").on("click", function (e) {
             console.log("button pressed");   // just as an example...
             $('#frame_result').show();
             $("#modalUploadFile").modal('hide');     // dismiss the dialog
         });
 
-        $('#btn_close_frame_result').unbind('click').on('click', function(){
+        $('#btn_close_frame_result').unbind('click').on('click', function () {
             $('#frame_result').fadeOut();
         });
 
-        $("#modalUploadFile").on("hide", function() {    // remove the event listeners when the dialog is dismissed
+        $("#modalUploadFile").on("hide", function () {    // remove the event listeners when the dialog is dismissed
             $("#btn-enviar-file").off("click");
         });
 
-        $("#modalUploadFile").on("hidden", function() {  // remove the actual elements from the DOM when fully hidden
+        $("#modalUploadFile").on("hidden", function () {  // remove the actual elements from the DOM when fully hidden
             $("#modalUploadFile").remove();
         });
-
-
-
 
 
     })
 
 
-
-    function onClickUploadFile(prog, arq,id,tipo){
-        console.log( prog, arq,id);
-         $('#g_image').hide();
-         $('#g_text').hide();
-        switch (tipo){
+    function onClickUploadFile(prog, arq, id, tipo) {
+        console.log(prog, arq, id);
+        $('#g_image').hide();
+        $('#g_text').hide();
+        switch (tipo) {
             case "pdf":
                 $('#Arquivo_image').attr('accept', '.pdf');
                 $('#g_image').show();
@@ -750,20 +762,18 @@ $dataProgs = $command->queryAll();
                 break;
 
         }
-        $('#nomeArquivo').html( arq);
+        $('#nomeArquivo').html(arq);
         $('#idArquivo').html(id);
         $('#nomePrograma').html(prog);
 
-        $('#Arquivo_image').replaceWith( $('#Arquivo_image').val('').clone(true));
+        $('#Arquivo_image').replaceWith($('#Arquivo_image').val('').clone(true));
         $('#Arquivo_fk_id_arquivo').val(id);
-       $("#modalUploadFile").modal({                    // wire up the actual modal functionality and show the dialog
+        $("#modalUploadFile").modal({                    // wire up the actual modal functionality and show the dialog
             //  "backdrop"  : "static",
-            "keyboard"  : true
+            "keyboard": true
             // "show"      : true                     // ensure the modal is shown immediately
         });
     }
-
-
 
 
 </script>
