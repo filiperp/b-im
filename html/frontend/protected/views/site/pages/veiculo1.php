@@ -118,7 +118,7 @@ $dataProgs = $command->queryAll();
 
 
             </div>
-            <div class="col-md-9 col-sm-9" style="padding-right: 0px;">
+            <div class="col-md-9 col-sm-9">
 
             <div class="tab-content" style="padding:0; background: #fff;">
 
@@ -223,35 +223,184 @@ $dataProgs = $command->queryAll();
                         cursor:hand;
                         cursor:pointer;">
                         <i class='fa fa-gear '></i></div>
-                    <div class="panel-body">
                     <?php  if (isset($dataProgs)) {
                         foreach ($dataProgs as $prog) {
                             if ($prog['ativo_programa']) {
-                                $extraClass = strlen($prog['nome_programa'])>20?' double ': '';
-                                echo CHtml::link(
-                                    '
-                                        <div class=" row ">
-                                            <div style="padding:0px 10px;" >
-                                                 <div  style="display:block; height:110px;" class="well">
-                                                        <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] . '">
-                                                        <div style="display:block; margin-left:120px; margin-top:-60px;"> '
-                                                             .$prog['nome_programa'] .
-                                                        '</div>
-                                                 </div>
-                                            </div>
+                                ;?>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a href="#accordion1_<?php echo $prog['id_programa']; ?>" data-parent="#accordion1" data-toggle="collapse" class="accordion-toggle"
+                                               style="width: 100%">
+                                                <img src="<?php echo Yii::app()->request->baseUrl . '/' . $prog['imagem_programa']; ?>" class="imgicon100"/>
+                                                <?php echo $prog['nome_programa']; ?>
+                                                <i class="fa fa-eye  fa-2x pull-right" style="margin-top: 27px;"></i>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div class="panel-collapse collapse " id="accordion1_<?php echo $prog['id_programa']; ?>">
+                                        <div class="panel-body">
+                                            <?php
+                                            $criteria1 = new CDbCriteria(array('order' => 'nome_arquivo ASC'));
+                                            $arqs = Arquivo::model()->findAllByAttributes(array(
+
+                                                'fk_id_veiculo' => $veiculo->id_veiculo,
+                                                'fk_id_praca' => $praca['id_praca'],
+                                                'fk_id_programa' => $prog['id_programa'],
+                                            ), $criteria1);?>
+
+                                            <?php foreach ($arqs as $arq) {
+
+                                                $arq_tipo = isset($arq['tags'][0]["ref_tag"]) ? $arq['tags'][0]["ref_tag"] : 'pdf';;?>
+
+                                                <blockquote style="min-height: 115px;">
+
+                                                    <?php
+                                                    switch ($arq_tipo) {
+                                                        case 'youtube':
+                                                            ?>
+                                                            <div>
+
+                                                                 <span class="pull-right">
+                                                                        <iframe src="//www.youtube.com/embed/<?php echo $arq['caminho_arquivo']; ?>
+                                                                        " width="200" height="112" style="border: 1px solid #cccccc; " webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
+                                                                    </span>
+
+                                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
+
+                                                                <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
+
+                                                                <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>'
+                                                                   class=' btn  btn-primary '
+                                                                   style="color:white !important">
+                                                                    <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+
+                                                            </div>
+
+                                                            <?php
+
+                                                            break;
+                                                        case 'vimeo':
+                                                            ?>
+                                                            <div>
+                                                                <span class="pull-right">
+                                                                    <iframe src="//player.vimeo.com/video/<?php echo $arq['caminho_arquivo']; ?>" width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
+                                                                </span>
+
+                                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
+
+                                                                <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
+
+
+                                                                <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary '
+                                                                   style="color:white !important">
+                                                                    <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+
+                                                            </div>
+                                                            <!--                                        </blockquote>-->
+
+                                                            <?php
+                                                            break;
+                                                        case 'pdf':
+                                                            ?>
+                                                            <div>
+                                                                <span class='pull-right' style="margin-top: 40px;">
+                                                                     <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                         <i class='fa fa-file-pdf-o '></i> Clique Aqui Para Baixar
+                                                                     </a>
+                                                            </span>
+
+                                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
+
+                                                                <h4>formato: PDF</h4>
+                                                            </div>
+                                                            <!--                                        </blockquote>-->
+
+                                                            <?php
+                                                            break;
+                                                        case 'doc':
+                                                            ?>
+                                                            <div>
+                                                              <span class='pull-right' style="margin-top: 40px;">
+                                                                    <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                        <i class='fa fa-file-word-o '></i> Clique Aqui Para Baixar </a>
+                                                            </span>
+                                                            </div>
+                                                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
+
+                                                            <h4>formato: Word (.doc, .docx)</h4>
+                                                            <!--                                        </blockquote>-->
+
+                                                            <?php
+                                                            break;
+                                                        case 'xls':
+                                                            ?>
+                                                            <div>
+                                                                  <span class='pull-right' style="margin-top: 40px;">
+                                                                    <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                        <i class='fa fa-file-excel-o green'></i> Clique Aqui Para Baixar </a>
+                                                            </span>
+                                                            </div>
+                                                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
+                                                            <h4>formato: Excel (.xls, .xlsx)</h4>
+                                                            <!--                                        </blockquote>-->
+
+
+                                                            <?php
+                                                            break;
+                                                        case 'ppt':
+                                                            ?>
+                                                            <div>
+                                                              <span class='pull-right' style="margin-top: 40px;">
+                                                                    <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                        <i class='fa fa-file-powerpoint-o  purple '></i> Clique Aqui Para Baixar </a>
+                                                            </span>
+                                                            </div>
+                                                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
+
+                                                            <h4>formato: PowerPoint (.ppt, .pptx)</h4>
+
+
+                                                            <?php
+                                                            break;
+                                                    }
+                                                    ?>
+                                                    <p class="search-link " style="margin-top:8px;display: inline">
+                                                        Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo $arq['data']; ?>)
+                                                    </p>
+
+                                                    <div class="input-file-item" style="display: none; float: right; cursor:hand; cursor:pointer">
+
+                                                        <div class="btn btn-danger  btn-upload-item"
+                                                             onclick="onClickUploadFile('<?php echo $prog['nome_programa']; ?>',
+                                                                 '<?php echo $arq['nome_arquivo']; ?>',
+                                                                 '<?php echo $arq['id_arquivo']; ?>',
+                                                                 '<?php echo $arq_tipo; ?>'
+                                                                 )">
+                                                            <i class="fa fa-cloud-upload"></i>
+                                                        </div>
+
+                                                    </div>
+
+                                                </blockquote>
+
+                                            <?php }; ?>
                                         </div>
-                                   ',
-                                    CController::createUrl('site/veiculo&id=' . $prog['id_programa'] ),//. '&idPraca=' . $praca->id_praca),
-//                                    array(
-//                                        'type' => 'POST',
-//                                        'update' => '#container',
-//                                        'beforeSend' => 'function(){wait();}'
-//                                    ),
-                                    array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
+                                    </div>
+                                </div>
+
+
+                            <?php
                             }
                         }
                     };?>
-                    </div>
+
+
                 </div>
             </div>
 
