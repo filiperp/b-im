@@ -1,14 +1,14 @@
 <ul class="breadcrumb">
     <li><?php echo CHtml::ajaxLink(
-            '<i class="fa fa-home"> </i>Home',
-            CController::createUrl('site/main'),
+            '<i class="fa fa-video-camera"> </i> '.$tag['nome_tag'],
+            CController::createUrl('site/listVeiculos&id=' . $tag['id_tag']),
             array('type' => 'POST', 'update' => '#container',
                 'beforeSend' => 'function(){onClickHome();}'
             ),
             array('id' => GUID::getGUID())); ?></li>
     <li>
         <?php echo CHtml::ajaxLink(
-            "Veículo: " . $veiculo->nome_veiculo, // CHtml::image(Yii::app()->baseUrl . '/' . $veiculo->imagem_veiculo, '', array('class' => 'imgicon')) ,//. " " . $veiculo->nome_veiculo,
+            '  <i class="fa fa-youtube-play"></i> ' . $veiculo->nome_veiculo, // CHtml::image(Yii::app()->baseUrl . '/' . $veiculo->imagem_veiculo, '', array('class' => 'imgicon')) ,//. " " . $veiculo->nome_veiculo,
             CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
             array(
                 'type' => 'POST',
@@ -25,6 +25,27 @@
 <div class="row">
     <div class="col-md-3 col-sm-3">
         <img src="<?php echo Yii::app()->request->baseUrl . '/' . $veiculo['imagem_veiculo']; ?>" style="width: 100%; height: auto;">
+        <ul class="tabbable faq-tabbable">
+
+            <li>
+                <?php
+
+
+                    echo CHtml::ajaxLink(
+                        '<i class="fa fa-backward"></i> Escolher Outro Veículo',
+                        CController::createUrl('site/listVeiculos&id=' . $tag['id_tag']),
+                        array(
+                            'type' => 'POST',
+
+                            'update' => '#container',
+                            'beforeSend' => 'function(){wait();}'
+                        ),
+                        array('id' => GUID::getGUID()));
+
+
+                ?>
+            </li>
+        </ul>
     </div>
     <div class="col-md-9 col-sm-9">
         <h1> Escolha a praça desejada:</h1>

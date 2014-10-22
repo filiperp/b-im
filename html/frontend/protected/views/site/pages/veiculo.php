@@ -8,8 +8,8 @@
 
 <ul class="breadcrumb">
     <li><?php echo CHtml::ajaxLink(
-            '<i class="fa fa-home"> </i>Home',
-            CController::createUrl('site/main'),
+            '<i class="fa fa-video-camera"> </i> '. $tag['nome_tag'],
+            CController::createUrl('site/listVeiculos&id=' . $tag['id_tag']),
             array('type' => 'POST', 'update' => '#container',
                 'beforeSend' => 'function(){onClickHome();}'
             ),
@@ -19,7 +19,7 @@
 
     <li>
         <?php echo CHtml::ajaxLink(
-            "Veículo: " . $veiculo->nome_veiculo, //CHtml::image(Yii::app()->baseUrl . '/' . $veiculo->imagem_veiculo, '', array('class' => 'imgicon')), // . " " . $veiculo->nome_veiculo,
+            ' <i class="fa fa-youtube-play"></i> '. $veiculo->nome_veiculo, //CHtml::image(Yii::app()->baseUrl . '/' . $veiculo->imagem_veiculo, '', array('class' => 'imgicon')), // . " " . $veiculo->nome_veiculo,
             CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
             array(
                 'type' => 'POST',
@@ -33,7 +33,8 @@
         ; ?>
 
         <li>
-            Praça: <?php echo $praca->nome_praca; ?>
+
+            <i class="fa fa-map-marker"></i> <?php echo $praca->nome_praca; ?>
         </li>
     <?php }; ?>
 
@@ -83,9 +84,9 @@ $dataProgs = $command->queryAll();
             <div class="row">
               <div class="col-md-3 col-sm-3">
                 <ul class="tabbable faq-tabbable">
-                    <li class="active"><a href="#tab_1" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Análises</a></li>
-                    <li><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Comercial</a></li>
-                    <li><a href="#tab_3" data-toggle="tab"><i class="fa fa-briefcase"></i> Estudos</a></li>
+                    <li class="<?php echo $menu=='analises'?'active':'' ; ?>"><a href="#tab_1" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Análises</a></li>
+                    <li class="<?php echo $menu=='comercial'?'active':'' ; ?>"><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Comercial</a></li>
+                    <li class="<?php echo $menu=='estudos'?'active':'' ; ?>"><a href="#tab_3" data-toggle="tab"><i class="fa fa-briefcase"></i> Estudos</a></li>
                     <li>
                         <?php
 
@@ -102,7 +103,7 @@ $dataProgs = $command->queryAll();
                         } else {
                             echo CHtml::ajaxLink(
                                 '<i class="fa fa-backward"></i> Escolher Outro Veículo',
-                                CController::createUrl('site/listVeiculos&id=' . $veiculo->tags[0]['id_tag']),
+                                CController::createUrl('site/listVeiculos&id=' .$tag['id_tag']),
                                 array(
                                     'type' => 'POST',
 
@@ -123,7 +124,7 @@ $dataProgs = $command->queryAll();
             <div class="tab-content" style="padding:0; background: #fff;">
 
 
-            <div class="tab-pane active" id="tab_1">
+            <div class="tab-pane <?php echo $menu=='analises'?'active':'' ; ?>" id="tab_1">
                 <div class="panel-group" id="accordion2">
 
                     <div class="row margin-bottom-40">
@@ -211,7 +212,7 @@ $dataProgs = $command->queryAll();
             </div>
 
 
-            <div class="tab-pane " id="tab_2">
+            <div class="tab-pane <?php echo $menu=='comercial'?'active':'' ; ?>" id="tab_2">
                 <div class="panel-group" id="accordion1">
 
                     <div id="btn-upload-comercial"
@@ -228,25 +229,26 @@ $dataProgs = $command->queryAll();
                         foreach ($dataProgs as $prog) {
                             if ($prog['ativo_programa']) {
                                 $extraClass = strlen($prog['nome_programa'])>20?' double ': '';
-                                echo CHtml::link(
+                                echo CHtml::ajaxLink(
                                     '
                                         <div class=" row ">
-                                            <div style="padding:0px 10px;" >
-                                                 <div  style="display:block; height:110px;" class="well">
+                                            <div style="padding:0px 10px;" class="product-item">
+                                                 <div  style="display:block; height:110px;" class="well add2cart">
                                                         <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] . '">
-                                                        <div style="display:block; margin-left:120px; margin-top:-60px;"> '
+                                                        <div style="display:block; margin-left:120px; margin-top:-70px;">
+                                                        <h4  style="">'
                                                              .$prog['nome_programa'] .
-                                                        '</div>
+                                                        '</h4></div>
                                                  </div>
                                             </div>
                                         </div>
                                    ',
                                     CController::createUrl('site/veiculo&id=' . $prog['id_programa'] ),//. '&idPraca=' . $praca->id_praca),
-//                                    array(
-//                                        'type' => 'POST',
-//                                        'update' => '#container',
-//                                        'beforeSend' => 'function(){wait();}'
-//                                    ),
+                                    array(
+                                        'type' => 'POST',
+                                        'update' => '#container',
+                                        'beforeSend' => 'function(){wait();}'
+                                    ),
                                     array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
                             }
                         }
@@ -256,7 +258,7 @@ $dataProgs = $command->queryAll();
             </div>
 
 
-            <div class="tab-pane " id="tab_3">
+            <div class="tab-pane <?php echo $menu=='estudos'?'active':'' ; ?> " id="tab_3">
                 <div class="panel-group" id="accordion2">
 
                     <div class="row margin-bottom-40">

@@ -1,14 +1,6 @@
 <ul class="breadcrumb">
-    <li><?php echo CHtml::ajaxLink(
-            '<i class="fa fa-home"> </i>Home',
-            CController::createUrl('site/main'),
-            array('type' => 'POST', 'update' => '#container',
-                'beforeSend' => 'function(){wait();}'
-            ),
-            array('id' => GUID::getGUID())); ?></li>
-    <li>
-        Veículos
-    </li>
+    <li><i class="fa fa-video-camera"> </i> <?php echo $tag->nome_tag ; ?></li>
+
 
 </ul>
 

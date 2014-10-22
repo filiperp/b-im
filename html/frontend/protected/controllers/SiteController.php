@@ -14,7 +14,7 @@ class SiteController extends Controller
         return array(
             array('allow',
                 'actions' => array('view', 'contact', 'error', 'index', 'site/logout', 'logout', 'page',
-                    'main', 'noticias', 'veiculo', 'praca', 'listVeiculos', 'dashboard', 'analise', 'uploadFile'
+                    'main', 'noticias', 'veiculo', 'praca', 'listVeiculos', 'dashboard', 'analise', 'programa', 'uploadFile'
                 ),
                 'users' => array('@'),
             ),
@@ -85,30 +85,6 @@ class SiteController extends Controller
 
 
 
-    public function actionAnalise($id, $veiculo, $praca){
-        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-        $anal = Analise::model()->findByPk($id);
-
-        if($anal->tipo_analise=='painel'){
-
-            $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
-        }else{
-            $data['link'] = $anal['descricao_analise'];
-
-        }
-
-
-
-       // $data['link'] = 'http://uol.com.br';
-        $data['analise_selecionada']=$anal;
-        $data['link_tipo'] =$anal->tipo_analise;
-        $data['remote']=$_SERVER['REMOTE_ADDR'];
-        $data['veiculo'] = $veiculo;
-        $data['praca'] = $praca;
-        $data['nome']=$anal['nome_analise'];
-        $this->renderPartial('pages/analise', $data, false, true);
-
-    }
 
     function get_trusted_url($view_url) {
         $params = ':embed=yes&:toolbar=yes';
@@ -210,11 +186,50 @@ class SiteController extends Controller
             $data['praca'] = sizeof($v['pracas'])==1?$v['pracas'][0] : Praca::model()->findByPk($idPraca);
             $data[ 'veiculo']= Veiculo::model()->findByPk($id);
             $data['model']= new Arquivo;
+            $data['tag']=$v->tags[0];
+            $data['menu']= "analises";  //comerical ||estudos || analises
             $this->renderPartial('pages/veiculo', $data, false, true);
         }
 
 
     }
+
+    public function actionPraca($id){
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+        $v =  Veiculo::model()->findByPk($id);;
+        $data[ 'id']= (int) $id;
+        $data['tag']=$v->tags[0];
+        $data[ 'veiculo']=$v;
+
+
+        $this->renderPartial('pages/pracas', $data, false, true);
+    }
+
+    public function actionAnalise($id, $veiculo, $praca){
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+        $anal = Analise::model()->findByPk($id);
+
+        if($anal->tipo_analise=='painel'){
+
+            $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
+        }else{
+            $data['link'] = $anal['descricao_analise'];
+
+        }
+
+
+
+        // $data['link'] = 'http://uol.com.br';
+        $data['analise_selecionada']=$anal;
+        $data['link_tipo'] =$anal->tipo_analise;
+        $data['remote']=$_SERVER['REMOTE_ADDR'];
+        $data['veiculo'] = $veiculo;
+        $data['praca'] = $praca;
+        $data['nome']=$anal['nome_analise'];
+        $this->renderPartial('pages/analise', $data, false, true);
+
+    }
+
     public function actionUploadFile(){
 
         //$this->redirect(array('view', 'id' => $model->id_arquivo));
@@ -276,17 +291,6 @@ class SiteController extends Controller
         $this->renderPartial('pages/listVeiculos', $data, false, true);
     }
 
-    public function actionPraca($id){
-        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-        $data[ 'id']= (int) $id;
-        $data[ 'veiculo']= Veiculo::model()->findByPk($id);;
-
-        $this->renderPartial('pages/pracas', $data, false, true);
-    }
-
-    /**
-     * This is the action to handle external exceptions.
-     */
     public function actionError()
     {
         if ($error = Yii::app()->errorHandler->error) {
@@ -297,9 +301,6 @@ class SiteController extends Controller
         }
     }
 
-    /**
-     * Displays the contact page
-     */
     public function actionContact()
     {
         $model = new ContactForm;
@@ -321,9 +322,6 @@ class SiteController extends Controller
         $this->render('contact', array('model' => $model));
     }
 
-    /**
-     * Displays the login page
-     */
     public function actionLogin()
     {
         $model = new LoginForm;
@@ -346,9 +344,6 @@ class SiteController extends Controller
         $this->render('login', array('model' => $model));
     }
 
-    /**
-     * Logs out the current user and redirect to homepage.
-     */
     public function actionLogout()
     {
         Yii::app()->user->logout();
