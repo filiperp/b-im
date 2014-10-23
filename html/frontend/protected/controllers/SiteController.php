@@ -79,6 +79,15 @@ class SiteController extends Controller
             'midia_impressa'=>'green',
         );
     }
+    public function coresNotes(){
+        return array(
+            'tv_aberta'=>'note-success',
+            'newco'=>'note-info',
+            'outernet'=>'note-danger',
+            'radio'=>'well',
+            'midia_impressa'=>'note-success',
+        );
+    }
 
 
 
@@ -173,8 +182,10 @@ class SiteController extends Controller
         $this->renderPartial('pages/dashboard', null, false, true);
     }
 
-    public function actionVeiculo($id, $idPraca= null)
+    public function actionVeiculo($id, $idPraca= null, $menu =null)
+
     {
+        if($menu==null) $menu = 'analises';//comerical ||estudos || analises
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
 
 
@@ -183,16 +194,43 @@ class SiteController extends Controller
             $this->actionPraca($id);
         }else{
             $data[ 'id']= (int) $id;
+
             $data['praca'] = sizeof($v['pracas'])==1?$v['pracas'][0] : Praca::model()->findByPk($idPraca);
             $data[ 'veiculo']= Veiculo::model()->findByPk($id);
             $data['model']= new Arquivo;
             $data['tag']=$v->tags[0];
-            $data['menu']= "analises";  //comerical ||estudos || analises
+            $data['menu']= $menu;
             $this->renderPartial('pages/veiculo', $data, false, true);
         }
 
 
     }
+    public function actionPrograma($idVeiculo, $idPraca, $idPrograma)
+    {
+        Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+        $criteria = new CDbCriteria;
+        $criteria->condition = "
+                                fk_id_veiculo=:fk_veiculo AND
+                                fk_id_praca=:fk_praca AND
+                                fk_id_programa=:fk_programa
+                                ";
+        $criteria->params = array(':fk_veiculo' => $idVeiculo, ':fk_praca' => $idPraca, ':fk_programa'=>$idPrograma );
+
+
+
+            $data['praca'] =  Praca::model()->findByPk($idPraca);
+            $data['veiculo']=Veiculo::model()->findByPk($idVeiculo);
+             $data['tag']=$data['veiculo']['tags'][0];
+            $data['programa']= Programa::model()->findByPk($idPrograma);
+            $data['arquivos']= Arquivo::model()->findAll($criteria);
+          $data['coresNotes']=$this->coresNotes();
+            //$data['menu']= "analises";  //comerical ||estudos || analises
+            $this->renderPartial('pages/programa', $data, false, true);
+
+
+
+    }
+
 
     public function actionPraca($id){
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
@@ -349,4 +387,4 @@ class SiteController extends Controller
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
     }
-}
+    }

@@ -3,7 +3,7 @@
             '<i class="fa fa-video-camera"> </i> '.$tag['nome_tag'],
             CController::createUrl('site/listVeiculos&id=' . $tag['id_tag']),
             array('type' => 'POST', 'update' => '#container',
-                'beforeSend' => 'function(){onClickHome();}'
+                'beforeSend' => 'function(){wait();}'
             ),
             array('id' => GUID::getGUID())); ?></li>
     <li>
