@@ -55,7 +55,7 @@ class SiteController extends Controller
     {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
-      //  Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+        //  Yii::app()->clientScript->scriptMap['jquery.js'] = false;
 
         $Criteria = new CDbCriteria();
         $Criteria->addCondition('tipo_tag = "veiculo"');
@@ -67,46 +67,42 @@ class SiteController extends Controller
         $noticias = Noticia::model()->findAll($nCriteria);
 
 
-        $this->render('index', array('noticias' => $noticias, 'tags' => $tags, 'cores'=> $this->cores() ));
+        $this->render('index', array('noticias' => $noticias, 'tags' => $tags, 'cores' => $this->cores()));
     }
 
-    public function cores(){
+    public function cores()
+    {
         return array(
-            'tv_aberta'=>'green',
-            'newco'=>'blue',
-            'outernet'=>'red',
-            'radio'=>'gray',
-            'midia_impressa'=>'green',
-        );
-    }
-    public function coresNotes(){
-        return array(
-            'tv_aberta'=>'note-success',
-            'newco'=>'note-info',
-            'outernet'=>'note-danger',
-            'radio'=>'well',
-            'midia_impressa'=>'note-success',
+            'tv_aberta' => 'green',
+            'newco' => 'blue',
+            'outernet' => 'red',
+            'radio' => 'gray',
+            'midia_impressa' => 'green',
         );
     }
 
+    public function coresNotes()
+    {
+        return array(
+            'tv_aberta' => 'note-success',
+            'newco' => 'note-info',
+            'outernet' => 'note-danger',
+            'radio' => 'well',
+            'midia_impressa' => 'note-success',
+        );
+    }
 
 
-
-
-
-
-    function get_trusted_url($view_url) {
+    function get_trusted_url($view_url)
+    {
         $params = ':embed=yes&:toolbar=yes';
 
         $ticket = http_parse_message(http_post_fields("http://104.131.11.41/frontend/trusted/get.php", array()))->body;
         if (strcmp($ticket, "-1") != 0) {
             return "https://tableau.band.com.br/trusted/$ticket/views/$view_url?$params";
-        }
-        else
+        } else
             return 0;
     }
-
-
 
 
     public function actionMain()
@@ -124,8 +120,6 @@ class SiteController extends Controller
     public function actionNoticias()
     {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-
-
 
 
         if (Yii::app()->getRequest()->getIsPostRequest()) {
@@ -147,7 +141,7 @@ class SiteController extends Controller
             $x = $xmlDoc->getElementsByTagName('item');
             $items = array();
 
-            for ($i = 0; $i <= $x->length-1; $i++) {
+            for ($i = 0; $i <= $x->length - 1; $i++) {
                 $item = array();
                 $item['title'] = $x->item($i)->getElementsByTagName('title')
                     ->item(0)->childNodes->item(0)->nodeValue;
@@ -159,9 +153,6 @@ class SiteController extends Controller
                     ->item(0)->childNodes->item(0)->nodeValue;
                 array_push($items, $item);
             }
-
-
-
 
 
             $data['model'] = $not;
@@ -177,34 +168,36 @@ class SiteController extends Controller
         }
     }
 
-    public function actionDashboard(){
+    public function actionDashboard()
+    {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         $this->renderPartial('pages/dashboard', null, false, true);
     }
 
-    public function actionVeiculo($id, $idPraca= null, $menu =null)
+    public function actionVeiculo($id, $idPraca = null, $menu = null)
 
     {
-        if($menu==null) $menu = 'analises';//comerical ||estudos || analises
+        if ($menu == null) $menu = 'analises'; //comerical ||estudos || analises
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
 
 
         $v = Veiculo::model()->findByPk($id);
-        if(sizeof($v['pracas'])>1 && $idPraca==null){
+        if (sizeof($v['pracas']) > 1 && $idPraca == null) {
             $this->actionPraca($id);
-        }else{
-            $data[ 'id']= (int) $id;
+        } else {
+            $data['id'] = (int)$id;
 
-            $data['praca'] = sizeof($v['pracas'])==1?$v['pracas'][0] : Praca::model()->findByPk($idPraca);
-            $data[ 'veiculo']= Veiculo::model()->findByPk($id);
-            $data['model']= new Arquivo;
-            $data['tag']=$v->tags[0];
-            $data['menu']= $menu;
+            $data['praca'] = sizeof($v['pracas']) == 1 ? $v['pracas'][0] : Praca::model()->findByPk($idPraca);
+            $data['veiculo'] = Veiculo::model()->findByPk($id);
+            // $data['model']= new Arquivo;
+            $data['tag'] = $v->tags[0];
+            $data['menu'] = $menu;
             $this->renderPartial('pages/veiculo', $data, false, true);
         }
 
 
     }
+
     public function actionPrograma($idVeiculo, $idPraca, $idPrograma)
     {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
@@ -214,65 +207,66 @@ class SiteController extends Controller
                                 fk_id_praca=:fk_praca AND
                                 fk_id_programa=:fk_programa
                                 ";
-        $criteria->params = array(':fk_veiculo' => $idVeiculo, ':fk_praca' => $idPraca, ':fk_programa'=>$idPrograma );
+        $criteria->params = array(':fk_veiculo' => $idVeiculo, ':fk_praca' => $idPraca, ':fk_programa' => $idPrograma);
 
 
-
-            $data['praca'] =  Praca::model()->findByPk($idPraca);
-            $data['veiculo']=Veiculo::model()->findByPk($idVeiculo);
-             $data['tag']=$data['veiculo']['tags'][0];
-            $data['programa']= Programa::model()->findByPk($idPrograma);
-            $data['arquivos']= Arquivo::model()->findAll($criteria);
-          $data['coresNotes']=$this->coresNotes();
-            //$data['menu']= "analises";  //comerical ||estudos || analises
-            $this->renderPartial('pages/programa', $data, false, true);
-
+        $data['praca'] = Praca::model()->findByPk($idPraca);
+        $data['veiculo'] = Veiculo::model()->findByPk($idVeiculo);
+        $data['tag'] = $data['veiculo']['tags'][0];
+        $data['model'] = new Arquivo;
+        $data['programa'] = Programa::model()->findByPk($idPrograma);
+        $data['arquivos'] = Arquivo::model()->findAll($criteria);
+        $data['coresNotes'] = $this->coresNotes();
+        //$data['menu']= "analises";  //comerical ||estudos || analises
+        $this->renderPartial('pages/programa', $data, false, true);
 
 
     }
 
 
-    public function actionPraca($id){
+    public function actionPraca($id)
+    {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-        $v =  Veiculo::model()->findByPk($id);;
-        $data[ 'id']= (int) $id;
-        $data['tag']=$v->tags[0];
-        $data[ 'veiculo']=$v;
+        $v = Veiculo::model()->findByPk($id);;
+        $data['id'] = (int)$id;
+        $data['tag'] = $v->tags[0];
+        $data['veiculo'] = $v;
 
 
         $this->renderPartial('pages/pracas', $data, false, true);
     }
 
-    public function actionAnalise($id, $veiculo, $praca){
+    public function actionAnalise($id, $veiculo, $praca)
+    {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         $anal = Analise::model()->findByPk($id);
 
-        if($anal->tipo_analise=='painel'){
+        if ($anal->tipo_analise == 'painel') {
 
             $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
-        }else{
+        } else {
             $data['link'] = $anal['descricao_analise'];
 
         }
 
 
-
         // $data['link'] = 'http://uol.com.br';
-        $data['analise_selecionada']=$anal;
-        $data['link_tipo'] =$anal->tipo_analise;
-        $data['remote']=$_SERVER['REMOTE_ADDR'];
+        $data['analise_selecionada'] = $anal;
+        $data['link_tipo'] = $anal->tipo_analise;
+        $data['remote'] = $_SERVER['REMOTE_ADDR'];
         $data['veiculo'] = $veiculo;
         $data['praca'] = $praca;
-        $data['nome']=$anal['nome_analise'];
+        $data['nome'] = $anal['nome_analise'];
         $this->renderPartial('pages/analise', $data, false, true);
 
     }
 
-    public function actionUploadFile(){
+    public function actionUploadFile()
+    {
 
         //$this->redirect(array('view', 'id' => $model->id_arquivo));
         //criando historico
-        $model = Arquivo::model()->findByPk($_POST['Arquivo'][ 'id_arquivo']);
+        $model = Arquivo::model()->findByPk($_POST['Arquivo']['id_arquivo']);
         $label = get_class($model);
 
         $hist = new ArquivoHistorico;
@@ -283,15 +277,15 @@ class SiteController extends Controller
         $hist->nome_arquivo = $model->nome_arquivo;
 
 
-        $model->usuario =Yii::app()->user->getId();
-        $model->data= date('Y-m-d h:i:s', time());
+        $model->usuario = Yii::app()->user->getId();
+        $model->data = date('Y-m-d h:i:s', time());
 
-        if($model->getBaseTag()=='vimeo' ||$model->getBaseTag()=='youtube'){
+        if ($model->getBaseTag() == 'vimeo' || $model->getBaseTag() == 'youtube') {
             $hist->caminho_arquivo = $model->caminho_arquivo;
-            $model->caminho_arquivo =$_POST['Arquivo'][ 'caminho_arquivo'] ;
+            $model->caminho_arquivo = $_POST['Arquivo']['caminho_arquivo'];
             $hist->save();
             $model->save();
-        }else{
+        } else {
             $histPAth = '../uploads/' . strtolower($label) . '/' . strtolower($model->ref_arquivo) . '/hist/';
             if (!file_exists($histPAth) && !is_dir($histPAth)) {
                 mkdir($histPAth);
@@ -307,24 +301,15 @@ class SiteController extends Controller
         }
 
 
-
-
-
-
-
-
-
-
-
-
-        $data['res']=true;
-        $this->renderPartial('pages/uploadResult',$data);
+        $data['res'] = true;
+        $this->renderPartial('pages/uploadResult', $data);
     }
 
-    public function actionListVeiculos($id){
+    public function actionListVeiculos($id)
+    {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-        $data[ 'id']= (int) $id;
-        $data[ 'tag']= Tag::model()->findByPk($id);;
+        $data['id'] = (int)$id;
+        $data['tag'] = Tag::model()->findByPk($id);;
 
         $this->renderPartial('pages/listVeiculos', $data, false, true);
     }
@@ -387,4 +372,4 @@ class SiteController extends Controller
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
     }
-    }
+}

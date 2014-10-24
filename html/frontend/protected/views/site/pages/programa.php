@@ -114,119 +114,131 @@
                     switch ($arq_tipo) {
                         case 'youtube':
                             ?>
-
-
-                            <div>
                                 <span class="pull-right">
-                                    <iframe src="//www.youtube.com/embed/<?php echo $prog['caminho_arquivo']; ?>
-                                    " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
+                                    <iframe src="//www.youtube.com/embed/<?php echo $arq['caminho_arquivo']; ?>
+                                    " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen style="border: none;margin-top:15px;"></iframe>
                                 </span>
 
-                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
-
+                                <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                                    <hr>
                                 <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
 
-                                <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important;margin-right:5px;">
+                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a>
                                 <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>'
-                                   class=' btn  btn-primary '
-                                   style="color:white !important">
-                                    <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
-
-                            </div>
+                                   class=' btn  btn-primary 'style="color:white !important">
+                                    <i class='fa fa-envelope-o '></i> Enviar link como E-mail
+                                </a>
                             <?php
                             break;
                         case 'vimeo':
                             ?>
-                            <div>
                                 <span class="pull-right">
                                     <iframe src="//player.vimeo.com/video/<?php echo $arq['caminho_arquivo']; ?>
-                                    " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
+                                    " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen style="border: none;margin-top:15px;"></iframe>
                                 </span>
-
-                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
-
+                                <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                                <hr>
                                 <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
-
-                                <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important; margin-right:5px;">
+                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a>
                                 <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>'
-                                   class=' btn  btn-primary '
-                                   style="color:white !important">
-                                    <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
-
-                            </div>
-                            <!--                                        </blockquote>-->
-
+                                   class=' btn  btn-primary ' style="color:white !important">
+                                    <i class='fa fa-envelope-o '></i> Enviar link como E-mail
+                                </a>
                             <?php
                             break;
                         case 'pdf':
                             ?>
-                            <div>
                                 <span class='pull-right' style="margin-top: 40px;">
-                                        <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                            <i class='fa fa-file-pdf-o '></i> Clique Aqui Para Baixar
-                                        </a>
+                                    <i class="fa fa-file-pdf-o fa-5x" style="color:#888888;"></i>
                                 </span>
-
-                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
-
-                                <h4>formato: PDF</h4>
-                            </div>
-                            <!--                                        </blockquote>-->
-
+                                <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                                <hr>
+                                <h4>Formato: PDF</h4>
+                                <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                    <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
+                                </a>
+                                <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
+                                   class=' btn  btn-primary ' style="color:white !important" >
+                                   <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
+                                </a>
                             <?php
                             break;
                         case 'doc':
                             ?>
-                            <div>
-                                <span class='pull-right' style="margin-top: 40px;">
-                                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>'
-                                               class=' btn  btn-primary ' style="color:white !important">
-                                                <i class='fa fa-file-word-o '></i> Clique Aqui Para Baixar </a>
-                                    </span>
-                            </div>
-                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
-
-                            <h4>formato: Word (.doc, .docx)</h4>
-                            <!--                                        </blockquote>-->
-
+                            <span class='pull-right' style="margin-top: 40px;">
+                                    <i class="fa fa-file-pdf-o fa-5x" style="color:#888888;"></i>
+                                </span>
+                            <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                            <hr>
+                            <h4>Formato: Word (.doc, .docx)</h4>
+                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
+                            </a>
+                            <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
+                               class=' btn  btn-primary ' style="color:white !important" >
+                                <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
+                            </a>
                             <?php
                             break;
                         case 'xls':
                             ?>
-                            <div>
-                                <span class='pull-right' style="margin-top: 40px;">
-                                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>'
-                                               class=' btn  btn-primary ' style="color:white !important">
-                                                <i class='fa fa-file-excel-o green'></i> Clique Aqui Para Baixar </a>
-                                    </span>
-                            </div>
-                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
-
-                            <h4>formato: Excel (.xls, .xlsx)</h4>
-                            <!--                                        </blockquote>-->
-
-
+                            <span class='pull-right' style="margin-top: 40px;">
+                                    <i class="fa fa-file-pdf-o fa-5x" style="color:#888888;"></i>
+                                </span>
+                            <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                            <hr>
+                            <h4>Formato: Excel (.xls, .xlsx)</h4>
+                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
+                            </a>
+                            <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
+                               class=' btn  btn-primary ' style="color:white !important" >
+                                <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
+                            </a>
                             <?php
                             break;
                         case 'ppt':
                             ?>
-                            <div>
-                                <span class='pull-right' style="margin-top: 40px;">
-                                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>'
-                                               class=' btn  btn-primary ' style="color:white !important">
-                                                <i class='fa fa-file-powerpoint-o  purple '></i> Clique Aqui Para Baixar </a>
-                                    </span>
-                            </div>
-                            <h2 style="font-weight:300; text-decoration: underline"><?php echo $arq['nome_arquivo']; ?></h2>
-                            <h4>formato: PowerPoint (.ppt, .pptx)</h4>
-
-
+                            <span class='pull-right' style="margin-top: 40px;">
+                                    <i class="fa fa-file-pdf-o fa-5x" style="color:#888888;"></i>
+                                </span>
+                            <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                            <hr>
+                            <h4>Formato: PowerPoint (.ppt, .pptx)</h4>
+                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
+                            </a>
+                            <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
+                               class=' btn  btn-primary ' style="color:white !important" >
+                                <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
+                            </a>
                             <?php
                             break;
                     }
                     ?>
+
+                <div class="input-file-item" style="display: none;cursor: pointer;
+                                                            right: -43px;
+                                                            position: absolute;
+                                                            top: 0px; cursor:hand; cursor:pointer">
+
+                    <div class="btn btn-danger  btn-upload-item"
+                         onclick="onClickUploadFile(
+                             '<?php echo $programa['nome_programa']; ?>',
+                             '<?php echo $arq['nome_arquivo']; ?>',
+                             '<?php echo $arq['id_arquivo']; ?>',
+                             '<?php echo $arq_tipo; ?>'
+                             )">
+                        <i class="fa fa-cloud-upload"></i>
+                    </div>
+
+
+
+                </div>
+
+
                      <p class="search-link" style="margin-top:8px;">Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo $arq['data']; ?>)</p>
 
             </div>
