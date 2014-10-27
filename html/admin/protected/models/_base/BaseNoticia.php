@@ -41,7 +41,9 @@ abstract class BaseNoticia extends GxActiveRecord {
 			array('ref_noticia, nome_noticia, descricao_noticia, link_noticia, ativo_noticia, imagem_noticia', 'required'),
 			array('ativo_noticia', 'numerical', 'integerOnly'=>true),
 			array('ref_noticia', 'length', 'max'=>45),
-			array('nome_noticia', 'length', 'max'=>100),
+            array('ref_noticia','unique', 'message'=>'Essa Chave Já existe.'),
+
+            array('nome_noticia', 'length', 'max'=>100),
 			array('descricao_noticia, link_noticia', 'length', 'max'=>512),
 			array('imagem_noticia', 'length', 'max'=>255),
 			array('id_noticia, ref_noticia, nome_noticia, descricao_noticia, link_noticia, ativo_noticia, imagem_noticia', 'safe', 'on'=>'search'),

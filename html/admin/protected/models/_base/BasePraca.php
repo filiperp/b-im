@@ -41,7 +41,9 @@ abstract class BasePraca extends GxActiveRecord {
 			array('ref_praca, nome_praca, descricao_praca, ativo_praca, imagem_praca', 'required'),
 			array('ativo_praca', 'numerical', 'integerOnly'=>true),
 			array('ref_praca', 'length', 'max'=>45),
-			array('nome_praca', 'length', 'max'=>100),
+            array('ref_praca','unique', 'message'=>'Essa Chave Já existe.'),
+
+            array('nome_praca', 'length', 'max'=>100),
 			array('descricao_praca', 'length', 'max'=>512),
 			array('imagem_praca', 'length', 'max'=>255),
 			array('id_praca, ref_praca, nome_praca, descricao_praca, ativo_praca, imagem_praca', 'safe', 'on'=>'search'),

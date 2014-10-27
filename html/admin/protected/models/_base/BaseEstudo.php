@@ -43,7 +43,9 @@ abstract class BaseEstudo extends GxActiveRecord {
 			array('ref_estudo, nome_estudo, caminho_estudo, ativo_estudo, cliente_id_cliente', 'required'),
 			array('ativo_estudo, cliente_id_cliente', 'numerical', 'integerOnly'=>true),
 			array('ref_estudo', 'length', 'max'=>45),
-			array('nome_estudo', 'length', 'max'=>100),
+            array('ref_estudo','unique', 'message'=>'Essa Chave Já existe.'),
+
+            array('nome_estudo', 'length', 'max'=>100),
 			array('caminho_estudo', 'length', 'max'=>255),
 			array('id_estudo, ref_estudo, nome_estudo, caminho_estudo, ativo_estudo, cliente_id_cliente', 'safe', 'on'=>'search'),
 		);

@@ -43,6 +43,7 @@ abstract class BaseVeiculo extends GxActiveRecord {
 		return array(
 			array('ref_veiculo, nome_veiculo, descricao_veiculo, imagem_veiculo, ativo_veiculo', 'required'),
 			array('ativo_veiculo', 'numerical', 'integerOnly'=>true),
+            array('ref_veiculo','unique', 'message'=>'Essa Chave Já existe.'),
 			array('ref_veiculo', 'length', 'max'=>45),
 			array('nome_veiculo', 'length', 'max'=>100),
 			array('descricao_veiculo', 'length', 'max'=>512),

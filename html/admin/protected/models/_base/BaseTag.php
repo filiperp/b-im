@@ -42,7 +42,9 @@ abstract class BaseTag extends GxActiveRecord {
 		return array(
 			array('tipo_tag', 'required'),
 			array('ref_tag, nome_tag, tipo_tag', 'length', 'max'=>45),
-			array('ref_tag, nome_tag', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('ref_tag','unique', 'message'=>'Essa Chave Já existe.'),
+
+            array('ref_tag, nome_tag', 'default', 'setOnEmpty' => true, 'value' => null),
 			array('id_tag, ref_tag, nome_tag, tipo_tag', 'safe', 'on'=>'search'),
 		);
 	}

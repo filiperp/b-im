@@ -42,7 +42,9 @@ abstract class BasePrograma extends GxActiveRecord {
 			array('ref_programa, nome_programa, descricao_programa, imagem_programa, ativo_programa', 'required'),
 			array('ativo_programa', 'numerical', 'integerOnly'=>true),
 			array('ref_programa', 'length', 'max'=>45),
-			array('nome_programa', 'length', 'max'=>100),
+            array('ref_programa','unique', 'message'=>'Essa Chave Já existe.'),
+
+            array('nome_programa', 'length', 'max'=>100),
 			array('descricao_programa', 'length', 'max'=>512),
 			array('imagem_programa', 'length', 'max'=>255),
 			array('id_programa, ref_programa, nome_programa, descricao_programa, imagem_programa, ativo_programa', 'safe', 'on'=>'search'),

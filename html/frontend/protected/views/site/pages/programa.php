@@ -121,7 +121,7 @@
 
                                 <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                                     <hr>
-                                <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
+                                <h4>Endereço: http://www.youtube.com/watch?v<?php echo $arq['caminho_arquivo']; ?></h4>
 
                                 <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important;margin-right:5px;">
                                     <i class='fa fa-share-alt '></i> Abrir no Vimeo</a>

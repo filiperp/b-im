@@ -38,7 +38,9 @@ abstract class BaseCliente extends GxActiveRecord {
 		return array(
 			array('ref_cliente, nome_cliente, imagem_cliente', 'required'),
 			array('ref_cliente', 'length', 'max'=>45),
-			array('nome_cliente', 'length', 'max'=>100),
+            array('ref_cliente','unique', 'message'=>'Essa Chave Já existe.'),
+
+            array('nome_cliente', 'length', 'max'=>100),
 			array('imagem_cliente', 'length', 'max'=>255),
 			array('id_cliente, ref_cliente, nome_cliente, imagem_cliente', 'safe', 'on'=>'search'),
 		);

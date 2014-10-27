@@ -44,6 +44,7 @@ abstract class BaseAnalise extends GxActiveRecord {
 			array('ref_analise, nome_analise, descricao_analise, imagem_analise, ativo_analise, tipo_analise', 'required'),
 			array('ativo_analise, help_analise', 'numerical', 'integerOnly'=>true),
 			array('ref_analise, tipo_analise', 'length', 'max'=>45),
+            array('ref_analise','unique', 'message'=>'Essa Chave Já existe.'),
 			array('nome_analise', 'length', 'max'=>100),
 			array('descricao_analise', 'length', 'max'=>512),
 			array('imagem_analise', 'length', 'max'=>255),

@@ -50,7 +50,9 @@ abstract class BaseArquivo extends GxActiveRecord {
 			array('ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa', 'numerical', 'integerOnly'=>true),
 			array('ref_arquivo, usuario', 'length', 'max'=>45),
 			array('nome_arquivo', 'length', 'max'=>100),
-			array('caminho_arquivo', 'length', 'max'=>512),
+            array('ref_arquivo','unique', 'message'=>'Essa Chave Já existe.'),
+
+            array('caminho_arquivo', 'length', 'max'=>512),
 			array('id_arquivo, ref_arquivo, nome_arquivo, caminho_arquivo, ativo_arquivo, fk_id_veiculo, fk_id_praca, fk_id_programa, usuario, data', 'safe', 'on'=>'search'),
 			array('tags','greaterThanZero'),
 		);
