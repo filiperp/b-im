@@ -7,7 +7,7 @@
  */
 
 ?>
-<div class="row " style="   min-height: 80px; margin-bottom:10px;">
+<div  class="row " style="   min-height: 80px; margin-bottom:10px;">
     <div class="col-sm-12 well ">
         <?php
         echo CHtml::ajaxLink(
@@ -40,10 +40,10 @@ if ($link_tipo == 'painel') $frame_width = '915px';?>
 
 
 <div class="row" style="text-align: center;">
-    <div class="col-sm-12 " style="text-align: center;">
+    <div  class="col-sm-12 " style="text-align: center;">
 
-        <div style="text-align: center;width: <?php echo $frame_width; ?> !important; ">
-            <div id="help_holder" style="height:756px; box-sizing: border-box; width:<?php echo $frame_width; ?> ; position: absolute"></div>
+        <div id="iframe_analise"  style="text-align: center; width: <?php echo $frame_width; ?> !important; ">
+            <div id="help_holder" style="height:756px; box-sizing: border-box;display: none; width:<?php echo $frame_width; ?> ; position: absolute"></div>
             <iframe src="<?php echo $link; ?>"
                     width="<?php echo $frame_width; ?> "
                     height="756px" align="center" scrolling="no" style="border: none">
@@ -79,6 +79,16 @@ if ($link_tipo == 'painel') $frame_width = '915px';?>
 
         })
 
+        $('#btn_print').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            html2canvas($("#iframe_analise"), {
+                onrendered: function(canvas) {
+                    document.body.appendChild(canvas);
+                }
+            });
+        })
+
 
     });
 
@@ -88,6 +98,8 @@ if ($link_tipo == 'painel') $frame_width = '915px';?>
 <?php
 $cs = Yii::app()->getClientScript();
 $cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/HelpAnalise.js', CClientScript::POS_END);
+//$cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/FileSaver.js', CClientScript::POS_END);
+//$cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/html2canvas.js', CClientScript::POS_END);
 
 if (intval($analise_selecionada['help_analise']) == 1) {
     $cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/help/' . $analise_selecionada['ref_analise'] . '.js', CClientScript::POS_END);

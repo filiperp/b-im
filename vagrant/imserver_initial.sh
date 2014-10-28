@@ -6,30 +6,26 @@ sudo apt-get -y --force-yes update
 sudo apt-get -y --force-yes upgrade
 
 
-echo "=========APT_GET==========="
+echo "=========APT GET installs==========="
 sudo apt-get -y install \
-apache2 php5 libapache2-mod-php5 mysql-server php5-mysql \
+apache2 php5 libapache2-mod-php5 mysql-server  \
 php5-sqlite php5-memcache php-apc php5-mcrypt php5-imagick \
-php-pear php5-dev libpcre3-dev  libcurl3-openssl-dev \
+php-pear php5-dev libpcre3-dev  libcurl3-openssl-dev php5-mysql;
 
 
-echo "=========PECL==========="
+echo "=========PECL (must be 1.7.6)==========="
 sudo pecl  install pecl_http-1.7.6
 
-echo "=========LINKS==========="
+echo "=========Symbolics==========="
 sudo ln -s /etc/php5/mods-available/mcrypt.ini /etc/php5/apache2/conf.d/20-mcrypt.ini
 
-
-echo "=========TMP==========="
+echo "=========uploads tmp==========="
 sudo mkdir /var/www/tmp
 sudo chmod 755 /var/www/tmp
 sudo chown www-data:www-data  /var/www/tmp
 
 
-
-
-
-echo "=========MYSQL==========="
+echo "=========MYSQL homolog==========="
 #CREATE USER 'root'@'localhost' IDENTIFIED BY 'Mudar#123' ; 
 #CREATE USER 'root'@'%' IDENTIFIED BY 'Mudar#123' ;			  
 mysql -u root -p << EOF
@@ -42,18 +38,18 @@ mysql -u root -p << EOF
  exit; 
 EOF
 
-echo "=========my.cnf==========="
+echo "=========my.cnf homolog ==========="
 
 #sudo pico  /etc/mysql/my.cnf
 sudo sh -c 'echo  "
 [mysqld]
-bind-address            = 0.0.0.0
+bind-address = 0.0.0.0
 
 
 "   >> /etc/mysql/conf.d/band-im.cnf ';
 #sudo sh -c 'echo  >> '
 
-echo "=========php.ini==========="
+echo "=========php.ini homolog==========="
 #sudo pico /etc/php5/apache2/php.ini
 sudo sh -c 'echo  "
 
@@ -69,7 +65,7 @@ extension=http.so
 " >> /etc/php5/apache2/conf.d/band-im.ini'
 
 
-echo "=========APACHE==========="
+echo "=========APACHE homolog==========="
 sudo a2enmod rewrite
 
  sudo sh -c 'echo  "       
@@ -78,16 +74,15 @@ sudo a2enmod rewrite
         AllowOverride All
         Order allow,deny
         allow from all
-        # Uncomment this directive is you want to see apache2s
-        # default start page (in /apache2-default) when you go to /
         #RedirectMatch ^/$ /apache2-default/
 </Directory> 
 
 " >> /etc/apache2/sites-available/band-im.conf '
 
+echo "=========Symbolics sites-available==========="
 ln -s /etc/apache2/sites-available/band-im.conf  /etc/apache2/sites-enabled/band-im.conf 
 
 
-echo "=========RESTART==========="
+echo "=========RESTARTING SERVICES==========="
 sudo /etc/init.d/apache2 restart
 sudo service mysql restart
