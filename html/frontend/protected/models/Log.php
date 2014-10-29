@@ -98,6 +98,21 @@ class Log extends CActiveRecord
 		));
 	}
 
+
+
+    public function createLog($acao,$ref, $desc)
+    {
+
+        $this->usuario_log = Yii::app()->user->getId();
+        $this->data_log = new CDbExpression('NOW()');
+        $this->ip_log = ip2long(CHttpRequest::getUserHostAddress());
+        $this->acao_log= $desc;
+        $this->ref_log = $ref;
+        $this->descricao_log= $acao;
+        $this->save();
+
+    }
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
