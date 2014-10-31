@@ -100,16 +100,16 @@ class Log extends CActiveRecord
 
 
 
-    public function createLog($acao,$ref, $desc)
+    public static function createLog($ref, $desc,$acao)
     {
-
-        $this->usuario_log = Yii::app()->user->getId();
-        $this->data_log = new CDbExpression('NOW()');
-        $this->ip_log = ip2long(CHttpRequest::getUserHostAddress());
-        $this->acao_log= $desc;
-        $this->ref_log = $ref;
-        $this->descricao_log= $acao;
-        $this->save();
+        $l= new Log;
+        $l->usuario_log = Yii::app()->user->getId();
+        $l->data_log = new CDbExpression('NOW()');
+        $l->ip_log =  Yii::app()->request->userHostAddress;
+        $l->acao_log= $desc;
+        $l->ref_log = $ref;
+        $l->descricao_log= $acao;
+        $l->save();
 
     }
 

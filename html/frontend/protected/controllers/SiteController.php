@@ -241,6 +241,8 @@ class SiteController extends Controller
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         $anal = Analise::model()->findByPk($id);
 
+        Log::createLog($anal->ref_analise,'Acessou a Análise', __FUNCTION__);
+
         if ($anal->tipo_analise == 'painel') {
 
             $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
