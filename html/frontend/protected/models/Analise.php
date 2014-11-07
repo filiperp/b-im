@@ -108,7 +108,19 @@ class Analise extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	public function hasTag($ref)
+	{
 
+
+
+		foreach($this->tags as $tg){
+			if($tg->ref_tag==$ref){
+				return true;
+			}
+		}
+		return false;
+
+	}
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -119,4 +131,6 @@ class Analise extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+
 }

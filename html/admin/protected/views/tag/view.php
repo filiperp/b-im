@@ -98,6 +98,7 @@ $dataModels = array(
     'veiculo'=> array(
         'veiculo'=>$model->veiculos),
 
+
 );
 foreach ($dataModels[$model->tipo_tag] as $chave=> $lista) {
 ?>

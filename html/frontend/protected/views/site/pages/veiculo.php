@@ -1,7 +1,6 @@
-
 <ul class="breadcrumb">
     <li><?php echo CHtml::ajaxLink(
-            '<i class="fa fa-video-camera"> </i> '. $tag['nome_tag'],
+            '<i class="fa fa-video-camera"> </i> ' . $tag['nome_tag'],
             CController::createUrl('site/listVeiculos&id=' . $tag['id_tag']),
             array('type' => 'POST', 'update' => '#container',
                 'beforeSend' => 'function(){wait();}'
@@ -12,7 +11,7 @@
 
     <li>
         <?php echo CHtml::ajaxLink(
-            ' <i class="fa fa-youtube-play"></i> '. $veiculo->nome_veiculo, //CHtml::image(Yii::app()->baseUrl . '/' . $veiculo->imagem_veiculo, '', array('class' => 'imgicon')), // . " " . $veiculo->nome_veiculo,
+            ' <i class="fa fa-youtube-play"></i> ' . $veiculo->nome_veiculo, //CHtml::image(Yii::app()->baseUrl . '/' . $veiculo->imagem_veiculo, '', array('class' => 'imgicon')), // . " " . $veiculo->nome_veiculo,
             CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
             array(
                 'type' => 'POST',
@@ -75,378 +74,486 @@ $dataProgs = $command->queryAll();
         <div class="content-page">
 
             <div class="row">
-              <div class="col-md-3 col-sm-3">
-                <ul class="tabbable faq-tabbable">
-                    <li class="<?php echo $menu=='analises'?'active':'' ; ?>"><a href="#tab_1" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Análises</a></li>
-                    <li class="<?php echo $menu=='comercial'?'active':'' ; ?>"><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Comercial</a></li>
-                    <li class="<?php echo $menu=='estudos'?'active':'' ; ?>"><a href="#tab_3" data-toggle="tab"><i class="fa fa-briefcase"></i> Estudos</a></li>
-                    <li>
-                        <?php
+                <div class="col-md-3 col-sm-3">
+                    <ul class="tabbable faq-tabbable">
+                        <li class="<?php echo $menu == 'analises' ? 'active' : ''; ?>"><a href="#tab_1" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Todas Análises</a></li>
+                        <li style="padding-left:40px;" class="<?php echo $menu == 'painel_prospeccao' ? 'active' : ''; ?>"><a href="#tab_1_painel_prospeccao" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Prospecção</a></li>
+                        <li style="padding-left:40px;" class="<?php echo $menu == 'painel_audiencia' ? 'active' : ''; ?>"><a href="#tab_1_painel_audiencia" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Audiência</a></li>
+                        <li style="padding-left:40px;" class="<?php echo $menu == 'painel_defesa' ? 'active' : ''; ?>"><a href="#tab_1_painel_defesa" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Defesa</a></li>
+                        <li class="<?php echo $menu == 'comercial' ? 'active' : ''; ?>"><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Comercial</a></li>
+                        <li class="<?php echo $menu == 'estudos' ? 'active' : ''; ?>"><a href="#tab_3" data-toggle="tab"><i class="fa fa-briefcase"></i> Estudos</a></li>
+                        <li>
+                            <?php
 
-                        if (count($veiculo->pracas) > 1) {
-                            echo CHtml::ajaxLink(
-                                '<i class="fa fa-backward"></i> Escolher Outra Praça',
-                                CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
-                                array(
-                                    'type' => 'POST',
-                                    'update' => '#container',
-                                    'beforeSend' => 'function(){wait();}'
-                                ),
-                                array('id' => GUID::getGUID()));
-                        } else {
-                            echo CHtml::ajaxLink(
-                                '<i class="fa fa-backward"></i> Escolher Outro Veículo',
-                                CController::createUrl('site/listVeiculos&id=' .$tag['id_tag']),
-                                array(
-                                    'type' => 'POST',
-
-                                    'update' => '#container',
-                                    'beforeSend' => 'function(){wait();}'
-                                ),
-                                array('id' => GUID::getGUID()));
-                        }
-
-                        ?>
-                    </li>
-                </ul>
-
-
-            </div>
-            <div class="col-md-9 col-sm-9" style="padding-right: 0px;">
-
-            <div class="tab-content" style="padding:0; background: #fff;">
-
-
-            <div class="tab-pane <?php echo $menu=='analises'?'active':'' ; ?>" id="tab_1">
-                <div class="panel-group" id="accordion2">
-
-                    <div class="row margin-bottom-40">
-                        <!-- BEGIN CONTENT -->
-                        <div class="col-md-12 col-sm-12">
-                            <div class="content-page">
-                                <h1>Selecione a análise desejada:</h1>
-
-                                <div class="filter-v1">
-                                    <ul class="mix-filter hidden ">
-                                        <li data-filter="all" class="filter active">Todos</li>
-                                        <?php
-                                        $tags = Tag::model()->findAll('tipo_tag="analise"');
-                                        foreach ($tags as $tag) {
-                                            echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
-                                        };?>
-                                    </ul>
-                                    <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>">
-
-
-                                        <?php
-
-                                        foreach ($veiculo['analises'] as $anal) {
-                                            if ($anal->ativo_analise) {
-                                                $filter = " ";
-                                                foreach ($anal['tags'] as $anal_tag) {
-                                                    $filter .= " " . $anal_tag['ref_tag'];
-                                                };?>
-
-                                                <div class=" langs-block-others col-md-4 col-sm-6 mix <?php echo $filter; ?> mix_all"
-                                                     style="display: block; opacity: 1;
-                                                 /*border:1px solid #ccc;*/
-                                                 min-width: 260px; min-height: 205px;
-                                                 max-width: 260px; max-height: 205px;
-                                                 overflow: hidden; margin-right: 15px;;
-                                                 ">
-                                                    <h4 class="text-center"
-                                                        style="color:black; background-color: #eee;
-                                                    margin-bottom:15px; padding-bottom: 10px;
-                                                    font-weight: 900; color:#666666;"><?php echo $anal['nome_analise']; ?></h4>
-
-                                                    <div class="mix-inner">
-
-                                                        <img alt="" src="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="img-responsive"
-                                                             style="
-                                                        min-height: 190px;
-                                                        /*max-height: 130px;*/
-                                                        ">
-
-                                                        <div class="mix-details">
-                                                            <?php echo CHtml::ajaxLink(
-                                                                '<i class="fa fa-link"></i> ABRIR',
-                                                                CController::createUrl('site/analise&id=' . $anal->id_analise .
-                                                                    '&veiculo=' . $veiculo['id_veiculo'] .
-                                                                    '&praca=' . $praca['id_praca']),
-                                                                array(
-                                                                    'type' => 'POST',
-                                                                    'update' => '#container',
-                                                                    'beforeSend' => 'function(){wait();}'
-                                                                ),
-                                                                array('id' => GUID::getGUID(),
-                                                                    'class' => 'mix-link',
-                                                                    'style' => 'color:#fff;'
-                                                                ));;?>
-
-
-
-                                                            <a data-rel="fancybox-button" title="<?php echo $anal['nome_analise']; ?>" style="color:#fff"
-                                                               href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="mix-preview fancybox-button"><i
-                                                                    class="fa fa-search"></i> VER</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                            <?php
-                                            }
-                                        }?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="tab-pane <?php echo $menu=='comercial'?'active':'' ; ?>" id="tab_2">
-                <div class="panel-group" id="accordion1">
-
-
-                    <div class="panel-body">
-                    <?php  if (isset($dataProgs)) {
-                        foreach ($dataProgs as $prog) {
-                            if ($prog['ativo_programa']) {
-                                $extraClass = strlen($prog['nome_programa'])>20?' double ': '';
+                            if (count($veiculo->pracas) > 1) {
                                 echo CHtml::ajaxLink(
-                                    '
-                                        <div class=" row ">
-                                            <div style="padding:0px 10px;" class="product-item">
-                                                 <div  style="display:block; height:110px;" class="well add2cart">
-                                                        <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] . '">
-                                                        <div style="display:block; margin-left:120px; margin-top:-70px;">
-                                                            <h4  style="">
-                                                                '.$prog['nome_programa'] .'
-                                                             </h4>
-                                                        </div>
-
-                                                 </div>
-                                            </div>
-                                        </div>
-                                   ',
-                                    CController::createUrl('site/programa&idVeiculo=' .$veiculo->id_veiculo . '&idPraca=' . $praca->id_praca . '&idPrograma=' .$prog['id_programa'] ),//. '&idPraca=' . $praca->id_praca),
+                                    '<i class="fa fa-backward"></i> Escolher Outra Praça',
+                                    CController::createUrl('site/veiculo&id=' . $veiculo->id_veiculo),
                                     array(
                                         'type' => 'POST',
                                         'update' => '#container',
                                         'beforeSend' => 'function(){wait();}'
                                     ),
-                                    array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
+                                    array('id' => GUID::getGUID()));
+                            } else {
+                                echo CHtml::ajaxLink(
+                                    '<i class="fa fa-backward"></i> Escolher Outro Veículo',
+                                    CController::createUrl('site/listVeiculos&id=' . $tag['id_tag']),
+                                    array(
+                                        'type' => 'POST',
+
+                                        'update' => '#container',
+                                        'beforeSend' => 'function(){wait();}'
+                                    ),
+                                    array('id' => GUID::getGUID()));
                             }
-                        }
-                    };?>
-                    </div>
+
+                            ?>
+                        </li>
+                    </ul>
+
+
                 </div>
-            </div>
+                <div class="col-md-9 col-sm-9" style="padding-right: 0px;">
+
+                    <div class="tab-content" style="padding:0; background: #fff;">
 
 
-            <div class="tab-pane <?php echo $menu=='estudos'?'active':'' ; ?> " id="tab_3">
-                <div class="panel-group" id="accordion2">
+                        <div class="tab-pane <?php echo $menu == 'analises' ? 'active' : ''; ?>" id="tab_1">
+                            <div class="panel-group" id="accordion2">
 
-                    <div class="row margin-bottom-40">
-                        <!-- BEGIN CONTENT -->
-                        <div class="col-md-12 col-sm-12">
-                            <div class="content-page">
-                                <h1>Estudos realizados pelo departamento de Inteligência:</h1>
+                                <div class="row margin-bottom-40">
+                                    <!-- BEGIN CONTENT -->
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="content-page">
+                                            <h1>Selecione a análise desejada:</h1>
 
-                                <?php
+                                            <div class="filter-v1">
+                                                <ul class="mix-filter hidden ">
+                                                    <li data-filter="all" class="filter active">Todos</li>
+                                                    <?php
+                                                    $tags = Tag::model()->findAll('tipo_tag="analise"');
+                                                    foreach ($tags as $tag) {
+                                                        echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
+                                                    };?>
+                                                </ul>
+                                                <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>">
 
-                                $commandClient = Yii::app()->db->createCommand()
-                                    ->selectDistinct('c.id_cliente,
+
+                                                    <?php
+
+                                                    foreach ($veiculo['analises'] as $anal) {
+                                                        if ($anal->ativo_analise ) {
+                                                            $filter = " ";
+                                                            foreach ($anal['tags'] as $anal_tag) {
+                                                                $filter .= " " . $anal_tag['ref_tag'];
+                                                            };?>
+
+                                                            <div class=" langs-block-others col-md-4 col-sm-6 mix <?php echo $filter; ?> mix_all"
+                                                                 style="display: block; opacity: 1;
+                                                                 /*border:1px solid #ccc;*/
+                                                                 min-width: 260px; min-height: 205px;
+                                                                 max-width: 260px; max-height: 205px;
+                                                                 overflow: hidden; margin-right: 15px;;
+                                                                 ">
+                                                                <h4 class="text-center"
+                                                                    style="color:black; background-color: #eee;
+                                                                    margin-bottom:15px; padding-bottom: 10px;
+                                                                    font-weight: 900; color:#666666;"><?php echo $anal['nome_analise']; ?></h4>
+
+                                                                <div class="mix-inner">
+
+                                                                    <img alt="" src="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="img-responsive"
+                                                                         style="
+                                                                        min-height: 190px;
+                                                                        /*max-height: 130px;*/
+                                                                        ">
+
+                                                                    <div class="mix-details">
+                                                                        <?php echo CHtml::ajaxLink(
+                                                                            '<i class="fa fa-link"></i> ABRIR',
+                                                                            CController::createUrl('site/analise&id=' . $anal->id_analise .
+                                                                                '&veiculo=' . $veiculo['id_veiculo'] .
+                                                                                '&praca=' . $praca['id_praca']),
+                                                                            array(
+                                                                                'type' => 'POST',
+                                                                                'update' => '#container',
+                                                                                'beforeSend' => 'function(){wait();}'
+                                                                            ),
+                                                                            array('id' => GUID::getGUID(),
+                                                                                'class' => 'mix-link',
+                                                                                'style' => 'color:#fff;'
+                                                                            ));;?>
+
+
+
+                                                                        <a data-rel="fancybox-button" title="<?php echo $anal['nome_analise']; ?>" style="color:#fff"
+                                                                           href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="mix-preview fancybox-button"><i
+                                                                                class="fa fa-search"></i> VER</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        <?php
+                                                        }
+                                                    }?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <?php
+                        $analises_groups = array('painel_prospeccao', 'painel_audiencia', 'painel_defesa');
+
+                        foreach(   $analises_groups as $analise_group){
+                        ?>
+                            <div class="tab-pane <?php echo $menu == $analise_group ? 'active' : ''; ?>" id="tab_1_<?php echo  $analise_group; ?>">
+                                <div class="panel-group" id="accordion2">
+
+                                    <div class="row margin-bottom-40">
+                                        <!-- BEGIN CONTENT -->
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="content-page">
+                                                <h1>Selecione a análise desejada:</h1>
+
+                                                <div class="filter-v1">
+                                                    <ul class="mix-filter hidden ">
+                                                        <li data-filter="all" class="filter active">Todos</li>
+                                                        <?php
+                                                        $tags = Tag::model()->findAll('tipo_tag="analise"');
+                                                        foreach ($tags as $tag) {
+                                                            echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
+                                                        };?>
+                                                    </ul>
+                                                    <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>">
+
+
+                                                        <?php
+
+                                                        foreach ($veiculo['analises'] as $anal) {
+                                                           // echo "<div> $analise_group  |  </div> <br>";
+                                                            foreach ($anal['tags'] as $anal_tag) {
+                                                              //  echo "<div>" . $anal_tag['ref_tag'] . " </div>";
+                                                            }
+
+                                                            if ($anal->ativo_analise && $anal->hasTag($analise_group)) {
+                                                                $filter = " ";
+                                                                foreach ($anal['tags'] as $anal_tag) {
+                                                                    $filter .= " " . $anal_tag['ref_tag'];
+                                                                }; ;?>
+
+                                                                <div class=" langs-block-others col-md-4 col-sm-6 mix <?php echo $filter; ?> mix_all"
+                                                                     style="display: block; opacity: 1;
+                                                                 /*border:1px solid #ccc;*/
+                                                                 min-width: 260px; min-height: 205px;
+                                                                 max-width: 260px; max-height: 205px;
+                                                                 overflow: hidden; margin-right: 15px;;
+                                                                 ">
+                                                                    <h4 class="text-center"
+                                                                        style="color:black; background-color: #eee;
+                                                                    margin-bottom:15px; padding-bottom: 10px;
+                                                                    font-weight: 900; color:#666666;"><?php echo $anal['nome_analise']; ?></h4>
+
+                                                                    <div class="mix-inner">
+
+                                                                        <img alt="" src="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="img-responsive"
+                                                                             style="
+                                                                        min-height: 190px;
+                                                                        /*max-height: 130px;*/
+                                                                        ">
+
+                                                                        <div class="mix-details">
+                                                                            <?php echo CHtml::ajaxLink(
+                                                                                '<i class="fa fa-link"></i> ABRIR',
+                                                                                CController::createUrl('site/analise&id=' . $anal->id_analise .
+                                                                                    '&veiculo=' . $veiculo['id_veiculo'] .
+                                                                                    '&praca=' . $praca['id_praca']),
+                                                                                array(
+                                                                                    'type' => 'POST',
+                                                                                    'update' => '#container',
+                                                                                    'beforeSend' => 'function(){wait();}'
+                                                                                ),
+                                                                                array('id' => GUID::getGUID(),
+                                                                                    'class' => 'mix-link',
+                                                                                    'style' => 'color:#fff;'
+                                                                                ));;?>
+
+
+
+                                                                            <a data-rel="fancybox-button" title="<?php echo $anal['nome_analise']; ?>" style="color:#fff"
+                                                                               href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="mix-preview fancybox-button"><i
+                                                                                    class="fa fa-search"></i> VER</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            <?php
+                                                            }
+                                                        }?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php
+                            }
+                        ?>
+
+
+
+
+                        <div class="tab-pane <?php echo $menu == 'comercial' ? 'active' : ''; ?>" id="tab_2">
+                            <div class="panel-group" id="accordion1">
+
+
+                                <div class="panel-body">
+                                    <?php  if (isset($dataProgs)) {
+                                        foreach ($dataProgs as $prog) {
+                                            if ($prog['ativo_programa']) {
+                                                $extraClass = strlen($prog['nome_programa']) > 20 ? ' double ' : '';
+                                                echo CHtml::ajaxLink(
+                                                    '
+                                                            <div class=" row ">
+                                                                <div style="padding:0px 10px;" class="product-item">
+                                                                     <div  style="display:block; height:110px;" class="well add2cart">
+                                                                            <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] . '">
+                                                                            <div style="display:block; margin-left:120px; margin-top:-70px;">
+                                                                                <h4  style="">
+                                                                                    ' . $prog['nome_programa'] . '
+                                                                                 </h4>
+                                                                            </div>
+
+                                                                     </div>
+                                                                </div>
+                                                            </div>
+                                                       ',
+                                                    CController::createUrl('site/programa&idVeiculo=' . $veiculo->id_veiculo . '&idPraca=' . $praca->id_praca . '&idPrograma=' . $prog['id_programa']),//. '&idPraca=' . $praca->id_praca),
+                                                    array(
+                                                        'type' => 'POST',
+                                                        'update' => '#container',
+                                                        'beforeSend' => 'function(){wait();}'
+                                                    ),
+                                                    array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
+                                            }
+                                        }
+                                    };?>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="tab-pane <?php echo $menu == 'estudos' ? 'active' : ''; ?> " id="tab_3">
+                            <div class="panel-group" id="accordion2">
+
+                                <div class="row margin-bottom-40">
+                                    <!-- BEGIN CONTENT -->
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="content-page">
+                                            <h1>Estudos realizados pelo departamento de Inteligência:</h1>
+
+                                            <?php
+
+                                            $commandClient = Yii::app()->db->createCommand()
+                                                ->selectDistinct('c.id_cliente,
                                                 c.ref_cliente,
                                                 c.nome_cliente,
                                                 c.imagem_cliente  ')
-                                    ->from('estudo  as e')
-                                    ->join('cliente as  c', 'e.cliente_id_cliente = c.id_cliente ')
-                                    ->join('veiculo_has_estudo as vhe', 'vhe.estudo_id_estudo = e.id_estudo ')
-                                    ->where(" e.ativo_estudo=1 and vhe.veiculo_id_veiculo =" . $veiculo->id_veiculo)
-                                    ->order(' c.nome_cliente, e.nome_estudo ');
+                                                ->from('estudo  as e')
+                                                ->join('cliente as  c', 'e.cliente_id_cliente = c.id_cliente ')
+                                                ->join('veiculo_has_estudo as vhe', 'vhe.estudo_id_estudo = e.id_estudo ')
+                                                ->where(" e.ativo_estudo=1 and vhe.veiculo_id_veiculo =" . $veiculo->id_veiculo)
+                                                ->order(' c.nome_cliente, e.nome_estudo ');
 
 
-                                $clientes = $commandClient->queryAll();
+                                            $clientes = $commandClient->queryAll();
 
 
-                                if (isset($clientes)) {
-                                    foreach ($clientes as $cli) {
+                                            if (isset($clientes)) {
+                                                foreach ($clientes as $cli) {
 
-                                        ;?>
+                                                    ;?>
 
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a href="#accordion2_<?php echo $cli['id_cliente']; ?>" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle"
-                                                       style="width: 100%">
-                                                        <img src="<?php echo Yii::app()->request->baseUrl . '/' . $cli['imagem_cliente']; ?>" class="imgicon100"/>
-                                                        <?php echo $cli['nome_cliente']; ?>
-                                                        <i class="fa fa-eye  fa-2x pull-right" style="margin-top: 27px;"></i>
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div class="panel-collapse collapse " id="accordion2_<?php echo $cli['id_cliente']; ?>">
-                                                <div class="panel-body">
-                                                    <?php
-                                                    $commandEstudo = Yii::app()->db->createCommand()
-                                                        ->select('e.id_estudo ')
-                                                        ->from('estudo e  ')
-                                                        ->join('cliente c', 'e.cliente_id_cliente = c.id_cliente ')
-                                                        ->join('veiculo_has_estudo vhe', 'vhe.estudo_id_estudo = e.id_estudo ')
-                                                        ->where(" e.ativo_estudo=1 and vhe.veiculo_id_veiculo =" . $veiculo->id_veiculo . " and c.id_cliente= " . $cli['id_cliente'])
-                                                        ->order('c.nome_cliente, e.nome_estudo ');
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h4 class="panel-title">
+                                                                <a href="#accordion2_<?php echo $cli['id_cliente']; ?>" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle"
+                                                                   style="width: 100%">
+                                                                    <img src="<?php echo Yii::app()->request->baseUrl . '/' . $cli['imagem_cliente']; ?>" class="imgicon100"/>
+                                                                    <?php echo $cli['nome_cliente']; ?>
+                                                                    <i class="fa fa-eye  fa-2x pull-right" style="margin-top: 27px;"></i>
+                                                                </a>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="panel-collapse collapse " id="accordion2_<?php echo $cli['id_cliente']; ?>">
+                                                            <div class="panel-body">
+                                                                <?php
+                                                                $commandEstudo = Yii::app()->db->createCommand()
+                                                                    ->select('e.id_estudo ')
+                                                                    ->from('estudo e  ')
+                                                                    ->join('cliente c', 'e.cliente_id_cliente = c.id_cliente ')
+                                                                    ->join('veiculo_has_estudo vhe', 'vhe.estudo_id_estudo = e.id_estudo ')
+                                                                    ->where(" e.ativo_estudo=1 and vhe.veiculo_id_veiculo =" . $veiculo->id_veiculo . " and c.id_cliente= " . $cli['id_cliente'])
+                                                                    ->order('c.nome_cliente, e.nome_estudo ');
 
 
-                                                    $idEstudos = $commandEstudo->queryAll();
+                                                                $idEstudos = $commandEstudo->queryAll();
 
-                                                    foreach ($idEstudos as $idEstudo) {
-                                                        $estudo = Estudo::model()->findByPk($idEstudo['id_estudo']);
+                                                                foreach ($idEstudos as $idEstudo) {
+                                                                    $estudo = Estudo::model()->findByPk($idEstudo['id_estudo']);
 
-                                                        $arq_tipo = isset($estudo['tags'][0]["ref_tag"]) ? $estudo['tags'][0]["ref_tag"] : 'pdf';
+                                                                    $arq_tipo = isset($estudo['tags'][0]["ref_tag"]) ? $estudo['tags'][0]["ref_tag"] : 'pdf';
 
-                                                        ?>
-
-                                                        <blockquote style="min-height: 115px;">
-                                                            <?php
-                                                            switch ($arq_tipo) {
-                                                                case 'youtube':
                                                                     ?>
 
+                                                                    <blockquote style="min-height: 115px;">
+                                                                        <?php
+                                                                        switch ($arq_tipo) {
+                                                                            case 'youtube':
+                                                                                ?>
 
-                                                                    <div>
+
+                                                                                <div>
                                                                                 <span class="pull-right">
                                                                                     <iframe src="//www.youtube.com/embed/<?php echo $estudo['caminho_estudo']; ?>
                                                                                     " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
                                                                                 </span>
 
-                                                                        <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+                                                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                                        <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
+                                                                                    <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
 
-                                                                        <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                                                            <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
-                                                                        <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>'
-                                                                           class=' btn  btn-primary '
-                                                                           style="color:white !important">
-                                                                            <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+                                                                                    <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                                        <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                                                                    <a target='blank'
+                                                                                       href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>'
+                                                                                       class=' btn  btn-primary '
+                                                                                       style="color:white !important">
+                                                                                        <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
 
-                                                                    </div>
-                                                                    <?php
-                                                                    break;
-                                                                case 'vimeo':
-                                                                    ?>
-                                                                    <div>
+                                                                                </div>
+                                                                                <?php
+                                                                                break;
+                                                                            case 'vimeo':
+                                                                                ?>
+                                                                                <div>
                                                                         <span class="pull-right">
                                                                             <iframe src="//player.vimeo.com/video/<?php echo $estudo['caminho_estudo']; ?>
                                                                             " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen></iframe>
                                                                         </span>
 
-                                                                        <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+                                                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                                        <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
+                                                                                    <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
 
-                                                                        <a target='_blank' href='http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                                                            <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
-                                                                        <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>'
-                                                                           class=' btn  btn-primary '
-                                                                           style="color:white !important">
-                                                                            <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
+                                                                                    <a target='_blank' href='http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                                        <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                                                                    <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>'
+                                                                                       class=' btn  btn-primary '
+                                                                                       style="color:white !important">
+                                                                                        <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
 
-                                                                    </div>
-                                                                    <!--                                        </blockquote>-->
+                                                                                </div>
+                                                                                <!--                                        </blockquote>-->
 
-                                                                    <?php
-                                                                    break;
-                                                                case 'pdf':
-                                                                    ?>
-                                                                    <div>
+                                                                                <?php
+                                                                                break;
+                                                                            case 'pdf':
+                                                                                ?>
+                                                                                <div>
                                                                         <span class='pull-right' style="margin-top: 40px;">
                                                                                 <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                                                     <i class='fa fa-file-pdf-o '></i> Clique Aqui Para Baixar
                                                                                 </a>
                                                                         </span>
 
-                                                                        <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+                                                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                                        <h4>formato: PDF</h4>
-                                                                    </div>
-                                                                    <!--                                        </blockquote>-->
+                                                                                    <h4>formato: PDF</h4>
+                                                                                </div>
+                                                                                <!--                                        </blockquote>-->
 
-                                                                    <?php
-                                                                    break;
-                                                                case 'doc':
-                                                                    ?>
-                                                                    <div>
+                                                                                <?php
+                                                                                break;
+                                                                            case 'doc':
+                                                                                ?>
+                                                                                <div>
                                                                         <span class='pull-right' style="margin-top: 40px;">
                                                                                     <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>'
                                                                                        class=' btn  btn-primary ' style="color:white !important">
                                                                                         <i class='fa fa-file-word-o '></i> Clique Aqui Para Baixar </a>
                                                                             </span>
-                                                                    </div>
-                                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+                                                                                </div>
+                                                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                                    <h4>formato: Word (.doc, .docx)</h4>
-                                                                    <!--                                        </blockquote>-->
+                                                                                <h4>formato: Word (.doc, .docx)</h4>
+                                                                                <!--                                        </blockquote>-->
 
-                                                                    <?php
-                                                                    break;
-                                                                case 'xls':
-                                                                    ?>
-                                                                    <div>
+                                                                                <?php
+                                                                                break;
+                                                                            case 'xls':
+                                                                                ?>
+                                                                                <div>
                                                                     <span class='pull-right' style="margin-top: 40px;">
                                                                                 <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>'
                                                                                    class=' btn  btn-primary ' style="color:white !important">
                                                                                     <i class='fa fa-file-excel-o green'></i> Clique Aqui Para Baixar </a>
                                                                         </span>
-                                                                    </div>
-                                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+                                                                                </div>
+                                                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                                    <h4>formato: Excel (.xls, .xlsx)</h4>
-                                                                    <!--                                        </blockquote>-->
+                                                                                <h4>formato: Excel (.xls, .xlsx)</h4>
+                                                                                <!--                                        </blockquote>-->
 
 
-                                                                    <?php
-                                                                    break;
-                                                                case 'ppt':
-                                                                    ?>
-                                                                    <div>
+                                                                                <?php
+                                                                                break;
+                                                                            case 'ppt':
+                                                                                ?>
+                                                                                <div>
                                                                     <span class='pull-right' style="margin-top: 40px;">
                                                                                 <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>'
                                                                                    class=' btn  btn-primary ' style="color:white !important">
                                                                                     <i class='fa fa-file-powerpoint-o  purple '></i> Clique Aqui Para Baixar </a>
                                                                         </span>
-                                                                    </div>
-                                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
-                                                                    <h4>formato: PowerPoint (.ppt, .pptx)</h4>
+                                                                                </div>
+                                                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+                                                                                <h4>formato: PowerPoint (.ppt, .pptx)</h4>
 
 
-                                                                    <?php
-                                                                    break;
-                                                            }
-                                                            ?>
-                                                            <!--                                            <p class="search-link" style="margin-top:8px;">Atualizado por --><?php //echo $estudo['usuario']; ?><!-- - (--><?php //echo $estudo['data']; ?><!--)</p>-->
-                                                        </blockquote>
+                                                                                <?php
+                                                                                break;
+                                                                        }
+                                                                        ?>
+                                                                        <!--                                            <p class="search-link" style="margin-top:8px;">Atualizado por --><?php //echo $estudo['usuario']; ?><!-- - (--><?php //echo $estudo['data']; ?><!--)</p>-->
+                                                                    </blockquote>
 
-                                                    <?php }; ?>
-                                                </div>
-                                            </div>
+                                                                <?php }; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                <?php
+
+                                                }
+                                            };?>
                                         </div>
-
-
-                                    <?php
-
-                                    }
-                                };?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-            </div>
-
-            </div>
-            </div>
             </div>
         </div>
     </div>
@@ -454,16 +561,16 @@ $dataProgs = $command->queryAll();
 
 
 <script type="application/javascript">
-<!---->
+    <!---->
 
 
-    $(document).ready(function (){
+    $(document).ready(function () {
         setTimeout(function () {
             Portfolio.init();
         }, 1000);
 
 
     });
-        </script>
+</script>
 
 

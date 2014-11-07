@@ -6,7 +6,7 @@ document.helpData= [
         rect: {left: 734, top: 8, width: 175, height: 50},
         textRect: {left: 250, top: 50, width: 470, height: 'auto'},
         text: '<ul>' +
-            '<li>Digige o nome do anunciante nesta caixa de texto e aperte "Enter" ou clique na lupa para realizar a pesquisa</li>' +
+            '<li>Digite o nome do anunciante nesta caixa de texto e aperte "Enter" ou clique na lupa para realizar a pesquisa</li>' +
             '<li>Esta é uma seleção opcional, o painel funcionará assumindo todos os anunciantes se nenhum for selecionado.</li>' +
             '<li>Você pode escolher mais de um assinante.</li>' +
             '</ul>',
@@ -16,7 +16,7 @@ document.helpData= [
         rect: {left: 734, top: 117, width: 175, height: 50},
         textRect: {left: 250, top: 117, width: 470, height: 'auto'},
         text: '<ul>' +
-            '<li>Digige o nome da Agência nesta caixa de texto e aperte "Enter" ou clique na lupa para realizar a pesquisa</li>' +
+            '<li>Digite o nome da Agência nesta caixa de texto e aperte "Enter" ou clique na lupa para realizar a pesquisa</li>' +
             '<li>Esta é uma seleção opcional, o painel funcionará assumindo todos as agências se nenhuma for selecionada.</li>' +
             '<li>Você pode escolher mais de uma agência.</li>' +
             '</ul>',
