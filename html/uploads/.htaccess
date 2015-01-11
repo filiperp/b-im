@@ -4,4 +4,6 @@ RewriteCond %{HTTP_REFERER} !^http://(www\.)?192.168.33.10 [NC]
 RewriteCond %{HTTP_REFERER} !^http://(www\.)?192.168.33.10.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://(www\.)?104.131.11.41 [NC]
 RewriteCond %{HTTP_REFERER} !^http://(www\.)?104.131.11.41.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?11.1.116.137 [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?11.1.116.137.*$ [NC]
 RewriteRule \.(ico|pdf|flv|jpg|jpeg|mp3|mpg|mp4|mov|wav|wmv|png|gif|swf|css|js|ppt|pptx|xls|xlsx|pdf|doc|docx|zip|rar)$ http://%{HTTP_HOST}/frontend
