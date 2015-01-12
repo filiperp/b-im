@@ -4,17 +4,17 @@ $cs = Yii::app()->getClientScript();
 $cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/global/plugins/select2/select2.css');
 $cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/admin/pages/css/login-soft.css');
 
-$cs->registerCssFile( Yii::app()->request->baseUrl.'/metronic/assets/global/css/components.css');
-$cs->registerCssFile( Yii::app()->request->baseUrl.'/metronic/assets/global/css/plugins.css');
-$cs->registerCssFile( Yii::app()->request->baseUrl.'/metronic/assets/admin/layout/css/layout.css');
-$cs->registerCssFile( Yii::app()->request->baseUrl.'/metronic/assets/admin/layout/css/themes/default.css');
-$cs->registerCssFile( Yii::app()->request->baseUrl.'/metronic/assets/admin/layout/css/custom.css');
+$cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/global/css/components.css');
+$cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/global/css/plugins.css');
+$cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/admin/layout/css/layout.css');
+$cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/admin/layout/css/themes/default.css');
+$cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/admin/layout/css/custom.css');
 ?>
 <body class="login">
 <!-- BEGIN LOGO -->
 <div class="logo">
     <a href="index.php">
-               <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/images/logo-grupo2.png" alt="" style="width:300px ;"/>
+        <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/images/logo-grupo2.png" alt="" style="width:300px ;"/>
     </a>
 </div>
 <!-- END LOGO -->
@@ -51,7 +51,7 @@ $cs->registerCssFile( Yii::app()->request->baseUrl.'/metronic/assets/admin/layou
 
 
             <span class="input-group-addon">
-                    <i class="fa fa-user"></i> BANDEIRANTES\
+                    <i class="fa fa-user"></i>
             </span>
 
             <?php echo $form->textField($model, 'username', array(
@@ -84,19 +84,59 @@ $cs->registerCssFile( Yii::app()->request->baseUrl.'/metronic/assets/admin/layou
         <?php echo $form->error($model, 'password', array('class' => 'help-block btn-danger')); ?>
 
 
-        <div class="form-group  hidden">
-            <?php echo $form->label($model, 'rememberMe', array('class' => 'control-label visible-ie8 visible-ie9 ')); ?>
+    </div>
 
-            <?php echo $form->checkBox($model, 'rememberMe', array(
-                'class' => '',
+    <div class="form-group  hidden">
+        <?php echo $form->label($model, 'rememberMe', array('class' => 'control-label visible-ie8 visible-ie9 ')); ?>
+
+        <?php echo $form->checkBox($model, 'rememberMe', array(
+            'class' => '',
+        )); ?>
+        Lembrar
+
+
+        <?php echo $form->error($model, 'rememberMe', array('class' => 'help-block')); ?>
+
+    </div>
+
+
+    <div class="form-group " style=" display:<?= ( $exibir_captcha ) ? 'block' : 'none' ; ?>;">
+        <?php echo $form->labelEx($model, 'cod_seguranca', array('class' => 'control-label visible-ie8 visible-ie9 ')); ?>
+        <div class="input-group  margin-top-10">
+            <span class="input-group-addon">
+                      <i class="fa fa-check"></i>
+                </span>
+            <img class="form-control placeholder-no-fix pull-right" style="height: 60px;" src="<?= Yii::app()->request->baseUrl; ?>/index.php?r=site/imgbuilder">
+            <?php echo $form->passwordField($model, 'cod_seguranca', array(
+                'class' => 'form-control placeholder-no-fix',
+                'type' => 'password',
+                'autocomplete' => 'off',
+                'placeholder' => 'digite o código',
             )); ?>
-            Lembrar
 
 
-            <?php echo $form->error($model, 'rememberMe', array('class' => 'help-block')); ?>
+
+
 
         </div>
+        <?php echo $form->error($model, 'cod_seguranca', array('class' => 'help-block btn-danger')); ?>
+
+
     </div>
+
+    <div class="form-group  ">
+            <span class="input-group-addon">
+                  Tentativas:    <?php echo $tent ?>
+                </span>
+
+
+
+    </div>
+
+
+
+
+
     <div class="form-actions">
 
         <?php echo CHtml::htmlButton('<i class="fa fa-sign-in"></i> Acessar ', array(
@@ -121,7 +161,8 @@ $cs->registerCssFile( Yii::app()->request->baseUrl.'/metronic/assets/admin/layou
     $cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/assets/global/plugins/select2/select2.min.js', CClientScript::POS_END);
 
     $cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/LoginReady.js', CClientScript::POS_END);
-    $cs->registerScript('startLoginScript', " LoginReady.init();", CClientScript::POS_READY);
+   // $cs->registerScriptFile(Yii::app()->request->baseUrl . '/metronic/band/js/login.js', CClientScript::POS_END);
+    $cs->registerScript('startLoginScript', " LoginReady.init(); ", CClientScript::POS_READY);
     ?>
 
 
