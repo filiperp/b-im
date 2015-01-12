@@ -50,8 +50,26 @@ class LoginForm extends CFormModel
 		if(!$this->hasErrors())
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+
+			$res = $this->_identity->authenticate();
+			//echo $this->_identity->errorCode;
+			//die();
+
+			if($res === UserIdentity::ERROR_COULD_NOT_CONNECT){
+				$this->addError('password','Erro ao conectar com o AD.');
+			}elseif($res ===UserIdentity::ERROR_PASSORD_EXPIRED){
+				$this->addError('password','Senha Expirada.');
+			}elseif($res === UserIdentity::ERROR_COULD_NOT_CONNECT){
+				$this->addError('password','Erro ao conectar com o AD.');
+			}elseif($res === UserIdentity::ERROR_UNKNOWN_IDENTITY){
+				$this->addError('password','Dados Inválidos');
+			}elseif($res === UserIdentity::ERROR_NONE){}
+
+//
+//			echo $res;
+//			die();
+//			if(!$this->_identity->authenticate())
+//				$this->addError('password','Dados Incorretos.');
 		}
 	}
 
@@ -65,6 +83,8 @@ class LoginForm extends CFormModel
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
 			$this->_identity->authenticate();
+			//echo $this->errorCode;
+			//die();
 		}
 		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
 		{

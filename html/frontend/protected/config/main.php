@@ -98,5 +98,8 @@ return array(
     'params'=>array(
         // this is used in contact page
         'adminEmail'=>'webmaster@example.com',
+
+        'DOMAIN_FQDN' => 'bandeirantes.com.br',
+        'LDAP_SERVER' => '10.1.3.54'
     ),
 );
