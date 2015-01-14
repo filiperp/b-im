@@ -425,36 +425,29 @@ class SiteController extends Controller
 
     public function actionImgbuilder() {
 
-        // ================ //
-        // SETTINGS, INICIO //
-        // ================ //
 
-        // This string contains allowable characters for the image.
-        // To reduce confusion, zero and the letter 'o' have been removed,
-        // and QuickCaptcha is NOT case-sensitive.
+        // is NOT case-sensitive.
         $acceptedChars = 'ABCDEFGHIJKLMNPQRSTUVWXYZ123456789';
 
         // Number of characters in image.
         $stringlength = 5;
 
-        // A value between 0 and 100 describing how much color overlap
-        // there is between text and other objects.  Lower is more
-        // secure against bots, but also harder to read.
+
+        // color contrast
         $contrast = 60;
 
-        // Various obfuscation techniques.
-        $num_polygons = 3; // Number of triangles to draw.  0 = none
-        $num_ellipses = 6;  // Number of ellipses to draw.  0 = none
-        $num_lines = 0;  // Number of lines to draw.  0 = none
-        $num_dots = 0;  // Number of dots to draw.  0 = none
+        //  obfuscation.
+        $num_polygons = 3;
+        $num_ellipses = 6;
+        $num_lines = 0;
+        $num_dots = 0;
 
-        $min_thickness = 2;  // Minimum thickness in pixels of lines
-        $max_thickness = 8;  // Maximum thickness in pixles of lines
-        $min_radius = 5;  // Minimum radius in pixels of ellipses
-        $max_radius = 15;  // Maximum radius in pixels of ellipses
+        $min_thickness = 2;
+        $max_thickness = 8;
+        $min_radius = 5;
+        $max_radius = 15;
 
-        // How opaque should the obscuring objects be. 0 is opaque, 127
-        // is transparent.
+        // 0--127
         $object_alpha = 75;
 
         // ============= //
