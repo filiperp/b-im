@@ -39,9 +39,13 @@
 $command = Yii::app()->db->createCommand()
     ->select('vpp.fk_id_veiculo , vpp.fk_id_praca, vpp.fk_id_programa,
          pr.id_programa, pr.ref_programa, pr.nome_programa, pr.descricao_programa, pr.imagem_programa,pr.ativo_programa,
-         concat(vpp.fk_id_veiculo ,"-" , vpp.fk_id_praca, "-",vpp.fk_id_programa ) as k_v_p_p ')
+         concat(vpp.fk_id_veiculo ,"-" , vpp.fk_id_praca, "-",vpp.fk_id_programa ) as k_v_p_p
+         ,(select count(*) from arquivo arq where arq.fk_id_programa = vpp.fk_id_programa and arq.fk_id_praca = vpp.fk_id_praca and vpp.fk_id_veiculo=arq.fk_id_veiculo ) as qtde_arquivos
+
+         ')
     ->from('veiculo_praca_programa vpp ')
     ->join('programa pr', 'vpp.fk_id_programa=pr.id_programa AND pr.ativo_programa=1')
+   // ->join('arquivo arq', 'arq.fk_id_programa = vpp.fk_id_programa and arq.fk_id_praca = vpp.fk_id_praca and vpp.fk_id_veiculo=arq.fk_id_veiculo')
     ->where('vpp.fk_id_veiculo=' . $veiculo->id_veiculo . ' AND  vpp.fk_id_praca = ' . $praca->id_praca)
     ->order('pr.nome_programa');
 
@@ -323,13 +327,15 @@ $dataProgs = $command->queryAll();
                                                 echo CHtml::ajaxLink(
                                                     '
                                                             <div class=" row ">
-                                                                <div style="padding:0px 10px;" class="product-item">
+                                                               <div style="padding:0px 10px;" class="product-item">
                                                                      <div  style="display:block; height:110px;" class="well add2cart">
                                                                             <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] . '">
                                                                             <div style="display:block; margin-left:120px; margin-top:-70px;">
                                                                                 <h4  style="">
                                                                                     ' . $prog['nome_programa'] . '
                                                                                  </h4>
+                                                                                 <small style="position: absolute; display: block;top: 4px;right: 18px;">
+                                                                                 Arquivos: '.$prog['qtde_arquivos'].'</small>
                                                                             </div>
 
                                                                      </div>

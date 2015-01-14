@@ -159,9 +159,9 @@
                                 <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                     <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                                 </a>
-                                <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
+                                <a href="<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
                                    class=' btn  btn-primary ' style="color:white !important" >
-                                   <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
+                                   <i class="fa fa-google-plus-square "></i> Abrir No Navegador
                                 </a>
                             <?php
                             break;

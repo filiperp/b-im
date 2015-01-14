@@ -107,9 +107,9 @@ $cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/admin/layo
                       <i class="fa fa-check"></i>
                 </span>
             <img class="form-control placeholder-no-fix pull-right" style="height: 60px;" src="<?= Yii::app()->request->baseUrl; ?>/index.php?r=site/imgbuilder">
-            <?php echo $form->passwordField($model, 'cod_seguranca', array(
+            <?php echo $form->textField($model, 'cod_seguranca', array(
                 'class' => 'form-control placeholder-no-fix',
-                'type' => 'password',
+                'type' => 'text',
                 'autocomplete' => 'off',
                 'placeholder' => 'digite o código',
             )); ?>
