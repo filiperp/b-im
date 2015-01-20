@@ -435,12 +435,12 @@ $dataProgs = $command->queryAll();
 
                                                                                     <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                                                    <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
+                                                                                    <h4>Endereço: https://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
 
-                                                                                    <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                                    <a target='_blank' href='https://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                                                         <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
                                                                                     <a target='blank'
-                                                                                       href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>'
+                                                                                       href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttps://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>'
                                                                                        class=' btn  btn-primary '
                                                                                        style="color:white !important">
                                                                                         <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>
@@ -458,11 +458,11 @@ $dataProgs = $command->queryAll();
 
                                                                                     <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                                                    <h4>Endereço: http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
+                                                                                    <h4>Endereço: https://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
 
-                                                                                    <a target='_blank' href='http://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                                    <a target='_blank' href='https://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                                                         <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
-                                                                                    <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>'
+                                                                                    <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttps://vimeo.com/<?php echo $estudo['caminho_estudo']; ?>'
                                                                                        class=' btn  btn-primary '
                                                                                        style="color:white !important">
                                                                                         <i class='fa fa-envelope-o '></i> Enviar link como E-mail</a>

@@ -45,7 +45,8 @@ class UserIdentity extends CUserIdentity
 
         //define('DOMAIN_FQDN', 'bandeirantes.com.br');
         //define('LDAP_SERVER', '1.1.3.54');
-        $username = str_replace('BANDEIRANTES\\', '', $username);
+        $username = strtolower($username);
+        $username = str_replace('bandeirantes\\', '', $username);
         $username = str_replace('@band.com.br', '', $username);
         $username = str_replace('@bandeirantes.com.br', '', $username);
 

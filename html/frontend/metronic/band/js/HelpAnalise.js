@@ -22,6 +22,12 @@ HelpAnalise = (function () {
 
     HelpAnalise.instance= null;
     function HelpAnalise(theData, holder) {
+        var contact = {
+            name:'Filipe Rodrigues',
+            name:'Filipe Rodrigues',
+            name:'Filipe Rodrigues',
+
+    }
         if(HelpAnalise.instance) return;
         this.theData = theData;
         this.currentIndex = 0;

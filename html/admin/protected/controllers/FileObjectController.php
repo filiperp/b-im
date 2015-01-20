@@ -156,6 +156,8 @@ class FileObjectController extends CController
 
     public static function createHistorico($model)
     {
+
+        if (!file_exists($_SESSION['current_image_' . get_class($model)])) return;
         $label = get_class($model);
 
         $histPAth = '../uploads/' . strtolower($label) . '/' . strtolower($model->ref_arquivo) . '/hist/';

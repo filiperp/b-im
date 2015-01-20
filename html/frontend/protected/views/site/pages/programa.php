@@ -121,11 +121,11 @@
 
                                 <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                                     <hr>
-                                <h4>Endereço: http://www.youtube.com/watch?v<?php echo $arq['caminho_arquivo']; ?></h4>
+                                <h4>Endereço: https://www.youtube.com/watch?v<?php echo $arq['caminho_arquivo']; ?></h4>
 
-                                <a target='_blank' href='http://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important;margin-right:5px;">
+                                <a target='_blank' href='https://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important;margin-right:5px;">
                                     <i class='fa fa-share-alt '></i> Abrir no Vimeo</a>
-                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>'
+                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttps://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>'
                                    class=' btn  btn-primary 'style="color:white !important">
                                     <i class='fa fa-envelope-o '></i> Enviar link como E-mail
                                 </a>
@@ -139,10 +139,10 @@
                                 </span>
                                 <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                                 <hr>
-                                <h4>Endereço: http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
-                                <a target='_blank' href='http://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important; margin-right:5px;">
+                                <h4>Endereço: https://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
+                                <a target='_blank' href='https://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important; margin-right:5px;">
                                     <i class='fa fa-share-alt '></i> Abrir no Vimeo</a>
-                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttp://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>'
+                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttps://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>'
                                    class=' btn  btn-primary ' style="color:white !important">
                                     <i class='fa fa-envelope-o '></i> Enviar link como E-mail
                                 </a>
@@ -176,7 +176,7 @@
                             <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                 <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                             </a>
-                            <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
+                            <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
                                class=' btn  btn-primary ' style="color:white !important" >
                                 <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
                             </a>
@@ -193,7 +193,7 @@
                             <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                 <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                             </a>
-                            <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
+                            <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
                                class=' btn  btn-primary ' style="color:white !important" >
                                 <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
                             </a>
@@ -210,7 +210,7 @@
                             <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                 <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                             </a>
-                            <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
+                            <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
                                class=' btn  btn-primary ' style="color:white !important" >
                                 <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
                             </a>

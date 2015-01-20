@@ -182,7 +182,7 @@
                     <li><a href="https://pt-br.facebook.com/pages/Grupo-Bandeirantes-De-Comunicacao/195667893810525"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="https://www.linkedin.com/company/rede-bandeirantes-de-televis-o"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="https://twitter.com/GrpBandeirantes"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="http://www.youtube.com/user/RedeBandeirantesdeTv"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/RedeBandeirantesdeTv"><i class="fa fa-youtube"></i></a></li>
                 </ul>
             </div>
             <!-- END PAYMENTS -->

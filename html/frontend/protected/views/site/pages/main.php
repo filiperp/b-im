@@ -96,7 +96,7 @@
                 $estudos = Estudo::model()->findAll('1=1 order by id_estudo desc limit 8');
                 foreach ($estudos as $est) { ?>
                     <div class="client-item" style=" margin-right: 15px;">
-                        <a href="http://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $est->getLink(); ?>" target="_blank">
+                        <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $est->getLink(); ?>" target="_blank">
                             <img src="<?php echo Yii::app()->request->baseUrl . '/' . $est->clienteIdCliente->imagem_cliente; ?>" class="img-responsive" alt="">
                             <img src="<?php echo Yii::app()->request->baseUrl . '/' . $est->clienteIdCliente->imagem_cliente; ?>" class="color-img img-responsive" alt="">
                             <?php echo $est->nome_estudo; ?>

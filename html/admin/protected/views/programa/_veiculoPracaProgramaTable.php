@@ -44,30 +44,6 @@
                     'enablePagination'=>false,
                     'columns' => array(
                         array(
-                            'name' => 'Imagem',
-                            'value' => 'GxHtml::image($data["imagem_veiculo"],"ref." , array("class"=>"mini-thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
-                            'type'=>'raw'
-                        ),
-                        array(
-                            'name' => 'nome_veiculo',
-                            'header' => 'Veículo',
-                            'value' => '\'[\' .$data["fk_id_veiculo"] . \'] \' . $data["nome_veiculo"] ',
-                            'htmlOptions' => array('width' => 105),
-                        ),
-                        array(
-                            'name' => 'nome_praca',
-                            'header' => 'Praça',
-                            'value' => ' \'[\' . $data["fk_id_praca"] . \'] \' . $data["nome_praca"] ',
-                            'htmlOptions' => array('width' => 105),
-
-                        ),
-//        array(
-//            'name' => 'selected_programa',
-//            'header' => 'selected_programa',
-//            'value' => ' $data["selected_programa"]',
-//            'htmlOptions' => array('width' => 105),
-//        ),
-                        array(
                             'name' => '',
                             'header' => 'Habilitar',
                             'value' => 'CHtml::checkBox("selected_".$data["fk_id_veiculo"]."_".$data["fk_id_praca"],
@@ -82,6 +58,33 @@
                             'htmlOptions' => array('width' => 5, 'style' => "text-align:center;"),
                             //'visible'=>false,
                         ),
+
+                        array(
+                            'name' => 'nome_veiculo',
+                            'header' => 'Veículo',
+                            'value' => '\'[\' .$data["fk_id_veiculo"] . \'] \' . $data["nome_veiculo"] ',
+                            'htmlOptions' => array('width' => 105),
+                        ),
+                        array(
+                            'name' => 'nome_praca',
+                            'header' => 'Praça',
+                            'value' => ' \'[\' . $data["fk_id_praca"] . \'] \' . $data["nome_praca"] ',
+                            'htmlOptions' => array('width' => 105),
+
+                        ),
+                        array(
+                            'name' => 'Imagem',
+                            'value' => 'GxHtml::image($data["imagem_veiculo"],"ref." , array("class"=>"mini-thumb-image-grid"))',//// '($data->ativo_arquivo === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+                            'type'=>'raw'
+                        ),
+
+
+//        array(
+//            'name' => 'selected_programa',
+//            'header' => 'selected_programa',
+//            'value' => ' $data["selected_programa"]',
+//            'htmlOptions' => array('width' => 105),
+//        ),
 
 
                     ),
