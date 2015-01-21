@@ -116,11 +116,10 @@
 
 
 
-                <li id="mainMenuDashBoard" class="mainMenuItem"> <?php echo CHtml::ajaxLink(
-                        '<i class="fa fa-line-chart"> </i>Painel',
-                        CController::createUrl('site/dashboard'),
-                        array('type' => 'POST', 'update' => '#container','beforeSend' => 'function(){onClickDashBoard();}')); ?></li>
-
+<!--                <li id="mainMenuDashBoard" class="mainMenuItem"> --><?php //echo CHtml::ajaxLink(
+//                        '<i class="fa fa-line-chart"> </i>Painel',
+//                        CController::createUrl('site/dashboard'),
+//                        array('type' => 'POST', 'update' => '#container','beforeSend' => 'function(){onClickDashBoard();}')); ?><!--</li>-->
 
 
 
