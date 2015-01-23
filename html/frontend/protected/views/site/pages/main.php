@@ -2,7 +2,8 @@
 <div class="view-main">
     <div class="row margin-bottom-40">
         <div class="col-md-12 col-sm-12 ">
-            <h1>Bem-vindo ao novo Portal de <strong> Inteligência de Mercado!</strong></h1>
+            <h1> <strong>Portal Inteligência de Mercado</strong></h1>
+            <br>
 
             <h2>Agora, para pesquisar você deve seguir apenas <a href=""><strong>3 passos:</strong></a></h2>
         </div>
@@ -60,7 +61,22 @@
                                  alt="<?php echo $panel->nome_analise; ?>" class=" img-responsive"
                                  style="border: 2px solid #ccc; min-height: 180px;">
 
-                            <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+
+                            <?php echo CHtml::ajaxLink(
+                               '<i class="fa fa-link"></i>',
+                                CController::createUrl('site/analise&id=' . $panel->id_analise .
+                                    '&veiculo=0&praca=0'),
+                                array(
+                                    'type' => 'POST',
+                                    'update' => '#container',
+                                    'beforeSend' => 'function(){wait();}'
+                                ),
+                                array('id' => GUID::getGUID(),
+                                    'class' => 'mix-link',
+                                    'style' => 'color:#fff;'
+                                ));;?>
+
+<!--                            <a href="--><?php //echo  CController::createUrl('site/analise&id=' . $panel->id_analise) ; ?><!--"></a>-->
 
 
                             <a href="<?php echo Yii::app()->request->baseUrl . '/' . $panel->imagem_analise; ?>"
@@ -96,7 +112,8 @@
                 $estudos = Estudo::model()->findAll('1=1 order by id_estudo desc limit 8');
                 foreach ($estudos as $est) { ?>
                     <div class="client-item" style=" margin-right: 15px;">
-                        <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $est->getLink(); ?>" target="_blank">
+<!--                        <a href="https://docs.google.com/viewer?url=--><?php //echo Yii::app()->getBaseUrl(true) . $est->getLink(); ?><!--" target="_blank">-->
+                        <a href="<?php echo Yii::app()->getBaseUrl(true).'/..' . $est->getLink(); ?>" target="_blank">
                             <img src="<?php echo Yii::app()->request->baseUrl . '/' . $est->clienteIdCliente->imagem_cliente; ?>" class="img-responsive" alt="">
                             <img src="<?php echo Yii::app()->request->baseUrl . '/' . $est->clienteIdCliente->imagem_cliente; ?>" class="color-img img-responsive" alt="">
                             <?php echo $est->nome_estudo; ?>

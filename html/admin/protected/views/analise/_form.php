@@ -70,7 +70,7 @@
                         <?php echo $form->labelEx($model,'tipo_analise', array('class' => '  col-md-4 control-label')); ?>
 
                         <div class="col-md-8">
-                            <?php echo $form->dropDownList($model, 'tipo_analise', array('site'=>'Site', 'painel'=>'Painel') ); ?>
+                            <?php echo $form->dropDownList($model, 'tipo_analise', array('site'=>'Site', 'painel'=>'Painel', 'painel_1200'=>'Painel 1200') ); ?>
                         </div>
                     </div>
 

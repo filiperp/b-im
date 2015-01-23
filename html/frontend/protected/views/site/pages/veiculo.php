@@ -438,7 +438,7 @@ $dataProgs = $command->queryAll();
                                                                                     <h4>Endereço: https://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
 
                                                                                     <a target='_blank' href='https://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
-                                                                                        <i class='fa fa-share-alt '></i> Abrir no Vimeo</a> -
+                                                                                        <i class='fa fa-share-alt '></i> Abrir no Youtube</a> -
                                                                                     <a target='blank'
                                                                                        href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $estudo['nome_estudo']; ?>.%0A%0Ahttps://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>'
                                                                                        class=' btn  btn-primary '

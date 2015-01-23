@@ -36,7 +36,8 @@
 
 <?php
 $frame_width = '100%';
-if ($link_tipo == 'painel') $frame_width = '915px';?>
+if ($link_tipo == 'painel') $frame_width = '915px';
+if ($link_tipo == 'painel_1200') $frame_width = '1200px';?>
 
 
 <div class="row" style="text-align: center;">

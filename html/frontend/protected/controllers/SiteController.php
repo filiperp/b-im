@@ -97,7 +97,8 @@ class SiteController extends Controller
     {
         $params = ':embed=yes&:toolbar=yes';
 
-        $ticket = http_parse_message(http_post_fields("http://104.131.11.41/frontend/trusted/get.php", array()))->body;
+        $ticket = http_parse_message(http_post_fields("https://im.band.com.br/frontend/trusted/get.php", array()))->body;
+        //echo '<pre>'.$ticket;die();
         if (strcmp($ticket, "-1") != 0) {
             return "https://tableau.band.com.br/trusted/$ticket/views/$view_url?$params";
         } else
@@ -208,6 +209,7 @@ class SiteController extends Controller
                                 fk_id_programa=:fk_programa
                                 ";
         $criteria->params = array(':fk_veiculo' => $idVeiculo, ':fk_praca' => $idPraca, ':fk_programa' => $idPrograma);
+        $criteria->order = ' nome_arquivo ASC';
 
 
         $data['praca'] = Praca::model()->findByPk($idPraca);
@@ -236,20 +238,31 @@ class SiteController extends Controller
         $this->renderPartial('pages/pracas', $data, false, true);
     }
 
-    public function actionAnalise($id, $veiculo, $praca)
+    public function actionAnalise($id, $veiculo=0, $praca=0)
     {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
         $anal = Analise::model()->findByPk($id);
 
         Log::createLog($anal->ref_analise,'Acessou a Análise', __FUNCTION__);
 
-        if ($anal->tipo_analise == 'painel') {
-
-            $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
-        } else {
-            $data['link'] = $anal['descricao_analise'];
+        if($veiculo==0){
+            $veiculo = $anal->veiculos[0]->id_veiculo;
+            $praca = $anal->veiculos[0]->pracas[0]->id_praca;
 
         }
+
+        switch ($anal->tipo_analise){
+            case 'painel':
+            case 'painel_1200':
+            $data['link'] = $this->get_trusted_url($anal['descricao_analise']);
+
+                break;
+            default:
+                $data['link'] = $anal['descricao_analise'];
+                break;
+
+        }
+
 
 
         // $data['link'] = 'http://uol.com.br';

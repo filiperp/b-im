@@ -124,7 +124,7 @@
                                 <h4>Endereço: https://www.youtube.com/watch?v<?php echo $arq['caminho_arquivo']; ?></h4>
 
                                 <a target='_blank' href='https://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important;margin-right:5px;">
-                                    <i class='fa fa-share-alt '></i> Abrir no Vimeo</a>
+                                    <i class='fa fa-share-alt '></i> Abrir no Youtube</a>
                                 <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttps://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>'
                                    class=' btn  btn-primary 'style="color:white !important">
                                     <i class='fa fa-envelope-o '></i> Enviar link como E-mail
@@ -159,10 +159,10 @@
                                 <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                     <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                                 </a>
-                                <a href="<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
-                                   class=' btn  btn-primary ' style="color:white !important" >
-                                   <i class="fa fa-google-plus-square "></i> Abrir No Navegador
-                                </a>
+<!--                                <a href="--><?php //echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?><!--" target="_blank"-->
+<!--                                   class=' btn  btn-primary ' style="color:white !important" >-->
+<!--                                   <i class="fa fa-google-plus-square "></i> Abrir No Navegador-->
+<!--                                </a>-->
                             <?php
                             break;
                         case 'doc':
