@@ -45,10 +45,7 @@ class UserIdentity extends CUserIdentity
 
         //define('DOMAIN_FQDN', 'bandeirantes.com.br');
         //define('LDAP_SERVER', '1.1.3.54');
-        $username = strtolower($username);
-        $username = str_replace('bandeirantes\\', '', $username);
-        $username = str_replace('@band.com.br', '', $username);
-        $username = str_replace('@bandeirantes.com.br', '', $username);
+
 
         $user = strip_tags($username) . '@' . Yii::app()->params['DOMAIN_FQDN'];
         $pass = stripslashes($password);
@@ -106,6 +103,12 @@ class UserIdentity extends CUserIdentity
                     //echo '<br>';
                 } else {
                     $this->errorCode = self::ERROR_NONE;
+
+
+                    Yii::app()->user->setName($username);
+
+
+
 //                    foreach ($result as $res) {
 //                        $info = ldap_get_entries($conn, $res);
 //

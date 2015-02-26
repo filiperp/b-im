@@ -183,6 +183,7 @@ class SiteController extends Controller
 
 
         $v = Veiculo::model()->findByPk($id);
+        //$aAlphabetic = Analise::model()->with()
         if (sizeof($v['pracas']) > 1 && $idPraca == null) {
             $this->actionPraca($id);
         } else {
@@ -290,11 +291,11 @@ class SiteController extends Controller
         $hist->data = $model->data;
         $hist->ref_arquivo = $model->ref_arquivo;
         $hist->nome_arquivo = $model->nome_arquivo;
+        Log::createLog($model->ref_arquivo,'Fez Upload pelo Frontend', __FUNCTION__);
 
-
-        $model->usuario = Yii::app()->user->getId();
+        $model->usuario = Yii::app()->user->getName();
         $model->data = date('Y-m-d h:i:s', time());
-
+        $model->save();
         if ($model->getBaseTag() == 'vimeo' || $model->getBaseTag() == 'youtube') {
             $hist->caminho_arquivo = $model->caminho_arquivo;
             $model->caminho_arquivo = $_POST['Arquivo']['caminho_arquivo'];
@@ -309,7 +310,7 @@ class SiteController extends Controller
             $hist->caminho_arquivo = $histPAth . '__' . microtime(true) . '_' . $path_parts['basename'];
             $hist->save();
             if (copy($model->caminho_arquivo, $hist->caminho_arquivo)) {
-                unlink($model->caminho_arquivo);
+                if (file_exists($model->caminho_arquivo))  unlink($model->caminho_arquivo);
             }
             $img = CUploadedFile::getInstanceByName('Arquivo[image]');
             $img->saveAs($model->caminho_arquivo);

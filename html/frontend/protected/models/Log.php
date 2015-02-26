@@ -103,7 +103,7 @@ class Log extends CActiveRecord
     public static function createLog($ref, $desc,$acao)
     {
         $l= new Log;
-        $l->usuario_log = Yii::app()->user->getId();
+        $l->usuario_log = Yii::app()->user->getName();
         $l->data_log = new CDbExpression('NOW()');
         $l->ip_log =  Yii::app()->request->userHostAddress;
         $l->acao_log= $desc;

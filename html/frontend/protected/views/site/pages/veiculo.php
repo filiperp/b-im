@@ -141,11 +141,13 @@ $dataProgs = $command->queryAll();
                                                         echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
                                                     };?>
                                                 </ul>
-                                                <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>">
+                                                <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb; ">
 
 
                                                     <?php
                                               //      Yii::app()->cache->flush();
+
+
 
                                                     foreach ($veiculo->analises as $anal) {
                                                         if ($anal->ativo_analise ) {
@@ -223,7 +225,7 @@ $dataProgs = $command->queryAll();
                                     <div class="row margin-bottom-40">
                                         <!-- BEGIN CONTENT -->
                                         <div class="col-md-12 col-sm-12">
-                                            <div class="content-page">
+                                            <div class="content-page" >
                                                 <h1>Selecione a análise desejada:</h1>
 
                                                 <div class="filter-v1">
@@ -235,7 +237,7 @@ $dataProgs = $command->queryAll();
                                                             echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
                                                         };?>
                                                     </ul>
-                                                    <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>">
+                                                    <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>"  >
 
 
                                                         <?php
@@ -320,7 +322,7 @@ $dataProgs = $command->queryAll();
                             <div class="panel-group" id="accordion1">
 
 
-                                <div class="panel-body">
+                                <div class="panel-body"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;">
                                     <?php  if (isset($dataProgs)) {
                                         foreach ($dataProgs as $prog) {
                                             if ($prog['ativo_programa']) {

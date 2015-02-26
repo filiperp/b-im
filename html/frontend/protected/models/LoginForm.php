@@ -49,6 +49,11 @@ class LoginForm extends CFormModel
 	{
 		if(!$this->hasErrors())
 		{
+
+            $this->username = strtolower($this->username);
+            $this->username = str_replace("bandeirantes\\", '', $this->username);
+            $this->username = str_replace('@band.com.br', '', $this->username);
+            $this->username = str_replace('@bandeirantes.com.br', '', $this->username);
 			$this->_identity=new UserIdentity($this->username,$this->password);
 
 			$res = $this->_identity->authenticate();
@@ -90,6 +95,7 @@ class LoginForm extends CFormModel
 		{
 			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
 			Yii::app()->user->login($this->_identity,$duration);
+
 			return true;
 		}
 		else

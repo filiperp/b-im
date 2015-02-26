@@ -132,7 +132,9 @@
 
 
 
-                <li> <?php echo CHtml::link('<i class="fa fa-sign-out"> </i>Logout', array('site/logout'),array('id' =>GUID::getGUID())); ?></li>
+                <li> <?php echo CHtml::link('<i class="fa fa-sign-out"> </i>Sair  <small style="font-size: 9px;">('.Yii::app()->user->getName().') </small>', array('site/logout'),array('id' =>GUID::getGUID())); ?>
+
+                </li>
             </ul>
         </div>
         <!-- END NAVIGATION -->

@@ -103,13 +103,15 @@ class Analise extends CActiveRecord
 		$criteria->compare('ativo_analise',$this->ativo_analise);
 		$criteria->compare('tipo_analise',$this->tipo_analise,true);
 		$criteria->compare('help_analise',$this->help_analise);
-
+        $criteria->order = ' desc_analise ASC ';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
             'sort' => array(
-                'defaultOrder' => ' nome_analise ASC ',
+                'defaultOrder' => ' desc_analise ASC ',
 
             ),
+
+
 		));
 	}
 	public function hasTag($ref)

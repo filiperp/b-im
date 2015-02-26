@@ -55,7 +55,7 @@ class Veiculo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'analises' => array(self::MANY_MANY, 'Analise', 'veiculo_analise(fk_id_veiculo, fk_id_analise)'),
+			'analises' => array(self::MANY_MANY, 'Analise', 'veiculo_analise(fk_id_veiculo, fk_id_analise)', 'order'=>'nome_analise ASC'),
 			'estudos' => array(self::MANY_MANY, 'Estudo', 'veiculo_has_estudo(veiculo_id_veiculo, estudo_id_estudo)'),
 			'pracas' => array(self::MANY_MANY, 'Praca', 'veiculo_praca(fk_id_veiculo, fk_id_praca)'),
 			'tags' => array(self::MANY_MANY, 'Tag', 'veiculo_tag(veiculo_id_veiculo, tag_id_tag)'),

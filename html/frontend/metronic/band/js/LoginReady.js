@@ -21,6 +21,12 @@ LoginReady = (function () {
             }
         );
 
+               // If another browser, return 0
+
+
+
+
+
     };
     return LoginReady;
 
