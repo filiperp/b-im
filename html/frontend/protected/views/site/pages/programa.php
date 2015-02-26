@@ -156,7 +156,7 @@
                                 <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                                 <hr>
                                 <h4>Formato: PDF</h4>
-                                <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                     <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                                 </a>
 <!--                                <a href="--><?php //echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?><!--" target="_blank"-->
@@ -173,7 +173,7 @@
                             <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                             <hr>
                             <h4>Formato: Word (.doc, .docx)</h4>
-                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                 <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                             </a>
                             <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
@@ -190,7 +190,7 @@
                             <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                             <hr>
                             <h4>Formato: Excel (.xls, .xlsx)</h4>
-                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                 <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                             </a>
                             <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
@@ -207,7 +207,7 @@
                             <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                             <hr>
                             <h4>Formato: PowerPoint (.ppt, .pptx)</h4>
-                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                 <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                             </a>
                             <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"

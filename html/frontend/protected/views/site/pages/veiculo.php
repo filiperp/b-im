@@ -479,7 +479,7 @@ $dataProgs = $command->queryAll();
                                                                                 ?>
                                                                                 <div>
                                                                         <span class='pull-right' style="margin-top: 40px;">
-                                                                                <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
+                                                                                <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important">
                                                                                     <i class='fa fa-file-pdf-o '></i> Clique Aqui Para Baixar
                                                                                 </a>
                                                                         </span>
@@ -496,7 +496,7 @@ $dataProgs = $command->queryAll();
                                                                                 ?>
                                                                                 <div>
                                                                         <span class='pull-right' style="margin-top: 40px;">
-                                                                                    <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>'
+                                                                                    <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>?rand=<?php echo rand();?>  '
                                                                                        class=' btn  btn-primary ' style="color:white !important">
                                                                                         <i class='fa fa-file-word-o '></i> Clique Aqui Para Baixar </a>
                                                                             </span>
@@ -512,7 +512,7 @@ $dataProgs = $command->queryAll();
                                                                                 ?>
                                                                                 <div>
                                                                     <span class='pull-right' style="margin-top: 40px;">
-                                                                                <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>'
+                                                                                <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>?rand=<?php echo rand();?>  '
                                                                                    class=' btn  btn-primary ' style="color:white !important">
                                                                                     <i class='fa fa-file-excel-o green'></i> Clique Aqui Para Baixar </a>
                                                                         </span>
@@ -529,7 +529,7 @@ $dataProgs = $command->queryAll();
                                                                                 ?>
                                                                                 <div>
                                                                     <span class='pull-right' style="margin-top: 40px;">
-                                                                                <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>'
+                                                                                <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>?rand=<?php echo rand();?>  '
                                                                                    class=' btn  btn-primary ' style="color:white !important">
                                                                                     <i class='fa fa-file-powerpoint-o  purple '></i> Clique Aqui Para Baixar </a>
                                                                         </span>
