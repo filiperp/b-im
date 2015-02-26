@@ -19,6 +19,9 @@ return array(
        // 'ext.giix-components.*',
     ),
 
+    'cache' => array(
+        'class' => 'system.caching.CFileCache'
+    ),
     'modules'=>array(
         // uncomment the following to enable the Gii tool
 
@@ -70,6 +73,7 @@ return array(
             'username' => 'root',
             'password' => 'Mudar#123',
             'charset' => 'utf8',
+            'schemaCachingDuration'=>3600,
         ),
 
         'errorHandler'=>array(

@@ -145,8 +145,9 @@ $dataProgs = $command->queryAll();
 
 
                                                     <?php
+                                              //      Yii::app()->cache->flush();
 
-                                                    foreach ($veiculo['analises'] as $anal) {
+                                                    foreach ($veiculo->analises as $anal) {
                                                         if ($anal->ativo_analise ) {
                                                             $filter = " ";
                                                             foreach ($anal['tags'] as $anal_tag) {

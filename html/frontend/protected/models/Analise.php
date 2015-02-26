@@ -106,6 +106,10 @@ class Analise extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+            'sort' => array(
+                'defaultOrder' => ' nome_analise ASC ',
+
+            ),
 		));
 	}
 	public function hasTag($ref)
