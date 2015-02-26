@@ -66,7 +66,14 @@ return array(
             'password' => 'Mudar#123',
             'charset' => 'utf8',
         ),
-
+        'db2'=>array(
+            'connectionString' => 'mssql:host=sbdsao-hom050;dbname=IM_DW',
+            'emulatePrepare' => true,
+            'username' => 'sa',
+            'password' => '#419@Xzq9MhMZxmKs!z',
+            'charset' => 'utf8',
+            'class'            => 'CDbConnection'
+        ),
         'errorHandler'=>array(
             // use 'site/error' action to display errors
             'errorAction'=>'site/error',
