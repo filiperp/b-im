@@ -59,11 +59,11 @@ $dataProgs = $command->queryAll();
 <div class="row margin-bottom-40">
 
     <div class="col-md-12 col-sm-12">
-        <div class="row " style="min-height: 80px; margin-bottom:10px;">
+        <div class="row " style="min-height: 120px; margin-bottom:10px;">
             <div class="col-sm-12 ">
                 <div class=" text-center veiculo-title " style="background-color: #fff;margin-bottom: 15px;">
 
-                    <img src="<?php echo Yii::app()->request->baseUrl . '/' . $veiculo['imagem_veiculo']; ?>" style="height: 80px; width: auto; display: inline; " class=""/>
+                    <img src="<?php echo Yii::app()->request->baseUrl . '/' . $veiculo['imagem_veiculo']; ?>" style="height: 120px; width: auto; margin-bottom:20px;display: inline; " class=""/>
                     <?php if (sizeof($veiculo->pracas) > 1) {
                         ; ?>
 
@@ -141,7 +141,7 @@ $dataProgs = $command->queryAll();
                                                         echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
                                                     };?>
                                                 </ul>
-                                                <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb; ">
+                                                <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;padding-left: 15px; ">
 
 
                                                     <?php
@@ -237,7 +237,7 @@ $dataProgs = $command->queryAll();
                                                             echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
                                                         };?>
                                                     </ul>
-                                                    <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>"  >
+                                                    <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;padding-left: 15px; ">
 
 
                                                         <?php

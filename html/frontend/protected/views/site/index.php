@@ -30,7 +30,7 @@
         <!-- BEGIN NAVIGATION -->
         <div class="header-navigation pull-right font-transform-inherit">
             <ul>
-                <li id="mainMenuHome" class="mainMenuItem active"> <?php echo CHtml::ajaxLink(
+                <li id="mainMenuHome" class="mainMenuItem active" style="color:white;"> <?php echo CHtml::ajaxLink(
                         '<i class="fa fa-home"> </i>Home',
                         CController::createUrl('site/main'),
                         array('type' => 'POST', 'update' => '#container','beforeSend' => 'function(){onClickHome();}')); ?></li>

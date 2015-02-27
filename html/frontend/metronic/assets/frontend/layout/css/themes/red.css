@@ -1,26 +1,26 @@
 a {
-	color: #E02222;
+	color: #ed1c24;
 }
 a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .pre-header a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .shop-currencies a.current {
-	color: #E02222;
+	color: #ed1c24;
 }
 .tile-border{
-    border: 2px solid #E02222 !important;
+    border: 2px solid #ed1c24 !important;
 }
 .veiculo-title{
-    border-bottom: 3px solid #E02222 ;
+    border-bottom: 3px solid #ed1c24 ;
 }
 .simple-text{
-    color:#E02222;
+    color:#ed1c24;
 }
 .tile:hover{
-    background:#E02222 ;
+    background:#ed1c24 ;
 
 }
 .tile:hover img{
@@ -32,48 +32,48 @@ a:hover {
 .header-navigation ul > li.open > a,
 .header-navigation ul > li.open > a:hover,
 .header-navigation ul > li.open > a:focus {
-	color: #e02222;
+	color: #ed1c24;
 }
 .header-navigation li.menu-search i:hover {
-	color: #e02222;
+	color: #ed1c24;
 }
 .sidebar a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .sidebar .dropdown.open .dropdown-toggle:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .sidebar-menu .dropdown-menu li > a:hover, .sidebar-menu .dropdown-menu li > a:focus, .sidebar-menu li.active > a, .sidebar-menu li.active > a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .content-page a:hover, 
 .sidebar2 a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .content-page .link, .content-page .link:hover, .content-page .link:active {
-	color: #E02222;
+	color: #ed1c24;
 }
 .page-404 .number,
 .page-500 .number {
-	color: #E02222;
+	color: #ed1c24;
 }
 .content-form-page a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .quote-v1 a.btn-transparent:hover {
-  background: #E02222;
+  background: #ed1c24;
 }
 .recent-work h2 a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .recent-work .recent-work-item .fa:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .our-clients h2 a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .front-team h3 strong {
-  color: #E02222;
+  color: #ed1c24;
 }
 .ecommerce .header-navigation ul > li.active > a,
 .ecommerce .header-navigation ul > li > a:hover,
@@ -81,13 +81,13 @@ a:hover {
 .ecommerce .header-navigation ul > li.open > a,
 .ecommerce .header-navigation ul > li.open > a:hover,
 .ecommerce .header-navigation ul > li.open > a:focus {
-	color: #e02222;
+	color: #ed1c24;
 }
 .product-item h3 a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 .checkout-page a:hover {
-	color: #E02222;
+	color: #ed1c24;
 }
 
 
@@ -295,22 +295,22 @@ a:hover {
 
 
 .require {
-	color: #e94d1c;
+	color: #ed1c24;
 }
 .content-form-page .form-control:focus {
-	border: solid 1px #e94d1c;
+	border: solid 1px #ed1c24;
 }
 .content-search input:focus {
-	border: solid 1px #e94d1c;
+	border: solid 1px #ed1c24;
 }
 
 .btn-primary {
-	background: #e94d1c;
+	background: #ed1c24;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-	background: #cc3304;
+	background: #ed1c24;
 }
 
 .header-navigation .dropdown-menu > li:first-child {
@@ -322,7 +322,7 @@ a:hover {
 
 .del-goods:hover,
 .add-goods:hover {
-	background-color: #E94D1C;
+	background-color: #ed1c24;
 }
 
 .sidebar a:hover > .fa-angle-down {
@@ -357,18 +357,18 @@ a:hover {
 }
 
 .faq-tabbable {
-  border-left: solid 2px #e44f00;
+  border-left: solid 2px #ed1c24;
 }
 .faq-tabbable li:hover a,
 .faq-tabbable li.active a{
-  background: #e44f00;
+  background: #ed1c24;
 }
 .faq-tabbable li.active:after {
-  border-left: 6px solid #e44f00;
+  border-left: 6px solid #ed1c24;
 }
 
 .mix-filter li:hover, .mix-filter li.active {
-    background: #e44f00;
+    background: #ed1c24;
     color: #fff;
 }
 .mix-grid .mix .mix-details {

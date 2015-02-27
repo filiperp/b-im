@@ -498,7 +498,7 @@ body.page-header-fixed {
 	float: left;
 }
 .header-navigation > ul > li > a {
-	color: #333;
+	color: #fafafa;
 	display: block;	
 	padding: 29px 12px 30px;
 }

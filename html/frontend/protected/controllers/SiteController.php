@@ -121,7 +121,7 @@ class SiteController extends Controller
     public function actionNoticias()
     {
         Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-
+        Log::createLog('noticias','Acessou as Notícias', __FUNCTION__);
 
         if (Yii::app()->getRequest()->getIsPostRequest()) {
 
@@ -183,6 +183,7 @@ class SiteController extends Controller
 
 
         $v = Veiculo::model()->findByPk($id);
+        Log::createLog($v->ref_veiculo,'Acessou o Veículo', __FUNCTION__);
         //$aAlphabetic = Analise::model()->with()
         if (sizeof($v['pracas']) > 1 && $idPraca == null) {
             $this->actionPraca($id);
@@ -212,12 +213,14 @@ class SiteController extends Controller
         $criteria->params = array(':fk_veiculo' => $idVeiculo, ':fk_praca' => $idPraca, ':fk_programa' => $idPrograma);
         $criteria->order = ' nome_arquivo ASC';
 
+        $prog =  Programa::model()->findByPk($idPrograma);
+        Log::createLog($prog->ref_programa,'Acessou o Programa', __FUNCTION__);
 
         $data['praca'] = Praca::model()->findByPk($idPraca);
         $data['veiculo'] = Veiculo::model()->findByPk($idVeiculo);
         $data['tag'] = $data['veiculo']['tags'][0];
         $data['model'] = new Arquivo;
-        $data['programa'] = Programa::model()->findByPk($idPrograma);
+        $data['programa'] =$prog;
         $data['arquivos'] = Arquivo::model()->findAll($criteria);
         $data['coresNotes'] = $this->coresNotes();
         //$data['menu']= "analises";  //comerical ||estudos || analises
@@ -234,6 +237,7 @@ class SiteController extends Controller
         $data['id'] = (int)$id;
         $data['tag'] = $v->tags[0];
         $data['veiculo'] = $v;
+
 
 
         $this->renderPartial('pages/pracas', $data, false, true);
@@ -431,6 +435,8 @@ class SiteController extends Controller
 
     public function actionLogout()
     {
+        Log::createLog('logout','Terminou aplicação', __FUNCTION__);
+
         Yii::app()->user->logout();
         Yii::app()->session['tentativas'] = 0;
         $this->redirect(Yii::app()->homeUrl);
