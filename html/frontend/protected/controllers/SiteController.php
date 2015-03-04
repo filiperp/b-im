@@ -91,14 +91,31 @@ class SiteController extends Controller
             'midia_impressa' => 'note-success',
         );
     }
+    function do_post($url, $data)
+    {
+        $params = array('http' => array(
+            'method' => 'POST',
+            'content' => $data
+        ));
 
+        $ctx = stream_context_create($params);
+        $fp = @fopen($url, 'rb', false, $ctx);
+        if (!$fp) {
+            throw new Exception("Problem with $url, $php_errormsg");
+        }
+        $response = @stream_get_contents($fp);
+        if ($response === false) {
+            throw new Exception("Problem reading data from $url, $php_errormsg");
+        }
+        return $response;
+    }
 
     function get_trusted_url($view_url)
     {
         $params = ':embed=yes&:toolbar=yes';
-
-        $ticket = http_parse_message(http_post_fields("https://im.band.com.br/frontend/trusted/get.php", array()))->body;
-        //echo '<pre>'.$ticket;die();
+        // $ticket = http_parse_message(http_post_fields("https://im.band.com.br/frontend/trusted/get.php", array()))->body;
+         $ticket =  $this->do_post("https://im.band.com.br/frontend/trusted/get.php", array());
+      //  echo '<pre>'.$ticket;die();
         if (strcmp($ticket, "-1") != 0) {
             return "https://tableau.band.com.br/trusted/$ticket/views/$view_url?$params";
         } else

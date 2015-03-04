@@ -19,9 +19,7 @@ return array(
        // 'ext.giix-components.*',
     ),
 
-    'cache' => array(
-        'class' => 'system.caching.CFileCache'
-    ),
+
     'modules'=>array(
         // uncomment the following to enable the Gii tool
 
@@ -51,6 +49,11 @@ return array(
         ),
 
 
+        'cache' => array(
+            'class' => 'system.caching.CFileCache'
+        ),
+
+
         // uncomment the following to enable URLs in path-format
         /*
         'urlManager'=>array(
@@ -75,6 +78,8 @@ return array(
             'charset' => 'utf8',
             'schemaCachingDuration'=>3600,
         ),
+
+
 
         'errorHandler'=>array(
             // use 'site/error' action to display errors

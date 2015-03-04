@@ -7,7 +7,7 @@
 
 $this->menu = array(
     array('label' => Yii::t('app', 'List') . ' ' . $model->label(2), 'url' => array('index'), 'linkOptions' => array('class' => 'btn blue  forceWhite blue')),
-    array('label' => Yii::t('app', 'Create') . ' ' . $model->label(), 'url' => array('create'), 'linkOptions' => array('class' => 'btn blue  forceWhite  green ')),
+    array('label' => Yii::t('app', 'Pivot') . ' ' . $model->label(), 'url' => array('create'), 'linkOptions' => array('class' => 'btn blue  forceWhite  green ')),
 
 );
 Yii::app()->clientScript->registerScript('search', "
@@ -97,4 +97,8 @@ $('.search-form form').submit(function(){
 
 
 
+
+
 <?php $this->renderPartial('../layouts/_tableAdvanced', array()); ?>
+
+

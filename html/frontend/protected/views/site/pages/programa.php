@@ -239,7 +239,9 @@
                 </div>
 
 
-                     <p class="search-link" style="margin-top:8px;">Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo $arq['data']; ?>)</p>
+                     <p class="search-link" style="margin-top:8px;">Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo DateTime::createFromFormat('Y-m-d H:i:s',$arq['data'] )->format('d-m-Y H:i:s '); ?>)</p>
+
+
 
             </div>
             <?php }; ?>

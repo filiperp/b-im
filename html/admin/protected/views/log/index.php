@@ -6,7 +6,7 @@
 //);
 
 $this->menu = array(
-    array('label'=>Yii::t('app', 'Create') . ' ' . Log::label(), 'url' => array('create'),'linkOptions'=> array('class'=>'btn blue  forceWhite  green ')),
+    array('label'=>Yii::t('app', 'Pivot') . ' ' . Log::label(), 'url' => array('create'),'linkOptions'=> array('class'=>'btn blue  forceWhite  green ')),
     array('label'=>Yii::t('app', 'Manage') . ' ' . Log::label(2), 'url' => array('admin'),'linkOptions'=> array('class'=>'btn blue  forceWhite  blue ')),
 );
 ?>
