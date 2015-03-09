@@ -39,8 +39,9 @@
 $command = Yii::app()->db->createCommand()
     ->select('vpp.fk_id_veiculo , vpp.fk_id_praca, vpp.fk_id_programa,
          pr.id_programa, pr.ref_programa, pr.nome_programa, pr.descricao_programa, pr.imagem_programa,pr.ativo_programa,
-         concat(vpp.fk_id_veiculo ,"-" , vpp.fk_id_praca, "-",vpp.fk_id_programa ) as k_v_p_p
-         ,(select count(*) from arquivo arq where arq.fk_id_programa = vpp.fk_id_programa and arq.fk_id_praca = vpp.fk_id_praca and vpp.fk_id_veiculo=arq.fk_id_veiculo ) as qtde_arquivos
+         concat(vpp.fk_id_veiculo ,"-" , vpp.fk_id_praca, "-",vpp.fk_id_programa ) as k_v_p_p,
+         (select count(*) from arquivo arq where arq.fk_id_programa = vpp.fk_id_programa and arq.fk_id_praca = vpp.fk_id_praca and vpp.fk_id_veiculo=arq.fk_id_veiculo ) as qtde_arquivos,
+           (select count(*) from programa_tag where fk_id_tag=25 and fk_id_programa  = vpp.fk_id_programa) as isArquivo
 
          ')
     ->from('veiculo_praca_programa vpp ')
@@ -49,6 +50,8 @@ $command = Yii::app()->db->createCommand()
     ->where('vpp.fk_id_veiculo=' . $veiculo->id_veiculo . ' AND  vpp.fk_id_praca = ' . $praca->id_praca)
     ->order('pr.nome_programa');
 
+//var_dump( $command->getText());
+//die();
 
 $dataProgs = $command->queryAll();
 
@@ -85,6 +88,7 @@ $dataProgs = $command->queryAll();
                         <li style="padding-left:40px;" class="<?php echo $menu == 'painel_audiencia' ? 'active' : ''; ?>"><a href="#tab_1_painel_audiencia" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Audiência</a></li>
                         <li style="padding-left:40px;" class="<?php echo $menu == 'painel_defesa' ? 'active' : ''; ?>"><a href="#tab_1_painel_defesa" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Defesa</a></li>
                         <li class="<?php echo $menu == 'comercial' ? 'active' : ''; ?>"><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Comercial</a></li>
+                        <li class="<?php echo $menu == 'documentos' ? 'active' : ''; ?>"><a href="#tab_2b" data-toggle="tab"><i class="fa fa-folder-open-o"></i> Documentos</a></li>
                         <li class="<?php echo $menu == 'estudos' ? 'active' : ''; ?>"><a href="#tab_3" data-toggle="tab"><i class="fa fa-briefcase"></i> Estudos</a></li>
                         <li>
                             <?php
@@ -150,7 +154,7 @@ $dataProgs = $command->queryAll();
 
 
                                                     foreach ($veiculo->analises as $anal) {
-                                                        if ($anal->ativo_analise ) {
+                                                        if ($anal->ativo_analise  ) {
                                                             $filter = " ";
                                                             foreach ($anal['tags'] as $anal_tag) {
                                                                 $filter .= " " . $anal_tag['ref_tag'];
@@ -325,7 +329,7 @@ $dataProgs = $command->queryAll();
                                 <div class="panel-body"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;">
                                     <?php  if (isset($dataProgs)) {
                                         foreach ($dataProgs as $prog) {
-                                            if ($prog['ativo_programa']) {
+                                            if ($prog['ativo_programa'] && $prog['isArquivo']==0 ) {
                                                 $extraClass = strlen($prog['nome_programa']) > 20 ? ' double ' : '';
                                                 echo CHtml::ajaxLink(
                                                     '
@@ -358,6 +362,50 @@ $dataProgs = $command->queryAll();
                                 </div>
                             </div>
                         </div>
+
+
+
+                        <div class="tab-pane <?php echo $menu == 'documentos' ? 'active' : ''; ?>" id="tab_2b">
+                            <div class="panel-group" id="accordion1">
+
+
+                                <div class="panel-body"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;">
+                                    <?php  if (isset($dataProgs)) {
+                                        foreach ($dataProgs as $prog) {
+                                            if ($prog['ativo_programa'] && $prog['isArquivo']>0 ) {
+                                                $extraClass = strlen($prog['nome_programa']) > 20 ? ' double ' : '';
+                                                echo CHtml::ajaxLink(
+                                                    '
+                                                            <div class=" row ">
+                                                               <div style="padding:0px 10px;" class="product-item">
+                                                                     <div  style="display:block; height:110px;" class="well add2cart">
+                                                                            <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] . '">
+                                                                            <div style="display:block; margin-left:120px; margin-top:-70px;">
+                                                                                <h4  style="">
+                                                                                    ' . $prog['nome_programa'] . '
+                                                                                 </h4>
+                                                                                 <small style="position: absolute; display: block;top: 4px;right: 18px;">
+                                                                                 Arquivos: '.$prog['qtde_arquivos'].'</small>
+                                                                            </div>
+
+                                                                     </div>
+                                                                </div>
+                                                            </div>
+                                                       ',
+                                                    CController::createUrl('site/programa&idVeiculo=' . $veiculo->id_veiculo . '&idPraca=' . $praca->id_praca . '&idPrograma=' . $prog['id_programa']),//. '&idPraca=' . $praca->id_praca),
+                                                    array(
+                                                        'type' => 'POST',
+                                                        'update' => '#container',
+                                                        'beforeSend' => 'function(){wait();}'
+                                                    ),
+                                                    array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
+                                            }
+                                        }
+                                    };?>
+                                </div>
+                            </div>
+                        </div>
+
 
 
                         <div class="tab-pane <?php echo $menu == 'estudos' ? 'active' : ''; ?> " id="tab_3">
