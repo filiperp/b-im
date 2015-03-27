@@ -330,9 +330,12 @@ class SiteController extends Controller
             $path_parts = pathinfo($model->caminho_arquivo);
             $hist->caminho_arquivo = $histPAth . '__' . microtime(true) . '_' . $path_parts['basename'];
             $hist->save();
-            if (copy($model->caminho_arquivo, $hist->caminho_arquivo)) {
-                if (file_exists($model->caminho_arquivo))  unlink($model->caminho_arquivo);
+            if (file_exists($model->caminho_arquivo)){
+                if (copy($model->caminho_arquivo, $hist->caminho_arquivo)) {
+                    if (file_exists($model->caminho_arquivo))  unlink($model->caminho_arquivo);
+                }
             }
+
             $img = CUploadedFile::getInstanceByName('Arquivo[image]');
             $img->saveAs($model->caminho_arquivo);
         }

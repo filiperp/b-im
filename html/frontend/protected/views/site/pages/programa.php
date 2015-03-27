@@ -1,7 +1,10 @@
-<div class=" " id="frame_result" style="display: none; position: fixed; top:74px; z-index: 1000;width: 400px;right: 0px;">
+<div class=" " id="frame_result"
+     style="display: none; position: fixed; top:74px; z-index: 1000;width: 400px;right: 0px;">
 
-    <div class="btn btn-info" style="right: 7px; position: absolute; top:8px; " id="btn_close_frame_result"><i class="fa fa-close"></i></div>
-    <iframe id="uploader_iframe" scrolling="no" name="uploader_iframe" style="display: block; overflow: hidden; width: 100%; height: 45px; border: none !important;overflow-style: panner;"></iframe>
+    <div class="btn btn-info" style="right: 7px; position: absolute; top:8px; " id="btn_close_frame_result"><i
+            class="fa fa-close"></i></div>
+    <iframe id="uploader_iframe" scrolling="no" name="uploader_iframe"
+            style="display: block; overflow: hidden; width: 100%; height: 45px; border: none !important;overflow-style: panner;"></iframe>
 
 
 </div>
@@ -27,7 +30,7 @@
                 'update' => '#container',
                 'beforeSend' => 'function(){wait();}'
             ),
-            array('id' => GUID::getGUID()));;?>
+            array('id' => GUID::getGUID()));; ?>
     </li>
     <?php if (sizeof($veiculo->pracas) > 1) {
         ?>
@@ -43,7 +46,7 @@
                     'beforeSend' => 'function(){wait();}'
                 ),
                 array('id' => GUID::getGUID(), 'class' => '',
-                    'style' => ''))?>
+                    'style' => '')) ?>
 
 
         </li>
@@ -72,9 +75,10 @@
                 'beforeSend' => 'function(){wait();}'
             ),
             array('id' => GUID::getGUID(), 'class' => 'btn btn-primary pull-left',
-                'style' => 'position:absolute;'))?>
+                'style' => 'position:absolute;')) ?>
         <div class="text-center">
-            <h2 style="vertical-align: middle;display: inline;"><span class="small"></span> <?php echo $programa->nome_programa; ?></h2>
+            <h2 style="vertical-align: middle;display: inline;"><span
+                    class="small"></span> <?php echo $programa->nome_programa; ?></h2>
         </div>
 
 
@@ -95,7 +99,7 @@
 
 
 <div class="row" style="text-align: center;">
-    <div class="col-sm-12 col-md-12 col-lg-12" >
+    <div class="col-sm-12 col-md-12 col-lg-12">
 
 
         <div class="panel-body">
@@ -103,148 +107,169 @@
 
 
             foreach ($arquivos as $arq) {
+                if ($arq['ativo_arquivo']) {
 
+                    $arq_tipo = isset($arq['tags'][0]["ref_tag"]) ? $arq['tags'][0]["ref_tag"] : 'pdf';
 
-                $arq_tipo = isset($arq['tags'][0]["ref_tag"]) ? $arq['tags'][0]["ref_tag"] : 'pdf';
+                    ?>
+                    <div class="col-sm-12 col-md-12 col-lg-12 note <?php echo $coresNotes[$tag->ref_tag]; ?>"
+                         style="text-align: left;min-height: 115px;">
 
-                ?>
-            <div class="col-sm-12 col-md-12 col-lg-12 note <?php echo $coresNotes[$tag->ref_tag] ; ?>" style="text-align: left;min-height: 115px;" >
-
-                    <?php
-                    switch ($arq_tipo) {
-                        case 'youtube':
-                            ?>
+                        <?php
+                        switch ($arq_tipo) {
+                            case 'youtube':
+                                ?>
                                 <span class="pull-right">
                                     <iframe src="//www.youtube.com/embed/<?php echo $arq['caminho_arquivo']; ?>
-                                    " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen style="border: none;margin-top:15px;"></iframe>
+                                    " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen
+                                            style="border: none;margin-top:15px;"></iframe>
                                 </span>
 
                                 <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
-                                    <hr>
+                                <hr>
                                 <h4>Endereço: https://www.youtube.com/watch?v<?php echo $arq['caminho_arquivo']; ?></h4>
 
-                                <a target='_blank' href='https://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important;margin-right:5px;">
+                                <a target='_blank'
+                                   href='https://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>'
+                                   class=' btn  btn-primary ' style="color:white !important;margin-right:5px;">
                                     <i class='fa fa-share-alt '></i> Abrir no Youtube</a>
-                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttps://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>'
-                                   class=' btn  btn-primary 'style="color:white !important">
+                                <a target='blank'
+                                   href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttps://www.youtube.com/watch?v=<?php echo $arq['caminho_arquivo']; ?>'
+                                   class=' btn  btn-primary ' style="color:white !important">
                                     <i class='fa fa-envelope-o '></i> Enviar link como E-mail
                                 </a>
-                            <?php
-                            break;
-                        case 'vimeo':
-                            ?>
+                                <?php
+                                break;
+                            case 'vimeo':
+                                ?>
                                 <span class="pull-right">
                                     <iframe src="//player.vimeo.com/video/<?php echo $arq['caminho_arquivo']; ?>
-                                    " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen style="border: none;margin-top:15px;"></iframe>
+                                    " width="200" height="112" webkitallowfullscreen mozallowfullscree allowfullscreen
+                                            style="border: none;margin-top:15px;"></iframe>
                                 </span>
                                 <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                                 <hr>
                                 <h4>Endereço: https://vimeo.com/<?php echo $arq['caminho_arquivo']; ?></h4>
-                                <a target='_blank' href='https://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>' class=' btn  btn-primary ' style="color:white !important; margin-right:5px;">
+                                <a target='_blank' href='https://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>'
+                                   class=' btn  btn-primary ' style="color:white !important; margin-right:5px;">
                                     <i class='fa fa-share-alt '></i> Abrir no Vimeo</a>
-                                <a target='blank' href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttps://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>'
+                                <a target='blank'
+                                   href='mailto:?to=&subject=Vídeo%20Band&body=Olá%0AEste%20é%20o%20link%20para%20o%20arquivo:%20<?php echo $arq['nome_arquivo']; ?>.%0A%0Ahttps://vimeo.com/<?php echo $arq['caminho_arquivo']; ?>'
                                    class=' btn  btn-primary ' style="color:white !important">
                                     <i class='fa fa-envelope-o '></i> Enviar link como E-mail
                                 </a>
-                            <?php
-                            break;
-                        case 'pdf':
-                            ?>
+                                <?php
+                                break;
+                            case 'pdf':
+                                ?>
                                 <span class='pull-right' style="margin-top: 40px;">
                                     <i class="fa fa-file-pdf-o fa-5x" style="color:#888888;"></i>
                                 </span>
                                 <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
                                 <hr>
                                 <h4>Formato: PDF</h4>
-                                <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                <a target='_blank'
+                                   href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  '
+                                   class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
                                     <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
                                 </a>
-<!--                                <a href="--><?php //echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?><!--" target="_blank"-->
-<!--                                   class=' btn  btn-primary ' style="color:white !important" >-->
-<!--                                   <i class="fa fa-google-plus-square "></i> Abrir No Navegador-->
-<!--                                </a>-->
-                            <?php
-                            break;
-                        case 'doc':
-                            ?>
-                            <span class='pull-right' style="margin-top: 40px;">
+                                <!--                                <a href="--><?php //echo Yii::app()->getBaseUrl(true) . $arq->getLink();
+                                ?><!--" target="_blank"-->
+                                <!--                                   class=' btn  btn-primary ' style="color:white !important" >-->
+                                <!--                                   <i class="fa fa-google-plus-square "></i> Abrir No Navegador-->
+                                <!--                                </a>-->
+                                <?php
+                                break;
+                            case 'doc':
+                                ?>
+                                <span class='pull-right' style="margin-top: 40px;">
                                     <i class="fa fa-file-pdf-o fa-5x" style="color:#888888;"></i>
                                 </span>
-                            <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
-                            <hr>
-                            <h4>Formato: Word (.doc, .docx)</h4>
-                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
-                                <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
-                            </a>
-                            <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
-                               class=' btn  btn-primary ' style="color:white !important" >
-                                <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
-                            </a>
-                            <?php
-                            break;
-                        case 'xls':
-                            ?>
-                            <span class='pull-right' style="margin-top: 40px;">
+                                <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                                <hr>
+                                <h4>Formato: Word (.doc, .docx)</h4>
+                                <a target='_blank'
+                                   href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  '
+                                   class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                    <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
+                                </a>
+                                <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>"
+                                   target="_blank"
+                                   class=' btn  btn-primary ' style="color:white !important">
+                                    <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
+                                </a>
+                                <?php
+                                break;
+                            case 'xls':
+                                ?>
+                                <span class='pull-right' style="margin-top: 40px;">
                                     <i class="fa fa-file-pdf-o fa-5x" style="color:#888888;"></i>
                                 </span>
-                            <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
-                            <hr>
-                            <h4>Formato: Excel (.xls, .xlsx)</h4>
-                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
-                                <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
-                            </a>
-                            <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
-                               class=' btn  btn-primary ' style="color:white !important" >
-                                <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
-                            </a>
-                            <?php
-                            break;
-                        case 'ppt':
-                            ?>
-                            <span class='pull-right' style="margin-top: 40px;">
+                                <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                                <hr>
+                                <h4>Formato: Excel (.xls, .xlsx)</h4>
+                                <a target='_blank'
+                                   href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  '
+                                   class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                    <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
+                                </a>
+                                <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>"
+                                   target="_blank"
+                                   class=' btn  btn-primary ' style="color:white !important">
+                                    <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
+                                </a>
+                                <?php
+                                break;
+                            case 'ppt':
+                                ?>
+                                <span class='pull-right' style="margin-top: 40px;">
                                     <i class="fa fa-file-pdf-o fa-5x" style="color:#888888;"></i>
                                 </span>
-                            <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
-                            <hr>
-                            <h4>Formato: PowerPoint (.ppt, .pptx)</h4>
-                            <a target='_blank' href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
-                                <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
-                            </a>
-                            <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>" target="_blank"
-                               class=' btn  btn-primary ' style="color:white !important" >
-                                <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
-                            </a>
-                            <?php
-                            break;
-                    }
-                    ?>
+                                <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                                <hr>
+                                <h4>Formato: PowerPoint (.ppt, .pptx)</h4>
+                                <a target='_blank'
+                                   href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  '
+                                   class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                    <i class='fa fa-file-pdf-o '></i> Baixar o arquivo
+                                </a>
+                                <a href="https://docs.google.com/viewer?url=<?php echo Yii::app()->getBaseUrl(true) . $arq->getLink(); ?>"
+                                   target="_blank"
+                                   class=' btn  btn-primary ' style="color:white !important">
+                                    <i class="fa fa-google-plus-square "></i> Abrir no Google Docs
+                                </a>
+                                <?php
+                                break;
+                        }
+                        ?>
 
-                <div class="input-file-item" style="display: none;cursor: pointer;
+                        <div class="input-file-item" style="display: none;cursor: pointer;
                                                             right: -43px;
                                                             position: absolute;
                                                             top: 0px; cursor:hand; cursor:pointer">
 
-                    <div class="btn btn-danger  btn-upload-item"
-                         onclick="onClickUploadFile(
-                             '<?php echo $programa['nome_programa']; ?>',
-                             '<?php echo $arq['nome_arquivo']; ?>',
-                             '<?php echo $arq['id_arquivo']; ?>',
-                             '<?php echo $arq_tipo; ?>'
-                             )">
-                        <i class="fa fa-cloud-upload"></i>
+                            <div class="btn btn-danger  btn-upload-item"
+                                 onclick="onClickUploadFile(
+                                     '<?php echo $programa['nome_programa']; ?>',
+                                     '<?php echo $arq['nome_arquivo']; ?>',
+                                     '<?php echo $arq['id_arquivo']; ?>',
+                                     '<?php echo $arq_tipo; ?>'
+                                     )">
+                                <i class="fa fa-cloud-upload"></i>
+                            </div>
+
+
+                        </div>
+
+
+                        <p class="search-link" style="margin-top:8px;">Atualizado por <?php echo $arq['usuario']; ?> -
+                            (<?php echo DateTime::createFromFormat('Y-m-d H:i:s', $arq['data'])->format('d-m-Y H:i:s '); ?>
+                            )</p>
+
+
                     </div>
-
-
-
-                </div>
-
-
-                     <p class="search-link" style="margin-top:8px;">Atualizado por <?php echo $arq['usuario']; ?> - (<?php echo DateTime::createFromFormat('Y-m-d H:i:s',$arq['data'] )->format('d-m-Y H:i:s '); ?>)</p>
-
-
-
-            </div>
-            <?php }; ?>
+                <?php }
+            }; ?>
         </div>
 
 
@@ -257,13 +282,15 @@
     <div class="modal-dialog" style="max-width: 500px;float: right; min-width: 500px;">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
+                <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×
+                </button>
                 <h2 class="modal-title">Atualização de Arquivo</h2></div>
             <div class="modal-body">
                 <div class="bootbox-body">
 
 
-                    <form enctype="multipart/form-data" id="veiculo-form" target="uploader_iframe" action="<?php echo Yii::app()->createUrl("site/uploadFile"); ?>" method="post">
+                    <form enctype="multipart/form-data" id="veiculo-form" target="uploader_iframe"
+                          action="<?php echo Yii::app()->createUrl("site/uploadFile"); ?>" method="post">
 
                         <div class="form-group">
                             <div class="  col-md-4 bold">Programa:</div>
@@ -311,7 +338,8 @@
 
                         <div class="row ">
                             <div class="col-md-12 ">
-                                <input id="btn-upload-file" class=" btn blue pull-right" type="submit" name="yt0" value="Enviar">
+                                <input id="btn-upload-file" class=" btn blue pull-right" type="submit" name="yt0"
+                                       value="Enviar">
                             </div>
                         </div>
                     </form>

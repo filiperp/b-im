@@ -45,7 +45,7 @@ $cs->registerCssFile(Yii::app()->request->baseUrl . '/metronic/assets/admin/layo
             ),
         )); ?>
 
-        <h3 class="form-title text-center">ADMIN</h3>
+        <h3 class="form-title text-center">Login</h3>
 
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>

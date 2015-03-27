@@ -13,11 +13,13 @@ LoginReady = (function () {
     }
 
     LoginReady.init = function ($var) {
+        var myArray = [1,3,4];
+        var rand = myArray[Math.floor(Math.random() * myArray.length)];
         jQuery.backstretch([
-                    baseURL + "/metronic/assets/admin/pages/media/bg/4.jpg"
+                    baseURL + "/metronic/assets/admin/pages/media/bg/"+rand+".jpg",
             ], {
                 fade: 1000,
-                duration: 8000
+                duration: 80000
             }
         );
 
