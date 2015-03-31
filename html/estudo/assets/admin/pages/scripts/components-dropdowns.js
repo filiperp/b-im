@@ -59,7 +59,18 @@ var ComponentsDropdowns = function () {
                 "PONTO FRIO",
                 "RICARDO ELETRO",
                 "VIA VAREJO",
-                "WALMART"]
+                "WALMART",
+                "GENERAL MOTORS",
+                "FORD",
+                "RENAULT",
+                "FIAT",
+                "VOLKSWAGEN",
+                'NESTLÉ',
+                'KRAFT FOODS',
+                'ARCOR',
+                "HERSHEY'S",
+                "MARS"
+            ]
         });
 
 
