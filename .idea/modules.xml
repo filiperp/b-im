@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/html/BSC/BSC.iml" filepath="$PROJECT_DIR$/html/BSC/BSC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/BSP/BSP.iml" filepath="$PROJECT_DIR$/html/BSP/BSP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KoolPHPSuite/KoolPHPSuite.iml" filepath="$PROJECT_DIR$/KoolPHPSuite/KoolPHPSuite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/admin/admin.iml" filepath="$PROJECT_DIR$/html/admin/admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/estudo/estudo.iml" filepath="$PROJECT_DIR$/html/estudo/estudo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/ext/ext.iml" filepath="$PROJECT_DIR$/html/ext/ext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/frontend/frontend.iml" filepath="$PROJECT_DIR$/html/frontend/frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/ma/ma.iml" filepath="$PROJECT_DIR$/html/ma/ma.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/poc/poc.iml" filepath="$PROJECT_DIR$/html/poc/poc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/uploads/uploads.iml" filepath="$PROJECT_DIR$/html/uploads/uploads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vagrant/vagrant.iml" filepath="$PROJECT_DIR$/vagrant/vagrant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yii/yii.iml" filepath="$PROJECT_DIR$/yii/yii.iml" />
+    </modules>
+  </component>
+</project>
