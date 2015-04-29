@@ -19,7 +19,7 @@
                 'update' => '#container',
                 'beforeSend' => 'function(){wait();}'
             ),
-            array('id' => GUID::getGUID()));;?>
+            array('id' => GUID::getGUID()));; ?>
     </li>
     <?php if (sizeof($veiculo->pracas) > 1) {
         ; ?>
@@ -46,7 +46,7 @@ $command = Yii::app()->db->createCommand()
          ')
     ->from('veiculo_praca_programa vpp ')
     ->join('programa pr', 'vpp.fk_id_programa=pr.id_programa AND pr.ativo_programa=1')
-   // ->join('arquivo arq', 'arq.fk_id_programa = vpp.fk_id_programa and arq.fk_id_praca = vpp.fk_id_praca and vpp.fk_id_veiculo=arq.fk_id_veiculo')
+    // ->join('arquivo arq', 'arq.fk_id_programa = vpp.fk_id_programa and arq.fk_id_praca = vpp.fk_id_praca and vpp.fk_id_veiculo=arq.fk_id_veiculo')
     ->where('vpp.fk_id_veiculo=' . $veiculo->id_veiculo . ' AND  vpp.fk_id_praca = ' . $praca->id_praca)
     ->order('pr.nome_programa');
 
@@ -55,8 +55,8 @@ $command = Yii::app()->db->createCommand()
 
 $dataProgs = $command->queryAll();
 
-$showPlanos =  true;
-$showGrupos =  true;
+$showPlanos = true;
+$showGrupos = true;
 
 ?>
 
@@ -89,16 +89,16 @@ $showGrupos =  true;
                     <ul class="tabbable faq-tabbable">
                         <li class="<?php echo $menu == 'analises' ? 'active' : ''; ?>"><a href="#tab_1" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Todas Análises</a></li>
 
-                        <?php if ($showGrupos){  ?>
-                        <li style="padding-left:40px;" class="<?php echo $menu == 'painel_prospeccao' ? 'active' : ''; ?>"><a href="#tab_1_painel_prospeccao" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Prospecção</a></li>
-                        <li style="padding-left:40px;" class="<?php echo $menu == 'painel_audiencia' ? 'active' : ''; ?>"><a href="#tab_1_painel_audiencia" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Audiência</a></li>
-                        <li style="padding-left:40px;" class="<?php echo $menu == 'painel_defesa' ? 'active' : ''; ?>"><a href="#tab_1_painel_defesa" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Defesa</a></li>
+                        <?php if ($showGrupos) { ?>
+                            <li style="padding-left:40px;" class="<?php echo $menu == 'painel_prospeccao' ? 'active' : ''; ?>"><a href="#tab_1_painel_prospeccao" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Prospecção</a></li>
+                            <li style="padding-left:40px;" class="<?php echo $menu == 'painel_audiencia' ? 'active' : ''; ?>"><a href="#tab_1_painel_audiencia" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Audiência</a></li>
+                            <li style="padding-left:40px;" class="<?php echo $menu == 'painel_defesa' ? 'active' : ''; ?>"><a href="#tab_1_painel_defesa" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> Defesa</a></li>
                         <?php } ?>
 
 
-                        <?php if ($showPlanos){  ?>
-                        <li class="<?php echo $menu == 'comercial' ? 'active' : ''; ?>"><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Comercial</a></li>
-                        <li class="<?php echo $menu == 'documentos' ? 'active' : ''; ?>"><a href="#tab_2b" data-toggle="tab"><i class="fa fa-folder-open-o"></i> Documentos</a></li>
+                        <?php if ($showPlanos) { ?>
+                            <li class="<?php echo $menu == 'comercial' ? 'active' : ''; ?>"><a href="#tab_2" data-toggle="tab"><i class="fa fa-dollar"></i> Conteúdo</a></li>
+                            <li class="<?php echo $menu == 'documentos' ? 'active' : ''; ?>"><a href="#tab_2b" data-toggle="tab"><i class="fa fa-folder-open-o"></i> Documentos</a></li>
                         <?php } ?>
                         <li class="<?php echo $menu == 'estudos' ? 'active' : ''; ?>"><a href="#tab_3" data-toggle="tab"><i class="fa fa-briefcase"></i> Estudos</a></li>
                         <li>
@@ -154,22 +154,21 @@ $showGrupos =  true;
                                                     $tags = Tag::model()->findAll('tipo_tag="analise"');
                                                     foreach ($tags as $tag) {
                                                         echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
-                                                    };?>
+                                                    }; ?>
                                                 </ul>
-                                                <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;padding-left: 15px; ">
+                                                <div class="row mix-grid thumbnails" id="<?php echo GUID::getGUID(); ?>" style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;padding-left: 15px; ">
 
 
                                                     <?php
-                                              //      Yii::app()->cache->flush();
-
+                                                    //      Yii::app()->cache->flush();
 
 
                                                     foreach ($veiculo->analises as $anal) {
-                                                        if ($anal->ativo_analise  ) {
+                                                        if ($anal->ativo_analise) {
                                                             $filter = " ";
                                                             foreach ($anal['tags'] as $anal_tag) {
                                                                 $filter .= " " . $anal_tag['ref_tag'];
-                                                            };?>
+                                                            }; ?>
 
                                                             <div class=" langs-block-others col-md-4 col-sm-6 mix <?php echo $filter; ?> mix_all"
                                                                  style="display: block; opacity: 1;
@@ -185,7 +184,7 @@ $showGrupos =  true;
 
                                                                 <div class="mix-inner">
 
-                                                                    <img alt="" src="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="img-responsive"
+                                                                    <img alt="" src="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise'] . '?rand=' . rand(); ?>" class="img-responsive"
                                                                          style="
                                                                         min-height: 190px;
                                                                         /*max-height: 130px;*/
@@ -205,21 +204,21 @@ $showGrupos =  true;
                                                                             array('id' => GUID::getGUID(),
                                                                                 'class' => 'mix-link',
                                                                                 'style' => 'color:#fff;'
-                                                                            ));;?>
+                                                                            ));; ?>
 
 
 
                                                                         <a data-rel="fancybox-button" title="<?php echo $anal['nome_analise']; ?>" style="color:#fff"
-                                                                           href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>" class="mix-preview fancybox-button"><i
+                                                                           href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise'] . '?rand=' . rand(); ?>" class="mix-preview fancybox-button"><i
                                                                                 class="fa fa-search"></i> VER</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
 
-                                                        <?php
+                                                            <?php
                                                         }
-                                                    }?>
+                                                    } ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -231,199 +230,199 @@ $showGrupos =  true;
 
                         <?php
                         $analises_groups = array('painel_prospeccao', 'painel_audiencia', 'painel_defesa');
-                       if ($showGrupos) {
-                           foreach ($analises_groups as $analise_group) {
-                               ?>
-                               <div class="tab-pane <?php echo $menu == $analise_group ? 'active' : ''; ?>"
-                                    id="tab_1_<?php echo $analise_group; ?>">
-                                   <div class="panel-group" id="accordion2">
+                        if ($showGrupos) {
+                            foreach ($analises_groups as $analise_group) {
+                                ?>
+                                <div class="tab-pane <?php echo $menu == $analise_group ? 'active' : ''; ?>"
+                                     id="tab_1_<?php echo $analise_group; ?>">
+                                    <div class="panel-group" id="accordion2">
 
-                                       <div class="row margin-bottom-40">
-                                           <!-- BEGIN CONTENT -->
-                                           <div class="col-md-12 col-sm-12">
-                                               <div class="content-page">
-                                                   <h1>Selecione a análise desejada:</h1>
+                                        <div class="row margin-bottom-40">
+                                            <!-- BEGIN CONTENT -->
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="content-page">
+                                                    <h1>Selecione a análise desejada:</h1>
 
-                                                   <div class="filter-v1">
-                                                       <ul class="mix-filter hidden ">
-                                                           <li data-filter="all" class="filter active">Todos</li>
-                                                           <?php
-                                                           $tags = Tag::model()->findAll('tipo_tag="analise"');
-                                                           foreach ($tags as $tag) {
-                                                               echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
-                                                           };?>
-                                                       </ul>
-                                                       <div class="row mix-grid thumbnails"
-                                                            id="<?php echo GUID::getGUID(); ?>"
-                                                            style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;padding-left: 15px; ">
+                                                    <div class="filter-v1">
+                                                        <ul class="mix-filter hidden ">
+                                                            <li data-filter="all" class="filter active">Todos</li>
+                                                            <?php
+                                                            $tags = Tag::model()->findAll('tipo_tag="analise"');
+                                                            foreach ($tags as $tag) {
+                                                                echo '<li data-filter="' . $tag['ref_tag'] . '"  class="filter">' . $tag['nome_tag'] . '</li>';
+                                                            }; ?>
+                                                        </ul>
+                                                        <div class="row mix-grid thumbnails"
+                                                             id="<?php echo GUID::getGUID(); ?>"
+                                                             style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;padding-left: 15px; ">
 
 
-                                                           <?php
+                                                            <?php
 
-                                                           foreach ($veiculo['analises'] as $anal) {
-                                                               // echo "<div> $analise_group  |  </div> <br>";
-                                                               foreach ($anal['tags'] as $anal_tag) {
-                                                                   //  echo "<div>" . $anal_tag['ref_tag'] . " </div>";
-                                                               }
+                                                            foreach ($veiculo['analises'] as $anal) {
+                                                                // echo "<div> $analise_group  |  </div> <br>";
+                                                                foreach ($anal['tags'] as $anal_tag) {
+                                                                    //  echo "<div>" . $anal_tag['ref_tag'] . " </div>";
+                                                                }
 
-                                                               if ($anal->ativo_analise && $anal->hasTag($analise_group)) {
-                                                                   $filter = " ";
-                                                                   foreach ($anal['tags'] as $anal_tag) {
-                                                                       $filter .= " " . $anal_tag['ref_tag'];
-                                                                   };; ?>
+                                                                if ($anal->ativo_analise && $anal->hasTag($analise_group)) {
+                                                                    $filter = " ";
+                                                                    foreach ($anal['tags'] as $anal_tag) {
+                                                                        $filter .= " " . $anal_tag['ref_tag'];
+                                                                    };; ?>
 
-                                                                   <div
-                                                                       class=" langs-block-others col-md-4 col-sm-6 mix <?php echo $filter; ?> mix_all"
-                                                                       style="display: block; opacity: 1;
+                                                                    <div
+                                                                        class=" langs-block-others col-md-4 col-sm-6 mix <?php echo $filter; ?> mix_all"
+                                                                        style="display: block; opacity: 1;
                                                                  /*border:1px solid #ccc;*/
                                                                  min-width: 260px; min-height: 205px;
                                                                  max-width: 260px; max-height: 205px;
                                                                  overflow: hidden; margin-right: 15px;;
                                                                  ">
-                                                                       <h4 class="text-center"
-                                                                           style="color:black; background-color: #eee;
+                                                                        <h4 class="text-center"
+                                                                            style="color:black; background-color: #eee;
                                                                     margin-bottom:15px; padding-bottom: 10px;
                                                                     font-weight: 900; color:#666666;"><?php echo $anal['nome_analise']; ?></h4>
 
-                                                                       <div class="mix-inner">
+                                                                        <div class="mix-inner">
 
-                                                                           <img alt=""
-                                                                                src="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>"
-                                                                                class="img-responsive"
-                                                                                style="
+                                                                            <img alt=""
+                                                                                 src="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise'] . '?rand=' . rand();; ?>"
+                                                                                 class="img-responsive"
+                                                                                 style="
                                                                         min-height: 190px;
                                                                         /*max-height: 130px;*/
                                                                         ">
 
-                                                                           <div class="mix-details">
-                                                                               <?php echo CHtml::ajaxLink(
-                                                                                   '<i class="fa fa-link"></i> ABRIR',
-                                                                                   CController::createUrl('site/analise&id=' . $anal->id_analise .
-                                                                                       '&veiculo=' . $veiculo['id_veiculo'] .
-                                                                                       '&praca=' . $praca['id_praca']),
-                                                                                   array(
-                                                                                       'type' => 'POST',
-                                                                                       'update' => '#container',
-                                                                                       'beforeSend' => 'function(){wait();}'
-                                                                                   ),
-                                                                                   array('id' => GUID::getGUID(),
-                                                                                       'class' => 'mix-link',
-                                                                                       'style' => 'color:#fff;'
-                                                                                   ));; ?>
+                                                                            <div class="mix-details">
+                                                                                <?php echo CHtml::ajaxLink(
+                                                                                    '<i class="fa fa-link"></i> ABRIR',
+                                                                                    CController::createUrl('site/analise&id=' . $anal->id_analise .
+                                                                                        '&veiculo=' . $veiculo['id_veiculo'] .
+                                                                                        '&praca=' . $praca['id_praca']),
+                                                                                    array(
+                                                                                        'type' => 'POST',
+                                                                                        'update' => '#container',
+                                                                                        'beforeSend' => 'function(){wait();}'
+                                                                                    ),
+                                                                                    array('id' => GUID::getGUID(),
+                                                                                        'class' => 'mix-link',
+                                                                                        'style' => 'color:#fff;'
+                                                                                    ));; ?>
 
 
 
-                                                                               <a data-rel="fancybox-button"
-                                                                                  title="<?php echo $anal['nome_analise']; ?>"
-                                                                                  style="color:#fff"
-                                                                                  href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise']; ?>"
-                                                                                  class="mix-preview fancybox-button"><i
-                                                                                       class="fa fa-search"></i> VER</a>
-                                                                           </div>
-                                                                       </div>
-                                                                   </div>
+                                                                                <a data-rel="fancybox-button"
+                                                                                   title="<?php echo $anal['nome_analise']; ?>"
+                                                                                   style="color:#fff"
+                                                                                   href="<?php echo Yii::app()->request->baseUrl . '/' . $anal['imagem_analise'] . '?rand=' . rand();; ?>"
+                                                                                   class="mix-preview fancybox-button"><i
+                                                                                        class="fa fa-search"></i> VER</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
 
 
-                                                               <?php
-                                                               }
-                                                           }?>
-                                                       </div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
+                                                                    <?php
+                                                                }
+                                                            } ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                           <?php
-                           }
-                       }
+                                <?php
+                            }
+                        }
                         ?>
 
 
-                       <?php if($showPlanos){ ?>
+                        <?php if ($showPlanos) { ?>
 
-                                <div class="tab-pane <?php echo $menu == 'comercial' ? 'active' : ''; ?>" id="tab_2">
-                                    <div class="panel-group" id="accordion1">
+                            <div class="tab-pane <?php echo $menu == 'comercial' ? 'active' : ''; ?>" id="tab_2">
+                                <div class="panel-group" id="accordion1">
 
 
-                                        <div class="panel-body"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;">
-                                            <?php  if (isset($dataProgs)) {
-                                                foreach ($dataProgs as $prog) {
-                                                    if ($prog['ativo_programa'] && $prog['isArquivo']==0 ) {
-                                                        $extraClass = strlen($prog['nome_programa']) > 20 ? ' double ' : '';
-                                                       echo CHtml::ajaxLink(
-                                                           '
+                                    <div class="panel-body" style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;">
+                                        <?php if (isset($dataProgs)) {
+                                            foreach ($dataProgs as $prog) {
+                                                if ($prog['ativo_programa'] && $prog['isArquivo'] == 0) {
+                                                    $extraClass = strlen($prog['nome_programa']) > 20 ? ' double ' : '';
+                                                    echo CHtml::ajaxLink(
+                                                        '
                                                                    <div class=" row ">
                                                                       <div style="padding:0px 10px;" class="product-item">
                                                                             <div  style="display:block; height:110px;" class="well add2cart">
-                                                                                   <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] .'?rand=' .  rand() . '">
+                                                                                   <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] . '?rand=' . rand() . '">
                                                                                    <div style="display:block; margin-left:120px; margin-top:-70px;">
                                                                                        <h4  style="">
                                                                                            ' . $prog['nome_programa'] . '
                                                                                         </h4>
                                                                                         <small style="position: absolute; display: block;top: 4px;right: 18px;">
-                                                                                        Arquivos: '.$prog['qtde_arquivos'].'</small>
+                                                                                        Arquivos: ' . $prog['qtde_arquivos'] . '</small>
                                                                                    </div>
                                                                             </div>
                                                                        </div>
                                                                    </div>
                                                               ',
-                                                           CController::createUrl('site/programa&idVeiculo=' . $veiculo->id_veiculo . '&idPraca=' . $praca->id_praca . '&idPrograma=' . $prog['id_programa']),//. '&idPraca=' . $praca->id_praca),
-                                                           array(
-                                                               'type' => 'POST',
-                                                               'update' => '#container',
-                                                               'beforeSend' => 'function(){wait();}'
-                                                           ),
-                                                           array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
-                                                    }
+                                                        CController::createUrl('site/programa&idVeiculo=' . $veiculo->id_veiculo . '&idPraca=' . $praca->id_praca . '&idPrograma=' . $prog['id_programa']),//. '&idPraca=' . $praca->id_praca),
+                                                        array(
+                                                            'type' => 'POST',
+                                                            'update' => '#container',
+                                                            'beforeSend' => 'function(){wait();}'
+                                                        ),
+                                                        array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
                                                 }
-                                            };?>
-                                        </div>
+                                            }
+                                        }; ?>
                                     </div>
                                 </div>
+                            </div>
 
 
 
-                                <div class="tab-pane <?php echo $menu == 'documentos' ? 'active' : ''; ?>" id="tab_2b">
-                                    <div class="panel-group" id="accordion1">
+                            <div class="tab-pane <?php echo $menu == 'documentos' ? 'active' : ''; ?>" id="tab_2b">
+                                <div class="panel-group" id="accordion1">
 
 
-                                        <div class="panel-body"  style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;">
-                                            <?php  if (isset($dataProgs)) {
-                                                foreach ($dataProgs as $prog) {
-                                                    if ($prog['ativo_programa'] && $prog['isArquivo']>0 ) {
-                                                        $extraClass = strlen($prog['nome_programa']) > 20 ? ' double ' : '';
-                                                       echo CHtml::ajaxLink(
-                                                           '
+                                    <div class="panel-body" style="height: 500px; overflow-y: scroll;overflow-x:hidden;border: 1px solid #bbbbbb;">
+                                        <?php if (isset($dataProgs)) {
+                                            foreach ($dataProgs as $prog) {
+                                                if ($prog['ativo_programa'] && $prog['isArquivo'] > 0) {
+                                                    $extraClass = strlen($prog['nome_programa']) > 20 ? ' double ' : '';
+                                                    echo CHtml::ajaxLink(
+                                                        '
                                                                    <div class=" row ">
                                                                       <div style="padding:0px 10px;" class="product-item">
                                                                             <div  style="display:block; height:110px;" class="well add2cart">
-                                                                                   <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] .'?rand=' .  rand() . '">
+                                                                                   <img style="width:111px; height:auto;border:1px solid #ddd; background-color:#fff; " src="' . $prog['imagem_programa'] . '?rand=' . rand() . '">
                                                                                    <div style="display:block; margin-left:120px; margin-top:-70px;">
                                                                                        <h4  style="">
                                                                                            ' . $prog['nome_programa'] . '
                                                                                         </h4>
                                                                                         <small style="position: absolute; display: block;top: 4px;right: 18px;">
-                                                                                        Arquivos: '.$prog['qtde_arquivos'].'</small>
+                                                                                        Arquivos: ' . $prog['qtde_arquivos'] . '</small>
                                                                                    </div>
                                                                             </div>
                                                                        </div>
                                                                    </div>
                                                               ',
-                                                           CController::createUrl('site/programa&idVeiculo=' . $veiculo->id_veiculo . '&idPraca=' . $praca->id_praca . '&idPrograma=' . $prog['id_programa']),//. '&idPraca=' . $praca->id_praca),
-                                                           array(
-                                                               'type' => 'POST',
-                                                               'update' => '#container',
-                                                               'beforeSend' => 'function(){wait();}'
-                                                           ),
-                                                           array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
-                                                    }
+                                                        CController::createUrl('site/programa&idVeiculo=' . $veiculo->id_veiculo . '&idPraca=' . $praca->id_praca . '&idPrograma=' . $prog['id_programa']),//. '&idPraca=' . $praca->id_praca),
+                                                        array(
+                                                            'type' => 'POST',
+                                                            'update' => '#container',
+                                                            'beforeSend' => 'function(){wait();}'
+                                                        ),
+                                                        array('id' => GUID::getGUID(), 'class' => 'col-lg-6 col-md-6 '));
                                                 }
-                                            };?>
-                                        </div>
+                                            }
+                                        }; ?>
                                     </div>
                                 </div>
+                            </div>
 
                         <?php } ?>
 
@@ -456,7 +455,7 @@ $showGrupos =  true;
                                             if (isset($clientes)) {
                                                 foreach ($clientes as $cli) {
 
-                                                    ;?>
+                                                    ; ?>
 
                                                     <div class="panel panel-default">
                                                         <div class="panel-heading">
@@ -505,7 +504,7 @@ $showGrupos =  true;
 
                                                                                     <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
 
-                                                                                    <h4>Endereço: https://vimeo.com/<?php echo $estudo['caminho_estudo']; ?></h4>
+                                                                                    <h4>Endereço: https://youtube.com/<?php echo $estudo['caminho_estudo']; ?></h4>
 
                                                                                     <a target='_blank' href='https://www.youtube.com/watch?v=<?php echo $estudo['caminho_estudo']; ?>' class=' btn  btn-primary ' style="color:white !important">
                                                                                         <i class='fa fa-share-alt '></i> Abrir no Youtube</a> -
@@ -607,6 +606,23 @@ $showGrupos =  true;
 
                                                                                 <?php
                                                                                 break;
+                                                                            case 'xls':
+                                                                                ?>
+                                                                                <div>
+                                                                    <span class='pull-right' style="margin-top: 40px;">
+                                                                                <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>?rand=<?php echo rand();?>  '
+                                                                                   class=' btn  btn-primary ' style="color:white !important">
+                                                                                    <i class='fa fa-file-excel-o green'></i> Clique Aqui Para Baixar </a>
+                                                                        </span>
+                                                                                </div>
+                                                                                <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+
+                                                                                <h4>formato: Excel (.xls, .xlsx)</h4>
+                                                                                <!--                                        </blockquote>-->
+
+
+                                                                                <?php
+                                                                                break;
                                                                         }
                                                                         ?>
                                                                         <!--                                            <p class="search-link" style="margin-top:8px;">Atualizado por --><?php //echo $estudo['usuario']; ?><!-- - (--><?php //echo $estudo['data']; ?><!--)</p>-->
@@ -618,10 +634,10 @@ $showGrupos =  true;
                                                     </div>
 
 
-                                                <?php
+                                                    <?php
 
                                                 }
-                                            };?>
+                                            }; ?>
                                         </div>
                                     </div>
                                 </div>

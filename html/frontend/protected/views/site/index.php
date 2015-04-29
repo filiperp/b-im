@@ -17,9 +17,10 @@
     </div>
 </div>
 
-<div class="header btn-primary" style="z-index: 10000;">
+<div class="header btn-primary" style="z-index: 10000;height: 39px !important;">
     <div class="container">
-        <a class="site-logo " href="<?php echo CController::createUrl('index') ; ?>">
+        <a class="site-logo " href="<?php echo CController::createUrl('index') ; ?>" style="position: absolute">
+
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/metronic/band/images/logo-grupo3.png" alt="Grupo Bandeirantes" class="site-logo-image">
             <!--            <img src="--><?php //echo Yii::app()->request->baseUrl; ?><!--/metronic/band/images/logo-grupo3.png" alt="Grupo Bandeirantes" class="site-logo-image">-->
 

@@ -2,18 +2,203 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b4db657-8b09-4245-9e18-08b55a95ba87" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/estudo/docs/mondelez.pptx" afterPath="$PROJECT_DIR$/html/estudo/docs/mondelez.pptx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/BSC/BSC.iml" afterPath="$PROJECT_DIR$/html/BSC/BSC.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/BSP/BSP.iml" afterPath="$PROJECT_DIR$/html/BSP/BSP.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KoolPHPSuite/KoolPHPSuite.iml" afterPath="$PROJECT_DIR$/KoolPHPSuite/KoolPHPSuite.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/admin.iml" afterPath="$PROJECT_DIR$/html/admin/admin.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/estudo/estudo.iml" afterPath="$PROJECT_DIR$/html/estudo/estudo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/ext/ext.iml" afterPath="$PROJECT_DIR$/html/ext/ext.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/frontend/frontend.iml" afterPath="$PROJECT_DIR$/html/frontend/frontend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/ma/ma.iml" afterPath="$PROJECT_DIR$/html/ma/ma.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/uploads/uploads.iml" afterPath="$PROJECT_DIR$/html/uploads/uploads.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vagrant/vagrant.iml" afterPath="$PROJECT_DIR$/vagrant/vagrant.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yii/yii.iml" afterPath="$PROJECT_DIR$/yii/yii.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/protected/components/UserIdentity.php" afterPath="$PROJECT_DIR$/html/admin/protected/components/UserIdentity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/protected/views/layouts/_headerMetronic.php" afterPath="$PROJECT_DIR$/html/admin/protected/views/layouts/_headerMetronic.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/frontend/protected/views/site/pages/analise.php" afterPath="$PROJECT_DIR$/html/frontend/protected/views/site/pages/analise.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/autoHeight.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/autoHeight.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/blog-item.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/blog-item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/blog.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/blog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/changelog.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/changelog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/charts.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/charts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/click.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/click.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_dropdowns.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_dropdowns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_editors.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_editors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_form_tools.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_form_tools.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_ion_sliders.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_ion_sliders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_jqueryui_sliders.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_jqueryui_sliders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_knob_dials.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_knob_dials.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_noui_sliders.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_noui_sliders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_pickers.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/components_pickers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/custom.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/custom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/customJson.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/customJson.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_index.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_orders.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_orders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_orders_view.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_orders_view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_products.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_products.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_products_edit.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ecommerce_products_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_404_option1.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_404_option1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_404_option2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_404_option2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_404_option3.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_404_option3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_500_option1.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_500_option1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_500_option2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_500_option2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_faq.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_invoice.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_invoice.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_lock.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_lock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_pricing_table.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_pricing_table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_profile.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_search.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/extra_search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/feature-buttons.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/feature-buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/feature-forms.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/feature-forms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/feature-typography.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/feature-typography.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_controls.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_controls.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_dropzone.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_dropzone.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_editable.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_editable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_fileupload.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_fileupload.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_image_crop.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_image_crop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_layouts.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_layouts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_validation.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_validation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_wizard.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/form_wizard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/full.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/full.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/home-boxed.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/home-boxed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/home-fullscreen.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/home-fullscreen.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/home-fullwidth.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/home-fullwidth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/images.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/images.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/inbox.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/inbox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/index-header-fix.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/index-header-fix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/index-without-topbar.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/index-without-topbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/index.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/index.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/index.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/frontend/protected/views/site/index.php" afterPath="$PROJECT_DIR$/html/frontend/protected/views/site/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/index_2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/index_2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/index_3.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/index_3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/index_horizontal_menu.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/index_horizontal_menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/itemsCustom.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/itemsCustom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/json.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/json.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_ajax.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_blank_page.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_blank_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_boxed_page.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_boxed_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_disabled_menu.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_disabled_menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_ecommerce_index.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_ecommerce_index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_fontawesome_icons.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_fontawesome_icons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_full_height_content.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_full_height_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_full_height_portlet.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_full_height_portlet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_glyphicons.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_glyphicons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_horizontal_menu1.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_horizontal_menu1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_horizontal_menu2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_horizontal_menu2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_horizontal_sidebar_menu.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_horizontal_sidebar_menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_language_bar.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_language_bar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_search_on_header1.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_search_on_header1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_search_on_header2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_search_on_header2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_closed.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_closed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_fixed.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_fixed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_fixedTEST.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_fixedTEST.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_reversed.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_reversed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_search_option1.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_search_option1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_search_option2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/layout_sidebar_search_option2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/lazyLoad.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/lazyLoad.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/login.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/login_soft.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/login_soft.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/manipulations.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/manipulations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/maps_google.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/maps_google.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/maps_vector.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/maps_vector.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/navOnTop.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/navOnTop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/navOnTop2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/navOnTop2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/one.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/one.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/onepage-index.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/onepage-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/owlStatus.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/owlStatus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-404.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-500.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-500.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-about.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-careers.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-careers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-contacts.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-contacts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-faq.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-forgotton-password.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-forgotton-password.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-gallery.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-gallery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-login.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-prices.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-prices.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-reg-page.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-reg-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-search-result.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-search-result.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-services.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-services.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-site-map.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/page-site-map.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_about.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_blog.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_blog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_blog_item.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_blog_item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_calendar.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_calendar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_coming_soon.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_coming_soon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_contact.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_contact.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_news.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_news.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_news_item.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_news_item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_portfolio.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_portfolio.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_timeline.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/page_timeline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/panzoom-boxed.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/panzoom-boxed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/panzoom-fullscreen.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/panzoom-fullscreen.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/panzoom-fullwidth.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/panzoom-fullwidth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/parallax-scene.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/parallax-scene.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/parallax-scroll.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/parallax-scroll.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/portfolio-2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/portfolio-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/portfolio-3.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/portfolio-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/portfolio-4.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/portfolio-4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/portfolio-item.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/portfolio-item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_ajax.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_draggable.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_draggable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_general.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_general.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_general2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_general2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_general3.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/portlet_general3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/progressBar.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/progressBar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_on_boxed_layout.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_on_boxed_layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_over_content.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_over_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_over_content_transparent.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_over_content_transparent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_push_content.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_push_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_push_page.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/quick_sidebar_push_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/randomOrder.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/randomOrder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/scaleup.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/scaleup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-about.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-account.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-account.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-checkout.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-checkout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-contacts.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-contacts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-faq.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-goods-compare.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-goods-compare.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-index-header-fix.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-index-header-fix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-index-light-footer.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-index-light-footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-index.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-item.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-item.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-privacy-policy.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-privacy-policy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-product-list.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-product-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-search-result.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-search-result.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-shopping-cart-null.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-shopping-cart-null.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-shopping-cart.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-shopping-cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-standart-forms.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-standart-forms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-terms-conditions-page.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-terms-conditions-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-wishlist.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/frontend/shop-wishlist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/frontend/metronic/band/css/styles.css" afterPath="$PROJECT_DIR$/html/frontend/metronic/band/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/sync.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/sync.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_advanced.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_advanced.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_ajax.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_basic.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_editable.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_editable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_managed.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_managed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_responsive.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/table_responsive.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/transitions.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/demos/transitions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_alert_dialog_api.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_alert_dialog_api.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_blockui.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_blockui.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_buttons.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_colors.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_colors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_datepaginator.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_datepaginator.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_extended_modals.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_extended_modals.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_general.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_general.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_icons.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_icons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_idle_timeout.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_idle_timeout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_modals.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_modals.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_nestable.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_nestable.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_notific8.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_notific8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_page_progress_style_1.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_page_progress_style_1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_page_progress_style_2.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_page_progress_style_2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_page_progress_style_3.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_page_progress_style_3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_page_progress_style_4.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_page_progress_style_4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_session_timeout.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_session_timeout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_tabs_accordions_navs.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_tabs_accordions_navs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_tiles.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_tiles.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_toastr.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_toastr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_tree.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_typography.html" afterPath="$PROJECT_DIR$/html/admin/metronic/templates/admin/ui_typography.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/frontend/protected/views/site/pages/veiculo.php" afterPath="$PROJECT_DIR$/html/frontend/protected/views/site/pages/veiculo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/vertical-boxed.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/vertical-boxed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/vertical-fullscreen.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/vertical-fullscreen.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/vertical-fullwidth.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/vertical-fullwidth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/video-boxed.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/video-boxed.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/video-fullscreen.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/video-fullscreen.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/video-fullwidth.html" afterPath="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/slider-revolution-slider/video-fullwidth.html" />
     </list>
     <ignored path="b-im.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,93 +229,7 @@
     <favorites_list name="b-im" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="veiculo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/site/pages/veiculo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
-              <folding>
-                <marker date="1427467908000" expanded="true" signature="22875:24454" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="22959:22976" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="22998:24380" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="23089:23117" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="23140:24302" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="23237:23308" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="23465:23516" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="23517:24219" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="23619:23835" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="23939:23995" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="23996:24129" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="26538:28117" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="26622:26639" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="26661:28043" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="26752:26780" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="26803:27965" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="26900:26971" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="27128:27179" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="27180:27882" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="27282:27498" placeholder="..." />
-                <marker date="1427467908000" expanded="false" signature="27602:27658" placeholder="..." />
-                <marker date="1427467908000" expanded="true" signature="27659:27792" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="novoestudo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/estudo/novoestudo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="354" column="48" selection-start-line="360" selection-start-column="85" selection-end-line="360" selection-end-column="100" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#select#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/estudo/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="321" column="71" selection-start-line="321" selection-start-column="71" selection-end-line="321" selection-end-column="71" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="components-dropdowns.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/html/estudo/assets/admin/pages/scripts/components-dropdowns.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -155,10 +254,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/html/frontend/metronic/band/js/HelpAnalise.js" />
-        <option value="$PROJECT_DIR$/html/admin/protected/views/analise/_form.php" />
-        <option value="$PROJECT_DIR$/html/frontend/protected/views/site/pages/analise.php" />
-        <option value="$PROJECT_DIR$/html/frontend/trusted/get.php" />
         <option value="$PROJECT_DIR$/html/uploads/.htaccess" />
         <option value="$PROJECT_DIR$/html/frontend/metronic/assets/global/plugins/fancybox/source/jquery.fancybox.js" />
         <option value="$PROJECT_DIR$/html/frontend/metronic/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" />
@@ -174,7 +269,6 @@
         <option value="$PROJECT_DIR$/html/frontend/protected/components/UserIdentity.php" />
         <option value="$PROJECT_DIR$/html/frontend/metronic/assets/frontend/layout/css/themes/green.css" />
         <option value="$PROJECT_DIR$/html/frontend/metronic/assets/frontend/layout/css/themes/blue.css" />
-        <option value="$PROJECT_DIR$/html/frontend/protected/views/site/index.php" />
         <option value="$PROJECT_DIR$/html/admin/protected/views/arquivo/admin.php" />
         <option value="$PROJECT_DIR$/html/frontend/metronic/assets/frontend/layout/css/themes/red.css" />
         <option value="$PROJECT_DIR$/html/frontend/metronic/assets/frontend/layout/css/style.css" />
@@ -198,7 +292,6 @@
         <option value="$PROJECT_DIR$/html/estudo/lockscreen.html" />
         <option value="$PROJECT_DIR$/html/estudo/assets/admin/pages/scripts/form-wizard.js" />
         <option value="$PROJECT_DIR$/html/estudo/index.html" />
-        <option value="$PROJECT_DIR$/html/frontend/protected/views/site/pages/veiculo.php" />
         <option value="$PROJECT_DIR$/html/frontend/protected/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/html/estudo/dashboard.html" />
         <option value="$PROJECT_DIR$/html/estudo/novoestudo.html" />
@@ -206,6 +299,12 @@
         <option value="$PROJECT_DIR$/html/estudo/loading.html" />
         <option value="$PROJECT_DIR$/html/ext/configuration.ext.php" />
         <option value="$PROJECT_DIR$/html/ext/config/.htusers.php" />
+        <option value="$PROJECT_DIR$/html/frontend/protected/views/site/pages/analise.php" />
+        <option value="$PROJECT_DIR$/html/frontend/protected/views/site/pages/veiculo.php" />
+        <option value="$PROJECT_DIR$/html/frontend/protected/views/site/index.php" />
+        <option value="$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/changelog.html" />
+        <option value="$PROJECT_DIR$/html/frontend/metronic/band/css/styles.css" />
+        <option value="$PROJECT_DIR$/html/admin/protected/components/UserIdentity.php" />
       </list>
     </option>
   </component>
@@ -229,6 +328,9 @@
   </component>
   <component name="NamedScopeManager">
     <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
     <include_path>
@@ -319,6 +421,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -338,10 +442,274 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trusted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="metronic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="metronic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="band" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="metronic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="band" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b-im" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1036,15 +1404,16 @@
       <workItem from="1427465547432" duration="6425000" />
       <workItem from="1427894079661" duration="289000" />
       <workItem from="1428010283485" duration="43000" />
+      <workItem from="1430322457532" duration="6108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="744031000" />
+    <option name="totallyTimeSpent" value="750139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1053,16 +1422,20 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22650602" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12035851" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1944801" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" x="954" y="143" width="409" height="832" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1944801" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" x="954" y="143" width="409" height="832" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12002567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43493977" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1572529" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967907" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914164" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="RESTClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1070,35 +1443,31 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.39987162" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914164" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1521181" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22708757" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43583226" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="RESTClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.39987162" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914164" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2884371" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12002567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15750916" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1572529" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967907" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914164" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1108,14 +1477,15 @@
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22650602" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12124463" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12035851" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17216118" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" x="954" y="143" width="409" height="832" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1944801" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" x="954" y="143" width="409" height="832" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48953974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43493977" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1141,90 +1511,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/html/frontend/metronic/assets/frontend/layout/css/themes/red.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7084233">
-          <caret line="380" column="21" selection-start-line="380" selection-start-column="21" selection-end-line="380" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/frontend/metronic/assets/frontend/layout/css/themes/green.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35205182">
-          <caret line="364" column="33" selection-start-line="364" selection-start-column="33" selection-end-line="364" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KoolPHPSuite/Install/data.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.134228">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KoolPHPSuite/Install/install.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34505862">
-          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KoolPHPSuite/Resources/controls.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KoolPHPSuite/Resources/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KoolPHPSuite/Resources/runexample.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12562814">
-          <caret line="5" column="38" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KoolPHPSuite/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/frontend/trusted/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/frontend/trusted/get.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/frontend/protected/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin/protected/views/log/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/admin/protected/views/log/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1400,37 +1686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/site/pages/veiculo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
-          <folding>
-            <marker date="1427467908000" expanded="true" signature="22875:24454" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="22959:22976" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="22998:24380" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="23089:23117" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="23140:24302" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="23237:23308" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="23465:23516" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="23517:24219" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="23619:23835" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="23939:23995" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="23996:24129" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="26538:28117" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="26622:26639" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="26661:28043" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="26752:26780" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="26803:27965" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="26900:26971" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="27128:27179" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="27180:27882" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="27282:27498" placeholder="..." />
-            <marker date="1427467908000" expanded="false" signature="27602:27658" placeholder="..." />
-            <marker date="1427467908000" expanded="true" signature="27659:27792" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/frontend/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30981067">
@@ -1479,13 +1734,13 @@
           <caret line="321" column="71" selection-start-line="321" selection-start-column="71" selection-end-line="321" selection-end-column="71" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1496,17 +1751,17 @@
           <caret line="354" column="48" selection-start-line="360" selection-start-column="85" selection-end-line="360" selection-end-column="100" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#span#1;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#select#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#5;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1514,8 +1769,188 @@
     <entry file="file://$PROJECT_DIR$/html/estudo/assets/admin/pages/scripts/components-dropdowns.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+          <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/metronic/band/less/styles.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/metronic/band/less/files/backend.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/site/pages/listVeiculos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/site/pages/analise.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/protected/components/UserIdentity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55932206">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/metronic/band/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.267101">
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/site/pages/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4152544">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/layouts/column1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/metronic/assets/global/plugins/carousel-owl-carousel/changelog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40677965">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/site/pages/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6195372">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.95758355">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42416453">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1430336398000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/frontend/protected/views/site/pages/veiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27030626">
+          <caret line="99" column="164" selection-start-line="99" selection-start-column="164" selection-end-line="99" selection-end-column="164" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#1;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#1;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#2;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#2;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#3;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#4;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#4;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#1;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#5;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#5;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#2;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#6;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#6;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#3;n#blockquote#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1430336172000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

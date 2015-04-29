@@ -36,18 +36,19 @@
 
 <?php
 $frame_width = '100%';
+$frame_height= "1100px";
 if ($link_tipo == 'painel') $frame_width = '915px';
 if ($link_tipo == 'painel_1200') $frame_width = '1200px';?>
 
 
 <div class="row" style="text-align: center;">
-    <div  class="col-sm-12 " style="text-align: center;">
+    <div  class="col-sm-12 " style="text-align: center;padding:0px !important;">
 
         <div id="iframe_analise"  style="text-align: center; width: <?php echo $frame_width; ?> !important; ">
-            <div id="help_holder" style="height:756px; box-sizing: border-box;display: none; width:<?php echo $frame_width; ?> ; position: absolute"></div>
+            <div id="help_holder" style="height:<?php echo $frame_height; ?>; box-sizing: border-box;display: none; width:<?php echo $frame_width; ?> ; position: absolute"></div>
             <iframe src="<?php echo $link; ?>"
                     width="<?php echo $frame_width; ?> "
-                    height="756px" align="center" scrolling="no" style="border: none">
+                    height="<?php echo $frame_height; ?>" align="center" scrolling="no" style="border: none">
             </iframe>
         </div>
     </div>
