@@ -623,6 +623,23 @@ $showGrupos = true;
 
                                                                                 <?php
                                                                                 break;
+                                                                            case 'zip':
+                                                                                ?>
+                                                                                <div>
+                                                                        <span class='pull-right' style="margin-top: 40px;">
+                                                                                <a target='_blank' href='<?php echo $estudo['caminho_estudo']; ?>?rand=<?php echo rand();?>  ' class=' btn  btn-primary ' style="color:white !important">
+                                                                                    <i class='fa fa-file-zip-o'></i> Clique Aqui Para Baixar
+                                                                                </a>
+                                                                        </span>
+
+                                                                                    <h2 style="font-weight:300; text-decoration: underline"><?php echo $estudo['nome_estudo']; ?></h2>
+
+                                                                                    <h4>formato: ZIP</h4>
+                                                                                </div>
+                                                                                <!--                                        </blockquote>-->
+
+                                                                                <?php
+                                                                                break;
                                                                         }
                                                                         ?>
                                                                         <!--                                            <p class="search-link" style="margin-top:8px;">Atualizado por --><?php //echo $estudo['usuario']; ?><!-- - (--><?php //echo $estudo['data']; ?><!--)</p>-->

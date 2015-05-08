@@ -240,6 +240,23 @@
                                 </a>
                                 <?php
                                 break;
+                            case 'zip':
+                                ?>
+                                <span class='pull-right' style="margin-top: 40px;">
+                                    <i class="fa fa-file-zip-o fa-5x" style="color:#888888;"></i>
+                                </span>
+                                <h2 style="font-weight:300; "><?php echo $arq['nome_arquivo']; ?></h2>
+                                <hr>
+                                <h4>Formato: ZIP </h4>
+                                <a target='_blank'
+                                   href='<?php echo $arq['caminho_arquivo']; ?>?rand=<?php echo rand();?>  '
+                                   class=' btn  btn-primary ' style="color:white !important margin-right:5px;">
+                                    <i class='fa fa-file-zip-o '></i> Baixar o arquivo
+                                </a>
+
+                                <?php
+                                break;
+
                         }
                         ?>
 
